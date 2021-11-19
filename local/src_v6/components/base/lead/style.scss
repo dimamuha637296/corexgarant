@@ -1,0 +1,11 @@
+$_lead-font-size:                    1.8rem;
+$_lead-line-height:                  1.5;
+$_lead-margin-bottom:                1em;
+$_lead-color:                        $headings-color;
+
+.lead {
+  font-size: $_lead-font-size;
+  line-height: $_lead-line-height;
+  margin-bottom: $_lead-margin-bottom;
+  color: $_lead-color;
+}

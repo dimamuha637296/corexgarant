@@ -1,0 +1,37 @@
+include ../../../components/base/forms/form_1/form/index
+#modal-contacts.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .modal-title.h2
+          | Связаться с нами
+          .modal-title-help Если не перезвоним в течение 20 минут, привезем бесплатную пиццу!
+        button.close(type='button', data-dismiss='modal', aria-label="Close")
+      .modal-body
+        - var formID = 'modal-contacts-form';
+        +form_1({
+            formID: formID,
+            hasValidation: true,
+            rows: [
+                {
+                    labelText: 'Имя и фамилия',
+                    id: formID + '-FIO',
+                    required: true
+                },
+                {
+                    labelText: 'Электронная почта',
+                    id: formID + '-EMAIL',
+                    type: 'email',
+                    required: true
+                },
+                {
+                    controlType: 'textarea',
+                    labelText: 'Сообщение',
+                    helptText: 'Экскурсии проводятся по вторникам и четвергам',
+                    id: formID + '-MESSAGE',
+                    cols: 60,
+                    rows: 4,
+                    required: true
+                }
+            ]
+        })

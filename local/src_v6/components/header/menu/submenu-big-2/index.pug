@@ -1,0 +1,240 @@
+mixin submenu-big-2(data)
+  if (data === undefined)
+    -
+      var data = [
+        {
+        text: 'Телефония и связь',
+        isActive: true,
+        href: '#',
+        submenu: [
+          {
+          text: 'Мобильные телефоны',
+          href: '#',
+          submenu: [
+            {text: 'Мобильные телефоны', href: '#'},
+            {text: 'Умные часы', href: '#'},
+            {text: 'Радиотелефоны DECT', href: '#'},
+            {text: 'Факсы', href: '#'},
+            {text: 'Проводные телефоны', href: '#'},
+            {text: '3G-модемы', href: '#'},
+            {text: 'Портативные радиостанции', href: '#'},
+            {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {
+          text: 'Умные часы',
+          isActive: true,
+          submenu: [
+            {text: 'Мобильные телефоны', href: '#', isActive: true},
+            {text: 'Умные часы', href: '#'},
+            {text: 'Радиотелефоны DECT', href: '#'},
+            {text: 'Факсы', href: '#'},
+            {text: 'Проводные телефоны', href: '#'},
+            {text: '3G-модемы', isActive: true},
+            {text: 'Портативные радиостанции', href: '#'},
+            {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {
+          text: 'Радиотелефоны DECT',
+          href: '#',
+          submenu: [
+            {text: 'Мобильные телефоны', href: '#'},
+            {text: 'Умные часы', href: '#'},
+            {text: 'Радиотелефоны DECT', href: '#'},
+            {text: 'Факсы', href: '#'},
+            {text: 'Проводные телефоны', href: '#'},
+            {text: '3G-модемы', href: '#'},
+            {text: 'Портативные радиостанции', href: '#'},
+            {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {text: 'Факсы', href: '#'},
+          {text: 'Проводные телефоны', href: '#'},
+          {text: '3G-модемы', href: '#'},
+          {text: 'Портативные радиостанции', isActive: true},
+          {text: 'Автомобильные радиостанции', href: '#'}
+        ]
+        },
+        {
+        text: 'Планшеты, электронные книги',
+        href: '#',
+        submenu: [
+          {text: 'Планшеты', href: '#'},
+          {text: 'Чехлы для планшетов', href: '#'},
+          {text: 'Электронные книги', href: '#'},
+          {text: 'Обложки для электронных книг', href: '#'},
+          {text: 'Внешние аккумуляторы (Powerbank)', href: '#'},
+          {text: 'Беспроводные и портативные колонки', href: '#'},
+          {text: 'Музыкальные док-станции', href: '#'}
+        ]
+        },
+        {
+        text: 'Аксессуары для телефонов',
+        href: '#',
+        submenu: [
+          {text: 'Чехлы для телефонов', href: '#'},
+          {text: 'Аккумуляторы', href: '#'},
+          {text: 'Портативные аккумуляторы (Powerbank)', href: '#'},
+          {text: 'Bluetooth-гарнитуры', href: '#'},
+          {text: 'Автомобильные держатели', href: '#'},
+          {
+          text: 'Палки для селфи',
+          href: '#',
+          submenu: [
+            {text: 'Мобильные телефоны', href: '#'},
+            {text: 'Умные часы', href: '#'},
+            {text: 'Радиотелефоны DECT', href: '#'},
+            {text: 'Факсы', href: '#'},
+            {text: 'Проводные телефоны', href: '#'},
+            {text: '3G-модемы', href: '#'},
+            {text: 'Портативные радиостанции', href: '#'},
+            {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {text: 'Беспроводные и портативные колонки', href: '#'},
+          {text: 'Музыкальные док-станции', href: '#'},
+          {text: 'Зарядные устройства', href: '#'},
+          {text: 'Кабели и адаптеры для телефонов', href: '#'}
+        ]
+        },
+        {
+        text: 'Музыкальное оборудование',
+        href: '#',
+        submenu: [
+          {text: 'Синтезаторы и рабочие станции', href: '#'},
+          {text: 'Студийные мониторы', href: '#'},
+          {text: 'Аудиоинтерфейсы', href: '#'},
+          {text: 'Гитарные комбоусилители', href: '#'},
+          {text: 'Концертная акустика', href: '#'}
+        ]
+        },
+        {
+        text: 'Минздрав предупреждает',
+        href: '#',
+        submenu: [
+          {text: 'Электронные парогенераторы', href: '#'}
+        ]
+        },
+        {
+        text: 'Телефония и связь',
+        href: '#',
+        submenu: [
+        {
+        text: 'Мобильные телефоны',
+        submenu: [
+        {text: 'Мобильные телефоны'},
+        {text: 'Умные часы'},
+        {text: 'Радиотелефоны DECT'},
+        {text: 'Факсы'},
+        {text: 'Проводные телефоны'},
+        {text: '3G-модемы'},
+        {text: 'Портативные радиостанции'},
+        {text: 'Автомобильные радиостанции'}
+        ]
+        },
+        {
+        text: 'Умные часы',
+        href: '#',
+        submenu: [
+          {text: 'Мобильные телефоны', href: '#'},
+          {text: 'Умные часы', href: '#'},
+          {text: 'Радиотелефоны DECT', href: '#'},
+          {text: 'Факсы', href: '#'},
+          {text: 'Проводные телефоны', href: '#'},
+          {text: '3G-модемы', href: '#'},
+          {text: 'Портативные радиостанции', href: '#'},
+          {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {
+          text: 'Радиотелефоны DECT',
+          href: '#',
+          submenu: [
+            {text: 'Мобильные телефоны', href: '#'},
+            {text: 'Умные часы', href: '#'},
+            {text: 'Радиотелефоны DECT', href: '#'},
+            {text: 'Факсы', href: '#'},
+            {text: 'Проводные телефоны', href: '#'},
+            {text: '3G-модемы', href: '#'},
+            {text: 'Портативные радиостанции', href: '#'},
+            {text: 'Автомобильные радиостанции', href: '#'}
+          ]
+          },
+          {text: 'Факсы', href: '#'},
+          {text: 'Проводные телефоны', href: '#'},
+          {text: '3G-модемы', href: '#'},
+          {text: 'Портативные радиостанции', href: '#'},
+          {text: 'Автомобильные радиостанции', href: '#'}
+        ]
+        },
+        {
+        text: 'Планшеты, электронные книги',
+        href: '#',
+        submenu: [
+          {text: 'Планшеты', href: '#'},
+          {text: 'Чехлы для планшетов', href: '#'},
+          {text: 'Электронные книги', href: '#'},
+          {text: 'Обложки для электронных книг', href: '#'},
+          {text: 'Внешние аккумуляторы (Powerbank)', href: '#'},
+          {text: 'Беспроводные и портативные колонки', href: '#'},
+          {text: 'Музыкальные док-станции', href: '#'}
+        ]
+        },
+        {
+        text: 'Аксессуары для телефонов',
+        href: '#',
+        submenu: [
+          {text: 'Чехлы для телефонов', href: '#'},
+          {text: 'Аккумуляторы', href: '#'},
+          {text: 'Портативные аккумуляторы (Powerbank)', href: '#'},
+          {text: 'Bluetooth-гарнитуры', href: '#'},
+          {text: 'Автомобильные держатели', href: '#'},
+          {text: 'Палки для селфи', href: '#'},
+          {text: 'Беспроводные и портативные колонки', href: '#'},
+          {text: 'Музыкальные док-станции', href: '#'},
+          {text: 'Зарядные устройства', href: '#'},
+          {text: 'Кабели и адаптеры для телефонов', href: '#'}
+        ]
+        },
+        {
+        text: 'Музыкальное оборудование',
+        href: '#',
+        submenu: [
+          {text: 'Синтезаторы и рабочие станции', href: '#'},
+          {text: 'Студийные мониторы', href: '#'},
+          {text: 'Аудиоинтерфейсы', href: '#'},
+          {text: 'Гитарные комбоусилители', href: '#'},
+          {text: 'Концертная акустика', href: '#'}
+        ]
+        },
+        {
+        text: 'Минздрав предупреждает',
+        href: '#',
+        submenu: [
+          {text: 'Электронные парогенераторы', href: '#'}
+        ]
+        }
+      ]
+  .submenu-big-2.js-menu-sort.js-submenu-scroll
+    .inner.js-menu-inner.js-submenu-inner
+      ul.break-word.list-reset.menu_level_2.js-menu
+        each item_2, i_2 in data
+          li.item_2.js-item(class=item_2.isActive === true ? 'active' : '')
+            #{item_2.href ? 'a' : 'span'}&attributes(item_2.href ? {'href': item_2.href} : {} )
+              span #{item_2.text}
+            if (item_2.submenu)
+              .submenu-inner
+                ul.break-word.list-reset.menu_level_3
+                  each item_3, i_3 in item_2.submenu
+                    li.item_3(class=item_3.isActive === true ? 'active' : '')
+                      #{item_3.href ? 'a' : 'span'}&attributes(item_3.href ? {'href': item_3.href} : {} )
+                        span #{item_3.text}
+                      if (item_3.submenu)
+                        span.icon.collapsed(data-href='#', data-toggle='collapse', data-target='#submenu-big-2-' + i_2 + '-' + i_3)
+                        .submenu-inner.collapse(id='submenu-big-2-' + i_2 + '-' + i_3)
+                          ul.break-word.list-reset.menu_level_4
+                            each item_4 in item_3.submenu
+                              li.item_4(class=item_4.isActive === true ? 'active' : '')
+                                #{item_4.href ? 'a' : 'span'}&attributes(item_4.href ? {'href': item_2.href} : {} )
+                                  span #{item_4.text}

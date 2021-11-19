@@ -1,0 +1,36 @@
+mixin select(data)
+  -
+    var defaultList = [
+      {text: '&nbsp;', value: '', selected: true, disabled: true}, {text: 'Алтайский край'},
+      {text: 'Все страныВсе страныВсе страныВсе страныВсе страны'}, {text: 'Архангельская область'},
+      {text: 'Астраханская область'}, {text: 'Белгородская область'}, {text: 'Брянская область'},
+      {text: 'Владимирская область'}, {text: 'Волгоградская область'}, {text: 'Вологодская область'},
+      {text: 'Воронежская область'}, {text: 'Еврейская автономная область', disabled: true},
+      {text: 'Забайкальский край'}, {text: 'Ивановская область'}, {text: 'Иркутская область'},
+      {text: 'Калининградская область'}, {text: 'Калужская область'}, {text: 'Кемеровская область'},
+      {text: 'Кировская область'}, {text: 'Костромская область'}, {text: 'Краснодарский край'},
+      {text: 'Красноярский край'}, {text: 'Иран'}, {text: 'Ирландия'}, {text: 'Испания'},
+      {text: 'Италия'}, {text: 'Йемен'}, {text: 'Казахстан'}, {text: 'Канада'}, {text: 'Кипр'},
+      {text: 'Китай'}, {text: 'Куба'}
+    ]
+    var cl = data.className !== undefined ? data.className : 'form-control';
+    var mtpl = (data.multiple !== true ? ' ui-select' : '');
+    var className = cl + mtpl;
+    var attr = {};
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    if (data.size !== undefined) attr.size = data.size;
+    if (data.multiple !== undefined) attr.multiple = data.multiple;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  select(class=className)&attributes(attr)
+    - var list = data.list !== undefined ? data.list : defaultList;
+    each item in list
+      -
+        var optionAttr = {};
+        if (item.text === undefined) item.text = '';
+        if (item.value !== undefined) optionAttr.value = item.value;
+        if (item.selected !== undefined) optionAttr.selected = item.selected;
+        if (item.disabled !== undefined) optionAttr.disabled = item.disabled;
+      option&attributes(optionAttr) !{item.text}

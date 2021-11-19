@@ -1,0 +1,61 @@
+-
+  var data = [
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      price: '7,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      price: '7,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      price: '7,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон Ламинат Tarkett Манон',
+      price: '137,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      price: '1227,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон Ламинат Tarkett Манон',
+      price: '7,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон Ламинат Tarkett Манон',
+      price: '7,55'
+    },
+    {
+      img: 'img/tmp/search-head-img-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      price: '7,55'
+    }
+  ];
+// Блок генерируется через AJAX и JS на стороне Битрикса
+.search-head-img
+  ul.search-results.menu_level_1.break-word.list-reset(style='display: block')
+    each item in data
+      li.item_1
+        a(href='#')
+          .wrap
+            .img-wrap
+              img(src=DB.DIR + item.img, alt=item.title, title=item.title)
+            .title-wrap
+              .title #{item.title}
+            .price-wrap
+              | от
+              span.price #{item.price}
+              span.currency Byn
+    li.item_1
+      a.else-btn(href='#') Все результаты
+// /END Блок генерируется через AJAX и JS на стороне Битрикса

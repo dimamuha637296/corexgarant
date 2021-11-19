@@ -1,0 +1,134 @@
+// var ****************************************************************************************************************
+$_webform-field-height: 35px;
+$_webform-field-shadow-height: 1px;
+$_webform-field-height-wrap: ($_webform-field-height + $_webform-field-shadow-height);
+
+// styles *************************************************************************************************************
+
+.webform-field-upload-list {
+  margin-top: 0.2em !important;
+
+  #db & {
+    margin: 0 0 5px 0;
+  }
+
+  a.delete-file {
+    vertical-align: top;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 1px 0 0 6px;
+    outline: none;
+    background: none;
+
+    &:before {
+      @include png;
+      @include png-upload-close;
+    }
+
+    @include hover-focus() {
+      background: none;
+
+      &:before {
+        @include png-upload-close-hover;
+      }
+    }
+  }
+
+  i {
+    vertical-align: top;
+    display: none;
+    width: 15px;
+    height: 15px;
+    background: url('./../../base64/webform-field-upload-waiting.gif') no-repeat 0 2px;
+    margin: 3px 0 0 8px;
+  }
+
+  .hidden-caption {
+    display: none;
+  }
+
+  .upload-file-name {
+    margin: 0 0 0 -4px;
+    color: $link-color;
+    text-decoration: underline;
+  }
+
+  .upload-file-name:hover {
+    color: $link-color-hover;
+  }
+
+  li {
+    white-space: nowrap;
+    color: $caption-color;
+  }
+
+  .uploading {
+
+    .upload-file-name {
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    i {
+      display: inline-block;
+    }
+  }
+}
+
+.webform-field-upload {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: $_webform-field-height-wrap;
+
+  @include hover-focus() {
+    color: #000;
+    cursor: pointer !important;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .webform-small-button {
+    position: relative;
+    background: #f6f6f6;
+    border: 1px solid $border-color-base;
+    border-radius: $border-radius-base;
+    box-shadow: 1px $_webform-field-shadow-height 1px $border-color-base;
+    padding: 0 21px;
+    font-size: 15px;
+    color: $caption-color;
+  }
+}
+
+.webform-button-upload {
+  cursor: pointer;
+  content: '';
+  display: inline-block;
+  height: $_webform-field-height;
+  line-height: $_webform-field-height;
+  vertical-align: top;
+
+  &:before {
+    @include png;
+    @include png-upload();
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  &:after {
+    display: none;
+  }
+
+  .webform-button-right,
+  .webform-button-left {
+    display: none;
+  }
+}

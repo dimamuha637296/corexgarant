@@ -1,0 +1,13 @@
+// Transfer of long words to the next line
+@mixin break-word() {
+  overflow-wrap: break-word;//does not support IE, Firefox; is a copy of word-wrap
+  word-wrap: break-word;
+}
+
+
+// Disables transfer lines
+@mixin nowrap() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

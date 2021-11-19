@@ -1,0 +1,14 @@
+.section
+  .h3
+    | Тип плательщика
+  .group-check
+    .radio
+      label
+        input#PERSON_TYPE_1.ui-checkbox(type='radio', name='PERSON_TYPE', value='1', onclick='submitForm()')
+        span Физическое лицо
+    .radio
+      label
+        input#PERSON_TYPE_2.ui-checkbox(type='radio', name='PERSON_TYPE', value='2', checked='checked', onclick='submitForm()')
+        span Юридическое лицо
+  .clear
+  input(type='hidden', name='PERSON_TYPE_OLD', value='1')

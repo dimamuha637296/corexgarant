@@ -1,0 +1,36 @@
+.cookies {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  background: $brand-gray-2;
+  box-shadow: $box-shadow-base;
+  transition: all .5s ease;
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &__wrap {
+    padding: 20px 0;
+  }
+
+  .media {
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+    }
+  }
+
+  .btn-wrap {
+    margin-left: 30px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Preloader';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block pagehead
+block title
+  h1#title
+    | Preloader
+block content
+  .row
+    .col-12.col-md-4
+      include ../../../components/block/lorem/index
+    .col-12.col-md-4
+      -
+        var preloader = {
+          id: 'preloader-1',
+          size: 'xs'
+        };
+      include ../../../components/base/preloader/index
+      script.
+        !function () {
+            'use strict';
+
+            $(function () {
+                var preloader = $('#preloader-1');
+                hidePreloader(preloader);
+                showPreloader(preloader);
+            });
+        }();
+      include ../../../components/block/lorem/index
+    .col-12.col-md-4
+      include ../../../components/block/lorem/index
+  .row
+    .col-12
+      -
+        var preloader = {id: 'preloader-2'};
+      include ../../../components/base/preloader/index
+      script.
+          !function () {
+              'use strict';
+
+              $(function () {
+                var preloader = $('#preloader-2');
+                showPreloader(preloader);
+              });
+          }();
+      include ../../../components/block/lorem/index

@@ -1,0 +1,67 @@
+/* blockquote-style-4.scss */
+
+// var ****************************************************************************************************************
+$_blockquote-style-4-height: 100px;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+
+blockquote.style-4 {
+  margin: 65px 0;
+  padding: 0 50px;
+  border: none;
+  position: relative;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0 30px;
+    margin: 40px 0;
+  }
+
+  .text {
+    margin-bottom: 32px;
+  }
+
+  .person {
+    position: absolute;
+    width: $_blockquote-style-4-height;
+    height: $_blockquote-style-4-height;
+  }
+
+  .person-name {
+    height: $_blockquote-style-4-height;
+    font-size: 15px;
+    line-height: (20/15);
+    padding: 0 0 0 ($_blockquote-style-4-height + 34);
+
+    @media (max-width: $screen-sm-max) {
+      padding-left: ($_blockquote-style-4-height + 20);
+    }
+  }
+
+  &:before {
+    content: "\201E";
+    font-family: Georgia, $font-family-base;
+    color: $brand-1;
+    font-size: 100px;
+    position: absolute;
+    top: -32px;
+    left: 0;
+    line-height: 0;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 70px;
+      top: -15px;
+      left: 5px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      left: -5px;
+      top: -13px;
+    }
+  }
+}

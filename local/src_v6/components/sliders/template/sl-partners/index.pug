@@ -1,0 +1,21 @@
+mixin sl-partners(data)
+  .sl-partners(class=data.modifier ? data.modifier : '')
+    if (data.bg !== undefined)
+      .bg(style='background-image: url(' + DB.DIR + 'img/tmp/' + data.bg + ')')
+    if (data.bTitle)
+      +b-title({
+          title: data.bTitle.title,
+          titleH: data.bTitle.titleH,
+          link: data.bTitle.link
+      })
+    .wrap.cursor.inited-not
+      .slider
+        for slide in data.slides
+          .slide
+            .inner
+              a.link(href='#', target='_blank')
+                img.img(src=DB.DIR + 'img/tmp/' + slide, alt='partner')
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

@@ -1,0 +1,15 @@
+if (basketMobEmpty === undefined)
+  - var basketMobEmpty = false;
+.basket-header-mob-2.dropdown.js-dropdown-full-width
+  .dropdown-toggle(data-toggle='dropdown')
+    if (!basketMobEmpty)
+      span.icon 56
+  .dropdown-menu
+    .container
+      .wrap
+        a.link(href='#')
+          span В корзине
+      if (basketMobEmpty)
+        .text пока пусто
+      else
+        .text 12 товаров на 246 руб

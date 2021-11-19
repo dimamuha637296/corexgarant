@@ -1,0 +1,39 @@
+.item-quantity-2 {
+  display: inline-block;
+  font-size: 0;
+
+  .quantity {
+    display: inline-block;
+    border: none;
+    width: 60px;
+    height: 17px;
+    padding: 0 6px;
+    background: none;
+    @include font-family-bold();
+    font-size: 15px;
+    line-height: (17/15);
+    text-align: center;
+    vertical-align: bottom;
+  }
+
+  .minus,
+  .plus {
+    font-size: 17px;
+    min-width: 17px;
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+    text-decoration: none;
+    background-color: $link-color;
+    border-radius: 3px;
+    color: #fff;
+
+    @include hover-focus() {
+      background-color: $link-color-hover;
+    }
+
+    &:active {
+      background-color: $link-color-active;
+    }
+  }
+}

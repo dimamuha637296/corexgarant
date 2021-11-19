@@ -1,0 +1,15 @@
+$_enter-grid-gutter-width: 6px;
+
+.enter {
+  max-width: 250px;
+
+  .list {
+    display: flex;
+    margin: 0 $_enter-grid-gutter-width / -2;
+    padding: 0;
+  }
+
+  .item {
+    padding: 0 $_enter-grid-gutter-width / 2;
+  }
+}

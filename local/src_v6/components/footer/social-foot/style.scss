@@ -1,0 +1,40 @@
+.social-foot {
+  margin-bottom: 15px;
+
+  @media (min-width: $screen-md-min) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .list {
+    @include clearfix;
+  }
+
+  .item {
+    display: block;
+    text-decoration: none;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #7b7c79;
+    border-radius: 50px;
+
+    &:not(:last-child) {
+      margin-right: 11px;
+    }
+
+    &:before {
+      display: block;
+      width: 24px;
+      height: 24px;
+
+      .osLinux & {
+        padding-top: 0;
+      }
+    }
+
+    @include hover-focus() {
+      opacity: 0.8;
+    }
+  }
+}

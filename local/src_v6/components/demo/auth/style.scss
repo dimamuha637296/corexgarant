@@ -1,0 +1,41 @@
+/* auth.scss */
+
+// var ****************************************************************************************************************
+//@_auth:                       29px;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.auth {
+
+  .form-group {
+    margin-bottom: 9px;
+
+    .name {
+      @include font-family-bold();
+      margin-bottom: 3px;
+    }
+
+    .btn_submit {
+      font-size: 18px;
+      letter-spacing: .5px;
+      line-height: 1;
+      padding: 9px 30px 11px;
+      margin-bottom: 10px;
+
+      @media (max-width: $screen-xs-max) {
+        float: none;
+        margin-bottom: 15px;
+      }
+    }
+
+    .form_required {
+      font-size: 12px;
+
+      @media (max-width: $screen-xs-max) {
+        display: block;
+        font-size: 13px;
+      }
+    }
+  }
+}

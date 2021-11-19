@@ -1,0 +1,13 @@
+if (itemSizes === undefined)
+  - var itemSizes = ['XS', 'S', 'M', 'L', 'XL'];
+if (itemSizeElement === undefined)
+  - var itemSizeElement = 0;
+.item-size
+  .bx_size_scroller_container
+    .bx_size
+      ul.list-reset.sku_prop_list
+        each size, i in itemSizes
+          li.sku_prop(class=i === 0 ? 'bx_active' : '', data-value-id=size, data-element=itemSizeElement, data-property='SIZES_CLOTHES')
+            a(href='javascript:void(0);') #{size}
+    .bx_slide_left(onclick="leftScroll('SIZES_CLOTHES', '"+ itemSizeElement +"', 5);")
+    .bx_slide_right(onclick="rightScroll('SIZES_CLOTHES', '"+ itemSizeElement +"', 5);")

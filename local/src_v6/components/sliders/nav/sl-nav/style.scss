@@ -1,0 +1,78 @@
+// Navigation
+.sl-nav {
+
+  .prev,
+  .next {
+    display: none;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    color: #fff;
+
+    &.slick-arrow {
+      display: block;
+    }
+
+    &:before {
+      font-size: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 1px 2px 2px rgba(0, 0, 0, .43);
+      @include svg;
+      @include svg-sl-nav-next;
+
+      .inited-not & {
+        display: none;
+      }
+    }
+
+    @include hover-focus() {
+
+      &:before {
+        @include svg-sl-nav-next-hover();
+      }
+    }
+
+    &:active {
+
+      &:before {
+        @include svg-sl-nav-next-active();
+      }
+    }
+
+    &.slick-disabled,
+    &.disabled {
+
+      &:before {
+        @include svg-sl-nav-next-disabled();
+      }
+    }
+  }
+
+  .prev {
+    left: -10px;
+
+    .wrap & {
+      left: 0;
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) scale(-1, 1);
+    }
+  }
+
+  .next {
+    right: -10px;
+
+    .wrap & {
+      right: 0;
+    }
+  }
+}

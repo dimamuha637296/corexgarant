@@ -1,0 +1,39 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Выпадающий результат поиска c изображениями';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block header
+  .header__mob
+    .container
+      include ../../../components/header/logo/logo-mob/index
+      .header__tools
+        include ../../../components/header/contacts/contacts-mob/index
+        include ../../../components/header/search/search-mob/index
+        include ../../../components/header/lang/lang-mob/index
+        include ../../../components/header/hamburger/hamburger-opener/index
+  .header__desktop
+    .container
+      .header__top
+        .row
+          .col-5
+            include ../../../components/header/menu/menu-hor/index
+          .col-3
+            include ../../../components/header/search/search-head--2/index
+          .col-xl-2.col-lg-1
+            include ../../../components/header/lang/lang/index
+          .col-xl-2.col-lg-3
+            include ../../../components/header/question/btn-question/index
+      .header__bottom
+        .row
+          .col-7.col-xl-6
+            include ../../../components/header/logo/logo-png/index
+          .col-4
+            include ../../../components/header/contacts/contacts-head/index
+          .col-1.col-xl-2
+            include ../../../components/header/menu-base/hamburger-opener-menu/index
+      include ../../../components/header/menu/menu-drop-8/index
+block title
+  h1#title
+    | Выпадающий результат поиска c изображениями
+block content

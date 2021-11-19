@@ -1,0 +1,52 @@
+// Breadcrumbs
+
+$breadcrumb-font-size:              1.4rem;
+$breadcrumb-padding-y:              1.5rem;
+$breadcrumb-padding-x:              1.5rem;
+$breadcrumb-item-padding:           .5rem;
+
+$breadcrumb-margin-bottom:          1rem;
+
+$breadcrumb-bg:                     transparent;
+$breadcrumb-color:                  #919191;
+$breadcrumb-hover-color:            $link-color;
+$breadcrumb-active-color:           #000;
+
+$breadcrumb-border-radius:          $border-radius-base;
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  margin-bottom: $breadcrumb-margin-bottom;
+  list-style: none;
+  background-color: $breadcrumb-bg;
+  font-size: $breadcrumb-font-size;
+}
+
+.breadcrumb-item {
+
+  > a {
+    color: $breadcrumb-color;
+
+    @include hover-focus {
+      color: $breadcrumb-hover-color;
+    }
+  }
+
+  + .breadcrumb-item {
+    padding-left: $breadcrumb-item-padding;
+
+    &::before {
+      @include png;
+      @include png-breadcrumb();
+      margin: 0 .6rem;
+      color: $breadcrumb-color;
+      position: static;
+    }
+  }
+
+  &.active {
+    color: $breadcrumb-active-color;
+  }
+}

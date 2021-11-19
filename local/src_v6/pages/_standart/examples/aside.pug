@@ -1,0 +1,15 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Сайдбар';
+  - DB.DIR = '../../';
+block aside
+  include ../../../components/aside/menu-aside/index
+  include ../../../components/aside/menu-aside-2/index
+  include ../../../components/aside/menu-aside-3/index
+  include ../../../components/aside/menu-accordion/index
+  include ../../../components/aside/menu-accordion-2/index
+  include ../../../components/aside/menu-aside-vertical/index
+  include ../../../components/aside/news-aside/index
+  include ../../../components/aside/contacts-aside/index
+  include ../../../components/aside/subs-aside/index
+block content

@@ -1,0 +1,28 @@
++btn-primary({className: 'popup-youtube', text: 'Попап с видео'})(href='https://www.youtube.com/watch?v=h3o5pkOSgwc')
+script.
+    !function() {
+        'use strict';
+
+        $(function () {
+            var block = $('.popup-youtube');
+            if (!block.length) {
+                return false;
+            }
+            block.magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false,
+                callbacks: {
+                    open: function () {
+                        var closeBtn = $('.mfp-close');
+                        if (closeBtn.length) {
+                            closeBtn.addClass('ic-close');
+                        }
+                    }
+                }
+            });
+        });
+    }();

@@ -1,0 +1,58 @@
+.contacts-head {
+
+  .nav {
+    margin-bottom: 5px;
+
+    .nav-item {
+      display: block;
+      max-width: 100%;
+    }
+
+    .nav-link {
+      display: block;
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 1;
+      margin-right: 23px;
+      border-bottom: 1px dotted;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.active {
+        color: #000;
+        cursor: default;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  .tel {
+    line-height: 1;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-size: 17px;
+      line-height: (24/17);
+      margin-right: 2px;
+
+      @media (max-width: $screen-lg-max) {
+        font-size: 15px;
+      }
+
+      @include hover-focus {
+        color: $link-color-hover;
+      }
+    }
+
+    i {
+      color: #919191;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 14px;
+      }
+    }
+  }
+}

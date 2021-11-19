@@ -1,0 +1,72 @@
+.profile
+  .row
+    .col-12.col-md-8.col-lg-6
+      form#form-auth.form-1(name='form_auth', method='post', target='_top', action='/about/authorization/?login=yes')
+        fieldset.fieldset
+          .h2.mt-0 Личные данные
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG-NAME')
+              |  Имя
+            .text.col-12
+              input#REG-NAME.form-control(type='text', name='REG-NAME', maxlength='255', value='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG-LASTNAME')
+              |  Фамилия
+            .text.col-12
+              input#REG-LASTNAME.form-control(type='text', name='REG-LASTNAME', maxlength='255', value='')
+            .controls.col-12
+          .form-group.control-group
+            label.name.col-12(for='REG-LASTNAME2')
+              |  Фамилия
+            .text.col-12
+              input#REG-LASTNAME2.form-control(type='text', name='REG-LASTNAME2', maxlength='255', value='')
+            .controls.col-12
+
+          .h2 Пароль
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_PASSWORD2')
+              | Пароль
+            .text.col-12
+              input#REG_PASSWORD.form-control(type='password', name='REG_PASSWORD', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_PASSWORD2')
+              | Подтверждение пароля
+            .text.col-12
+              input#REG_PASSWORD2.form-control(type='password', name='REG_PASSWORD2', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group
+            .col-12
+              +btn-primary({type: 'input', className: 'btn_submit', text: 'Сохранить настройки профиля'})(name='Login')
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-auth');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'REG_PASSWORD': {
+                              required: true
+                          },
+                          'REG_PASSWORD2': {
+                              required: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

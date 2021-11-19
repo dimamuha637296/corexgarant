@@ -1,0 +1,21 @@
+.b-info {
+  margin: 0 0 40px;
+  padding: 5px;
+  box-shadow: $box-shadow-base;
+
+  &__wrap {
+    padding: 19px 19px 23px;
+    border: 1px solid $brand-1;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 12px;
+    }
+  }
+
+  &__title {
+
+    .g-wrap & {
+      margin-top: 0;
+    }
+  }
+}

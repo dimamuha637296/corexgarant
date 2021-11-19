@@ -1,0 +1,116 @@
+//-
+  modules/gallery-list.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .gallery-list - Модуль Галерея, список фотографий плиткой
+  .js-popup-gallery - при клике появляется попап (app.js)
+.h2
+  | Фотогалерея плиткой
+.gallery-list.gallery-hover.row-clear.js-popup-gallery
+  .row
+    - var n = 0
+    while n < 8
+      - n++
+      .item.col-12.col-sm-4.col-md-3
+        .pic
+          a.link(title='Фото ' + n + '', href=DB.DIR + 'img/tmp/gallery-' + n + '.jpg')
+            i.icon.svg-loop
+            img(src=DB.DIR + 'img/tmp/gallery-thumb-' + n + '.jpg', alt='Фото ' + n + '', title='Фото ' + n + '')
+.h2
+  | Переключение картинок в попапе
+.gallery-list.gallery-hover.row-clear.js-popup-gallery-arrow
+  .row
+    - var n = 0
+    while n < 8
+      - n++
+      .item.col-12.col-sm-4.col-md-3
+        .pic
+          a.link(title='Фото ' + n + '', href=DB.DIR + 'img/tmp/gallery-' + n + '.jpg')
+            i.icon.svg-loop
+            img(src=DB.DIR + 'img/tmp/gallery-thumb-' + n + '.jpg', alt='Фото ' + n + '', title='Фото ' + n + '')
+script.
+    !function () {
+        'use strict';
+
+        // init popup-gallery no arrow
+        function popupGallery() {
+            var galleryList = $('.js-popup-gallery');
+            if (!galleryList.length || !$.fn.magnificPopup) {
+                return false;
+            }
+            galleryList.find('.item').find('.link').each(function () {
+                var self = $(this);
+                var data = self.data('gallery');
+                var src = [{
+                    src: self.attr('href'),
+                    title: self.attr('title')
+                }];
+                if ((typeof data) !== 'undefined') {
+                    for (var i = 0; i < data.length; i++) {
+                        src.push({
+                            src: data[i].href,
+                            title: data[i].title
+                        });
+                    }
+                }
+                self.magnificPopup({
+                    type: 'image',
+                    closeOnContentClick: false,
+                    closeBtnInside: false,
+                    mainClass: 'mfp-with-zoom mfp-img-mobile',
+                    image: {
+                        verticalFit: true
+                    },
+                    gallery: {
+                        enabled: true //false
+                    },
+                    zoom: {
+                        enabled: true,
+                        duration: 300, // don't forget to change the duration also in CSS
+                        opener: function () {
+                            return self;
+                        }
+                    },
+                    items: src
+                });
+            });
+        }
+
+        // popup with arrows
+        function popupGalleryArrow() {
+            var galleryList = $('.js-popup-gallery-arrow');
+            if (galleryList.length && $.fn.magnificPopup) {
+                galleryList.each(function () {
+                    $(this).magnificPopup({
+                        delegate: '.link',
+                        type: 'image',
+                        closeOnContentClick: false,
+                        closeBtnInside: false,
+                        mainClass: 'mfp-with-zoom mfp-img-mobile',
+                        image: {
+                            verticalFit: true,
+                            titleSrc: function (item) {
+                                return item.el.attr('title');
+                            }
+                        },
+                        gallery: {
+                            enabled: true
+                        },
+                        zoom: {
+                            enabled: true,
+                            duration: 300, // don't foget to change the duration also in CSS
+                            opener: function (element) {
+                                return element.find('img');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
+        // Call functions
+        $(window).on('load', function () {
+            popupGallery();
+            popupGalleryArrow()
+        });
+    }();

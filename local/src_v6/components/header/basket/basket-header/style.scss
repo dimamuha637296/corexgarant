@@ -1,0 +1,64 @@
+.basket-header {
+  text-align: right;
+
+  .wrap {
+    margin: 0 0 4px;
+  }
+
+  .ico {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+
+    &:before {
+      @include svg;
+      @include svg-basket();
+    }
+  }
+
+  .link {
+    font-size: 16px;
+    text-decoration: none;
+
+    @include hover-focus() {
+
+      .ico {
+
+        &:before {
+          @include svg-basket-hover();
+        }
+      }
+    }
+  }
+
+  .text {
+    @include font-family-light;
+    font-size: 13px;
+    line-height: (16/13);
+    color: $text-color;
+  }
+
+  &.empty-basket {
+
+    .ico {
+
+      &:before {
+        @include svg-basket-empty();
+      }
+    }
+
+    .link {
+
+      @include hover-focus() {
+
+        .ico {
+
+          &:before {
+            @include svg-basket-empty-hover();
+          }
+        }
+      }
+    }
+  }
+}

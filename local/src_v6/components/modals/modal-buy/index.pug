@@ -1,0 +1,87 @@
+include ../../../components/base/btns/btn/index
+include ../../../components/block/f_star/index
+#buyOneClickForm.modal.fade.vertical-center(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .h2.modal-title Купить
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body
+        form#form-buy.form-horizontal(method='post', action='/')
+          fieldset.fieldset
+            // row
+            .form-group.control-group
+              label.name.label-pt.col-lg-3.col-sm-3.col-12(for='form-NAME-buy')
+                | Ваше имя
+                +f_star()
+              .text.col-lg-6.col-sm-5.col-12
+                input#form-NAME-buy.form-control(type='text', name='form-NAME-buy', maxlength='50', spellcheck='true', value='', required='')
+              .controls.col-lg-3.col-sm-4.col-12
+            // row
+            .form-group.control-group
+              label.name.label-pt.col-lg-3.col-sm-3.col-12(for='form-MAIL-buy')
+                | Эл. почта
+              .text.col-lg-6.col-sm-5.col-12
+                input#form-MAIL-buy.form-control(type='email', name='form-EMAIL-buy', maxlength='50', spellcheck='true', value='', placeholder='email@example.com', required='')
+              .controls.col-lg-3.col-sm-4.col-12
+            // row
+            .form-group.control-group
+              label.name.label-pt.col-lg-3.col-sm-3.col-12(for='form-PHONE-buy')
+                | Телефон
+                +f_star()
+              .text.col-lg-6.col-sm-5.col-12
+                input#form-PHONE-buy.form-control(type='tel', name='form-PHONE-buy', maxlength='50', spellcheck='true', required='')
+                p.help-block Например: +375 (29) 123-45-67
+              .controls.col-lg-3.col-sm-4.col-12
+            // row
+            .form-group.control-group
+              label.name.label-pt.col-lg-3.col-sm-3.col-12(for='form-MESSAGE-buy')
+                | Сообщение
+              .text.col-lg-6.col-sm-5.col-12
+                textarea#form-MESSAGE-buy.form-control(name='form-MESSAGE-buy', maxlength='500', cols='60', rows='4', spellcheck='true', required='')
+              .controls.col-lg-3.col-sm-4.col-12
+            // row
+            .form-group
+              .col-12.col-xs-offset-0.col-sm-offset-3
+                +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+        script.
+            !function () {
+                'use strict';
+
+                function maskForm() {
+                    $("#form-PHONE-buy").mask("+375 - 99 - 999 - 99 - 99");
+                }
+
+                // Form validation
+                function initQuestValid() {
+                    // Validation options http://jqueryvalidation.org/documentation/
+                    var form_validator = $('#form-buy');
+                    if (form_validator.length && $.fn.validate) {
+                        form_validator.validate({
+                            rules: {
+                                'form-NAME-buy': {
+                                    required: true,
+                                    minlength: 4
+                                },
+                                'form-PHONE-buy': {
+                                    required: true,
+                                    minlength: 4
+                                },
+                                'form-MAIL-buy': {
+                                    required: true,
+                                    minlength: 4
+                                },
+                                'form-MESSAGE-buy': {
+                                    required: true,
+                                    minlength: 10
+                                }
+                            }
+                        });
+                    }
+                }
+
+                $(function () {
+                    maskForm();
+                    initQuestValid();
+                });
+            }();

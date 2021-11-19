@@ -1,0 +1,64 @@
+include ../../../components/block/b-title/index
+include ../../../components/base/btns/btn/index
+if (projects2 === undefined)
+  -
+    var projects2 = {
+    title: 'Наши проекты',
+    link: 'Смотреть все проекты',
+    descr: 'За период своей деятельности в Республике Беларусь компания «Стройтекс ТК» реализовала многочисленные проекты, такие как : СКА Спортивный комплекс в Уручье, отель «Renaissance», клуб «Rich Cat», УЗ «5я городская клиническая больница» родильный дом, кинотеатр «Замок» в ТЦ Замок, отель DoubleTree by Hilton, театр оперы и балета НАБТ РБ, национальная библиотека в Минске и т. д. Благодаря компетентности и профессионализму наших сотрудников, у нас появляются проекты в России и Европе. Современные отделочные материалы — вот наша стезя, и мы стараемся быть в этом лучшими.',
+      list: [
+        {
+          img: 'img/tmp/projects-01.jpg',
+          title: 'СКА Спортивный комплекс в Уручье',
+          btnText: 'Подробнее'
+        },
+        {
+          img: 'img/tmp/projects-02.jpg',
+          title: 'Отель Renaissance',
+          btnText: 'Подробнее'
+        },
+        {
+          img: 'img/tmp/projects-03.jpg',
+          title: 'Клуб "Rich Cat"',
+          btnText: 'Подробнее'
+        },
+        {
+          img: 'img/tmp/projects-04.jpg',
+          title: 'УЗ «5я городская клиническая больница»',
+          btnText: 'Подробнее'
+        },
+        {
+          img: 'img/tmp/projects-05.jpg',
+          title: 'Кинотеатр «Замок» в ТЦ Замок',
+          btnText: 'Подробнее'
+        },
+        {
+          img: 'img/tmp/projects-06.jpg',
+          title: 'Отель DoubleTree by Hilton',
+          btnText: 'Подробнее'
+        }
+      ]
+    };
+
+.projects
+  +b-title({
+    title: projects2.title,
+    titleH: 'h2',
+    link: projects2.link,
+    isLinkSimple: true,
+    descr: projects2.descr
+  })
+  .projects__list.row
+    each item in projects2.list
+      .projects__item.col-12.col-sm-6.col-md-4
+        a(href="#").projects__inner
+          .projects__pic
+            if (item.img)
+              .projects__pic-wrap
+                .projects__pic-inner
+                  img.projects__img(src=DB.DIR + item.img, alt=item.title)
+            if (item.btnText)
+              +btn-primary({className: 'projects__btn', type: 'div', text: item.btnText, withArrow: true})
+          .projects__text
+            if (item.title)
+              .h4.projects__title #{item.title}

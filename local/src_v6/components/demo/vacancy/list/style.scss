@@ -1,0 +1,63 @@
+/*vacancy-list.scss*/
+
+// var *****************************************************************************************************************
+//@_vacancy-list: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.vacancy-list {
+  margin: 0 0 50px;
+
+  .item {
+    margin: 0 0 50px;
+  }
+
+  .wrap {
+
+    @media (min-width: $screen-lg-min) {
+      padding-right: 30px;
+    }
+  }
+
+  .title {
+    margin-top: 0;
+    padding-left: 25px;
+    margin-left: -25px;
+  }
+
+  .descr {
+    margin: 0 0 35px;
+
+    &:last-child {
+      margin-bottom: 12px;
+    }
+  }
+
+  .subtitle {
+    @include font-family-bold();
+  }
+
+  .sum {
+    text-align: right;
+    font-size: 16px;
+    line-height: (22/16);
+
+    @media (min-width: $screen-md-min ) {
+      float: right;
+    }
+
+    @media (max-width: $screen-sm-max ) {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+
+  .sum_i {
+    background: $brand-1;
+    color: $brand-white;
+    display: inline-block;
+    padding: 3px 7px;
+    @include font-family-bold();
+  }
+}

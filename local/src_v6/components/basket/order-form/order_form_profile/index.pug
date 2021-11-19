@@ -1,0 +1,10 @@
+.section
+  .h3
+    | Информация для оплаты и доставки заказа
+  .form-group
+    .bx_block.r1x3
+      | Выберите профиль:
+    .bx_block.r3x1
+      select#ID_PROFILE_ID.form-control.ui-select(name='PROFILE_ID', onchange='SetContact(this.value)')
+        option(value='0') Новый профиль
+        option(value='19', selected='') test

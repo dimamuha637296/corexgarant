@@ -1,0 +1,14 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Сотрудники';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Наша команда
+block content
+  include ../../../components/demo/personal/list/index
+  .h2
+    | Строчное представление списка сотрудников с большим
+    | количеством контента (H2)
+  include ../../../components/demo/personal/detail/index
+  include ../../../components/demo/personal/comb/index

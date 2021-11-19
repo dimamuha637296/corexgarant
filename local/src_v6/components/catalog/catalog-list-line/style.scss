@@ -1,0 +1,99 @@
+.catalog-line {
+  padding-bottom: 30px;
+  @include border();
+
+  .text {
+    margin-bottom: 11px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .pic {
+    margin-right: 15px;
+    flex-shrink: 0;
+
+    a {
+      display: block;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+
+    .media {
+      margin: 0 auto;
+      display: block;
+    }
+
+    .pic {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 15px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
+  .media-body {
+    min-width: 0;
+  }
+
+  .price {
+    font-size: 18px;
+    line-height: (21/18);
+    @include font-family-bold();
+    margin-bottom: 8px;
+  }
+
+  .price-old {
+    font-size: 11px;
+    line-height: (18/11);
+    text-decoration: line-through;
+  }
+
+  .title {
+    margin-bottom: 7px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .wrap {
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  .catalog-btn-counter {
+    margin-bottom: 5px;
+  }
+
+  .btn-b {
+    margin-bottom: 12px;
+  }
+
+  .btn-pm {
+    max-width: 148px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    input {
+      border-radius: $border-radius-base;
+    }
+  }
+
+  .catalog-btn-counter {
+    margin-bottom: 10px;
+  }
+}

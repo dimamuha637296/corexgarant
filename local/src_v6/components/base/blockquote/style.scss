@@ -1,0 +1,18 @@
+$_blockquote-border-color:                       #e1e1e1;
+
+blockquote {
+  color: $text-color;
+  margin: 24px;
+  padding: 0 0 0 14px;
+  font-size: 18px;
+  line-height: 1.35;
+  font-style: normal;
+  background: none;
+  font-weight: normal;
+  border-radius: 0;
+  text-align: left;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 16px;
+  }
+}

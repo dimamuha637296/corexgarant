@@ -1,0 +1,71 @@
+.form-group-2.control-group-2
+  label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-DAY')
+    | Дата посещения
+    +f_star()
+  .text.col-xl-6.col-md-5.col-12
+    .input-group.date
+      input.form-control(id=datepicker.id, type='text', name=datepicker.id, spellcheck='true', value='', required='')
+      span.icon.svg-datepicker-calendar-2
+    p.help-block Экскурсии проводятся по вторникам и четвергам
+  .controls.col-md-4.col-12
+script.
+    !function () {
+        'use strict';
+
+        function setResizeHandler(calendar) {
+            $(window).on('resize', function () {
+                calendar.datepicker('hide');
+            });
+        }
+
+        function setIconClickHandler(calendar) {
+            var icon = calendar.siblings('.icon');
+            if (icon.length) {
+                icon.off('click.calendar').on('click.calendar', function () {
+                    calendar.datepicker('show');
+                });
+            }
+        }
+
+        function setMask(calendar) {
+            if ($.fn.mask) {
+                calendar.mask(
+                    '99.99.9999',
+                    {
+                        placeholder: '__.__.____'
+                    }
+                );
+            }
+        }
+
+        function initDatepicker(id) {
+            // https://jqueryui.com/datepicker/
+            // http://api.jqueryui.com/datepicker/
+            // time picker addon http://trentrichardson.com/examples/timepicker/
+            var calendar = $(id);
+            if (calendar.length && $.fn.datepicker) {
+                calendar.datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    dateFormat: 'dd.mm.yy',
+                    yearRange: '1910:c',
+                    monthNamesShort: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Откябрь", "Ноябрь", "Декабрь" ],
+                    beforeShow: function (input, element) {
+                        element.dpDiv.addClass('ui-datepicker-2');
+                    },
+                    onClose: function (selectedDate, element) {
+                        calendar.datepicker('setDate', selectedDate);
+                        element.dpDiv.removeClass('ui-datepicker-2');
+                    }
+                });
+                setIconClickHandler(calendar);
+                setResizeHandler(calendar);
+                setMask(calendar);
+            }
+        }
+        $(function () {
+            initDatepicker('##{datepicker.id}');
+        });
+    }();

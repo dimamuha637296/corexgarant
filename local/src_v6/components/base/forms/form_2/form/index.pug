@@ -1,0 +1,274 @@
+include ../../../../../components/block/f_star/index
+include ../../../../../components/base/forms/form_2/checkboxradio/index
+include ../../../../../components/base/forms/form_2/file/index
+include ../../../../../components/base/forms/form_2/select/index
+include ../../../../../components/base/forms/form_2/spinner/index
+form#form-2.form-2(method='post', action='/')
+  fieldset.fieldset-2
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-FIO')
+        | Ваше имя
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        input#form-2-FIO.form-control-2(name='form-2-FIO', required='')
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-MAIL')
+        | Эл. почта
+      .text.col-xl-6.col-md-5.col-12
+        input#form-2-MAIL.form-control-2(name='form-2-MAIL', type='email', placeholder='email@example.com')
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-PHONE')
+        | Ваш телефон
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        input#form-2-PHONE.form-control-2(name='form-2-PHONE', type='tel', required='')
+        p.help-block Например: +375 (29) 123-45-67
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-PHONE-2')
+        | Ваш телефон
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        include ../../../../../components/base/forms/form_2/form_mask/index
+        p.help-block Например: +375 (29) 123-45-67
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-COUNTRY')
+        | Город
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        select#form-2-COUNTRY.form-control-2.ui-select.ui-select-2(name='form-2-COUNTRY', required='')
+          option(value='', selected='', disabled='')  
+          option Алтайский край
+          option Все страныВсе страныВсе страныВсе страныВсе страны
+          option Архангельская область
+          option Астраханская область
+          option Белгородская область
+          option Брянская область
+          option Владимирская область
+          option Волгоградская область
+          option Вологодская область
+          option Воронежская область
+          option(disabled='') Еврейская автономная область
+          option Забайкальский край
+          option Ивановская область
+          option Иркутская область
+          option Калининградская область
+          option Калужская область
+          option Кемеровская область
+          option Кировская область
+          option Костромская область
+          option Краснодарский край
+          option Красноярский край
+          option Иран
+          option Ирландия
+          option Испания
+          option Италия
+          option Йемен
+          option Казахстан
+          option Канада
+          option Кипр
+          option Китай
+          option Куба
+      .controls.col-md-4.col-12
+    - var datepicker = { id: 'form-2-DAY' };
+    include ../../../../../components/base/forms/form_2/datepicker/index
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-QUANTITY')
+        | Кол-во человек
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        input#form-2-QUANTITY.form-control-2.ui-spin-2(name='form-2-QUANTITY', type='number', max='20', min='1', required='')
+        p.help-block от 1 до 20
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-MESSAGE')
+        | Дополнительная информация
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        textarea#form-2-MESSAGE.form-control-2(name='form-2-MESSAGE', maxlength='500', rows='4', cols='60', required='')
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-AGE')
+        | 18
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12.single-check
+        .checkbox-2
+          label
+            input#form-2-AGE.ui-checkbox-2(type='checkbox', name='form-2-AGE', required='')
+            span Подтверждаю, что все участники экскурсии старше 18 лет
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-NUMBER')
+        | Множественный выбор
+        +f_star()
+      .text.col-xl-6.col-md-5.col-12
+        select#form-2-NUMBER.form-control-2(name='form-2-NUMBER', multiple='', required='')
+          option(value='', selected='', disabled='')  
+          option Алтайский край
+          option Все страныВсе страныВсе страныВсе страныВсе страны
+          option Архангельская область
+          option Астраханская область
+          option Белгородская область
+          option Брянская область
+          option Владимирская область
+          option Волгоградская область
+          option Вологодская область
+          option Воронежская область
+          option(disabled='') Еврейская автономная область
+          option Забайкальский край
+          option Ивановская область
+          option Иркутская область
+          option Калининградская область
+          option Калужская область
+          option Кемеровская область
+          option Кировская область
+          option Костромская область
+          option Краснодарский край
+          option Красноярский край
+          option Иран
+          option Ирландия
+          option Испания
+          option Италия
+          option Йемен
+          option Казахстан
+          option Канада
+          option Кипр
+          option Китай
+          option Куба
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      .col-form-label-2.col-xl-2.col-md-3.col-12
+        | Что-то тут должно быть
+      .text.col-xl-6.col-md-5.col-12.group-check
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX', disabled='')
+            span статистика
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX')
+            span естественно
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX', disabled='')
+            span ускоряет
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX', disabled='')
+            span ускоряет2
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX')
+            span многомерный определитель системы линейных уравнений
+        .checkbox-2
+          label
+            input.ui-checkbox-2(type='checkbox', name='form-2-CHECKBOX')
+            span предполагалось
+      .controls.col-md-4.col-12
+    .form-group-2.control-group
+      .col-form-label-2.col-xl-2.col-md-3.col-12
+        | И тут тоже
+      .text.col-xl-6.col-md-5.col-12.group-check
+        .radio-2
+          label
+            input.ui-checkbox-2(type='radio', name='form-2-RADIO')
+            span Линейное
+        .radio-2
+          label
+            input.ui-checkbox-2(type='radio', name='form-2-RADIO')
+            span
+              | Предел последовательности, в первом приближении, изящно развивает ротор векторного поля, как и предполагалось.
+        .radio-2
+          label
+            input.ui-checkbox-2(type='radio', name='form-2-RADIO', disabled='')
+            span программирование
+        .radio-2
+          label
+            input.ui-checkbox-2(type='radio', name='form-2-RADIO')
+            span изменяет
+        .radio-2
+          label
+            input.ui-checkbox-2(type='radio', name='form-2-RADIO')
+            span интеграл
+      .controls.col-md-4.col-12
+    // row
+    include ../../../../../components/base/forms/form_2/captcha/index
+    // row
+    .form-group-2
+      .col-xl-10.col-md-9.col-12.offset-xl-2.offset-md-3.d-md-flex.align-items-center
+        +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+        .form_required
+          +f_star()
+          =' '
+          | — поля обязательные к заполнению
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-2');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'form-2-FIO': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-2-EMAIL': {
+                              required: true
+                          },
+                          'form-2-PHONE': {
+                              required: true,
+                              minlength: 3
+                          },
+                          'form-2-PHONE-2': {
+                              minlenghtphone: true,
+                              requiredphone: true
+                          },
+                          'form-2-COUNTRY': {
+                              required: true
+                          },
+                          'form-2-DAY': {
+                              required: true,
+                              date: true
+                          },
+                          'form-2-DAY1': {
+                              required: true,
+                              date: true
+                          },
+                          'form-2-QUANTITY': {
+                              required: true
+                          },
+                          'form-2-MESSAGE': {
+                              required: true
+                          },
+                          'form-2-AGE': {
+                              required: true
+                          },
+                          'form-2-NUMBER': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-2-CHECKBOX': {
+                              required: true
+                          },
+                          'form-2-RADIO': {
+                              required: true
+                          },
+                          'form-2-CAPTCHA': {
+                              required: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

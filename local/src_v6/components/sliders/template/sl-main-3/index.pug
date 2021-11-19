@@ -1,0 +1,28 @@
+mixin sl-main-3(data)
+  .sl-main-3.outer-margin(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              a.main-link(href="#")
+              .pic
+                img.img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title ? slide.title : 'Заголовок слайда')
+              .container
+                .b-wrap
+                  .main-content(class=slide.btnText ? 'has-btn' : '')
+                    if (slide.title)
+                      .title
+                        span.title-text #{slide.title ? slide.title : 'Заголовок слайда'}
+                    if (slide.btnText)
+                      .btn-wrap
+                        +btn-primary({text: '<span class="btn-inner">' + slide.btnText + '</span>'})
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    .links
+      each slide in data.slides
+        a.link(href='#')
+          .link-text
+            span !{slide.pagerTitle}

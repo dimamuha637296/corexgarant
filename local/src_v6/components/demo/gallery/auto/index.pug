@@ -1,0 +1,152 @@
+//-
+  modules/gallery-auto.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .gallery-auto - Модуль Галерея, cписок фотографий плиткой с автораспределением свободного места (modules/gallery-auto.less)
+  .js-popup-gallery - при клике появляется попап (app.js)
+  .gallery-hover - при наведении появляется иконка лупы и затеняется фон над картинкой (modules/gallery-hover.less).
+  .js-gallery - скрипт для автораспределения свободного места (masonry.js)
+//ToDo переписать, используя цикл
+.h2
+  | Галерея с автораспределением свободного места
+.gallery-auto.gallery-hover.js-gallery
+  .row
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-1.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-1.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-2.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-2.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-3.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-3.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-4.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-4.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-5.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-5.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-6.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-6.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-7.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-7.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-8.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-8.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-9.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-9.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-10.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-10.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-11.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-11.jpg', alt='Фотогалерея', title='Фотогалерея')
+    .col-xs-6.col-sm-4.col-md-3.gal-item
+      .pic
+        a.link(title='Фото 1', href=DB.DIR + 'img/tmp/modules/gallery-list-12.jpg')
+          i.icon.svg-loop
+          img(src=DB.DIR + 'img/tmp/modules/gallery-list-12.jpg', alt='Фотогалерея', title='Фотогалерея')
+script.
+    !function () {
+        'use strict';
+        var oWindow = $(window);
+
+        function initGallery() {
+            var list = $('.js-gallery');
+            if (list.length && $.fn.masonry) {
+                var items = list.find('.gal-item');
+                items.each(function () {
+                    var oThis = $(this);
+                    var imgH = oThis.find('img').outerHeight();
+                    oThis.css({
+                        'height': imgH
+                    });
+                });
+                var item = '.gal-item';
+                list.masonry({
+                    'columnWidth': item,
+                    'itemSelector': item
+                });
+            }
+        }
+
+        // init popup-gallery
+        function popupGallery() {
+            var galleryList = $('.gallery-auto');
+            if (!galleryList.length || !$.fn.magnificPopup) {
+                return false;
+            }
+            galleryList.find('.gal-item').find('.link').each(function () {
+                var self = $(this);
+                var data = self.data('gallery');
+                var src = [{
+                    src: self.attr('href'),
+                    title: self.attr('title')
+                }];
+                if ((typeof data) !== 'undefined') {
+                    for (var i = 0; i < data.length; i++) {
+                        src.push({
+                            src: data[i].href,
+                            title: data[i].title
+                        });
+                    }
+                }
+                self.magnificPopup({
+                    type: 'image',
+                    closeOnContentClick: false,
+                    closeBtnInside: false,
+                    mainClass: 'mfp-with-zoom mfp-img-mobile',
+                    image: {
+                        verticalFit: true
+                    },
+                    gallery: {
+                        enabled: true //false
+                    },
+                    zoom: {
+                        enabled: true,
+                        duration: 300, // don't forget to change the duration also in CSS
+                        opener: function () {
+                            return self;
+                        }
+                    },
+                    items: src
+                });
+            });
+        }
+
+        $(function () {
+            initGallery();
+        });
+        oWindow.on('load', function () {
+            initGallery();
+            popupGallery();
+        });
+        oWindow.on('resize', function () {
+            initGallery();
+        });
+    }();

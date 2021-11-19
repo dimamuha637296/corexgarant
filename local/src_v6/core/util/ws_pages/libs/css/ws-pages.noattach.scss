@@ -1,0 +1,211 @@
+$_ws_pages-body-bg:             #fff;
+$_ws_pages-backdrop-bg:         rgba(#000, 0.3);
+$_ws_pages-box-shadow:          1px 0 2px rgba(0,0,0,0.3);
+$_ws_pages-transition:          all .4s ease;
+$_ws_pages-arrow-color:         #000;
+$_ws_pages-menu-border-color:   #cecece;
+$_ws_pages-menu-level-1-bg:     #fff;
+$_ws_pages-menu-level-2-bg:     #f0f0f0;
+$_ws_pages-menu-level-3-bg:     #dddddd;
+$_ws_pages-menu-level-4-bg:     #cecece;
+
+.ws_pages {
+
+  &__body {
+    z-index: 10000;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 46px 0 0;
+    margin: 0 0 0 46px;
+    transform: translateX(-100%);
+    transition: $_ws_pages-transition;
+    pointer-events: none;
+  }
+
+  &__inner {
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: $_ws_pages-body-bg;
+    box-shadow: $_ws_pages-box-shadow;
+    pointer-events: auto;
+  }
+
+  &__backdrop {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    background: $_ws_pages-backdrop-bg;
+    transition: $_ws_pages-transition;
+    cursor: pointer;
+  }
+
+  &__toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50vh;
+    right: 0;
+    width: 46px;
+    height: 46px;
+    border: none;
+    margin: -23px 0 0;
+    background: $_ws_pages-body-bg;
+    box-shadow: $_ws_pages-box-shadow;
+    pointer-events: auto;
+  }
+
+  &__icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('./../../../../base64/ws_pages_icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: all .3s ease;
+  }
+
+  button.ws_pages__toggle-btn {
+
+    &:hover {
+
+      .ws_pages__icon {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__menu {
+    border-bottom: 1px solid $_ws_pages-menu-border-color;
+
+    [class*="menu_level_"] {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid $_ws_pages-menu-border-color;
+    }
+
+    [class*="item_"] {
+      position: relative;
+
+      + [class*="item_"] {
+        border-top: 1px solid $_ws_pages-menu-border-color;
+      }
+
+      > a,
+      > span {
+        display: block;
+        padding: 10px 40px 10px 10px;
+
+        &.icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          margin: 0;
+
+          &:before {
+            content: '';
+            position: absolute;
+            transform: rotate(90deg);
+            border-top: 3px solid transparent;
+            border-left: 5px solid $_ws_pages-arrow-color;
+            border-bottom: 3px solid transparent;
+            transition: all .3s ease;
+          }
+
+          &:hover,
+          &:focus {
+
+            &:before {
+              opacity: 0.5;
+            }
+          }
+
+          &.collapsed {
+
+            &:before {
+              transform: rotate(0deg);
+            }
+          }
+        }
+      }
+    }
+
+    .menu_level_1 {
+      background: $_ws_pages-menu-level-1-bg;
+    }
+
+    .menu_level_2 {
+      background: $_ws_pages-menu-level-2-bg;
+    }
+
+    .item_2 {
+
+      > a,
+      > span {
+        padding-left: 25px;
+      }
+    }
+
+    .menu_level_3 {
+      background: $_ws_pages-menu-level-3-bg;
+    }
+
+    .item_3 {
+
+      > a,
+      > span {
+        padding-left: 50px;
+      }
+    }
+
+    .menu_level_4 {
+      background: $_ws_pages-menu-level-4-bg;
+    }
+
+    .item_4 {
+
+      > a,
+      > span {
+        padding-left: 75px;
+      }
+    }
+  }
+
+  &.active {
+
+    .ws_pages__body {
+      transform: none;
+      margin-left: 0;
+    }
+
+    .ws_pages__backdrop {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.inited {
+    display: block !important;
+  }
+}

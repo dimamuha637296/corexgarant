@@ -1,0 +1,28 @@
+.section
+  .bx_section
+    .h3
+      | Платежная система
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_8(type='radio', name='PAY_SYSTEM_ID', value='8', checked='checked', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_8', onclick="BX('ID_PAY_SYSTEM_ID_8').checked=true;changePaySystem();")
+          span.bx_logotype
+            span.score-payment
+              | Счет на&nbsp;оплату
+          span.bx_description
+            span.clear
+            strong
+              | Банковский перевод
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_2(type='radio', name='PAY_SYSTEM_ID', value='2', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_2', onclick="BX('ID_PAY_SYSTEM_ID_2').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + (DB.DIR) + 'img/tmp/basket/logo-default-ps.gif);')
+          span.bx_description
+            strong
+              | Наложенный платеж
+            span
+              | Оплата с помощью наложенного платежа
+        .clear
+    div(style='clear: both;')

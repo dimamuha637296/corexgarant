@@ -1,0 +1,33 @@
+/*subscr.scss*/
+
+// var *****************************************************************************************************************
+//@_subscr: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.subscr {
+
+  .controls {
+    padding: 0;
+    min-height: 21px;
+  }
+
+  .form-horizontal {
+    border-bottom: 1px solid $border-color-base;
+    padding-bottom: 30px;
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .form_required {
+    padding-top: 10px;
+  }
+
+  .text {
+    margin-bottom: 6px;
+  }
+}

@@ -1,0 +1,50 @@
+if (mapBlock === undefined)
+    - var mapBlock = false
+.map-wide(class=mapBlock ? 'map-with-block' : '')
+  .wrap
+    iframe.map-frame(src='https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d75220.1454818802!2d27.5250443!3d53.9027881!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1417006632796',
+    height='400',
+    style='border:0;display:block;width:100%;')
+    script.
+        !function () {
+            'use strict';
+            var WINDOW = $(window);
+
+            function setMapWidth() {
+                var map = $('.map-wide');
+                var container = map.find('.wrap');
+                if (!map.length || !container.length) {
+                    return false;
+                }
+                var outer = $('.outer-bg');
+                var windW;
+                if (outer.length) {
+                    windW = outer.width();
+                } else {
+                    windW = getInnerWidth();
+                }
+                if (windW > ws.const.screen.screen_md_min) {
+                    container.css({
+                        'width': windW,
+                        'margin-left': (windW / -2),
+                        'left': '50%'
+                    });
+                } else {
+                    container.css({
+                        'width': 'auto',
+                        'margin-left': 0,
+                        'left': '0'
+                    });
+                }
+            }
+
+            $(function () {
+                setMapWidth();
+            });
+            WINDOW.on('resize', function () {
+                setMapWidth();
+            });
+        }();
+  if (mapBlock === true)
+    .map-block-wrap
+      include ../map-block/index

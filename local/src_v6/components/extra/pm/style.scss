@@ -1,0 +1,112 @@
+$_push-menu-bg:                       #fff;
+$_push-menu-transition-time:          .5s;
+$_push-menu-width:                    400px;
+$_push-menu-width--mob:               85%;
+
+.pm-open {
+  overflow: hidden;
+}
+
+.pm-content {
+  position: relative;
+  transition: transform $_push-menu-transition-time;
+
+  .pm-push.pm-open & {
+    transform: translateX($_push-menu-width);
+
+    @media (max-width: $screen-xs-max) {
+      transform: translateX($_push-menu-width--mob);
+    }
+  }
+}
+
+.pm {
+  display: block;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  transition: opacity $_push-menu-transition-time, z-index $_push-menu-transition-time;
+  z-index: -1;
+
+  .pm-open & {
+    z-index: 1000;
+    opacity: 1;
+  }
+
+  .pm-push & {
+    transition: none;
+  }
+}
+
+.pm-backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .pm-open & {
+    display: block;
+  }
+}
+
+.pm-wrap {
+  width: 100%;
+  background: $_push-menu-bg;
+  height: 100%;
+  position: absolute;
+  transform: translateX(-100%);
+  transition: transform $_push-menu-transition-time;
+  will-change: transform;
+
+  @media (max-width: $screen-md-max) {
+    width: $_push-menu-width;
+    transform: translateX(-$_push-menu-width);
+  }
+
+  @media (max-width: $screen-xs-max) {
+    width: $_push-menu-width--mob;
+    transform: translateX(-$_push-menu-width--mob);
+  }
+
+  .pm-open & {
+    transform: translateX(0);
+  }
+}
+
+.pm-inner {
+  height: 100%;
+  padding: 0 ($grid-gutter-width / 2);
+  position: relative;
+  box-shadow: $box-shadow-base;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.pm-head {
+
+  &__list {
+    margin: 0 ($grid-gutter-width / -2);
+    overflow: hidden;// На мобилках появляется горизонтальный скролл
+  }
+
+  &__item {
+    border-bottom: 1px solid $border-color-base;
+  }
+}
+
+// https://www.google.by/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%D0%B2%D1%8B%D0%B5%D0%B7%D0%B6%D0%B0%D1%8E%D1%89%D0%B5%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20css
+// http://focuskontur.com/category/kontur-focus
+// http://tympanus.net/Blueprints/SlidePushMenus/
+// http://codepen.io/jasonhowmans/pen/dykhL
+// https://github.com/Mango/slideout
+// https://mango.github.io/slideout/
+// https://github.com/FrDH/jQuery.mmenu/blob/master/src/core/scrollbugfix/jquery.mmenu.scrollbugfix.ts

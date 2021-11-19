@@ -1,0 +1,11 @@
+.table-caption
+  div
+    include ../../../block/f_star/index
+    =' '
+    | — Сноска под таблицей.
+  div
+    - var f_star = {text: '**'};
+    include ../../../block/f_star/index
+    =' '
+    | — В стоимость проживания  входит завтрак (55 000 бел. руб. на человека)
+include ../../../block/lorem/index

@@ -1,0 +1,28 @@
+//
+// Tables-2 (adaptive)
+// --------------------------------------------------
+.table-adaptive {
+
+  &.type-3 {
+    width: auto;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+
+    td {
+
+      @media (max-width: $screen-sm-max) {
+        width: 50%;
+        float: left;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        width: 100%;
+        padding-top: to-rem(10px);
+        padding-bottom: to-rem(10px);
+        text-align: left;
+      }
+    }
+  }
+}

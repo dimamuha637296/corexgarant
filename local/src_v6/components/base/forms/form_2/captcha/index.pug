@@ -1,0 +1,10 @@
+include ../../../../../components/block/f_star/index
+.form-group-2.control-group-2
+  label.col-form-label-2.col-xl-2.col-md-3.col-12(for='form-2-CAPTCHA')
+    | Введите символы с картинки
+    +f_star()
+  .text.col-xl-6.col-md-5.col-12
+    .captcha_img-2
+      img(src=DB.DIR + 'img/tmp/form-2-captcha.jpg', alt='Captcha', title='Captcha')
+    input.form-control-2#form-2-CAPTCHA(name='form-2-CAPTCHA', required='', aria-required='true')
+  .controls.col-md-4.col-12

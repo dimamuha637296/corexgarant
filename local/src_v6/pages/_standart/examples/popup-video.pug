@@ -1,0 +1,7 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Popup video';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/base/popup-video/index

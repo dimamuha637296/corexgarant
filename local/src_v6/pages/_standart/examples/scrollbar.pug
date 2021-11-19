@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Кастомный скроллбар';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/base/scrollbar/text/index
+  include ../../../components/base/scrollbar/popup/index
+  include ../../../components/base/scrollbar/accordion/index
+  include ../../../components/base/scrollbar/tab/index
+block aside

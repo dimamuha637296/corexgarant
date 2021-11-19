@@ -1,0 +1,75 @@
+include ../submenu-3/index
+include ../submenu-big-2/index
+include ../../../util/menuMore/index
+.menu-drop-8.js-menu-tablet.js-menuMore.d-print-none
+  ul.menu_level_1.break-word.list-reset
+    li.item_1.has-submenu-2.active
+      a(href="#")
+        span О компании
+      .submenu-2.js-menu-sort-wrap.js-submenu-scroll-wrap
+        +submenu-big-2()
+    li.item_1.has-submenu
+      a(href="#")
+        span Продукция
+        span.icon
+      .submenu
+        +submenu-3()
+    li.item_1.has-submenu-2.active
+      span
+        span Услуги
+        span.icon
+      .submenu-2.js-submenu-scroll-wrap
+        include ../submenu-big/index
+    li.item_1
+      span
+        span Наши проекты
+    li.item_1
+      a(href="#")
+        span Инструменты и загрузки
+    li.item_1
+      a(href="#")
+        span Инструменты и загрузки
+    li.item_1
+      a(href="#")
+        span Инструменты и загрузки
+    li.item_1.has-submenu
+      a(href="#")
+        span Контакты
+        span.icon
+      .submenu
+        +submenu-3([
+            {
+                text: 'О компании',
+                isActive: true,
+                href: '#'
+            },
+            {
+                text: 'Продукция',
+                href: '#',
+                submenu: [
+                    {
+                        text: 'нструменты и загрузки',
+                        href: '#'
+                    },
+                    {
+                        text: 'нструменты и загрузки Инструменты и загрузки 2',
+                        href: '#'
+                    }
+                ]
+            },
+            {
+                text: 'Услуги',
+                isActive: true
+            },
+            {
+                text: 'Наши проекты',
+                href: '#'
+            },
+            {
+                text: 'Инструменты и загрузки',
+                href: '#'
+            }
+        ])
+    +menuMore({
+        itemModifier: 'has-submenu'
+    })

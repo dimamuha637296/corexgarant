@@ -1,0 +1,17 @@
+if (newsLinkData === undefined)
+  -
+    var newsLinkData = {
+      date: '31.09<br>2017',
+      title: 'Перенос сроков установки СКНО',
+      text: 'Cо 2 августа 2017 г. вступает в силу Постановление N 571/9, корректирующее сроки установки в кассовое оборудование средств контроля налоговых органов.',
+      img: 'news-pic-0.jpg'
+    };
+
+a.news-link(href='#')
+  .news-link__pic
+    img.news-link__img(src=DB.DIR + 'img/tmp/' + newsLinkData.img, alt='alt', title='title')
+    .news-link__date
+      span !{newsLinkData.date}
+  .news-link__i-title
+    span #{newsLinkData.title}
+  .news-link__text #{newsLinkData.text}

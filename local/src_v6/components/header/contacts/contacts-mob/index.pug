@@ -1,0 +1,41 @@
+include ../../../../components/base/btns/btn/index
+.contacts-mob.dropdown.js-dropdown-full-width
+  .dropdown-toggle(data-toggle='dropdown')
+  .dropdown-menu
+    .container.inner
+      .contacts-head
+        div
+          // Nav tabs
+          ul.nav.list-reset.open-dropdown
+            li.nav-item
+              a.nav-link.active(href='#tab-mob-200', data-toggle='tab') Минск
+            li.nav-item
+              a.nav-link(href='#tab-mob-201', data-toggle='tab') Москва
+          // Tab panes
+          .tab-content
+            #tab-mob-200.tab-pane.fade.show.active
+              .tel
+                a(href='tel:+375291632322')
+                  span +375 17
+                    =' '
+                    b 233-66-35
+                    =' '
+                    i (многоканальный)
+              .tel
+                a(href='tel:+375295662322') +375 29
+                  =' '
+                  b 233-66-35
+            #tab-mob-201.tab-pane.fade
+              .tel
+                a(href='tel:+375291632322')
+                  span +375 17
+                    =' '
+                    b 233-66-36
+                    =' '
+                    i (многоканальный)
+              .tel
+                a(href='tel:+375295662322') +375 29
+                  =' '
+                  b 233-66-36
+      .btn-question
+        +btn-success({type: 'button', text: 'Оставить заявку'})(data-toggle='modal' data-target='#questModal')

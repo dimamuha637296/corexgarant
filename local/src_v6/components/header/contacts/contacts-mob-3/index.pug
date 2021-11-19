@@ -1,0 +1,47 @@
+.contacts-mob-3.dropdown.js-dropdown-full-width
+  .dropdown-toggle(data-toggle='dropdown')
+  .dropdown-menu
+    .container.inner
+      .contacts-head-3
+        div
+          // Nav tabs
+          ul.nav.list-reset.open-dropdown
+            li.nav-item
+              a.nav-link.active(href='#tab-mob-100', data-toggle='tab') Минск
+            li.nav-item
+              a.nav-link(href='#tab-mob-101', data-toggle='tab') Москва
+          // Tab panes
+          .tab-content
+            #tab-mob-100.tab-pane.fade.show.active
+              .text
+                | Прием и обработка заказов:
+                br
+                | Пн-Пт: 08.00 - 17.00
+                br
+                | Сб-Вс: выходной
+              .tel
+                a(href='tel:+375291632322')
+                  span +375 17
+                    =' '
+                    | 233-66-36
+                    =' '
+                    i (многоканальный)
+              .tel
+                a(href='tel:+375295662322') +375 29
+                  =' '
+                  | 233-66-36
+            #tab-mob-101.tab-pane.fade
+              .tel
+                a(href='tel:+375291632322')
+                  span +375 17
+                    =' '
+                    | 233-66-36
+                    =' '
+                    i (многоканальный)
+              .tel
+                a(href='tel:+375295662322') +375 29
+                  =' '
+                  | 233-66-36
+      .btn-question
+        a.btn-quest(href='#questModal', data-toggle='modal')
+          span.dot Заказать звонок

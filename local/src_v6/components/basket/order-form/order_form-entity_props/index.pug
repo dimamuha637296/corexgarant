@@ -1,0 +1,91 @@
+.bx_section
+  .h3
+    | Информация о покупателе
+    input#showProps(type='hidden', name='showProps', value='Y')
+  #sale_order_props
+    div
+      div.form-group(data-property-id-row='8')
+        .bx_block.r1x3
+          | Название компании
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_8.form-control(type='text', maxlength='250', size='40', value='', name='ORDER_PROP_8')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='9')
+        .bx_block.r1x3
+          | Юридический адрес
+        .bx_block.r3x1
+          textarea#ORDER_PROP_9.form-control(rows='3', cols='40', name='ORDER_PROP_9')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='10')
+        .bx_block.r1x3
+          | ИНН
+        .bx_block.r3x1
+          input#ORDER_PROP_10.form-control(type='text', maxlength='250', value='', name='ORDER_PROP_10')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='11')
+        .bx_block.r1x3
+          | КПП
+        .bx_block.r3x1
+          input#ORDER_PROP_11.form-control(type='text', maxlength='250', value='', name='ORDER_PROP_11')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='12')
+        .bx_block.r1x3
+          | Контактное лицо
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_12.form-control(type='text', maxlength='250', value='test', name='ORDER_PROP_12')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='13')
+        .bx_block.r1x3
+          | Эл. почта
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_13.form-control(type='text', maxlength='250', size='40', value='test@tut.by', name='ORDER_PROP_13')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='14')
+        .bx_block.r1x3
+          | Телефон
+        .bx_block.r3x1
+          input#ORDER_PROP_14.form-control(type='text', maxlength='250', value='', name='ORDER_PROP_14')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='15')
+        .bx_block.r1x3
+          | Факс
+        .bx_block.r3x1
+          input#ORDER_PROP_15.form-control(type='text', maxlength='250', value='', name='ORDER_PROP_15')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='16')
+        .bx_block.r1x3
+          | Индекс
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_16.form-control(type='text', maxlength='250', size='8', value='101000', name='ORDER_PROP_16')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='18')
+        .bx_block.r1x3
+          | Местоположение
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          .location-block-wrapper
+            #sls-62796.bx-sls
+              .dropdown-block.bx-ui-sls-input-block.form-control
+                span.dropdown-icon
+                input.dropdown-field.form-control(type='text', autocomplete='off', name='ORDER_PROP_18', value='', placeholder='Введите название ...', style='display: none;')
+                .bx-ui-sls-container(style='margin: 0px; padding: 0px; border: none; position: relative;')
+                  input.bx-ui-sls-route.form-control(type='text', disabled='disabled', autocomplete='off', style='padding: 6px 0px 0px 8px; margin: 0px;')
+                  input.bx-ui-sls-fake.form-control(type='text', autocomplete='off', value='', placeholder='Введите название ...')
+                .dropdown-fade2white
+                .bx-ui-sls-loader
+                .bx-ui-sls-clear(title='Отменить выбор', style='display: none;')
+                .bx-ui-sls-pane(style='overflow-y: auto; overflow-x: hidden; display: none;')
+                  .bx-ui-sls-variants
+              .bx-ui-sls-error-message
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='19')
+        .bx_block.r1x3
+          | Адрес доставки
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          textarea#ORDER_PROP_19.form-control(rows='3', cols='30', name='ORDER_PROP_19')
+        div(style='clear: both;')

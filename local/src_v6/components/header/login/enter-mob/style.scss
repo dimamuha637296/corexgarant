@@ -1,0 +1,38 @@
+.enter-mob {
+  padding: 0 ($grid-gutter-width / 2);
+
+  .list {
+    margin: 0;
+  }
+
+  .item {
+    @include font-family-light;
+    font-size: 14px;
+    color: $link-color;
+  }
+
+  .ico {
+    display: inline-block;
+    margin-right: 5px;
+
+    &:before {
+      @include svg;
+      @include svg-enter-mob();
+    }
+  }
+
+  .link {
+    @include mobile-height-item();
+    display: block;
+
+    @include hover-focus() {
+
+      .ico {
+
+        &:before {
+          @include svg-enter-mob-hover();
+        }
+      }
+    }
+  }
+}

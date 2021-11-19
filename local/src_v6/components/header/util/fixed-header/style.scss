@@ -1,0 +1,13 @@
+.fixed-header {
+
+  @media (min-width: $grid-breakpoint-min) {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: $site-max-width;
+    z-index: 101;
+    background: $body-bg-color;
+    box-shadow: $box-shadow-base;
+  }
+}

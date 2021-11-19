@@ -1,0 +1,124 @@
+include ../../../components/block/f_star/index
+#modal-vacancy.modal.fade(role='dialog', aria-hidden='true')
+  .modal-dialog.modal-fluid
+    .modal-content
+      .modal-header
+        .modal-title.h2
+          | Напишите нам сообщение или задайте вопрос
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body
+        .forms
+          .row
+            .col-12
+              form#form-popup.form-horizontal(method='post', action='/')
+                fieldset.fieldset
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-FIO-FRM_vacancies')
+                      | Имя
+                      +f_star()
+                    .text.col-12
+                      input#form-FIO-FRM_vacancies.form-control(type='text', name='FIO', maxlength='50', spellcheck='true', required='', value='')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-EMAIL-popup')
+                      | Эл. почта
+                      +f_star()
+                    .text.col-12
+                      input#form-EMAIL-popup.form-control(type='email', name='form-EMAIL-popup', maxlength='50', spellcheck='true', value='', placeholder='email@example.com', required='')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-PHONE-FRM_vacancies')
+                      | Телефон
+                      +f_star()
+                    .text.col-12
+                      input#form-PHONE-FRM_vacancies.form-control(type='tel', name='PHONE', maxlength='50', spellcheck='true', required='', value='')
+                      p.help-block Например: (+375 29) 123-45-67
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-vacancy-FRM_vacancies')
+                      | Вакансия
+                    .text.col-12
+                      input#form-vacancy-FRM_vacancies.form-control(type='text', name='vacancy', maxlength='50', spellcheck='true', value='Контент–менеджер')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-MESSAGE-FRM_vacancies')
+                      | Комментарий
+                    .text.col-12
+                      textarea#form-MESSAGE-FRM_vacancies.form-control(name='MESSAGE', maxlength='500', cols='60', rows='4', spellcheck='true')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    .col-12
+                      label Прикрепить резюме
+                    .col-12
+                      .db-drag_n_drop-field
+                        .file-input
+                          ol#file_input_upload_list_mfiedzQb.webform-field-upload-list(style='display: block;')
+                            li.saved(id='file-controls-sprite.png-75099')
+                              a.upload-file-name(href='#', target='_blank') controls-sprite.png
+                              span.upload-file-size  13.2 КБ
+                              i
+                              a.delete-file(href='javascript:void(0)')
+                              input(type='hidden', name='MORE_FILES[]', value='708')
+                            li.saved(id='file-dealers-2.png-64163')
+                              a.upload-file-name(href='#', target='_blank') dealers-2.png
+                              span.upload-file-size  1.12 КБ
+                              i
+                              a.delete-file(href='javascript:void(0)')
+                              input(type='hidden', name='MORE_FILES[]', value='709')
+                            li.uploading(id='file-design.psd-30737')
+                              a.upload-file-name(href='', target='_blank') design.psd
+                              span.upload-file-size
+                              i
+                              a.delete-file(href='javascript:void(0)')
+                          .webform-field-upload
+                            span.webform-small-button.webform-button-upload Загрузить файлы
+                            input#file_input_mfirLzEV(type='file', name='FILE_NEW_TMP[]', size='1', multiple='multiple')
+                    .controls.col-12
+                  // row
+                  .form-group
+                    .name.col-12
+                    .col-12.d-md-flex.align-items-center
+                      +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(id='submit_FRM_vacancies' name='submit')
+                      .form_required
+                        +f_star()
+                          =' '
+                        | — поля обязательные к заполнению
+          script.
+              !function () {
+                  'use strict';
+
+                  // Form validation
+                  function initValid() {
+                      // Validation options http://jqueryvalidation.org/documentation/
+                      var form_validator = $('#form-popup');
+                      if (form_validator.length && $.fn.validate) {
+                          form_validator.validate({
+                              rules: {
+                                  'FIO': {
+                                      required: true,
+                                      minlength: 3
+                                  },
+                                  'EMAIL': {
+                                      email: true,
+                                      required: true
+                                  },
+                                  'PHONE': {
+                                      minlength: 5,
+                                      maxlength: 15,
+                                      required: true
+                                  }
+                              }
+                          });
+                      }
+                  }
+
+                  $(function () {
+                      initValid();
+                  });
+              }();

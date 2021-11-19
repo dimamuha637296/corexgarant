@@ -1,0 +1,39 @@
+-
+  var data = {
+    list: [
+      {
+      mod: 'color-0',
+      title: 'SEO-экспертиза',
+      text: 'Отлаженный процесс накопления и внедрения изменяющихся SEO-требований в стандарты разработки.',
+      pic: 'teaser_2-0.png'
+      },
+      {
+      mod: 'color-1',
+      title: 'Технологическое совершенство',
+      text: 'Новейшие технологии front-end и back-end, высокая скорость загрузки.',
+      pic: 'teaser_2-1.png'
+      },
+      {
+      mod: 'color-2',
+      title: 'Внутренние стандарты',
+      text: 'Контролируем ключевые параметры каждого проекта и стараемся давать клиентам все лучший и лучший сервис.',
+      pic: 'teaser_2-2.png'
+      },
+      {
+      mod: 'color-3',
+      title: 'Внутренние стандарты',
+      text: 'Контролируем ключевые параметры каждого проекта и стараемся давать клиентам все лучший и лучший сервис.',
+      pic: 'teaser_2-3.png'
+      }
+    ]
+  };
+.teaser_2
+  .row
+    each item, i in data.list
+      .item.col-12.col-md-6.col-xl-3
+        a.inner(class=item.mod ? item.mod : '', href='#')
+          .wrap
+            .pic
+              img.img(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.title)
+            .h4.title #{item.title}
+            .text #{item.text}

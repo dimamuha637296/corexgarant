@@ -1,0 +1,56 @@
+.sl-vertical {
+  position: relative;
+  margin: 0 0 30px;
+
+  .wrap {
+    position: relative;
+    padding: 50px 0 0;
+
+    &.inited-not {
+
+      .slide {
+
+        &:nth-child(n+2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slide {
+    padding: 10px 0;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    height: 180px;
+  }
+
+  .pic {
+    flex-shrink: 0;
+    margin: 0 20px 0 0;
+  }
+
+  .title {
+    overflow: hidden;
+    max-height: $line-height-h2 * 2em;
+    margin: 0 0 10px;
+    @include font-family-bold();
+    color: $headings-color;
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
+  }
+
+  .text {
+    overflow: hidden;
+    max-height: 1.2 * 4em;
+    line-height: 1.2;
+  }
+
+  .sl-nav-4-dark {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

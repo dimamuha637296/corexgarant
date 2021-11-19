@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Партнёры';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Партнеры или клиенты
+block content
+  include ../../../components/demo/partners/detail/index
+  include ../../../components/demo/partners/list/index

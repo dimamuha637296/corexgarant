@@ -1,0 +1,158 @@
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin self-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-placeholder-color) {
+  // For Mozilla 15-17 placeholder color
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  // jQuery polyfill for IE10- placeholder
+  &.placeholder {
+    color: $color; //placeholder text color
+  }
+}
+
+@mixin max-height($fs: 16, $lh: 20, $quant: 2) {
+  font-size: $fs + px;
+  line-height: ($lh/$fs);
+  max-height: (($lh/$fs) * $quant + em);
+  overflow: hidden;
+  @if ($quant == 1) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin gallery-hover() {
+
+  &.gallery-hover {
+
+    .pic {
+      overflow: hidden;
+    }
+
+    .link {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+
+      &:hover {
+
+        .icon-loop, .icon {
+          opacity: 1;
+          background: rgba(0, 0, 0, .15);
+        }
+
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    img {
+      transition: all .4s ease-out;
+    }
+
+    .icon {
+      display: block;
+      opacity: 0;
+      transition: all .2s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 6;
+
+      &:before {
+        position: relative;
+        top: 50%;
+        display: block;
+        transform: translateY(-50%);
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@mixin border {
+
+  .item {
+
+    + .item {
+
+      &:before {
+        content: '';
+        height: 1px;
+        background: $border-color-base;
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        clear: both;
+      }
+    }
+  }
+}
+
+@mixin triangle-drop($color: $text-color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: $color transparent transparent transparent;
+  transition: $transition-default;
+}
+
+@mixin input-autofill-styles($animation-name: 'input') {
+  $full-animation-name: $animation-name + '-autofill';
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    animation: $full-animation-name 0s both;
+  }
+
+  @keyframes #{$full-animation-name} {
+
+    to {
+      @content
+    }
+  }
+}

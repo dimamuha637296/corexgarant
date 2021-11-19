@@ -1,0 +1,120 @@
+/*news-list.scss*/
+
+// var *****************************************************************************************************************
+//@_news-list: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.news-list {
+  margin: 0 0 40px;
+
+  .pic {
+    max-width: 25%;
+    margin: 0 30px 0 0;
+    display: inline-block;
+    position: relative;
+    float: left;
+
+    @media (max-width: $screen-xs-max) {
+      max-width: inherit;
+      float: none;
+      margin-bottom: 10px;
+    }
+  }
+
+  .item {
+    margin: 0 0 15px;
+    @include clearfix();
+
+    + .item {
+
+      &:before {
+        content: '';
+        height: 1px;
+        background: $border-color-base;
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  .wrap {
+    overflow: hidden;
+  }
+
+  .news-body {
+    overflow: hidden;
+  }
+
+  .title {
+    @extend .h3;
+    margin-top: 0;
+
+    a {
+      text-decoration: none;
+      color: $link-color-active;
+
+      @include hover-focus() {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .date {
+    @include caption-text();
+    line-height: 1.1;
+    margin-bottom: 9px;
+  }
+
+  .time {
+    display: inline-block;
+
+    + .part:before {
+      content: '/';
+      display: inline-block;
+      padding: 0 5px;
+    }
+  }
+
+  .part {
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      color: $caption-color;
+
+      @include hover-focus() {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .link {
+    display: block;
+    text-decoration: none;
+    color: $link-color-active;
+
+    @include hover-focus() {
+      .title {
+        color: $link-color-hover;
+      }
+
+      .icon {
+        opacity: 1;
+        background: rgba(0, 0, 0, .1);
+      }
+    }
+
+    .icon {
+      display: block;
+      opacity: 0;
+      transition: all .2s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

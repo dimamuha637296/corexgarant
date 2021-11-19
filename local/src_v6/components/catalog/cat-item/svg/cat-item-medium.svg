@@ -1,0 +1,19 @@
+<svg id="осталось_мало" data-name="осталось мало" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #277844;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #d8dee0;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_790" data-name="Фигура 790" class="cls-1" d="M1211,2000h-3v10h3v-10Zm-4,3h-3v7h3v-7Zm-4,3h-3v4h3v-4Z" transform="translate(-1200 -2000)"/>
+  <path id="Фигура_790_копия" data-name="Фигура 790 копия" class="cls-2" d="M1211,2000h-3v10h3v-10Z" transform="translate(-1200 -2000)"/>
+</svg>

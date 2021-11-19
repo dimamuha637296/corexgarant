@@ -1,0 +1,191 @@
+/*menu-accordion-2.scss*/
+
+// var *****************************************************************************************************************
+$_menu-accordion-2-border-width: 4px; //только четные
+$_menu-accordion-2-color: #000;
+$_menu-accordion-2-link-color: $link-color;
+$_menu-accordion-2-link-color-hover: $link-color-hover;
+$_menu-accordion-2-padding: 7px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.menu-accordion-2 {
+
+  @media (max-width: $grid-breakpoint-max) {
+    display: none;
+  }
+
+  .title {
+    font-size: 22px;
+    margin: 0 0 22px 22px;
+    line-height: 1.2;
+    @include font-family-bold();
+  }
+
+  [class*="item_"] {
+    display: block;
+    transition: all 0.2s ease-in-out;
+
+    > a {
+      color: $_menu-accordion-2-link-color;
+
+      @include hover-focus() {
+        color: $link-color-hover;
+      }
+    }
+
+    > span {
+      color: $_menu-accordion-2-color;
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu-accordion-2-color;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: #fff;
+        }
+      }
+    }
+
+    @include hover-focus() {
+      background: $link-color;
+
+      > a,
+      > span {
+        color: #fff;
+      }
+    }
+  }
+
+  .accordion {
+
+    .acc-heading {
+      position: relative;
+      display: block;
+      font-size: 16px;
+      @include font-family-medium();
+      padding: 14px 24px 14px 16px;
+
+      + div {
+        background: #fff;
+      }
+    }
+
+    .acc-body {
+      padding-bottom: 0;
+    }
+
+    .panel {
+      padding: 0;
+      background: #f4f6f9;
+
+      .link {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .menu_level_1 {
+    margin: 0;
+  }
+
+  .item_1 {
+    font-size: 16px;
+
+    &.active {
+
+      .acc-heading {
+
+        > a,
+        > span {
+          color: $_menu-accordion-2-color;
+        }
+
+        > a {
+
+          @include hover-focus() {
+            color: $link-color-active-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_level_2 {
+    font-size: 15px;
+    margin: 0;
+
+    .item_2 {
+      margin-bottom: 0;
+      padding: 15px 0 14px 30px;
+      border-bottom: 1px solid $border-color-base;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .menu_level_3 {
+    font-size: 13px;
+
+    #db & {
+      margin: 14px 0 0 3px;
+      padding: 0;
+    }
+
+    .item_3 {
+      margin-bottom: 8px;
+    }
+  }
+
+  .menu_level_4 {
+    font-size: 13px;
+    padding: 0;
+    margin: 5px 0 0 13px;
+
+    .item_4 {
+      margin-bottom: 5px;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .open-menu {
+    display: block;
+    position: absolute;
+    transform: rotate(0deg);
+    padding: $_menu-accordion-2-padding;
+    transform-origin: ($_menu-accordion-border-width/2 + $_menu-accordion-padding) center 0;
+    left: auto;
+    right: 0;
+    top: 14px;
+
+    &:before {
+      content: '';
+      display: block;
+      border: $_menu-accordion-2-border-width solid;
+      border-color: transparent transparent transparent $link-color;
+    }
+
+    @include hover-focus() {
+
+      &:before {
+        border-color: transparent transparent transparent $link-color-hover;
+      }
+    }
+
+    &.collapsed {
+      transform: rotate(90deg);
+    }
+  }
+}

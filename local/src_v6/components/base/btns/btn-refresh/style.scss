@@ -1,0 +1,98 @@
+.btn-refresh {
+  position: relative;
+  width: 51px;
+  height: 51px;
+  padding: 10px;
+  border: 2px solid $link-color;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+
+  &:before {
+    @include svg;
+    @include svg-refresh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @include hover-focus {
+    background: #fff;
+
+    &:before {
+      @include svg-refresh-hover;
+    }
+  }
+
+  &:active,
+  &.active {
+    background: #ebebeb;
+
+    &:before {
+      @include svg-refresh-hover;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    background: $disabled-color;
+    border-color: $disabled-color;
+  }
+
+  &.spin {
+
+    &:before {
+      display: block;
+      animation-name: spin;
+      animation-duration: 4000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      position: absolute;
+      top: 15px;
+      left: 12px;
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &.btn-lg {
+    width: 68px;
+    height: 68px;
+    padding: 0;
+
+    &:before {
+      top: 23px;
+      left: 20px;
+    }
+  }
+
+  &.btn-sm {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    &:before {
+      top: 10px;
+      left: 7px;
+    }
+  }
+
+  &.btn-xs {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    &:before {
+      top: 7px;
+      left: 4px;
+    }
+  }
+}

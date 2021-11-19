@@ -1,0 +1,59 @@
+.fast-bx {
+  margin-bottom: 15px;
+}
+
+.bx-composite-btn {
+  border-radius: 15px;
+  color: #ffffff !important;
+  display: inline-block;
+  position: relative;
+  line-height: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  height: 31px !important;
+  padding: 0 35px 0 17px !important;
+  vertical-align: middle !important;
+  text-decoration: none !important;
+
+  &:before {
+    @include png();
+    @include png-fast-bx();
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+}
+
+.bx-composite-btn-fixed {
+  position: absolute;
+  top: -45px;
+  right: 15px;
+  z-index: 10;
+}
+
+.bx-btn-white {
+  background-position: right 5px;
+  color: #fff !important;
+}
+
+.bx-btn-black {
+  background-position: right -31px;
+  color: #000 !important;
+}
+
+.bx-btn-red {
+  background-position: right -62px;
+  color: #555 !important;
+}
+
+.bx-btn-grey {
+  background-position: right -93px;
+  color: #657b89 !important;
+}
+
+.bx-btn-border {
+  border: 1px solid #d4d4d4;
+  height: 29px !important;
+  line-height: 29px !important;
+}

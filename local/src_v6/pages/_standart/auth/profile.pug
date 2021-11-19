@@ -1,0 +1,8 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Profile';
+  - DB.DIR = '../../';
+block title
+  h1#title Профиль пользователя
+block content
+  include ../../../components/auth/profile/index

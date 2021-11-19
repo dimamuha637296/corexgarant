@@ -1,0 +1,44 @@
+.calc-result
+  .bx_ordercart_order_table_container
+    table.table-reset.tbi
+      tbody.tbi-tbody
+        - var n = 0
+        - var m = 0
+        while n < 2
+          - m++
+          if (n % 3 === 0)
+            - m = 1
+          - n++
+          tr(id='tr_' + m)
+            td.tbi-td.itemphoto
+              .bx_ordercart_photo_container
+                a(href='#')
+                  .bx_ordercart_photo
+                    img(src=DB.DIR + 'img/tmp/basket/catalog-cart_0' + m + '.jpg', alt='photo')
+            td.tbi-td.item
+              .bx_ordercart_wrap
+                .h2.bx_ordercart_itemtitle
+                  a(href='#')
+                    | Ламинат Tarkett Infinite 832
+                .bx_ordercart_itemart
+                .bx_item_detail_scu_small_noadaptive
+                  span.bx_item_section_name_gray
+                    | Декор:
+                  include ../item-color/index
+                .bx_item_detail_size_small_noadaptive
+                  span.bx_item_section_name_gray
+                    | Ширина рулона, м
+                    sup 2
+                    | :
+                  - var itemSizes = ['1,5', '2,5', '5,5', '1,5'];
+                  include ../item-size/index
+            td.tbi-td
+              .centered
+                input.form-control.quantity(id='QUANTITY_' + m + '', type='text', name='QUANTITY_' + m + '', value='20')
+            td.tbi-td.custom
+              .total_price(id='sum_' + m)
+                | 1&#160;199&#160;руб.
+            td.tbi-td.custom
+              .btn-wrap
+                +btn-primary({type: 'button', text: 'В корзину'})
+                +btn-primary({type: 'button', disabled: true, text: 'В корзине'})

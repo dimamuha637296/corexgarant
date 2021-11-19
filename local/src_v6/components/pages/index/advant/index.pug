@@ -1,0 +1,40 @@
+-
+  var advantData = {
+    title: 'Почему выбирают нас',
+    list: [
+      {
+        img: 'img/tmp/advant-1.png',
+        name: 'Надежность',
+        text: 'Проверенный поставщик с многолетним опытом'
+      },
+      {
+        img: 'img/tmp/advant-2.png',
+        name: 'Сервис',
+        text: 'Бесперебойные поставки, возможность доставки на склад заказчика'
+      },
+      {
+        img: 'img/tmp/advant-3.png',
+        name: 'Клиентоориентированность',
+        text: 'Гибкие цены, различные варианты взаиморасчетов, выполнение индивидуальных заявок'
+      },
+      {
+        img: 'img/tmp/advant-4.png',
+        name: 'В контакте с клиентом',
+        text: 'Профессиональная команда, технологическая поддержка и помощь'
+      }
+    ]
+  };
+.advant
+  .advant__wrap
+    .advant__title #{advantData.title}
+    .advant__list
+      .row.row-clear
+        each item in advantData.list
+          .col-12.col-md-6.advant__item
+            .media-old
+              .media-left-old
+                .advant__img
+                  img(src=DB.DIR + item.img, alt=item.name, title=item.name)
+              .media-body-old
+                .advant__i-title #{item.name}
+                .advant__i-text #{item.text}

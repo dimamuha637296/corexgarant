@@ -1,0 +1,14 @@
+.element-head
+  .item.avail-item
+    if (DB.catalogTovarIsAvail === true)
+      i.icon.avail
+      span в наличии
+    else
+      span нет в наличии
+  if (DB.catalogTovarIsAvail !== false)
+    a(href="#").item
+      i.icon.comp
+      span Сравнить
+    a(href="#").item
+      i.icon.whishlist
+      span Избранное

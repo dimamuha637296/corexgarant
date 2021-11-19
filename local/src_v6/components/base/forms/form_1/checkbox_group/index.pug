@@ -1,0 +1,6 @@
+mixin checkbox_group(data)
+  -
+    var list = data.list !== undefined ? data.list : [];
+  each item in list
+    - item.name = data.name;
+    +checkbox(item)

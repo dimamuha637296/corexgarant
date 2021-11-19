@@ -1,0 +1,18 @@
+.js-submenu-scroll {
+  height: 600px;
+
+  @media (max-width: $screen-lg-max) {
+    height: 500px;
+  }
+}
+
+.js-submenu-scroll,
+.js-submenu-scroll-wrap {
+
+  .js-scroll-init #db & {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+

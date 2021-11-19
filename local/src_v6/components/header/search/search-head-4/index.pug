@@ -1,0 +1,9 @@
+.search-head-4.hide-print
+  .backdrop
+  .wrap
+    .btn-open
+    form.search-form(action='/search/', method='get')
+      .form-wrap
+        input.btn-search(name='btn-search', type='submit', value='Найти')
+        input.field(id="headSearch" type='search', placeholder='Поиск по сайту', name='q', maxlength='50', required='')
+        .btn-close

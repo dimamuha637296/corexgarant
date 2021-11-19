@@ -1,0 +1,49 @@
+.sl-prod-wrap {
+  position: relative;
+
+  @media (max-width: $screen-md-max) {
+    max-width: 360px;
+    margin: 0 auto 20px;
+  }
+}
+
+.sl-prod {
+  position: relative;
+  margin-bottom: 20px;
+
+  .wrap {
+    position: relative;
+    background-color: $body-bg-color;
+    border: 1px solid $border-color-base;
+
+    &.inited-not {
+
+      .slide {
+
+        &:nth-child(1) {
+          float: none;
+        }
+
+        &:nth-child(1n+2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slide {
+    position: relative;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 286px;
+    padding: 20px;
+  }
+
+  .img {
+    max-height: 100%;
+  }
+}

@@ -1,0 +1,132 @@
+// utilities/spacing
+
+// stylelint-disable declaration-no-important
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+                (
+                        0: 0,
+                        1: ($spacer * .5),
+                        2: ($spacer * 1),
+                        3: ($spacer * 1.5),
+                        4: ($spacer * 2),
+                        5: ($spacer * 2.5),
+                        6: ($spacer * 3),
+                        7: ($spacer * 3.5),
+                        8: ($spacer * 4),
+                        9: ($spacer * 4.5),
+                        10: ($spacer * 5)
+                ),
+                $spacers
+);
+
+@if $enable-utils-spacing-simple-vertical {
+
+  // Margin and Padding
+  $wrapClass: '.db';
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+
+      #{$wrapClass} .#{$abbrev}t-#{$size} {
+        #{$prop}-top: $length;
+      }
+      #{$wrapClass} .#{$abbrev}b-#{$size} {
+        #{$prop}-bottom: $length;
+      }
+    }
+  }
+}
+
+@if $enable-utils-spacing-simple {
+
+  // Margin and Padding
+  $wrapClass: '.db';
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+
+      #{$wrapClass} .#{$abbrev}-#{$size} {
+        #{$prop}: $length;
+      }
+      #{$wrapClass} .#{$abbrev}t-#{$size},
+      #{$wrapClass} .#{$abbrev}y-#{$size} {
+        #{$prop}-top: $length;
+      }
+      #{$wrapClass} .#{$abbrev}r-#{$size},
+      #{$wrapClass} .#{$abbrev}x-#{$size} {
+        #{$prop}-right: $length;
+      }
+      #{$wrapClass} .#{$abbrev}b-#{$size},
+      #{$wrapClass} .#{$abbrev}y-#{$size} {
+        #{$prop}-bottom: $length;
+      }
+      #{$wrapClass} .#{$abbrev}l-#{$size},
+      #{$wrapClass} .#{$abbrev}x-#{$size} {
+        #{$prop}-left: $length;
+      }
+    }
+  }
+}
+
+@if $enable-utils-spacing-important {
+
+  // Margin and Padding
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+
+      .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+      .#{$abbrev}t-#{$size},
+      .#{$abbrev}y-#{$size} {
+        #{$prop}-top: $length !important;
+      }
+      .#{$abbrev}r-#{$size},
+      .#{$abbrev}x-#{$size} {
+        #{$prop}-right: $length !important;
+      }
+      .#{$abbrev}b-#{$size},
+      .#{$abbrev}y-#{$size} {
+        #{$prop}-bottom: $length !important;
+      }
+      .#{$abbrev}l-#{$size},
+      .#{$abbrev}x-#{$size} {
+        #{$prop}-left: $length !important;
+      }
+    }
+  }
+}
+
+@if $enable-utils-spacing-media {
+
+  // Margin and Padding with media
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      // Some special margin utils
+      .m#{$infix}-auto { margin: auto !important; }
+      .mt#{$infix}-auto,
+      .my#{$infix}-auto {
+        margin-top: auto !important;
+      }
+      .mr#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-right: auto !important;
+      }
+      .mb#{$infix}-auto,
+      .my#{$infix}-auto {
+        margin-bottom: auto !important;
+      }
+      .ml#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-left: auto !important;
+      }
+    }
+  }
+}

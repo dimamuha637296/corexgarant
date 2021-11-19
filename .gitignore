@@ -1,0 +1,117 @@
+# IDE
+## Phpstorm project files
+.idea
+## Netbeans project files
+nbproject
+
+# Mac DS_Store Files
+.DS_Store
+
+# Node.js modules
+node_modules
+
+# SASS
+.sass-cache
+
+# Bower
+bower_components
+
+#Tests
+/local/src_v6/test/
+
+# Git web-hooks
+gitlab-webhook-push.php
+.hooks
+
+# Bitrix
+/bitrix
+# /bitrix/activities
+# /bitrix/admin
+# /bitrix/backup
+# /bitrix/cache
+# /bitrix/catalog_export
+# /bitrix/crontab
+# /bitrix/html_pages
+# /bitrix/image_uploader
+# /bitrix/managed_cache
+# /bitrix/managed_flags
+# /bitrix/tmp
+# /bitrix/php_interface/crontab
+# /bitrix/php_interface/dbconn.php
+# /bitrix/php_interface/init.php
+# /bitrix/stack_cache
+# /bitrix/updates
+# /bitrix/urlrewrite.php
+# /bitrix/.settings.php
+/eng/webstat
+/logs
+/upload
+/webstat
+
+# Enviromental vars
+/local/php_interface/env.php
+
+# Log, backup, htaccess, debug
+.htaccess*
+.htpasswd*
+*.log
+*_log
+*.txt
+/local/templates/.default/debug/
+
+# archive
+*.dt
+*.tar*
+*.gz*
+*.tgz
+*.zip
+*.rar
+*.dat
+*.7z
+*.tmp
+
+# sitemap
+yandex_*.html
+
+# Db
+*.sql
+*.xml
+*.db
+*.csv
+adminer*.php
+
+# Office docs
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.pdf
+
+# hosting files
+/cgi-bin/
+/.well-known/
+.ftpquota
+
+# Exludes
+# db.modules in bitrix directory
+!bitrix/wizards/db
+
+!cmsmagazine76c5fb8872e8328840d5f6d32da019af.txt
+
+# WordPress https://github.com/github/gitignore/blob/master/WordPress.gitignore
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/mu-plugins/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/readme.html
+/cache/

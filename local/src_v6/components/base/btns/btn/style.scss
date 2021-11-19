@@ -1,0 +1,63 @@
+// Remove the default `border-radius` that macOS Chrome adds.
+//
+// Details at https://github.com/twbs/bootstrap/issues/24093
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none;
+}
+// END reboot
+
+.btn {
+  @include font-family-medium();
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  max-width: 100%;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 1.2rem 2.5rem;
+  font-size: $font-size-base;
+  line-height: 1;
+  border-radius: $border-radius-base;
+  color: $brand-white;
+  transition: all .15s ease-in-out; // prevent flickering on link buttons
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  // Share hover and focus styles
+  @include hover-focus {
+    outline: none;
+    color: $brand-white;
+    text-decoration: none;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    //opacity: .65;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+
+    &:active,
+    &.active {
+      //background-image: none;
+      //box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}

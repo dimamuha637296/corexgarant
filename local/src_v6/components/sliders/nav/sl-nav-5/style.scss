@@ -1,0 +1,61 @@
+.sl-nav-5 {
+
+  .prev,
+  .next {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+    transition: $transition-default;
+
+    &.slick-arrow {
+      display: flex;
+    }
+
+    .js-off & {
+      display: none;
+    }
+
+    &:before {
+      @include svg;
+      @include svg-sl-nav-5-next;
+
+      .inited-not & {
+        display: none;
+      }
+    }
+
+    @include hover-focus() {
+
+      &:before {
+        @include svg-sl-nav-5-next-hover;
+      }
+    }
+
+    &:active {
+      opacity: .8;
+    }
+
+    &.disabled {
+      display: none;
+    }
+  }
+
+  .prev {
+    left: 0;
+
+    &:before {
+      transform: scale(-1, 1);
+    }
+  }
+
+  .next {
+    right: 0;
+  }
+}

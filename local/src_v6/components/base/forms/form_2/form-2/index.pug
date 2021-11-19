@@ -1,0 +1,110 @@
+include ../../../../../components/base/forms/form_2/checkboxradio/index
+include ../../../../../components/base/forms/form_2/file/index
+include ../../../../../components/base/forms/form_2/select/index
+include ../../../../../components/base/forms/form_2/spinner/index
+include ../../../../../components/block/f_star/index
+form#form-2-dropdown.form-2.form-2-dropdown(method='post', action='/')
+  fieldset.fieldset-2
+    .form-group-2.control-group.dropdown-valid-2
+      label.col-form-label-2.col-12(for='form-2-dropdown-FIO')
+        | Ваше имя
+        +f_star()
+      .text.col-12
+        .input-wrap
+          input#form-2-dropdown-FIO.form-control-2(name='form-2-dropdown-FIO', required='')
+          .error-drop
+            button.error-icon(data-toggle='dropdown') ?
+            .dropdown-menu.dropdown-menu-right
+              .controls
+    .form-group-2.control-group.dropdown-valid-2
+      label.col-form-label-2.col-12(for='form-2-dropdown-MESSAGE')
+        | Дополнительная информация
+        +f_star()
+      .text.col-12
+        .input-wrap
+          textarea#form-2-dropdown-MESSAGE.form-control-2(name='form-2-dropdown-MESSAGE', maxlength='500', rows='4', cols='60', required='')
+          .error-drop
+            button.error-icon(data-toggle='dropdown') ?
+            .dropdown-menu.dropdown-menu-right
+              .controls
+    .form-group-2.control-group.dropdown-valid-2
+      label.col-form-label-2.col-12(for='form-2-dropdown-COUNTRY')
+        | Город
+        +f_star()
+      .text.col-12
+        .input-wrap
+          select#form-2-dropdown-COUNTRY.form-control-2.ui-select.ui-select-2(name='form-2-dropdown-COUNTRY', required='')
+            option(value='', selected='', disabled='')  
+            option Алтайский край
+            option Все страныВсе страныВсе страныВсе страныВсе страны
+            option Архангельская область
+            option Астраханская область
+            option Белгородская область
+            option Брянская область
+            option Владимирская область
+            option Волгоградская область
+            option Вологодская область
+            option Воронежская область
+            option(disabled='') Еврейская автономная область
+            option Забайкальский край
+            option Ивановская область
+            option Иркутская область
+            option Калининградская область
+            option Калужская область
+            option Кемеровская область
+            option Кировская область
+            option Костромская область
+            option Краснодарский край
+            option Красноярский край
+            option Иран
+            option Ирландия
+            option Испания
+            option Италия
+            option Йемен
+            option Казахстан
+            option Канада
+            option Кипр
+            option Китай
+            option Куба
+          .error-drop
+            button.error-icon(data-toggle='dropdown') ?
+            .dropdown-menu.dropdown-menu-right
+              .controls
+    // row
+    .form-group-2
+      .col-12.d-md-flex.align-items-center
+        +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+        .form_required
+          +f_star()
+          =' '
+          | — поля обязательные к заполнению
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-2-dropdown');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'form-2-dropdown-FIO': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-2-dropdown-COUNTRY': {
+                              required: true
+                          },
+                          'form-2-dropdown-MESSAGE': {
+                              required: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

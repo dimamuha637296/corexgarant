@@ -1,0 +1,28 @@
+.form-group-2.control-group-2
+  label.col-form-label-2.col-xl-2.col-md-3.col-12(for='file_input_2')
+    | Выберите файл
+  .text.col-xl-6.col-md-5.col-12
+    .db-drag_n_drop-field
+      .file-input
+        ol#file_input_upload_list-2.webform-field-upload-list-2(style='display: block;')
+          li.saved(id='file-controls-sprite.png-75099')
+            a.upload-file-name(href='#', target='_blank') controls-sprite.png
+            span.upload-file-size  13.2 КБ
+            i
+            a.delete-file(href='javascript:void(0)')
+            input(type='hidden', name='MORE_FILES[]', value='708')
+          li.saved(id='file-dealers-2.png-64163')
+            a.upload-file-name(href='#', target='_blank') dealers-2.png
+            span.upload-file-size  1.12 КБ
+            i
+            a.delete-file(href='javascript:void(0)')
+            input(type='hidden', name='MORE_FILES[]', value='709')
+          li.uploading(id='file-design.psd-30737')
+            a.upload-file-name(href='', target='_blank') design.psd
+            span.upload-file-size
+            i
+            a.delete-file(href='javascript:void(0)')
+        .webform-field-upload
+          span.webform-small-button.webform-button-upload Загрузить файлы
+          input#file_input_2(type='file', name='FILE_NEW_TMP[]', size='1', multiple='multiple')
+  .controls.col-md-4.col-12

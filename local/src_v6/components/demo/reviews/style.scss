@@ -1,0 +1,74 @@
+/*reviews.scss*/
+
+// var *****************************************************************************************************************
+//@_reviews: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.reviews {
+  margin: 0 0 78px;
+
+  .item {
+    margin-bottom: 20px;
+  }
+
+  .name {
+    font-size: 13px;
+    line-break: (18/13);
+    margin: 0 0 5px;
+    @include font-family-bold();
+  }
+
+  .date {
+    @include caption-text();
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .question {
+    margin: 0 0 15px;
+  }
+
+  .answer {
+    position: relative;
+
+    padding-left: 30px;
+    font-size: 12px;
+    line-height: (19/12);
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      @include png();
+      @include png-answer();
+    }
+  }
+
+  .title {
+    margin: 0 0 1px;
+    @include font-family-bold();
+  }
+
+  .text {
+    margin: 0 0 5px;
+  }
+
+  .who {
+    color: $caption-color;
+  }
+}
+
+.star-list-small {
+  .star-item {
+    @include png;
+    @include png-no-star;
+    display: inline-block;
+
+    &.active {
+      @include png;
+      @include png-star;
+      display: inline-block;
+    }
+  }
+}

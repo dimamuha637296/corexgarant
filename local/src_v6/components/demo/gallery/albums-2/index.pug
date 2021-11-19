@@ -1,0 +1,46 @@
+if (albums2 === undefined)
+  -
+    var albums2 = [
+      {
+        img: 'img/tmp/albums-2-0.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      },
+      {
+        img: 'img/tmp/albums-2-1.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      },
+      {
+        img: 'img/tmp/albums-2-1.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      },
+      {
+        img: 'img/tmp/albums-2-2.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      },
+      {
+        img: 'img/tmp/albums-2-3.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      },
+      {
+        img: 'img/tmp/albums-2-4.jpg',
+        title: 'Выбор года',
+        desc: '10 фото'
+      }
+    ]
+.albums-2
+  .albums-2__list
+    .row
+      each item in albums2
+        .col-lg-4.col-sm-6.col-12.albums-2__col
+          a(href='#').albums-2__item
+            .albums-2__item-wrap
+              .albums-2__img-wrap
+                img.albums-2__img(src=DB.DIR + item.img, alt=item.title)
+              .albums-2__text
+                .albums-2__title #{item.title}
+                .albums-2__desc #{item.desc}

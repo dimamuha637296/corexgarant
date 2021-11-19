@@ -1,0 +1,17 @@
+.header__mob
+  .container
+    include ../../../components/header/logo/logo-mob/index
+    .header__tools
+      include ../../../components/header/search/search-mob/index
+      include ../../../components/header/hamburger/hamburger-opener/index
+.header__desktop
+  .container
+    .header__row
+      .header__left
+        - var logoTitle = false;
+        include ../../../components/header/logo/logo-png/index
+      .header__right
+        block menu_head
+          include ../../../components/header/menu/menu-drop-8/index
+        .header__search
+          include ../../../components/header/search/search-head-4/index

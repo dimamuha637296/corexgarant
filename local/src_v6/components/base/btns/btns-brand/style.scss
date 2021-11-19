@@ -1,0 +1,89 @@
+.btn-primary {
+  background:           $brand-1;
+  border-color:         $brand-1;
+  color:                $brand-white;
+
+  @include hover-focus  {
+    background:         darken($brand-1, 10%);
+    border-color:       darken($brand-1, 12%);
+  }
+
+  &:active,
+  &.active {
+    background:         darken($brand-1, 20%);
+    border-color:       darken($brand-1, 22%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background:         $disabled-color;
+    border-color:       $disabled-color;
+  }
+}
+
+.btn-primary-outline {
+  @extend .btn-primary;
+  background:           none;
+  border-color:         $brand-1;
+  color:                $brand-1;
+}
+
+.btn-secondary {
+  background:           $brand-2;
+  border-color:         $brand-2;
+  color:                $brand-white;
+
+  @include hover-focus  {
+    background:         darken($brand-2, 10%);
+    border-color:       darken($brand-2, 12%);
+  }
+
+  &:active,
+  &.active {
+    background:         darken($brand-2, 20%);
+    border-color:       darken($brand-2, 22%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background:         $disabled-color;
+    border-color:       $disabled-color;
+  }
+}
+
+.btn-secondary-outline {
+  @extend .btn-secondary;
+  background:           none;
+  border-color:         $brand-2;
+  color:                $brand-2;
+}
+
+.btn-third {
+  background:           $brand-3;
+  border-color:         $brand-3;
+  color:                $brand-white;
+
+  @include hover-focus  {
+    background:         darken($brand-3, 10%);
+    border-color:       darken($brand-3, 12%);
+  }
+
+  &:active,
+  &.active {
+    background:         darken($brand-3, 20%);
+    border-color:       darken($brand-3, 22%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background:         $disabled-color;
+    border-color:       $disabled-color;
+  }
+}
+
+.btn-third-outline {
+  @extend .btn-third;
+  background:           none;
+  border-color:         $brand-3;
+  color:                $brand-3;
+}

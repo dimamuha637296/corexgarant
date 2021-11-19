@@ -1,0 +1,28 @@
+.list-tile-2 {
+  margin: 0 0 20px;
+
+  &__item {
+    display: flex;
+    margin: 0 0 20px;
+  }
+
+  &__pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 0;
+    border-radius: 50%;
+    background: $brand-white;
+    box-shadow: $box-shadow-base;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

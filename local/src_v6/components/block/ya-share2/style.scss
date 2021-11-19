@@ -1,0 +1,25 @@
+.ya-share2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  .ya-share2__list {
+    @include clearfix();
+    display: block;
+
+    .g-wrap & {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .ya-share2__item {
+    float: left;
+
+    .g-wrap & {
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+}

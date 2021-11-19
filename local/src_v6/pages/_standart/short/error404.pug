@@ -1,0 +1,19 @@
+extends ../../tpl/simple
+block pageVars
+  - DB.pageTitle = 'Ошибка 404';
+block content
+  .row
+    article.col-12.col-md-7.col-lg-8
+      include ../../../components/short/error404/index
+      include ../../../components/header/search/search-head/index
+    aside.col-12.col-md-4.offset-md-1.col-lg-3
+      include ../../../components/short/menu404/index
+block footer
+  .container
+    .row.footer__row
+      .footer__left-col.col-12.col-md-6.col-lg-4
+        include ../../../components/footer/logo-foot-2/index
+      .footer__middle-col.col-12.col-md-6.col-lg-4
+        include ../../../components/footer/menu-foot/index
+      .footer__right-col.col-12.col-md-6.col-lg-4
+        include ../../../components/footer/studio/index

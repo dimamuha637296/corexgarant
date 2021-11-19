@@ -1,0 +1,71 @@
+-
+  var data = [
+  {
+    title: 'H4 Пенсионный Пенсионный+',
+    cost1: 'Basic 1',
+    cost2: '50',
+    cost3: '48',
+    percent: '2,5 - 3,3%',
+    percent_text: 'caption 1 в год от суммы кредита',
+    sum1: '99',
+    sum2: ' + 2,5-3,3%​',
+    sum_text: 'в год от суммы кредита, не более 50 000 руб.'
+  },
+  {
+    title: 'H4 Минутное дело',
+    cost1: '1',
+    cost2: '420',
+    cost3: '479',
+    percent: '3,7%',
+    percent_text: 'caption 1 в год от суммы кредита',
+    sum1: '900',
+    sum2: ' + 2,5-3,3%​',
+    sum_text: 'в год от суммы кредита, не более 50 000 руб.'
+  },
+  {
+    title: 'H4 Кредит для руководителей',
+    cost1: '1',
+    cost2: '420',
+    cost3: '479',
+    percent: '3,7%',
+    percent_text: 'caption 1 в год от суммы кредита',
+    sum1: '900',
+    sum2: ' + 3,7%​',
+    sum_text: 'в год от суммы кредита, не более 50 000 руб.'
+  },
+  {
+    title: 'H4 Другие срочные кредиты',
+    cost1: '1',
+    cost2: '420',
+    cost3: '479',
+    percent: '2-5%',
+    percent_text: 'caption 1 в год от суммы кредита',
+    sum1: '900',
+    sum2: ' + 2-5%​',
+    sum_text: 'в год от суммы кредита, не более 50 000 руб.'
+  }
+  ];
+.h2 Тип 2. Таблица с вертикальным в 2 колонки + перестроением карточками для 576px и ниже.
+.table-adaptive.type-2.js-sort-table
+  table
+    thead
+      tr
+        th CAPTION 3 ПАКЕТ УСЛУГ
+        th Интернет-банк
+        th Перевыпуск карты
+        th СМС-банк
+        th «РКО Плюс»
+        th ИТОГОВАЯ СТОИМОСТЬ
+    tbody
+      for item in data
+        tr
+          td #{item.title}
+          td #{item.cost1}
+          td #{item.cost2}
+          td #{item.cost3}
+          td #{item.percent}
+          td
+            span #{item.sum1}
+            span #{item.sum2}
+            br
+            span #{item.sum_text}

@@ -1,0 +1,94 @@
+mixin form_validator(data)
+  //-script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-validation');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'form-FIO': {
+                              required: true,
+                              minlength: 2
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();
+  script
+    ='\n'
+    ='!function () {\n'
+    ='    \'use strict\';\n'
+    ='\n'
+    ='    // Form validation\n'
+    ='    function initValid() {\n'
+    ='        // Validation options http://jqueryvalidation.org/documentation/\n'
+    ='        var form_validator = $(\'#' + data.formID + '\');\n'
+    !='        if (form_validator.length && $.fn.validate) {\n'
+    ='            form_validator.validate({\n'
+    ='                rules: {'
+    - var validateItemsCount = 0;
+    if (data.hasCaptcha === true)
+      -
+        data.rows.push({
+          isCaptcha: true,
+          id: data.formID + '-CAPTCHA',
+          required: true
+        });
+    for item, i in data.rows
+      if (data.validOnlyRequired === true && item.required !== true)
+        - continue
+      -
+        var name = item.id !== undefined ? item.id : item.name;
+        var itemValidRules = [];
+        if (item.minlength !== undefined) itemValidRules.push('minlength: ' + item.minlength)
+        if (item.maxlength !== undefined) itemValidRules.push('maxlength: ' + item.maxlength)
+        if (item.min !== undefined) itemValidRules.push('min: ' + item.min)
+        if (item.max !== undefined) itemValidRules.push('max: ' + item.max)
+        if (item.type === 'tel')
+            if (item.masked === true)
+              itemValidRules.push('minlengthphone: true')
+            else if (item.minlength === undefined)
+              itemValidRules.push('minlength: 3')
+        if (item.type === 'email')
+          itemValidRules.push('email: true')
+        if ((item.type === 'text' || item.controlType === 'textarea' || (item.type === undefined && item.controlType === undefined)) && item.minlength === undefined && item.isCaptcha !== true)
+          itemValidRules.push('minlength: 2')
+        if (item.required === true)
+          if (item.type === 'tel' && item.masked === true)
+            itemValidRules.push('requiredphone: true')
+          else
+            itemValidRules.push('required: true')
+      if (name !== undefined && itemValidRules.length !== 0)
+        if (validateItemsCount > 0)
+          =',\n'
+        else
+          ='\n'
+        ='                    \'' + name + '\': {'
+        ='\n'
+        for rule, j in itemValidRules
+          - var ruleString = '                        ' + rule;
+            if (itemValidRules.length !== 1 && j !== itemValidRules.length - 1)
+              - ruleString = ruleString + ',\n';
+            =ruleString
+        - validateItemsCount += 1;
+        ='\n'
+        ='                    }'
+    ='\n'
+    ='                }\n'
+    ='            });\n'
+    ='        }\n'
+    ='    }\n'
+    ='\n'
+    ='    $(function () {\n'
+    ='        initValid();\n'
+    ='    });\n'
+    ='}();'

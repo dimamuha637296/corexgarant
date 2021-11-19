@@ -1,0 +1,29 @@
+.header__mob
+  .container
+    include ../../../components/header/logo/logo-mob/index
+    .header__tools
+      include ../../../components/header/search/search-mob-2/index
+      include ../../../components/header/contacts/contacts-mob-3/index
+      include ../../../components/header/basket/basket-header-mob-2/index
+      - var basketMobEmpty = true;
+      include ../../../components/header/basket/basket-header-mob-2/index
+      include ../../../components/header/login/exit-header-mob/index
+      include ../../../components/header/hamburger/hamburger-opener/index
+.header__desktop
+  .container
+    .header__top
+      .header__row
+        include ../../../components/header/menu/menu-hor/index
+        include ../../../components/header/login/exit/index
+        include ../../../components/header/compare/compare/index
+        include ../../../components/header/lang/lang-2/index
+        include ../../../components/header/contacts/contacts-head-2/index
+    .header__bottom
+      .row
+        .col-3
+          - var logoTitle = false;
+          include ../../../components/header/logo/logo-png/index
+        .col-5
+          include ../../../components/header/search/search-head/index
+        .col-4
+          include ../../header/contacts/contacts-head/index

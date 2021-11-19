@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Successful authorization';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Авторизация
+block content
+  p Вы зарегистрированы и успешно авторизовались.
+  a(href='/') Вернуться на главную страницу

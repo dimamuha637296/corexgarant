@@ -1,0 +1,32 @@
+include ../btns-brand/index
+include ../btns-color/index
+include ../btns-link/index
+include ../btn-refresh/index
+include ../btn-size/index
+
+mixin btn(data)
+  -
+    var attr = {};
+    var tag = data.type || 'a';
+    var color = data.color !== undefined ? data.color : 'primary';
+    var className = data.className !== undefined ? ' ' + data.className : '';
+    var disClass = data.disabled !== true ? '' : ' disabled';
+    var outline = data.outline !== true ? '' : '-outline';
+    if (data.disabled !== undefined && tag !== 'a') attr.disabled = data.disabled;
+    if (data.attributes) attr = Object.assign({}, attr, data.attributes);
+    var fullClass = 'btn-' + color + outline + disClass + className;
+  case tag
+    when 'a'
+      - attr.href = attr.href || '#';
+    when 'button'
+      -
+        attr.type = attr.type || 'button';
+    when 'input'
+      -
+        attr.type = attr.type || 'submit';
+        attr.value = data.text;
+        data.text = '';
+  if (tag === 'input')
+    input.btn(class=fullClass)&attributes(attr)
+  else
+    #{tag}.btn(class=fullClass)&attributes(attr) !{data.text}

@@ -1,0 +1,31 @@
+.bx_ordercart_order_pay
+  .bx_ordercart_order_pay_right
+    table.bx_ordercart_order_sum.no-hover.table-reset
+      tbody
+        tr
+          td.custom_t1
+            | Общий вес
+          td.custom_t2
+            | 0 кг
+        tr
+          td.custom_t1
+            | Товаров на
+          td.custom_t2
+            | 3 898 руб.
+        tr
+          td.custom_t1
+            | Доставка
+          td.custom_t2
+            | 500 руб.
+        tr
+          td.custom_t1.fwb
+            | Итого
+          td.custom_t2.fwb
+            | 4 398 руб.
+  .bx_ordercart_order_pay_left
+    .h3
+      | Комментарии к заказу:
+    .bx_block.w100
+      textarea#ORDER_DESCRIPTION(name='ORDER_DESCRIPTION', style='max-width:100%;min-height:78px')
+    input(type='hidden', name='ORDER', value='')
+  div(style='clear:both;')

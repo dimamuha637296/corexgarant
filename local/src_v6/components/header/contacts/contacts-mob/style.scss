@@ -1,0 +1,49 @@
+$_btn-contact-bg-dropdown:                         $brand-gray-1;
+
+.contacts-mob {
+  position: relative;
+
+  .dropdown-toggle {
+    @include mobile-height;
+    cursor: pointer;
+
+    &:before {
+      @include svg();
+      @include svg-contacts-mob();
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    padding: 21px 0 8px;
+    border-radius: 0;
+    border: none;
+    background: $_btn-contact-bg-dropdown;
+  }
+
+  &.show {
+    background: $_btn-contact-bg-dropdown;
+
+    .dropdown-toggle {
+      &:before {
+        @include svg-contacts-mob-active();
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contacts-head {
+    margin-bottom: 15px;
+  }
+
+  .btn-question {
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,49 @@
+html body {
+  background-color: $body-bg-outer-color;
+}
+
+.outer-bg {
+  min-width: $site-min-width;
+
+  @media (max-width: $grid-breakpoint-max) {
+    overflow-x: hidden;
+    height: 100%;// iPhone bug with overflow
+  }
+
+  .g-wrap & {
+    max-width: $site-max-width;
+    background: $body-bg-color;
+    margin: 0 auto;
+  }
+}
+
+.g-wrap {
+  overflow: hidden;
+  min-width: $site-min-width;
+
+  .modal-open & {
+    overflow: initial;
+  }
+}
+
+.g-main {
+
+  @media (max-width: $grid-breakpoint-max) {
+    padding-top: 49px;
+  }
+}
+
+.g-content {
+  padding-bottom: 44px;
+
+  @media (min-width: $screen-lg-min) {
+
+    .g-sidebar + & {
+      padding-left: 30px;
+    }
+  }
+
+  .main & {
+    padding-bottom: 20px;
+  }
+}

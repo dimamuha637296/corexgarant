@@ -1,0 +1,101 @@
+$_menu-drop-submenu-color:                  $text-color;
+$_menu-drop-submenu-color-hover:            $link-color;
+$_menu-drop-submenu-color-active:           $link-color;
+$_menu-drop-submenu-color-active-hover:     $link-color;
+$_menu-drop-2-submenu-bg:                   transparent;
+$_menu-drop-2-submenu-bg-hover:             transparent;
+$_menu-drop-2-submenu-bg-active:            transparent;
+$_menu-drop-2-submenu-bg-active-hover:      transparent;
+
+
+.submenu-3 {
+
+  @mixin triangle-drop($color: $_menu-drop-submenu-color) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 0 4px 4px;
+    border-color: transparent transparent transparent $color;
+    transition: $transition-default;
+  }
+
+  [class*='menu_level_'] {
+    padding: 10px 0;
+  }
+
+  .g-wrap & [class*='item_'] {
+    position: relative;
+
+    @include hover-focus() {
+
+      > .submenu-inner {
+        display: block;
+      }
+    }
+
+    > a,
+    > span {
+      display: block;
+      @include font-family-regular();
+      color: $_menu-drop-submenu-color;
+      font-size: $font-size-base;
+      text-decoration: none;
+      padding: 7px 25px 7px 18px;
+      background: $_menu-drop-2-submenu-bg;
+      text-transform: none;
+      text-align: left;
+
+      .icon {
+        @include triangle-drop(currentColor);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+      }
+    }
+
+    > a {
+
+      @include hover-focus() {
+        color: $_menu-drop-submenu-color-hover;
+        background: $_menu-drop-2-submenu-bg-hover;
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        @include font-family-bold();
+        color: $_menu-drop-submenu-color-active;
+        background: $_menu-drop-2-submenu-bg-active;
+      }
+
+      > a {
+
+        @include hover-focus {
+          color: $_menu-drop-submenu-color-active-hover;
+          background: $_menu-drop-2-submenu-bg-active-hover;
+          text-decoration: underline;
+          text-decoration-color: rgba($_menu-drop-submenu-color-active-hover, .7);
+        }
+      }
+    }
+  }
+
+  .submenu-inner {
+    z-index: 999;
+    display: none;
+    width: 300px;
+    position: absolute;
+    background-color: $body-bg-color;
+    box-shadow: $box-shadow-base;
+    top: 0;
+    left: 100%;
+
+    .submenu-inner {
+      top: 0;
+      left: 100%;
+    }
+  }
+}

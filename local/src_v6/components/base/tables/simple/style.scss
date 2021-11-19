@@ -1,0 +1,71 @@
+//
+// Tables
+// --------------------------------------------------
+
+table {
+  border-collapse: collapse; // Prevent double borders
+}
+
+th {
+  // Matches default `<td>` alignment by inheriting from the `<body>`, or the
+  // closest parent with a set `text-align`.
+  text-align: inherit;
+}
+
+.g-wrap {
+
+  table {
+    max-width: 100%;
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 32px;
+
+    td,
+    th {
+      border-left: 1px solid transparent; //Firefox fix for right displaying tables
+      border-right: 1px solid transparent; //Firefox fix for right displaying tables
+    }
+
+    // Line across the table
+    tr {
+
+    }
+
+    // The header of the table
+    thead {
+      //border-bottom: 2px solid $border-color-base;
+    }
+
+    // The cell of header table
+    th {
+      padding: 9px 11px 12px;
+      text-align: left;
+      color: $headings-color;
+      font-size: 15px;
+      line-height: (19/15);
+      @include font-family-bold();
+      background: #f4f6f9;
+    }
+
+    // The body of table
+    tbody {
+      // Line in the body of table
+      tr {
+        font-size: 13px;
+        line-height: (18/13);
+        border-bottom: 1px solid $border-color-base;
+
+        @include hover-focus() {
+          background: #f9f9f9;
+          transition: all 0.15s;
+        }
+      }
+    }
+
+    // Cell in the body of table
+    td {
+      vertical-align: top;
+      padding: 25px 11px 33px;
+    }
+  }
+}

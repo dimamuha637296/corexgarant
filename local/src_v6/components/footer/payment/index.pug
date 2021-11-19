@@ -1,0 +1,9 @@
+.payment
+  .title Способы оплаты
+  ul.list.list-reset
+    - var n = 0
+    while n < 5
+      - n++
+      li.item
+        a.link(href='#')
+          img(src=DB.DIR + 'img/tmp/payment/pay-' + n + '.png', alt='payment', title='payment')

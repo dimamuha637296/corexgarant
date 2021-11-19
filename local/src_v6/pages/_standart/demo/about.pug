@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'О компании';
+  - DB.layout = 'aside';
+  - DB.DIR = '../../';
+block title
+  h1#title О компании
+block content
+  include ../../../components/demo/about-page/index
+  include ../../../components/demo/about-page-2/index
+  include ../../../components/demo/about-page-3/index

@@ -1,0 +1,19 @@
+.contacts-foot-2 {
+  margin: 0 0 10px;
+
+  &__item {
+    margin: 0 0 5px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    [class*=svg] {
+      margin-right: 5px;
+    }
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}

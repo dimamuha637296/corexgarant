@@ -1,0 +1,68 @@
+.item-color {
+
+  .bx_scu {
+    width: 180px;
+    overflow: hidden;
+
+    @media (max-width: $screen-sm-max) {
+      width: 150px;
+    }
+
+    .sku_prop_list {
+      margin: 0;
+      width: 200%;
+    }
+
+    .sku_prop {
+      position: relative;
+      display: block;
+      float: left;
+      width: 10%;
+      padding-top: 10%;
+      height: 0;
+      margin-right: 4px;
+
+      @include hover-focus() {
+
+        a {
+          border-color: $link-color;
+
+          img {
+            max-height: 100%;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        overflow: hidden;
+        border: 2px solid $border-color-base;
+        border-radius: 50%;
+        background: #fff;
+
+        span {
+          position: absolute;
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &.bx_active {
+
+        a {
+          border-color: $link-color-hover;
+
+          @include hover-focus() {
+            border-color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}

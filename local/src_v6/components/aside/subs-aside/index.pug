@@ -1,0 +1,32 @@
+include ../../../components/base/btns/btn/index
+.subs-aside
+  form#subs-aside(method='post', action='/')
+    fieldset
+      .control-group
+        .text
+          input.form-control(type='email', name='aside_EMAIL', placeholder='Ваш e-mail', value='')
+          .b-btn
+            +btn-primary({type: 'button', text: 'Подписаться'})(name='OK')
+  script.
+      !function () {
+          'use strict';
+
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#subs-aside');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'aside_EMAIL': {
+                              required: true,
+                              email: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

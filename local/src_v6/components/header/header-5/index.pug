@@ -1,0 +1,21 @@
+.header__mob
+  .container
+    include ../../../components/header/logo/logo-mob/index
+    .header__tools
+      include ../../../components/header/contacts/contacts-mob/index
+      include ../../../components/header/hamburger/hamburger-opener/index
+.header__desktop
+  .container
+    .header__top
+      .row
+        .col-xl-3.col-4
+          - var logoTitle = false;
+          include ../../../components/header/logo/logo-png/index
+        .col-xl-5.col-4
+          include ../../../components/header/contacts/contacts-head-3/index
+        .col-xl-4.col-4
+          include ../../../components/header/contacts/contacts-head-4/index
+    .header__bottom
+      .js-fixed-menu
+        block menu_head
+          include ../../../components/header/menu/menu-drop-8/index

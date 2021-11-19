@@ -1,0 +1,101 @@
+$header-mob-height:                 48px;
+$header-additional-background:      $brand-gray-1;
+$mob-menu-element-width-mob:        40px;
+$mob-menu-element-width-xs:         50px;
+
+@mixin mobile-height() {
+  height: $header-mob-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $mob-menu-element-width-mob;
+
+  @media (min-width: $screen-sm-min) {
+    width: $mob-menu-element-width-xs;
+  }
+}
+
+@mixin mobile-height-item {
+  line-height: 1.2;
+  padding: 16px 0;
+}
+
+.header {
+
+  @media (max-width: $grid-breakpoint-max) {
+    border-bottom: 1px solid $border-color-base;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+    background: $body-bg-color;
+    min-width: $site-min-width;
+  }
+
+  &__top {
+    padding: 15px 0;
+    border-bottom: 1px solid $border-color-base;
+
+    > .row {
+      align-items: center;
+    }
+  }
+
+  &__bottom {
+    padding: 15px 0;
+
+    > .row {
+      align-items: center;
+    }
+  }
+
+  &__mob {
+
+    > .container {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (min-width: $grid-breakpoint-min) {
+      display: none;
+    }
+  }
+
+  &__tools {
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__desktop {
+
+    @media (max-width: $grid-breakpoint-max) {
+      display: none;
+    }
+  }
+
+  .layout-simple & {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .1);
+
+    @media (max-width: $grid-breakpoint-max) {
+      position: static;
+      height: auto;
+    }
+  }
+
+  hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+// При появлении свернутой админ-панели, фиксированный header сдвигается ниже
+#panel {
+
+  + #db {
+
+    .header {
+      top: 39px;
+    }
+  }
+}

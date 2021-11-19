@@ -1,0 +1,31 @@
+mixin webformFieldUpload(data)
+  -
+    var attr = {};
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  .db-drag_n_drop-field
+    .file-input
+      ol.webform-field-upload-list(style='display: block;')
+        li.saved
+          a.upload-file-name(href='#', target='_blank') controls-sprite.png
+          span.upload-file-size  13.2 КБ
+          i
+          a.delete-file(href='javascript:void(0)')
+          input(type='hidden', name='MORE_FILES[]', value='708')
+        li.saved
+          a.upload-file-name(href='#', target='_blank') dealers-2.png
+          span.upload-file-size  1.12 КБ
+          i
+          a.delete-file(href='javascript:void(0)')
+          input(type='hidden', name='MORE_FILES[]', value='709')
+        li.uploading
+          a.upload-file-name(href='', target='_blank') design.psd
+          span.upload-file-size
+          i
+          a.delete-file(href='javascript:void(0)')
+      .webform-field-upload
+        span.webform-small-button.webform-button-upload Загрузить файлы
+        input(type='file', name='FILE_NEW_TMP[]', size='1', multiple='multiple')&attributes(attr)

@@ -1,0 +1,49 @@
+@mixin caption-text() {
+  color: $caption-color;
+  font-size: $caption-font-size;
+  font-family: $caption-font-family;
+}
+
+$caption-padding:                    30px;
+
+.caption {
+
+  &.left {
+
+    @media (min-width: $screen-md-min) {
+      float: left;
+      max-width: 43%;
+      margin-right: 5%;
+    }
+
+    .text {
+      margin-left: 0;
+    }
+  }
+
+  &.right {
+
+    @media (min-width: $screen-md-min) {
+      float: right;
+      max-width: 43%;
+      margin-left: 5%;
+    }
+
+    .text {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    margin-bottom: ($caption-padding/3);
+  }
+
+  .text {
+    margin-bottom: $caption-padding;
+    @include caption-text();
+  }
+}
+
+.caption-text {
+  @include caption-text();
+}

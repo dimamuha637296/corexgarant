@@ -1,0 +1,42 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+}
+
+.tab-content{
+
+  > .tab-pane {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}
+
+.tab-pane {
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,132 @@
+.checkbox,
+.radio {
+
+  .ui-checkboxradio-label {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+
+    &.ui-state-disabled {
+      opacity: .35;
+    }
+
+    .ui-checkboxradio {
+      position: absolute;
+      z-index: -1;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+    }
+
+    .ui-checkboxradio-icon {
+      flex-shrink: 0;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .ui-checkboxradio-icon-space {
+      display: none;
+    }
+
+    &.ui-state-disabled {
+      cursor: not-allowed;
+    }
+
+    // checkboxes styles
+    &:not(.ui-checkboxradio-radio-label) {
+
+      .ui-checkboxradio-icon {
+        width: 20px;
+        height: 20px;
+        margin: 0 9px 0 0;
+        border: 1px solid #C3C3C3;
+      }
+
+      // checked
+      &.ui-checkboxradio-checked {
+
+        .ui-checkboxradio-icon {
+          background-color: $link-color;
+          border-color: $link-color;
+
+          &:before {
+            @include svg();
+            @include svg-checkboxradio-arrow();
+          }
+        }
+
+        // checked-disabled
+        &.ui-state-disabled {
+
+          .ui-checkboxradio-icon {
+            background-color: #ced2d9;
+            border-color: #ced2d9;
+          }
+        }
+      }
+
+      // disabled
+      &.ui-state-disabled {
+
+        .ui-checkboxradio-icon {
+          border-color: #ccd0d8;
+        }
+      }
+    }
+
+    // radiobutton styles
+    &.ui-checkboxradio-radio-label {
+
+      .ui-checkboxradio-icon {
+        width: 20px;
+        height: 20px;
+        margin: 0 9px 0 0;
+        border: 1px solid #acb3bd;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      // checked
+      &.ui-checkboxradio-checked {
+
+        .ui-checkboxradio-icon {
+          border-color: $link-color;
+
+          &:before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $link-color;
+          }
+        }
+
+        // checked-disabled
+        &.ui-state-disabled {
+
+          .ui-checkboxradio-icon {
+            border-color: #b0b2b5;
+
+            &:before {
+              background-color: #b0b2b5;
+            }
+          }
+        }
+      }
+
+      // disabled
+      &.ui-state-disabled {
+
+        .ui-checkboxradio-icon {
+          border-color: #b0b2b5;
+        }
+      }
+    }
+  }
+}

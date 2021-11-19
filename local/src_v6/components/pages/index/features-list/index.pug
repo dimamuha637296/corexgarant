@@ -1,0 +1,27 @@
+- 
+  var data = [
+    {
+      title: 'Инноватор',
+      text: 'Мы первыми в РБ установили: банкомат, фискальный регистратор с поддержкой СКНО, платежный киоск самообслуживания собственного производства',
+      img: 'features-list-light-bulb.png'
+    },
+    {
+      title: 'Дистрибьютор',
+      text: 'Мы — крупнейший поставщик торгово-кассового, весоизмерительного и банковского оборудования. Только официальные поставки со всеми сопроводительными документами',
+      img: 'features-list-van.png'
+    },
+    {
+      title: 'Сервис-провайдер',
+      text: 'У нас есть сервисные филиалы во всех областях РБ. Единый call-центр поддержки клиентов 24/7. Мобильный сервисный центр с 50 автомобильных сервисных бригад',
+      img: 'features-list-24-hours.png'
+    }
+  ];
+.features-list
+  .row
+    each item in data
+      .col-md-4.col-12.item.features-list__col
+        .features-list__item
+          .features-list__title-wrap
+            .features-list__title #{item.title}
+            img.features-list__pic(src=DB.DIR + 'img/tmp/' + item.img, alt='alt', title='title')
+          .features-list__text #{item.text}

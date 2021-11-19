@@ -1,0 +1,19 @@
+-
+  var data = [
+    {
+      title: '№1 на рынке веб-разработки и поискового маркетинга на протяжении 5 лет',
+      pic: 'teaser_3-0.jpg'
+    },
+    {
+      title: '№1 на рынке веб-разработки и поискового маркетинга на протяжении 5 лет',
+      pic: 'teaser_3-1.jpg'
+    }
+  ];
+.teaser_3
+  .wrap
+    each item in data
+      .item
+        a.inner(href='#')
+          img.img(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.title)
+          .text-wrap
+            .h3.title #{item.title}

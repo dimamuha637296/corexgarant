@@ -1,0 +1,54 @@
+#db .element-table {
+  border: none;
+
+  table {
+    margin-bottom: 38px;
+  }
+
+  th {
+    background: transparent;
+    padding: 0 0 5px;
+  }
+
+  tr {
+
+    @include hover-focus() {
+      background: none;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  td {
+    padding: 12px 15px 11px 0;
+
+    &:first-child {
+      width: 40%;
+    }
+  }
+
+  .yes {
+
+    &:before {
+      @include png;
+      @include png-catalog-yes;
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  .not {
+
+    &:before {
+      @include png;
+      @include png-catalog-no;
+    }
+  }
+
+  .js-popover {
+    top: 2px;
+  }
+}

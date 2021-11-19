@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Full BG';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/examples/full-bg/full-bg-1/index
+  include ../../../components/examples/full-bg/full-bg-2/index
+  include ../../../components/examples/full-bg/full-width-title/index

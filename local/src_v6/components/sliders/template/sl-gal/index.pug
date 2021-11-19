@@ -1,0 +1,15 @@
+mixin sl-gal(data)
+  .sl-gal(class=data.modifier ? data.modifier : '')
+    .wrap.inited-not.cursor
+      .slider
+        each slide in data.slides
+          .slide
+            .pic
+              img(src=DB.DIR + 'img/tmp/' + slide, alt='Фото')
+      .counter-wrap
+        include ../../util/slide-counter/index
+      .nav-wrap
+        if (data.nav !== undefined)
+          +#{data.nav}()
+      if (data.pager !== undefined)
+        +#{data.pager}()

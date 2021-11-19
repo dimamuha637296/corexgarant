@@ -1,0 +1,36 @@
+//
+// Tables-2 (adaptive)
+// --------------------------------------------------
+.table-adaptive {
+
+  &.type-2 {
+
+    @media (max-width: $screen-sm-max) {
+
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .table-cell-label {
+          margin-bottom: 5px;
+        }
+
+        .table-cell-label,
+        .table-cell-content {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: $screen-xs-max) {
+
+      tr {
+        margin-bottom: 20px;
+        box-shadow: $box-shadow-base;
+        border: none;
+        border-radius: $border-radius-base;
+        padding: 10px 0;
+      }
+    }
+  }
+}

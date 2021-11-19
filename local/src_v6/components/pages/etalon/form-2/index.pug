@@ -1,0 +1,46 @@
+include ../../../base/forms/form_1/form/index
+.h2 H2 Форма-1 (Вариант валидации с дропдауном)
+- var formID = 'form-1-dropdown';
++form_1({
+    formID: formID,
+    hasValidation: true,
+    dropdownValidation: true,
+    rows: [
+        [
+            {
+                filedCol: 'col-12 col-md-6',
+                placeholder: 'Ваше имя',
+                id: formID + '-FIO',
+                required: true,
+                inputCol: 'col-12'
+            },
+            {
+                filedCol: 'col-12 col-md-6',
+                type: 'email',
+                id: formID + '-MAIL',
+                required: true,
+                placeholder: 'Эл. почта',
+                inputCol: 'col-12'
+            }
+        ],
+        {
+            filedCol: 'col-12',
+            controlType: 'textarea',
+            placeholder: 'Дополнительная информация',
+            id: formID + '-MESSAGE',
+            required: true,
+            maxlength: 500,
+            rows: 4,
+            cols: 60,
+            inputCol: 'col-12'
+        },
+        {
+            filedCol: 'col-12',
+            controlType: 'select',
+            placeholder: 'Город',
+            id: formID + '-COUNTRY',
+            required: true,
+            inputCol: 'col-12'
+        }
+    ]
+})

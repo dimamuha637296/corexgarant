@@ -1,0 +1,36 @@
+.compare {
+  padding: 0 ($grid-gutter-width / 2);
+
+  .list {
+    margin: 0;
+  }
+
+  .item {
+    @include font-family-light;
+    font-size: 14px;
+    color: $link-color;
+  }
+
+  .ico {
+    display: inline-block;
+    margin-right: 5px;
+
+    &:before {
+      @include svg;
+      @include svg-compare();
+    }
+  }
+
+  .link {
+
+    @include hover-focus() {
+
+      .ico {
+
+        &:before {
+          @include svg-compare-hover();
+        }
+      }
+    }
+  }
+}

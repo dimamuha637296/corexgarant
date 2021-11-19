@@ -1,0 +1,16 @@
+.header {
+
+  &--2 {
+
+    .logo-desk {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .pic {
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+include ../../../components/base/forms/form_1/form/index
+#questModal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        .h2.modal-title
+          | Задать вопрос
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body
+        - var formID = 'form-quest';
+        +form_1({
+            formID: formID,
+            hasValidation: true,
+            rows: [
+                {
+                    labelText: 'Ваше имя',
+                    id: formID + '-NAME',
+                    required: true
+                },
+                {
+                    type: 'tel',
+                    labelText: 'Телефон',
+                    id: formID + '-PHONE',
+                    required: true,
+                    helpText: 'Например: +375 (29) 123-45-67'
+                },
+                {
+                    type: 'email',
+                    labelText: 'Эл. почта',
+                    id: formID + '-EMAIL',
+                    required: true,
+                    placeholder: 'email@example.com'
+                },
+                {
+                    controlType: 'textarea',
+                    labelText: 'Вопрос',
+                    id: formID + '-MESSAGE',
+                    required: true,
+                    maxlength: 500,
+                    rows: 4,
+                    cols: 60
+                }
+            ]
+        })

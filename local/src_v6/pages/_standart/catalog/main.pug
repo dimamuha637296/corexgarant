@@ -1,0 +1,13 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Catalog main page';
+  - DB.DIR = '../../';
+  - DB.layout = 'wide';
+  - DB.catalogMainWithPhoto = true;
+  - DB.catalogMainWithText = true;
+  - DB.catalogMainWithCategory = false;
+block title
+  h1#title.catalog-title
+    | Каталог
+block content
+  include ../../../components/catalog/catalog-main/index

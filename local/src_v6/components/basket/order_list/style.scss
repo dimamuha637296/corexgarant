@@ -1,0 +1,205 @@
+.bx_my_order {
+
+  .list-descr {
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    &.list-items {
+      border-bottom: 1px solid $border-color-base;
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .bx_item_list {
+
+    #db & {
+      margin: 3px 0 0 2px;
+
+      li:before {
+        padding-right: 10px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .bx_my_order_table {
+    border: 1px solid $border-color-base;
+
+    @media(max-width: $screen-sm-max){
+      display: block;
+      width: 100%;
+    }
+
+    #db & {
+      margin-bottom: 35px;
+    }
+
+    thead,
+    tr,
+    tbody {
+
+      @media(max-width: $screen-sm-max){
+        display: block;
+        width: 100%;
+      }
+    }
+
+    thead {
+      border-bottom: 1px solid $border-color-base;
+
+      @media(max-width: $screen-sm-max){
+        overflow: hidden;
+      }
+    }
+
+    th {
+      border-left: 0;
+      border-right: 0;
+
+      #db & {
+        padding: 18px 15px  15px;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+
+      @media(max-width: $screen-sm-max){
+        display: block;
+        float: left;
+        width: 40%;
+
+        &:first-child {
+          width: 60%;
+        }
+      }
+
+      @media(max-width: $screen-xs-max){
+        width: 100%;
+
+        &:first-child {
+          width: 100%;
+        }
+
+        &:last-child {
+          text-align: left;
+
+          #db & {
+            padding-top: 0!important;
+          }
+        }
+      }
+    }
+
+    tr {
+
+      #db & {
+        border: none;
+      }
+
+      &:hover{
+
+        #db & {
+          background: none;
+        }
+      }
+    }
+
+    tbody {
+
+      tr {
+
+        @media (max-width: $screen-sm-max) {
+          padding: 10px;
+        }
+      }
+    }
+
+    td {
+      border-left: 0;
+      border-right: 0;
+
+      #db & {
+        padding: 15px;
+
+        @media (max-width: $screen-sm-max) {
+          padding: 5px;
+        }
+      }
+
+      &:first-child {
+        width: 65%
+      }
+
+      @media(max-width: $screen-sm-max){
+        display: block;
+        width: 100%!important;
+      }
+    }
+  }
+
+  .bx_my_order_status {
+    float: right;
+    padding: 10px 15px;
+    line-height: normal;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #fff;
+
+    @media(max-width: $screen-sm-max){
+      float: none;
+    }
+
+    &.yellow {
+      background: $brand-warning
+    }
+
+    &.red {
+      background: $brand-danger
+    }
+
+    &.green {
+      background: $brand-success;
+    }
+
+    &.gray {
+      background: #bbbbbb
+    }
+  }
+
+  .bx_order_action {
+    clear: both;
+    display: block;
+    margin-bottom: 12px;
+    text-align: right;
+  }
+}
+
+.bx_my_order_switch {
+  margin-bottom: 15px;
+  line-height: 30px;
+
+  .bx_mo_link {
+    margin-right: 20px;
+
+    @media(max-width: $screen-sm-max){
+      margin: 0;
+      display: block;
+    }
+  }
+}
+
+.bx_my_order_status_desc {
+  margin: 20px 0 20px 0;
+
+  .status {
+    margin-bottom: 5px;
+  }
+}

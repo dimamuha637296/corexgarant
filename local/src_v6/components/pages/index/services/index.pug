@@ -1,0 +1,58 @@
+include ../../../block/b-title/index
+-
+  var data = [
+  {
+    title: 'БПС-Сбербанк',
+    text: 'Разработка и продвижение сайта',
+    pic: 'services-0.jpg'
+  },
+  {
+    title: 'Крыница',
+    text: 'Разработка корпоративного сайта',
+    pic: 'services-1.jpg'
+  },
+  {
+    title: 'YUKON',
+    text: 'Разработка сайтов и поисковый маркетинг на западные рынки',
+    pic: 'services-2.jpg'
+  },
+  {
+    title: 'ФК “Зенит”',
+    text: 'Программирование и техническая поддержка сайта',
+    pic: 'services-3.jpg'
+  },
+  {
+    title: 'YUKON',
+    text: 'Разработка сайтов и поисковый маркетинг на западные рынки',
+    pic: 'services-2.jpg'
+  },
+  {
+    title: 'ФК “Зенит”',
+    text: 'Программирование и техническая поддержка сайта',
+    pic: 'services-3.jpg'
+  },
+  {
+    title: 'БПС-Сбербанк',
+    text: 'Разработка и продвижение сайта',
+    pic: 'services-0.jpg'
+  },
+  {
+    title: 'Крыница',
+    text: 'Разработка корпоративного сайта',
+    pic: 'services-1.jpg'
+  }
+  ];
+.services
+  +b-title({
+      title: 'Реализованные проекты',
+      titleH: 'h1',
+      link: 'Перейти в галерею проектов'
+  })
+  .row
+    each item, i in data
+      .item.col-12.col-sm-6.col-lg-4.col-xl-3(class=i == 8 ? 'hidden-lg hidden-xs' : '')
+        a.link(href='#')
+          img.pic(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.title)
+          .wrap
+            .h3.title #{item.title}
+            .text #{item.text}

@@ -1,0 +1,261 @@
+.sl-cat {
+  box-shadow: $box-shadow-base;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 67px;
+
+  @media (max-width: $screen-md-max) {
+    margin-bottom: 30px;
+  }
+
+  .wrap {
+    position: relative;
+
+    &.inited-not {
+
+      .slide {
+
+        &:nth-child(1) {
+          float: none;
+        }
+
+        &:nth-child(1n+2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slide {
+    position: relative;
+  }
+
+  .pic {
+    position: relative;
+    overflow: hidden;
+    height: 375px;
+
+    @media (max-width: $screen-sm-max) {
+      height: 300px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, .4);
+      z-index: 1;
+    }
+
+    .img {
+      -webkit-user-select: none;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      max-width: inherit;
+      transform: translate(-50%, -50%);
+
+      @media (max-width: $screen-sm-max) {
+        filter: blur(4px);
+        margin: 0 auto;
+        max-height: 420px;
+        top: auto;
+        left: auto;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .b-wrap {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: #fff;
+    margin-top: 4px;
+    padding: 0 10%;
+    max-width: 70%;
+    z-index: 2;
+
+    @media (max-width: $screen-sm-max) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding: 0 10% 0 5%;
+    }
+  }
+
+  .title {
+    @include max-height(48, 62, 2);
+    margin: 0 0 10px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 26px;
+    }
+  }
+
+  .text {
+    @include max-height(16, 21, 4);
+    margin: 0 0 43px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 15px;
+    }
+  }
+
+  .b-btn {
+
+    .btn {
+      font-size: 11px;
+      letter-spacing: 0.6px;
+      position: relative;
+      text-transform: uppercase;
+      box-shadow: none;
+
+      @media (max-width: $screen-xs-max) {
+        padding: 12px 40px 11px 20px;
+      }
+    }
+  }
+
+  .side-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(#fff, .1);
+    z-index: 2;
+
+    @media (max-width: $screen-sm-max) {
+      width: 40px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+
+  .side-wrap-text {
+    transform: rotate(270deg);
+  }
+
+  .prod-quant,
+  .product {
+    color: #E4EAEC;
+    font-size: 13px;
+    line-height: (15/13);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .prod-quant {
+    margin-right: 5px;
+  }
+
+  $_sl-cat-link-hover-bg:                            #feeee3;
+  $_sl-cat-link-prod-text:                           #b1b8bc;
+
+  .sl-cat-links {
+    @include clearfix;
+  }
+
+  .link {
+    float: left;
+    width: 25%;
+    background-color: #fff;
+    padding: 18px 20px;
+    border-top: 4px solid transparent;
+    text-decoration: none;
+
+    @media (max-width: $screen-lg-max) {
+      height: 105px;
+    }
+
+    @media (max-width: $screen-md-max) {
+      width: 50%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 10px 15px;
+      width: 100%;
+      height: auto;
+    }
+
+    &.active {
+      border-top: 4px solid $link-color-hover;
+      background-color: $brand-light;
+
+      .link-title {
+        color: $link-color-hover;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $_sl-cat-link-hover-bg;
+      border-top: 4px solid $_sl-cat-link-hover-bg;
+
+      .sl-cat__link-title {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .icon,
+  .link-text-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .icon {
+    height: 83px;
+    width: 102px;
+
+    @media (max-width: $screen-md-max) {
+      width: 75px;
+      height: 63px;
+    }
+  }
+
+  .link-text-wrap {
+    padding-left: 19px;
+  }
+
+  .link-title {
+    @include max-height(18, 23, 2);
+    color: $text-color;
+  }
+
+  .link-prod-quant,
+  .link-product {
+    color: $_sl-cat-link-prod-text;
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .link-prod-quant {
+    margin-right: 3px;
+  }
+}

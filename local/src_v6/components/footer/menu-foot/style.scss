@@ -1,0 +1,71 @@
+$_menu_foot-color:                               $text-footer-color;
+$_menu_foot-color-hover:                         $_menu_foot-color;
+$_menu_foot-color-active:                        #000;
+$_menu_foot-color-active-hover:                  $_menu_foot-color-active;
+
+.menu-foot {
+  margin-bottom: 15px;
+
+  .menu_level_1 {
+    margin: 0 -10px;
+    @include clearfix;
+    font-size: 0;
+  }
+
+  .item_1 {
+    float: left;
+    padding: 0 10px;
+
+    + .item_1 {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        height: 12px;
+        margin-top: -6px;
+        left: 0;
+        width: 1px;
+        background: $_menu_foot-color;
+      }
+    }
+
+    > a,
+    > span {
+      font-size: 14px;
+      line-height: $line-height-base;
+      color: $_menu_foot-color;
+    }
+
+    > a {
+      text-decoration: underline;
+      text-decoration-color: rgba($_menu_foot-color, .6);
+
+      @include hover-focus {
+        color: $_menu_foot-color-hover;
+        text-decoration: none;
+        text-decoration-color: rgba($_menu_foot-color-hover, 0);
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu_foot-color-active;
+      }
+
+      > a {
+        text-decoration: none;
+        text-decoration-color: rgba($_menu_foot-color-active, 0);
+
+        @include hover-focus {
+          color: $_menu_foot-color-active-hover;
+          text-decoration: underline;
+          text-decoration-color: rgba($_menu_foot-color-active, .6);
+        }
+      }
+    }
+  }
+}

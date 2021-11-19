@@ -1,0 +1,22 @@
+include ../../../../components/base/btns/btn/index
+mixin sl-main-2(data)
+  .sl-main-2(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              .pic
+                img.img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+              .container
+                .b-wrap
+                  .h1.title #{slide.title ? slide.title : 'Заголовок слайда'}
+                  if (slide.text)
+                    p.text #{slide.text}
+                  if (slide.btnText)
+                    .btn-wrap
+                      +btn-primary({text: slide.btnText})
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

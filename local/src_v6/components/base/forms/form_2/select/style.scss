@@ -1,0 +1,192 @@
+.ui-front-2 {
+
+  // worker
+  z-index: 100;
+
+  .ui-select { // для корректной работы валидатора
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    display: block !important;
+  }
+
+  .ui-selectmenu-text {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ui-state-disabled {
+    opacity: .35;
+  }
+
+  .ui-button {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .ui-selectmenu-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  .ui-selectmenu-open {
+    display: block;
+  }
+
+  // styles
+  .ui-selectmenu-button {
+    @include form-control-2();
+    white-space: nowrap;
+    text-align: left;
+    position: relative;
+    padding-right: 38px;
+
+    @include hover-focus() {
+      outline: 0;
+      border-color: #a3b8c2;
+
+      .ui-selectmenu-icon {
+
+        &:before {
+          @include svg-select-arrow-2--focus;
+        }
+      }
+    }
+
+    &:focus,
+    &:active {
+      border-color: $input-focus-border-color;
+      outline: 0;
+    }
+
+    &.ui-selectmenu-button-open {
+
+      .ui-selectmenu-icon {
+
+        &:before {
+          @include svg-select-arrow-2--focus;
+        }
+      }
+    }
+
+    .has-error & {
+      border-color: $state-danger-text;
+
+      &:hover,
+      &:focus {
+        border-color: $state-danger-text;
+      }
+    }
+  }
+
+  .ui-selectmenu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 38px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include svg;
+      @include svg-select-arrow-2;
+      transition: opacity .25s ease, background-position .25s ease;
+    }
+  }
+
+  .ui-menu {
+    background-color: $input-bg;
+    border: 1px solid $input-border-color;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-height: 300px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &,
+    #db & {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+      position: relative;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+    }
+  }
+
+  .ui-selectmenu-optgroup {
+    padding: 15px 17px 5px;
+    font-size: 1.2em;
+    @include font-family-medium;
+
+    &,
+    #db & {
+      display: block;
+      margin: 0;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .ui-menu-item {
+    cursor: pointer;
+
+    &,
+    #db & {
+      display: block;
+      margin: 0;
+
+      .ie & {
+        padding-left: 0;
+      }
+
+      &:before {
+        content: none;
+      }
+    }
+
+    &.ui-state-disabled {
+
+      .ui-menu-item-wrapper {
+        color: #b5bac1
+      }
+    }
+  }
+
+  .ui-menu-item-wrapper {
+    color: $headings-color;
+    min-height: 18px;
+    padding: 4px 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+
+    &.ui-state-active {
+      background-color: #b5bac1;
+      color: $body-bg-color;
+    }
+
+    @include hover-focus() {
+      background-color: $link-color;
+      color: $body-bg-color;
+    }
+  }
+}

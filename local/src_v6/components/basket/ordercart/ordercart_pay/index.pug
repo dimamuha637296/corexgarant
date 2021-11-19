@@ -1,0 +1,27 @@
+.bx_ordercart_order_pay
+  #coupons_block.bx_ordercart_order_pay_left
+    .bx_ordercart_coupon
+      span
+        | Введите код купона для скидки:
+      input#coupon.form-control(type='text', name='COUPON', value='', onchange='enterCoupon();')
+  .bx_ordercart_order_pay_right
+    table.bx_ordercart_order_sum.table-reset.no-hover
+      tbody
+        tr
+          td
+            | Товаров на
+          td#allSum_wVAT_FORMATED
+            | 12 291 руб.
+        tr
+          td
+            | В том числе НДС
+          td#allVATSum_FORMATED
+            | 0 руб.
+        tr
+          td.fwb Итого
+          td#allSum_FORMATED.fwb
+            | 12 291 руб.
+    div(style='clear:both;')
+  div(style='clear:both;')
+  .bx_ordercart_order_pay_center
+    +btn-primary({className: 'checkout', text: 'Оформить заказ'})(href='javascript:void(0)' onclick='checkOut();')

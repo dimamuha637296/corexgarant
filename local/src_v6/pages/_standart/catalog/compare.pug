@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Compare';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1
+    | Сравнение товаров
+block content
+  include ../../../components/catalog/compare/index

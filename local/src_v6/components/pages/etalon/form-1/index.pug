@@ -1,0 +1,137 @@
+include ../../../base/forms/form_1/form/index
+.h2 H2 Форма-1
+- var formID = 'form-1';
++form_1({
+    formID: formID,
+    hasValidation: true,
+    hasCaptcha: true,
+    rows: [
+        {
+            labelText: 'Ваше имя',
+            id: formID + '-FIO',
+            required: true
+        },
+        {
+            type: 'email',
+            labelText: 'Эл. почта',
+            id: formID + '-MAIL',
+            required: false,
+            placeholder: 'email@example.com'
+        },
+        {
+            type: 'tel',
+            labelText: 'Ваш телефон',
+            id: formID + '-PHONE',
+            required: true,
+            helpText: 'Например: +375 (29) 123-45-67'
+        },
+        {
+            type: 'tel',
+            labelText: 'Ваш телефон',
+            id: formID + '-PHONE-2',
+            required: true,
+            masked: true,
+            helpText: 'Например: +375 (29) 123-45-67',
+            className: 'form-control js_mask_tel'
+        },
+        {
+            controlType: 'select',
+            labelText: 'Город',
+            id: formID + '-COUNTRY',
+            required: true
+        },
+        {
+            controlType: 'datepicker',
+            labelText: 'Дата посещения',
+            id: formID + '-DAY',
+            required: true,
+            helpText: 'Экскурсии проводятся по вторникам и четвергам'
+        },
+        {
+            type: 'number',
+            labelText: 'Кол-во человек',
+            id: formID + '-QUANTITY',
+            required: true,
+            min: 1,
+            max: 20,
+            className: 'form-control ui-spin',
+            helpText: 'от 1 до 20'
+        },
+        {
+            controlType: 'textarea',
+            labelText: 'Дополнительная информация',
+            id: formID + '-MESSAGE',
+            required: true,
+            maxlength: 500,
+            rows: 4,
+            cols: 60
+        },
+        {
+            controlType: 'checkbox',
+            labelText: '18',
+            text: 'Подтверждаю, что все участники экскурсии старше 18 лет',
+            id: formID + '-AGE',
+            required: true
+        },
+        {
+            controlType: 'select',
+            labelText: 'Множественный выбор',
+            id: formID + '-NUMBER',
+            multiple: true,
+            required: true
+        },
+        {
+            controlType: 'checkbox_group',
+            labelText: 'Что-то тут должно быть',
+            name: formID + '-CHECKBOX',
+            list: [
+                {
+                    text: 'статистика',
+                    disabled: true
+                },
+                {
+                    text: 'естественно'
+                },
+                {
+                    text: 'ускоряет',
+                    disabled: true
+                },
+                {
+                    text: 'ускоряет2',
+                    disabled: true,
+                    checked: true
+                },
+                {
+                    text: 'многомерный определитель системы линейных уравнений'
+                },
+                {
+                    text: 'предполагалось'
+                }
+            ]
+        },
+        {
+            controlType: 'radio_group',
+            labelText: 'И тут тоже',
+            name: formID + '-RADIO',
+            list: [
+                {
+                    text: 'Линейное',
+                    checked: true
+                },
+                {
+                    text: 'Предел последовательности, в первом приближении, изящно развивает ротор векторного поля, как и предполагалось.'
+                },
+                {
+                    text: 'программирование',
+                    disabled: true
+                },
+                {
+                    text: 'изменяет'
+                },
+                {
+                    text: 'интеграл'
+                }
+            ]
+        }
+    ]
+})

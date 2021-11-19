@@ -1,0 +1,21 @@
+#order_form_div.order-checkout
+  .bx_order_make
+    form#ORDER_FORM.order_form(action='/personal/order/make/', method='POST', name='ORDER_FORM', enctype='multipart/form-data')
+      input#sessid(type='hidden', name='sessid', value='d6421f2ead0fa413cd8c664c2b21c97c')
+      #order_form_content
+        include ../order_form_type/index
+        include ../order_form_profile/index
+        include ../order_form_props/index
+        include ../order_form_delivery/index
+        include ../order_form_pay/index
+        include ../order_form_prop-pay/index
+        include ../../bx_ordercart_order/index
+      input#confirmorder(type='hidden', name='confirmorder', value='Y')
+      input#profile_change(type='hidden', name='profile_change', value='N')
+      input#is_ajax_post(type='hidden', name='is_ajax_post', value='Y')
+      input(type='hidden', name='json', value='Y')
+      include ../../ordercart/ordercart_pay_btn/index
+    div(style='display:none;')
+      #delivery_info__
+        a(href='javascript:void(0)', onclick="deliveryCalcProceed({'STEP':'1','DELIVERY':'','PROFILE':'','WEIGHT':'0','PRICE':'0','LOCATION':'0','LOCATION_ZIP':'','CURRENCY':'','INPUT_NAME':'','TEMP':'','ITEMS':'','EXTRA_PARAMS_CALLBACK':''})") Рассчитать стоимость
+      #wait_container__(style='display: none;')

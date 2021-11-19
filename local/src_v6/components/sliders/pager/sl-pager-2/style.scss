@@ -1,0 +1,88 @@
+/* sl-pager-2.scss */
+
+// var ****************************************************************************************************************
+$_sl-pager-bg:                            transparent;
+$_sl-pager-active-bg:                     #fff;
+$_sl-pager-dot-width:                     6px;
+$_sl-pager-dotWrap-width:                 28px;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.sl-pager-2 {
+  position: relative;
+
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: none!important;
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    width: $_sl-pager-dotWrap-width;
+    height: $_sl-pager-dotWrap-width;
+    margin: 0 2px;
+    position: relative;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: $_sl-pager-dot-width/-2;
+      margin-left: $_sl-pager-dot-width/-2;
+      width: $_sl-pager-dot-width;
+      height: $_sl-pager-dot-width;
+      border-radius: 50%;
+      transition: all .15s ease-out;
+    }
+
+    &:before {
+      background: rgba($_sl-pager-active-bg, .7);
+    }
+
+    &:after {
+      border: 1px solid $_sl-pager-bg;
+    }
+
+    &.slick-active,
+    .desktop & {
+      @include hover-focus() {
+
+        &:before {
+          background: $_sl-pager-active-bg;
+        }
+
+        &:after {
+          width: $_sl-pager-dotWrap-width;
+          height: $_sl-pager-dotWrap-width;
+          margin-top: $_sl-pager-dotWrap-width/-2;
+          margin-left: $_sl-pager-dotWrap-width/-2;
+          border-color: $_sl-pager-active-bg;
+        }
+      }
+    }
+
+    &.slick-active {
+      cursor: default;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}

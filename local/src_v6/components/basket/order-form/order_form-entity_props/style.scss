@@ -1,0 +1,107 @@
+.bx-sls {
+
+  .dropdown-block {
+    width: auto;
+    padding: 0 22px 0 30px;
+    position: relative;
+  }
+
+  .dropdown-icon {
+    @include png();
+    @include png-search-btn();
+    position: absolute;
+    left: 10px;
+    top: 7px;
+  }
+
+  .dropdown-fade2white {
+    width: 46px;
+    height: 31px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+
+  input[type="text"] {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .bx-ui-sls-container {
+    display: block !important;
+    overflow: hidden;
+  }
+
+  .bx-ui-sls-route {
+    padding-top: 0 !important;
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    color: $caption-color!important;
+    background-color: transparent!important;
+    border-color: transparent!important;
+    opacity: 1!important;
+  }
+
+  .bx-ui-sls-route,
+  .bx-ui-sls-fake {
+    background: transparent!important;
+    border: none!important;
+    box-shadow: none!important;
+  }
+
+  .bx-ui-sls-loader {
+    background-image: url('./../../base64/order_form-entity_props-waiter.gif') right -1px no-repeat!important;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    display: none;
+  }
+
+  .bx-ui-sls-clear {
+    @include png();
+    @include png-bx-sls-close-h();
+    margin-top: 2px;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    @include hover-focus() {
+      @include png-bx-sls-close();
+    }
+  }
+
+  .bx-ui-sls-pane {
+    background-color: #fff;
+    z-index: 999;
+    border: 1px solid $border-color-base;
+    max-height: 300px;
+    left: 0;
+    top: 35px;
+    padding: 5px 5px 3px 5px;
+    position: absolute;
+    width: 100%;
+    box-shadow: $box-shadow-base;
+    border-radius: 2px;
+  }
+
+  .bx-ui-sls-variants {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.location-block-wrapper {
+  max-width: 400px;
+  width: 100%;
+
+  @media (max-width: $screen-sm-max) {
+    max-width: none;
+  }
+}

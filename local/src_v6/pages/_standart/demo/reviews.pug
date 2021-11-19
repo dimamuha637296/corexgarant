@@ -1,0 +1,17 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Отзывы';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Отзывы
+block content
+  include ../../../components/demo/cert-list/index
+  .h2
+    | Самые лучшие отзывы с ответами H2
+  include ../../../components/demo/faq-modal/index
+  include ../../../components/demo/reviews/index
+  include ../../../components/demo/raiting/index
+  include ../../../components/demo/personal/detail/index
+  include ../../../components/demo/cert-tile/index

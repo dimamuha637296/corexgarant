@@ -1,0 +1,35 @@
+/*gallery-list.scss*/
+
+// var *****************************************************************************************************************
+$_gallery-list-item-padding: 4px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.gallery-list {
+  @include gallery-hover();
+  margin: 0 0 50px;
+
+  .row {
+    margin-left: -$_gallery-list-item-padding;
+    margin-right: -$_gallery-list-item-padding;
+  }
+
+  img {
+    margin: 0 auto;
+    max-height: 216px;
+  }
+
+  .item {
+    padding: $_gallery-list-item-padding;
+    text-align: center;
+
+    @media (max-width: $screen-xs-max) {
+      width: 50%;
+
+      &:nth-of-type(2n+1) {
+        clear: both;
+      }
+    }
+  }
+}

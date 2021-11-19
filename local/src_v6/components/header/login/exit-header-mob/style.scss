@@ -1,0 +1,49 @@
+/* exit-header-mob.scss */
+
+// var ****************************************************************************************************************
+//$_exit-header-mob:                                29px;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.exit-header-mob {
+  position: relative;
+  float: right;
+
+  .dropdown-toggle {
+    @include mobile-height;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      @include png();
+      @include png-exit-header-mob();
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    padding: 21px 0 23px;
+    border-radius: 0;
+    border: none;
+    background: $_btn-contact-bg-dropdown;
+  }
+
+  a {
+    color: $text-color;
+    @include hover-focus() {
+      color: lighten($text-color, 40%);
+    }
+  }
+
+  &.open {
+    background: $_btn-contact-bg-dropdown;
+
+    .dropdown-toggle {
+      &:before {
+        @include png-exit-header-hover-mob();
+      }
+    }
+  }
+}

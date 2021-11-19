@@ -1,0 +1,15 @@
+if (itemColors === undefined)
+  - var itemColors = ['img/tmp/basket/catalog-color_01.jpg', 'img/tmp/basket/catalog-color_02.jpg'];
+if (itemColorElement === undefined)
+  - var itemColorElement = 0;
+.item-color
+  .bx_scu_scroller_container
+    .bx_scu
+      ul.list-reset.sku_prop_list
+        each color, i in itemColors
+          li.sku_prop(class=i === 1 ? 'bx_active' : '', data-value-id='pink', data-element='' + i + '', data-property='COLOR_REF')
+            a(href='javascript:void(0);')
+              span
+                img(src=DB.DIR + color, alt='color', title='color')
+    .bx_slide_left(onclick="leftScroll('COLOR_REF', '+ i +', 1);")
+    .bx_slide_right(onclick="rightScroll('COLOR_REF', '+ i +', 1);")

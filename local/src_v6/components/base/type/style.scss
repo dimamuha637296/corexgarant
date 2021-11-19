@@ -1,0 +1,125 @@
+//
+// Body text
+//
+
+.p,
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+b,
+strong {
+  @include font-family-bold();
+}
+
+i {
+  @include font-family-italic();
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+small,
+.small {
+  font-size: 80%; // Add the correct font size in all browsers
+}
+
+// Content grouping
+//
+// 1. Add the correct box sizing in Firefox.
+// 2. Show the overflow in Edge and IE.
+hr {
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  overflow: visible; // 2
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid $border-color-base;
+}
+
+mark,
+.mark {
+  background: #FFEAB9;
+}
+
+// Links
+
+a {
+  color: $link-color; // Primary color of the link; allowed to change only here
+  text-decoration: $link-decoration;
+  background-color: transparent; // Remove the gray background on active links in IE 10.
+  -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+  cursor: pointer;
+  transition: $transition-link;
+
+  @include hover-focus {
+    color: $link-color-hover;
+    text-decoration: $link-decoration-hover;
+  }
+
+  @include hover-focus-active {
+    outline: none;
+  }
+
+  // Visited Links
+  .p &:not(.btn),
+  p &:not(.btn) {
+    // Do not change the main link color here
+
+    &:visited {
+      color: #6f0ec1;
+    }
+
+    @include hover-focus {
+      color: $link-color-hover;
+    }
+  }
+
+  // And undo these styles for placeholder links/named anchors (without href)
+  // which have not been made explicitly keyboard-focusable (without tabindex).
+  // It would be more straightforward to just use a[href] in previous block, but that
+  // causes specificity issues in many other styles that are too complex to fix.
+  // See https://github.com/twbs/bootstrap/issues/19402
+  &:not([href]):not([tabindex]) {
+
+    @include self-hover-focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: $brand-gray-5;
+
+    &:hover {
+      color: $brand-gray-5;
+    }
+  }
+}
+
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+
+  a#{$parent} {
+    @include hover-focus() {
+      color: darken($color, 10%);
+    }
+  }
+}
+
+@include text-emphasis-variant('.text-primary',$brand-1);
+@include text-emphasis-variant('.text-success',$brand-success);
+@include text-emphasis-variant('.text-info',$brand-info);
+@include text-emphasis-variant('.text-warning',$brand-warning);
+@include text-emphasis-variant('.text-danger',$brand-danger);

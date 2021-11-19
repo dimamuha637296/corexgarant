@@ -1,0 +1,12 @@
+mixin sl-prod-nav(data)
+  .sl-prod-nav(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              img.img(src=DB.DIR + 'img/tmp/' + slide.pic, alt='ÖLFLEX® CLASSIC 100 300/500 V')
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

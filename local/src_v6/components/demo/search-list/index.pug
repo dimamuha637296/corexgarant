@@ -1,0 +1,85 @@
+//-
+  modules/search.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .search - модуль Поиск
+  .search-list - результаты поиска
+ol.search-list(start='9')
+  li.item
+    .wrap
+      .title
+        a(href='#')
+          | ОАО «Криница» начало выпуск
+          =' '
+          span.mark квас
+          | а «Лето 988» в стеклобутылке ёмкостью 0,33 л
+          =' '
+          b квас
+          | а. для премиального сегмента
+      .text
+        | ОАО «Криница» — первая компания в Беларуси, которая начала выпуск
+        =' '
+        span.mark квас
+        | а в стеклобутылке ёмкостью 0,33 л
+        =' '
+        b квас
+        | а. для премиального сегмента.
+        | Эксклюзивная бутылка имеет уникальный дизайн...
+      .link
+        | Найдено в разделе
+        =' '
+        a(href='#') Новости
+  li.item
+    .wrap
+      .title
+        a(href='#') Новый квас «Лето 988»
+      .text
+        | Пивоваренная
+      .link
+        | Найдено в разделе
+        =' '
+        a(href='#') Новости
+  li.item
+    .wrap
+      .title
+        a(href='#')
+          | Найдено в разделе Новости Республиканский конкурс продуктов питания «ПРОДУКТ ГОДА 2013»,
+          | г. Минск (Республика Беларусь)
+      .text
+        | Диплом I степени в номинации «ПИВО» (ТМ «Крынiца») Диплом II степени в
+        | номинации «
+        span.mark КВАС
+        | »
+      .link
+        | Найдено в разделе
+        =' '
+        a(href='#') Новости
+script.
+    !function () {
+        'use strict';
+
+        function setSearchPaddingLeft() {
+            var list = $('.search-list');
+            if (!list.length || !Modernizr.datauri) {
+                return false;
+            }
+            list.each(function () {
+                var self = $(this);
+                var startValue = self.attr('start') || 1;
+                var item = self.children('li');
+                var maxNumb = startValue + item.length - 1;
+                item.filter(':last').append($('<div class="__tmp-ol__ title">' + maxNumb + '.</div>'));
+                var maxNumbW = self.find('.__tmp-ol__').outerWidth();
+                self.find('.__tmp-ol__').remove();
+                item.each(function () {
+                    $(this).css({
+                        'padding-left': maxNumbW
+                    })
+                });
+            });
+        }
+
+        $(function () {
+            setSearchPaddingLeft();
+        });
+    }();

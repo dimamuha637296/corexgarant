@@ -1,0 +1,25 @@
+.g-wrap {
+
+  .no-border {
+
+    tbody {
+
+      tr {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .no-hover {
+
+    tbody {
+
+      tr {
+
+        @include hover-focus() {
+          background: transparent;
+        }
+      }
+    }
+  }
+}

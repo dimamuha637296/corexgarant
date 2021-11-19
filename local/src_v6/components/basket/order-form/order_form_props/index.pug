@@ -1,0 +1,64 @@
+.bx_section
+  .h3
+    | Информация о покупателе&nbsp;
+    a.slide(href='#', onclick='fGetBuyerProps(this); return false;')
+      | Развернуть
+    input#showProps(type='hidden', name='showProps', value='N')
+  #sale_order_props(style='')
+    div
+      div.form-group(data-property-id-row='1')
+        .bx_block.r1x3
+          | Ф. И. О.
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_1.form-control(type='text', maxlength='250', size='40', value='test', name='ORDER_PROP_1')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='2')
+        .bx_block.r1x3
+          | Эл. почта
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_2.form-control(type='text', maxlength='250', size='40', value='test@tut.by', name='ORDER_PROP_2')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='3')
+        .bx_block.r1x3
+          | Телефон
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_3.form-control(type='text', maxlength='250', value='12121212', name='ORDER_PROP_3')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='4')
+        .bx_block.r1x3
+          | Индекс
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          input#ORDER_PROP_4.form-control(type='text', maxlength='250', size='8', value='101000', name='ORDER_PROP_4')
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='6')
+        .bx_block.r1x3
+          | Местоположение
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          .location-block-wrapper
+            #sls-45463.bx-sls
+              .dropdown-block.bx-ui-sls-input-block.form-control
+                span.dropdown-icon
+                input.dropdown-field.form-control(type='text', autocomplete='off', name='ORDER_PROP_6', value='129', placeholder='Введите название ...', style='display: none;')
+                .bx-ui-sls-container(style='margin: 0px; padding: 0px; border: none; position: relative;')
+                  input.bx-ui-sls-route.form-control(type='text', disabled='disabled', autocomplete='off', style='padding: 6px 0px 0px 8px; margin: 0px;')
+                  input.bx-ui-sls-fake.form-control(type='text', autocomplete='off', value='129', placeholder='Введите название ...', title='Москва, Московская область, Центр, Россия')
+                .dropdown-fade2white
+                .bx-ui-sls-loader
+                .bx-ui-sls-clear(title='Отменить выбор', style='display: block;')
+                .bx-ui-sls-pane(style='overflow-y: auto; overflow-x: hidden; display: none;')
+                  .bx-ui-sls-variants
+              .bx-ui-sls-error-message
+        div(style='clear: both;')
+      div.form-group(data-property-id-row='7')
+        .bx_block.r1x3
+          | Адрес доставки
+          span.bx_sof-req.f-star &nbsp;*
+        .bx_block.r3x1
+          textarea#ORDER_PROP_7.form-control(rows='3', cols='30', name='ORDER_PROP_7') Москва
+        div(style='clear: both;')
+input#BUYER_STORE(type='hidden', name='BUYER_STORE', value='')

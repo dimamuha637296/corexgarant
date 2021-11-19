@@ -1,0 +1,53 @@
+include ../../../../../components/block/f_star/index
+include ../input/index
+include ../select/index
+include ../textarea/index
+include ../datepicker/index
+include ../datepicker--2/index
+include ../datepicker_mask/index
+include ../checkbox/index
+include ../checkbox_group/index
+include ../radio/index
+include ../radio_group/index
+include ../file/index
+include ../webform-field-upload/index
+include ../form_row/index
+include ../form_row_submit/index
+include ../form_row_captcha/index
+include ../form_row_control/index
+include ../form_validator/index
+
+mixin form_1(data)
+  -
+    var method = data.method || 'post';
+    var action = data.action || '/';
+  each item in data.rows
+    if (item.required === true)
+      - data.hasRequired = true
+  form.form-1(id=data.formID, method=method, action=action)
+    fieldset.fieldset
+      for item in data.rows
+        - if (Array.isArray(item) === true)
+          .row
+            each itemInArray in item
+              div(class=itemInArray.filedCol)
+                +form_row({
+                    fields: itemInArray,
+                    dropdownValidation: data.dropdownValidation,
+                    labelCol: data.labelCol,
+                    inputCol: data.inputCol,
+                    controlCol: data.controlCol
+                })
+        - else
+          +form_row({
+              fields: item,
+              dropdownValidation: data.dropdownValidation,
+              labelCol: data.labelCol,
+              inputCol: data.inputCol,
+              controlCol: data.controlCol
+          })
+      if (data.hasCaptcha === true)
+        +form_row_captcha(data)
+      +form_row_submit(data)
+  if (data.hasValidation === true)
+    +form_validator(data)

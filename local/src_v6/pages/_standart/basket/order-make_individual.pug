@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Basket step 2 Individual';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Оформление заказа (Физ. лицо)
+block content
+  include ../../../components/basket/order-form/order_form/index

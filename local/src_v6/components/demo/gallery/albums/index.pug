@@ -1,0 +1,45 @@
+-
+  var data = [
+    {
+      img: 'img/tmp/modules/gallery-album-1.jpg',
+      title: 'Альбом с фотографиями',
+      quant: '16 фото'
+    },
+    {
+      img: 'img/tmp/modules/gallery-album-2.jpg',
+      title: 'Альбом с фотографиями и длинным названием',
+      quant: '16 фото'
+    },
+    {
+      img: 'img/tmp/modules/gallery-album-3.jpg',
+      title: 'Альбом с фотографиями',
+      quant: '16 фото'
+    },
+    {
+      img: 'img/tmp/modules/gallery-album-4.jpg',
+      title: 'Альбом с фотографиями',
+      quant: '16 фото'
+    },
+    {
+      img: 'img/tmp/modules/gallery-album-5.jpg',
+      title: 'Альбом с фотографиями и длинным названием',
+      quant: '16 фото'
+    },
+    {
+      img: 'img/tmp/modules/gallery-album-6.jpg',
+      title: 'Альбом с фотографиями',
+      quant: '16 фото'
+    }
+  ];
+.gallery-albums
+  .text
+    | Окна из дерева для Москвы и Подмосковья производятся в «Злато-Окна» на заказ любых размеров и конфигураций по дизайнерским проектам. Они наилучшим образом подойдут к любому интерьеру, идеально дополняя или оттеняя палитру цветовых решений помещения.
+  .row.row-clear
+    each item in data
+      .item.col-12.col-sm-6.col-md-4
+        a.link(href='#')
+          .pic
+            .pic_i
+              img.img(src=DB.DIR + item.img, alt=item.title)
+          .title #{item.title}
+        .quant.caption-text #{item.quant}

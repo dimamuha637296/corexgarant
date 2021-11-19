@@ -1,0 +1,74 @@
+.auth
+  .row
+    .col-sm-8.col-lg-6.col-12
+      form#form-auth.form-horizontal(name='form_auth', method='post', target='_top', action='/about/authorization/?login=yes')
+        fieldset.fieldset
+          // row
+          .alert.alert-danger(role='alert') Неверный логин или пароль
+          // row
+          .form-group.control-group
+            label.name.col-12(for='AUTH_LOGIN')
+              | Логин
+            .text.col-12
+              input#AUTH_LOGIN.form-control(type='text', name='USER_LOGIN', maxlength='255', value='', spellcheck='true', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='AUTH_PASSWORD')
+              | Пароль
+            .text.col-12
+              input#AUTH_PASSWORD.form-control(type='password', name='USER_PASSWORD', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='AUTH_CAPTCHA_PROMT')
+              input(type='hidden', name='captcha_sid', value='014fe49849e2ee886aaa9c9f3d2e3d44')
+              | Введите символы на картинке:
+              img(src=DB.DIR + 'img/tmp/captcha.jpg', width='180', height='40', alt='CAPTCHA')
+            .text.col-12
+              input#AUTH_CAPTCHA_PROMT.form-control(type='text', name='captcha_word', maxlength='50', value='', size='15')
+            .controls.col-12
+          // row
+          .form-group
+            .col-12
+              .checkbox
+                input#USER_REMEMBER.formstyler(type='checkbox', name='USER_REMEMBER', value='Y')
+                label(for='USER_REMEMBER') Запомнить меня на этом компьютере
+          // row
+          .form-group
+            .col-12
+              +btn-primary({type: 'input', className: 'btn_submit', text: 'Войти'})(name='submit')
+              .form_required.fl-left
+                a(href='../basket/registration.html', target='_blank') Регистрация
+              .form_required.fl-right
+                a(href='#', target='_blank') Забыли пароль
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-auth');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'AUTH_LOGIN': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'AUTH_PASSWORD': {
+                              required: true
+                          },
+                          'captcha_word': {
+                              required: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

@@ -1,0 +1,50 @@
+.lang-2 {
+  display: flex;
+  justify-content: flex-end;
+
+  .list_1 {
+    margin: 0;
+  }
+
+  .item_1 {
+    @include font-family-light;
+    font-size: 14px;
+    position: relative;
+
+    &.active {
+      @include font-family-medium;
+    }
+
+    @include hover-focus() {
+
+      .submenu {
+        display: block;
+      }
+    }
+  }
+
+  .link_1 {
+
+    @include hover-focus() {
+
+      .ico {
+
+        &:before {
+          @include svg-exit-hover();
+        }
+      }
+    }
+  }
+
+  .submenu {
+    padding: 15px 16px 5px;
+    min-width: inherit;
+    left: -17px;
+
+    .item_1 {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}

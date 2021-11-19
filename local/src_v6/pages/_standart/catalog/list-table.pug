@@ -1,0 +1,14 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Product list, table veiw';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Список элементов
+block aside
+  include ../../../components/catalog/catalog-filter/index
+block content
+  include ../../../components/catalog/catalog-sort/index
+  include ../../../components/catalog/catalog-list-table/index
+  include ../../../components/base/pagination/index
+  include ../../../components/catalog/element-seo-text/index

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="21px" height="40px" viewBox="0 0 21.092 40.124" enable-background="new 0 0 21.092 40.124" xml:space="preserve">
+<g>
+	<path fill="#{$disabled-color}" d="M20.799,19.324c-0.053-0.053-0.119-0.081-0.18-0.119L1.707,0.293c-0.391-0.39-1.024-0.39-1.414,0
+		c-0.39,0.392-0.39,1.024,0,1.415l18.354,18.354L0.293,38.416c-0.39,0.392-0.39,1.024,0,1.415c0.391,0.39,1.024,0.39,1.414,0
+		L20.62,20.919c0.061-0.039,0.127-0.066,0.18-0.119c0.203-0.204,0.295-0.472,0.287-0.738C21.094,19.796,21.002,19.528,20.799,19.324
+		z"/>
+</g>
+</svg>

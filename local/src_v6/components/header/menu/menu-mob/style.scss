@@ -1,0 +1,167 @@
+$_menu-mob-level-1-font-size:     14px;
+$_menu-mob-level-2-font-size:     14px;
+$_menu-mob-level-3-font-size:     14px;
+$_menu-mob-level-4-font-size:     13px;
+$_menu-mob-color:                 $text-color;
+$_menu-mob-color-hover:           $link-color-hover;
+$_menu-mob-color-active:          $link-color-active;
+
+.menu-mob {
+  margin: 0 ($grid-gutter-width / -2);
+  @include font-family-light;
+
+  [class*="menu_level_"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  [class*="item_"] {
+    position: relative;
+
+    > a,
+    > span {
+      line-height: 1.2;
+      padding: 16px 0;
+      padding-right: $header-mob-height;
+      padding-left: ($grid-gutter-width / 2);
+      display: block;
+      color: $_menu-mob-color;
+
+      &.icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        border-bottom: none;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 0;
+          height: 0;
+          transform: rotate(90deg);
+          transition: .3s;
+          border-top: 3px solid transparent;
+          border-left: 5px solid $_menu-mob-color;
+          border-bottom: 3px solid transparent;
+        }
+
+        @include hover-focus() {
+
+          &:before {
+            border-left-color: $_menu-mob-color-hover;
+          }
+        }
+
+        &.collapsed {
+
+          &:before {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+
+    > a {
+      color: $_menu-mob-color;
+      text-decoration: none;
+
+      @include hover-focus() {
+        color: $_menu-mob-color-hover;
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu-mob-color-active;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: $_menu-mob-color-hover;
+        }
+      }
+    }
+  }
+
+  .menu_level_1 {
+    padding: 0 0 30px;
+    font-size: $_menu-mob-level-1-font-size;
+  }
+
+  .item_1 {
+
+    + .item_1 {
+      border-top: 1px solid $border-color-base;
+    }
+  }
+
+  .menu_level_2 {
+    font-size: $_menu-mob-level-2-font-size;
+    background: $header-additional-background;
+    border-top: 1px solid $body-bg-color;
+  }
+
+  .item_2 {
+
+    + .item_2 {
+      border-top: 1px solid $body-bg-color;
+    }
+
+    > a,
+    > span {
+      padding-left: 31px;
+    }
+  }
+
+  .menu_level_3 {
+    font-size: $_menu-mob-level-3-font-size;
+    background: #ededed;
+    border-top: 1px solid $body-bg-color;
+  }
+
+  .item_3 {
+
+    + .item_3 {
+      border-top: 1px solid $body-bg-color;
+    }
+
+    > a,
+    > span {
+      padding-left: 51px;
+    }
+  }
+
+  .menu_level_4 {
+    font-size: $_menu-mob-level-4-font-size;
+    background: #dbdbdb;
+    border-top: 1px solid $body-bg-color;
+  }
+
+  .item_4 {
+
+    + .item_4 {
+      border-top: 1px solid $body-bg-color;
+    }
+
+    > a,
+    > span {
+      padding-left: 73px;
+      padding-bottom: 18px;
+    }
+  }
+}

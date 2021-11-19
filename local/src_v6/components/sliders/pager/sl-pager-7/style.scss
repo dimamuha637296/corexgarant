@@ -1,0 +1,67 @@
+/* sl-pager-7.scss */
+
+// var ****************************************************************************************************************
+$_sl-pager-bg:                            #DFDFDF;
+$_sl-pager-active-bg:                     #ee4646;
+$_sl-pager-dot-width:                     32px;
+$_sl-pager-dot-height:                    7px;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.sl-pager-7 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    cursor: pointer;
+    display: inline-block;
+    width: $_sl-pager-dot-width;
+    height: $_sl-pager-dot-height;
+    margin: 0 4px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $_sl-pager-bg;
+      transition: $transition-default;
+    }
+
+    .desktop & {
+
+      @include hover-focus() {
+
+        &:after {
+          background: $_sl-pager-active-bg;
+        }
+      }
+    }
+
+    &.slick-active {
+      cursor: default;
+
+      &:after {
+        background: $_sl-pager-active-bg;
+      }
+    }
+
+    button {
+      display: none;
+    }
+  }
+}

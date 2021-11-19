@@ -1,0 +1,197 @@
+// Lists
+// OL, UL - Level 1
+$list-font-size:                    $font-size-base;
+$list-level1-margin-top:            1em;
+$list-level1-margin-bottom:         1.5em;
+$list-padding-left:                 0.2em;
+$list-padding-right:                5em;
+$list-line-height:                  (22/15);
+$list-text-color:                   $text-color;
+$list-before-width-ie:              1.5em;// Only in em!
+$list-item-before-pad-right:        14px;
+// li - Level 1
+$list-item-1-margin-bottom:         .95em;
+// ul, ol - Level 2
+$list-level-2-margin-top:           1.1em;
+$list-level-2-margin-bottom:        0.4em;
+// li - Level 2
+$list-item-2-margin-bottom:         .95em;
+// ul li - Level 1
+$list-item-1-content:               "\2014";// 2014 long dash, 2013 averakge dash, 2012 digital dash, 2022 circle
+// ul li - Level 2
+$list-item-2-content:               "\2013"; // ul>ul>li use "\25cf" by standart list-style-type
+// Lists color
+$ol-font-color:                     $link-color;
+$ol-ol-font-color:                  $link-color;
+$ul-font-color:                     $link-color;
+$ul-ul-font-color:                  $link-color;
+
+// Set list ordered counter-reset
+@mixin counter-reset-start($index) {
+  @if $index >= 5 {
+
+    ol[start="#{$index}"] {
+      counter-reset: list ($index - 1);
+    }
+    @include counter-reset-start(($index - 5));
+  }
+}
+
+// reboot
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+// Unordered and Ordered lists
+.g-wrap {
+
+  ul,
+  ol {
+
+    &:not(.list-unstyled) {
+      // UL, OL - Level 1
+      list-style: none;
+      padding-left: 0;
+    }
+
+    &:not(.list-reset) {
+      position: relative; // Because sometimes content has more z-index
+      margin: $list-level1-margin-top 0 $list-level1-margin-bottom;
+      padding: 0 $list-padding-right 0 $list-padding-left;
+      font-size: $list-font-size;
+      line-height: $list-line-height;
+
+      @media (max-width: $screen-sm-max) {
+        padding: 0;
+      }
+
+      li {
+        display: table;
+        margin-bottom: $list-item-1-margin-bottom;
+        border-collapse: separate; /*prevent error in table > ul > li*/
+
+        .ie & {
+          position: relative;
+          padding-left: $list-before-width-ie;
+        }
+
+        &:before {
+          display: table-cell;
+          padding-right: $list-item-before-pad-right;
+
+          .ie & {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      // UL, OL - Level 2
+      ul,
+      ol {
+        padding-left: 3px;
+        margin: $list-level-2-margin-top 0 $list-level-2-margin-bottom;
+
+        li {
+          margin-bottom: $list-item-2-margin-bottom;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // OL - Level 1
+  ol {
+    &:not(.list-reset) {
+      padding-left: ($list-padding-left / 2);
+      counter-reset: list 0; // Start counter from next digit
+
+      @media (max-width: $screen-sm-max) {
+        padding-left: 0;
+      }
+
+      > li {
+
+        &:before {
+          counter-increment: list; // counter up (list = +1, list list = +1+1...)
+          content: counter(list) ". "; // delimeter for counter and content
+          color: $ol-font-color;
+        }
+      }
+
+      // OL - Level 2
+      ol > li {
+
+        &:before {
+          content: counters(list, ".") ". "; // delimeter for counter and content
+          color: $ol-ol-font-color;
+        }
+      }
+      .ie & {
+        // OL - Level 2
+        ol > li {
+          $__level-2-before-width: ($list-before-width-ie * 1.5);
+          padding-left: $__level-2-before-width;
+        }
+        // OL - Level 3
+        ol ol > li {
+          $__level-3-before-width: ($list-before-width-ie * 2);
+          padding-left: $__level-3-before-width;
+        }
+        // OL - Level 4
+        ol ol ol > li {
+          $__level-4-before-width: ($list-before-width-ie * 2.5);
+          padding-left: $__level-4-before-width;
+        }
+        // OL - Level 5
+        ol ol ol ol > li {
+          $__level-5-before-width: ($list-before-width-ie * 3);
+          padding-left: $__level-5-before-width;
+        }
+      }
+    }
+  }
+
+  // UL - Level 1
+  ul {
+
+    &:not(.list-reset) {
+
+      > li {
+
+        &:before {
+          content: $list-item-1-content;
+          color: $ul-font-color;
+        }
+      }
+
+      // UL - Level 2
+      ul {
+
+        > li {
+
+          &:before {
+            content: $list-item-2-content;
+            color: $ul-ul-font-color;
+          }
+        }
+      }
+    }
+  }
+  // Set list ordered counter-reset
+  @include counter-reset-start(31);
+}

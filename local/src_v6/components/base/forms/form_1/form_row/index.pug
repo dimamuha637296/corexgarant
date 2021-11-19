@@ -1,0 +1,25 @@
+mixin form_row(data)
+  .form-group.control-group(class=data.dropdownValidation === true ? 'dropdown-valid' : '')
+    -
+      var isCheckOrRadioGroup = data.fields.controlType === 'checkbox_group' || data.fields.controlType === 'radio_group';
+      var isSingleCheckOrRadio = data.fields.controlType === 'checkbox' || data.fields.controlType === 'radio';
+      var textClass = isCheckOrRadioGroup === true ? ' group-check' : '';
+      textClass += isSingleCheckOrRadio === true ? ' single-check' : '';
+      var labelCol = data.fields.labelCol || data.labelCol || 'col-xl-2 col-md-3 col-12';
+      var inputCol = data.fields.inputCol || data.inputCol || 'col-xl-6 col-md-5 col-12';
+      var controlCol = data.fields.controlCol || data.controlCol || 'col-md-4 col-12';
+    if (data.fields.labelText !== undefined)
+      #{isCheckOrRadioGroup === true ? 'div' : 'label'}.col-form-label(class=labelCol)&attributes(isCheckOrRadioGroup === true ? {} : { 'for': data.fields.id })
+        | #{data.fields.labelText}
+        if (data.fields.required === true)
+          +f_star()
+    .text(class=inputCol + textClass)
+      if (data.dropdownValidation === true)
+        .input-wrap
+          +form_row_control(data)
+      else
+        +form_row_control(data)
+      if (data.fields.helpText)
+        p.help-block #{data.fields.helpText}
+    if (data.dropdownValidation !== true)
+      .controls(class=controlCol)

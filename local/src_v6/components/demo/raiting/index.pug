@@ -1,0 +1,132 @@
+include ../../../components/block/f_star/index
+.h2
+  | Отзыв
+.forms.forms-etalon.mb-10
+  .row
+    .col-12
+      form#feedback.form-horizontal(method='post', action='/')
+        fieldset.fieldset
+          // row
+          .form-group.control-group
+            label.name.label-pt.col-lg-2.col-sm-3.col-12(for='form-FIO')
+              | Имя и фамилия
+              +f_star()
+            .text.col-lg-6.col-sm-5.col-12
+              input#form-FIO.form-control(type='text', name='form-FIO', maxlength='50', spellcheck='true', value='', required='')
+            .controls.col-sm-4.col-12
+          // row
+          .form-group.control-group
+            label.name.label-pt.col-lg-2.col-sm-3.col-12(for='form-EMAIL')
+              | Электронная почта
+              +f_star()
+            .text.col-lg-6.col-sm-5.col-12
+              input#form-EMAIL.form-control(type='email', name='form-EMAIL', maxlength='50', spellcheck='true', value='', placeholder='email@example.com', required='')
+            .controls.col-sm-4.col-12
+          // row
+          #rating.form-group.control-group.has-error
+            label.name.label-pt.col-lg-2.col-sm-3.col-12(for='form-RATING')
+              | Оценка
+              +f_star()
+            .text.col-lg-6.col-sm-5.col-12.rating
+              ul.list-rating.list-reset.star-list(data-category='cost')
+                li.star-item
+                li.star-item
+                li.star-item
+                li.star-item
+                li.star-item
+              input#form-RATING.input-hidden.text(type='text', name='STARS', maxlength='1', spellcheck='true', required='', value='')
+            .controls.col-sm-4.col-12
+          // row
+          .form-group.control-group
+            label.name.label-pt.col-lg-2.col-sm-3.col-12(for='form-MESSAGE')
+              | Сообщение
+            .text.col-lg-6.col-sm-5.col-12
+              textarea#form-MESSAGE.form-control(name='form-MESSAGE', maxlength='500', cols='60', rows='4', spellcheck='true', required='')
+            .controls.col-sm-4.col-12
+          // row
+          .form-group
+            .col-lg-10.col-sm-9.col-12.col-lg-offset-2.col-sm-offset-3.col-xs-offset-0.d-md-flex.align-items-center
+              +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+              .form_required
+                +f_star()
+                  =' '
+                | — поля обязательные к заполнению
+  script.
+      !function () {
+          'use strict';
+
+          // Form rating
+          function rating() {
+              'use strict';
+              var parentRaiting = $('#rating');
+              if (parentRaiting.length) {
+                  var starHover = parentRaiting.find('.star-item');
+                  var inpHidd = parentRaiting.find(".input-hidden");
+                  if (starHover.length && inpHidd.length) {
+                      parentRaiting.each(function () {
+                          var t = $(this);
+                          inpHidd.val(null);
+                          t.on('click', '.star-item', function () {
+                              var self = $(this);
+                              var itemStar = self.parent().find('.star-item');
+                              var indexStar = self.index() + 1;
+                              var category = self.parent().attr('data-category');
+                              inpHidd.val(indexStar);
+                              inpHidd.focus();//.click();
+                              for (var o = 0; o < 5; o++) {
+                                  itemStar.eq(o).removeClass('active')
+                              }
+                              for (var i = 0; i < indexStar; i++) {
+                                  itemStar.eq(i).addClass('active')
+                              }
+                          });
+                      });
+                      starHover.hover(function () {
+                          var t = $(this),
+                              itemStar = t.parent().find('.star-item'),
+                              indexHover = t.index() + 1;
+                          for (var i = 0; i < indexHover; i++) {
+                              itemStar.eq(i).addClass('hover');
+                          }
+                      }, function () {
+                          var t = $(this),
+                              itemStar = t.parent().find('.star-item'),
+                              indexHover = t.index();
+                          for (var i = 0; i < indexHover + 1; i++) {
+                              itemStar.eq(i).removeClass('hover');
+                          }
+                      });
+                  }
+              }
+          }
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#feedback');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'form-FIO': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-EMAIL': {
+                              required: true
+                          },
+                          'form-MESSAGE': {
+                              required: true
+                          },
+                          'form-RATING': {
+                              minlength: 1
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+              rating();
+          });
+      }();

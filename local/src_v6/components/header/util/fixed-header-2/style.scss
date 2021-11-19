@@ -1,0 +1,22 @@
+$_header-top_height:          103px;
+$_header_height:              139px;
+$_transition-time:            .3s;
+
+.fixed-header-2 {
+
+  @media (min-width: $grid-breakpoint-min) {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: $site-max-width;
+    z-index: 101;
+    background: $body-bg-color;
+    box-shadow: $box-shadow-base;
+    transition: transform $_transition-time;
+
+    &.active {
+      transform: translate(-50%, -$_header-top_height);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.b-video {
+
+  .list {
+    margin: 0 0 40px;
+  }
+
+  .item {
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .title {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,25 @@
+.contact-form-2 {
+  margin-bottom: 37px;
+  position: relative;
+
+  @media (max-width: $screen-md-max) {
+    margin-bottom: 18px;
+  }
+
+  .form-group {
+    margin: 0 -5px;
+  }
+
+  [class*=col] {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    max-height: 67px;
+  }
+
+  .btn {
+    min-width: 176px;
+  }
+}

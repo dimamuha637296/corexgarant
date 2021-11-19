@@ -1,0 +1,8 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Хлебные крошки';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block breadcrumbs
+  include ../../../components/header/dropdown-header/index
+  include ../../../components/base/breadcrumb/index

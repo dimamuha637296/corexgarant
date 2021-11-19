@@ -1,0 +1,55 @@
+.rating {
+
+  &.form-group {
+
+    .list-item {
+      padding-top: 12px;
+    }
+  }
+}
+
+.list-rating {
+  counter-reset: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.star-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 21px;
+  height: 23px;
+  margin: 0 1px;
+}
+
+.input-hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.star-list {
+
+  .star-item {
+    @include png;
+    @include png-no-star-big;
+    display: inline-block;
+    cursor: pointer;
+
+    &:not(.active) {
+      opacity: 0.5;
+    }
+
+    &.active {
+      @include png;
+      @include png-star-big;
+      display: inline-block;
+    }
+
+    &.hover:not(.active) {
+      opacity: 1;
+    }
+  }
+}

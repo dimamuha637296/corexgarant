@@ -1,0 +1,53 @@
+.element-sale2 {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .icon {
+    display: inline-block;
+    position: absolute;
+
+    &:before {
+      display: block;
+      width: 42px;
+      height: 42px;
+    }
+
+    &:nth-child(1) {
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      left: 20px;
+    }
+
+    &:nth-child(3) {
+      left: 40px;
+    }
+  }
+
+  .percent {
+
+    &:before {
+      @include png;
+      @include png-element-sale-2-percent;
+    }
+  }
+
+  .new {
+
+    &:before {
+      @include png;
+      @include png-element-sale-2-new;
+    }
+  }
+
+  .sale {
+
+    &:before {
+      @include png;
+      @include png-element-sale-2-hit;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.element-pic-tab {
+  margin-bottom: 15px;
+
+  .tab-content {
+    padding: 0;
+    background: none;
+    border: none;
+    height: 250px;
+    margin: 10px 0 20px;
+    overflow: hidden;
+    position: relative;
+
+    .tab-pane {
+      height: 100%;
+    }
+
+    .link {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .nav-tabs {
+    background: none;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+  }
+
+  .nav-item {
+    padding: 0 3.5px;
+    margin-bottom: 7px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid $border-color-base;
+
+    &:hover,
+    &:focus {
+      border-color: $link-color-hover;
+    }
+
+    &.active {
+      border-color: $link-color-active;
+    }
+  }
+}

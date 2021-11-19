@@ -1,0 +1,41 @@
+.cat {
+
+  &--2 {
+
+    .cat__link {
+
+      &:hover,
+      &:focus {
+
+        @media (min-width: $screen-xl-min) {
+
+          .desktop & {
+
+            .cat__wrap {
+              bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .cat__wrap {
+
+      .g-wrap & {
+        bottom: 20px;
+      }
+    }
+
+    .cat__text,
+    .cat__btn {
+
+      .g-wrap & {
+        margin-bottom: 0;
+      }
+    }
+
+    .cat__btn {
+      margin-top: 10px;
+    }
+  }
+}

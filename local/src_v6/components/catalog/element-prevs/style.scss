@@ -1,0 +1,63 @@
+.element-prevs {
+  margin-bottom: 37px;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 0;
+  }
+
+  .wrap {
+    padding: 33px 34px 0;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: $box-shadow-base;
+
+    @media (max-width: $screen-lg-max) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .col {
+
+    @media (max-width: $screen-xs-max) {
+      width: 50%;
+    }
+  }
+
+  .inner {
+    display: block;
+    margin-bottom: 25px;
+    text-decoration: none;
+
+    @include hover-focus() {
+
+      .item-title {
+        color: $link-color-hover;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .img-wrap {
+    height: 85px;
+    margin-bottom: 16px;
+
+    img {
+      max-height: 85px;
+      max-width: 85px;
+    }
+  }
+
+  .item-title {
+    overflow: hidden;
+    max-height: 80px;
+    @include font-family-bold();
+    color: $text-color;
+    font-size: 16px;
+    line-height: 1.25;
+    transition: $transition-link;
+  }
+}

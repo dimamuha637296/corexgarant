@@ -1,0 +1,25 @@
+mixin picture(data)
+  - var className = data.className || '';
+  - var breakpoints = ['xl', 'lg', 'md', 'sm', 'xs'];
+  - var attributes = {}
+  -
+    var screenMinWidth = {
+      xl: '#{$screen-xl-min}',
+      lg: '#{$screen-lg-min}',
+      md: '#{$screen-md-min}',
+      sm: '#{$screen-sm-min}',
+      xs: '#{$screen-xs-min}'
+    };
+  each breakpoint in breakpoints
+    -
+      attributes.src = DB.DIR + (data.xs || data.sm || data.md || data.lg || data.xl || '');
+      attributes.alt = data.alt || 'alt';
+      if (data[breakpoint] !== undefined)
+        attributes['data-src-' + breakpoint] = DB.DIR + data[breakpoint]
+  picture(class=className)
+    each breakpoint in breakpoints
+      if (data[breakpoint] !== undefined && breakpoint !== 'xs')
+        - var media = '(min-width: ' + screenMinWidth[breakpoint] + ')';
+        - var srcset = DB.DIR + data[breakpoint];
+        source(media=media, srcset=srcset)
+    img.js-srcset&attributes(attributes)

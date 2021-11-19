@@ -1,0 +1,34 @@
+/*full-bg-2.scss*/
+
+// var *************************************************************************************************************
+$_full-bg-2-width-width:                          600%;
+$_full-bg-2-width-2-height:                       5px;
+
+// mixins **************************************************************************************************************
+
+// styles  *************************************************************************************************************
+
+// 2 Полосы
+.full-bg-2 {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: (ceil($_full-bg-2-width-2-height / -2));
+    width: 500%;
+    height: $_full-bg-2-width-2-height;
+    background: $brand-warning;
+  }
+
+  &:before {
+    right: 102%;
+  }
+
+  &:after {
+    left: 102%;
+  }
+}

@@ -1,0 +1,57 @@
+.catalog-detail {
+  @include border();
+
+  a {
+    text-decoration: none;
+  }
+
+  .media {
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+    }
+  }
+
+  .title-cat {
+    margin-top: 0;
+
+    > a,
+    > span {
+      color: $text-color;
+    }
+
+    > a {
+      text-decoration: underline;
+      text-decoration-color: rgba($text-color, .7);
+
+      @include hover-focus() {
+        color: $link-color-hover;
+        text-decoration-color: rgba($link-color-hover, 7);
+      }
+    }
+  }
+
+  .block {
+    border: none;
+  }
+
+  #db & .item {
+    margin-bottom: 30px;
+  }
+
+  .pic {
+    margin-right: 15px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .link-up {
+
+    > a {
+      text-decoration: underline;
+    }
+  }
+}

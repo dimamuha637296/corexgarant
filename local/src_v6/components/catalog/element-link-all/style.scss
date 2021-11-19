@@ -1,0 +1,27 @@
+.link-arr {
+  text-decoration: none;
+
+  @include hover-focus() {
+    text-decoration: none;
+
+    &:before {
+      color: $link-color-hover;
+    }
+  }
+
+  &:before {
+    content: '\2190';
+    color: $link-color;
+    display: inline-block;
+    padding-right: 6px;
+  }
+
+  .arr-left {
+    border-bottom: 1px solid;
+  }
+}
+
+.link-arr-wrap {
+  border-top: 1px solid $border-color-base;
+  padding-top: 9px;
+}

@@ -1,0 +1,15 @@
+caption {
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  color: $text-color;
+  text-align: left;
+  caption-side: bottom;
+}
+
+.table-caption {
+  @include caption-text();
+
+  .g-content & {
+    margin: -19px 0 50px;
+  }
+}

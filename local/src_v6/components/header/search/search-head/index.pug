@@ -1,0 +1,11 @@
+.search-head.d-print-none
+  form(action='/search/', method='get', onsubmit="var str=document.getElementById('search_header'); if (!str.value || str.value == str.title) return false;")
+    fieldset.field
+      input.input(
+      type='search',
+      placeholder='Поиск по сайту',
+      name='q',
+      maxlength='50',
+      required='')
+      span.submit
+        input.btn-search(name='btn-search', type='submit', value='')

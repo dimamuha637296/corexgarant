@@ -1,0 +1,278 @@
+.bx_order_list {
+
+  .bx_order_list_table {
+    margin-bottom: 0;
+    border: 1px solid $border-color-base;
+
+    th {
+      border-right: 0;
+      border-left: 0;
+    }
+
+    thead {
+      border-bottom: 1px solid $border-color-base;
+    }
+  }
+
+  .table-responsive {
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+.bx_order_list .bx_order_list_table tbody tr td {
+  padding: 10px;
+  border-right: 0;
+  border-left: 0;
+}
+
+.bx_order_list .bx_order_list_table tbody tr td[colspan="2"] {
+  @include font-family-bold();
+  background: $_ordercard-th-bg;
+  padding: 15px 10px 10px;
+}
+
+.bx_order_list .bx_order_list_table tbody tr td:nth-child(2) {
+  width: 75%
+}
+
+.bx_order_list .bx_order_list_table_order {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $border-color-base;
+
+  thead {
+    border-bottom: 1px solid $border-color-base;
+  }
+
+  th,
+  td {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    display: block;
+  }
+
+  #db & {
+    margin-bottom: 15px;
+  }
+
+  thead {
+
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  th {
+
+    #db & {
+      padding: 10px 15px;
+    }
+
+    &.price {
+      text-align: right;
+    }
+  }
+
+  tr,
+  tbody {
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  tr {
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 10px;
+    }
+  }
+
+  td {
+
+    #db & {
+      padding: 20px 15px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      width: 100%;
+
+      #db & {
+        padding: 5px;
+      }
+    }
+
+    &.img {
+      width: 10%;
+
+      @media (max-width: $screen-sm-max) {
+        width: 25%;
+        display: inline-block;
+      }
+
+      .bx_ordercart_photo_container {
+        position: relative;
+        padding-top: 100%;
+        min-width: 50px;
+        max-width: 100%;
+        height: 0;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+      }
+
+      .bx_ordercart_photo {
+        position: absolute;
+        top: 4%;
+        right: 4%;
+        bottom: 4%;
+        left: 4%;
+        background-position: center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.name {
+      width: 25%;
+      font-size: 16px;
+      line-height: 1.1;
+
+      @media (max-width: $screen-sm-max) {
+        width: 74%;
+        display: inline-block;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000000;
+        @include font-family-medium();
+      }
+    }
+
+  }
+}
+
+.bx_order_list {
+
+  .price {
+    white-space: nowrap;
+    text-align: right;
+
+    @media (max-width: $screen-sm-max) {
+      text-align: left;
+    }
+  }
+
+  .fm {
+    display: none;
+    color: $headings-color;
+    @include font-family-medium;
+
+    @media (max-width: $screen-sm-max) {
+      display: inline-block;
+    }
+  }
+
+  .bx_ordercart_order_sum {
+    margin-bottom: 20px;
+    margin-top: 27px;
+    background: transparent;
+
+    @media (max-width: $screen-sm-max) {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    tbody {
+
+      tr {
+        border: 0;
+      }
+    }
+
+    td {
+      text-align: right;
+      padding: 11px 10px 9px;
+      border: 0;
+
+      @media (max-width: $screen-sm-max) {
+        text-align: left;
+      }
+
+      &.custom_t1 {
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          width: 65%;
+        }
+      }
+
+      &.custom_t2 {
+        white-space: nowrap;
+      }
+
+      &.fwb {
+        @include font-family-bold();
+      }
+    }
+  }
+}
+
+.bx_ol_sku_prop {
+  margin: 0;
+
+  @media (max-width: $screen-sm-max) {
+    margin: 8px 0 10px 0;
+  }
+
+  tr {
+
+    #db & {
+      border: none;
+    }
+  }
+
+  td {
+
+    #db & {
+      padding: 0 !important;
+    }
+  }
+
+  li {
+    margin-bottom: 15px;
+    line-height: 1;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 6px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 0 !important;
+    margin: 3px 3px 3px 0;
+    padding: 3px;
+    border: 1px solid $border-color-base;
+
+    @media (max-width: $screen-sm-max) {
+      max-width: 22px;
+      max-height: 22px;
+      margin: 3px;
+      display: inline-block;
+    }
+  }
+}

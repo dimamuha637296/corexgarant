@@ -1,0 +1,218 @@
+$_menu-drop-8-color:                       $text-color;
+$_menu-drop-8-color-hover:                 $link-color;
+$_menu-drop-8-color-active:                $link-color;
+$_menu-drop-8-color-active-hover:          $_menu-drop-8-color-active;
+$_menu-drop-8-submenu-z-index:             999;
+$_menu-drop-8-submenu-offset-y:            9px;
+$_menu-drop-8-submenu-bg:                  $body-bg-color;
+
+@mixin sumbenu-before-hover() {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: visibility .15s ease, opacity .3s ease, transform .3s ease-in;
+}
+
+@mixin submenu-hover() {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-drop-8 {
+  position: relative;
+
+  .js-off & {
+
+    .menu_level_1 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .menu_level_1 {
+    width: 100%;
+    display: table;
+    margin: 0;
+  }
+
+  .item_1 {
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 50px;
+    position: relative;
+
+    @media (max-width: $screen-lg-max) {
+      padding-right: 30px;
+    }
+
+    @include hover-focus() {
+
+      &.has-submenu,
+      &.has-submenu-2 {
+
+        a,
+        span {
+
+          &:after {
+            @include submenu-hover;
+          }
+        }
+      }
+
+      > .submenu,
+      > .submenu-2 {
+        @include submenu-hover;
+      }
+    }
+
+    &:nth-last-child(2),
+    &:last-child {
+
+      > .submenu,
+        .submenu-inner {
+        left: auto;
+        right: 0;
+
+        .submenu,
+        .submenu-inner {
+          left: auto;
+          right: 100%;
+        }
+      }
+    }
+
+    &.has-submenu-2 {
+      position: static;
+    }
+
+    &.has-submenu,
+    &.has-submenu-2 {
+
+      > a,
+      > span {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: (-$_menu-drop-8-submenu-offset-y - 4px);
+          z-index: $_menu-drop-8-submenu-z-index + 1;
+          left: calc(50% - 12px);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 12px 8px 12px;
+          border-color: transparent transparent $_menu-drop-8-submenu-bg transparent;
+          @include sumbenu-before-hover;
+          transition: opacity .3s ease, transform .3s ease-in;
+        }
+      }
+    }
+
+    > a,
+    > span {
+      display: block;
+      color: $_menu-drop-8-color;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px 0 15px;
+      white-space: nowrap;
+      @include font-family-bold;
+      border-bottom: 3px solid transparent;
+      text-decoration: none;
+      font-size: 14px;
+
+      > span:not(.icon) {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 250px;
+        @include nowrap;
+      }
+
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        @include triangle-drop(currentColor);
+        margin-left: 8px;
+      }
+    }
+
+    > a {
+
+      @include hover-focus() {
+        color: $_menu-drop-8-color-hover;
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu-drop-8-color-active;
+        border-bottom-color: $brand-1;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: $_menu-drop-8-color-active-hover;
+        }
+      }
+    }
+  }
+
+  .submenu,
+  .submenu-2 {
+    z-index: $_menu-drop-8-submenu-z-index;
+    @include sumbenu-before-hover;
+    padding-top: $_menu-drop-8-submenu-offset-y;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .submenu {
+    width: 300px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: $_menu-drop-8-submenu-offset-y;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: $box-shadow-base;
+      background-color: $_menu-drop-8-submenu-bg;
+    }
+
+    .submenu {
+      top: 0;
+      left: 100%;
+    }
+
+    .item_1 {
+      padding-right: 0;
+
+      > a,
+      > span {
+        white-space: normal;
+        border-bottom: 0;
+
+        > span {
+          white-space: normal;
+          max-width: none;
+          overflow: visible;
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .submenu-2 {
+    width: 100%;
+  }
+}

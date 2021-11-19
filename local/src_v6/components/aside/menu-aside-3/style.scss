@@ -1,0 +1,168 @@
+/* menu-aside-3.scss */
+
+// var ****************************************************************************************************************
+$_menu-aside-3-level-1-font-size:     14px;
+$_menu-aside-3-level-2-font-size:     14px;
+$_menu-aside-3-level-3-font-size:     14px;
+$_menu-aside-3-color:                 $link-color;
+$_menu-aside-3-color-hover:           $link-color-hover;
+$_menu-aside-3-color-active:          $link-color-hover;
+$_menu-aside-3-color-active-hover:    $link-color;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.menu-aside-3 {
+  padding: 0;
+  margin: 0 0 25px;
+
+  @media (max-width: $grid-breakpoint-max) {
+    display: none;
+  }
+
+  [class*="menu_level_"] {
+
+    .g-wrap & {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  [class*="item_"] {
+    position: relative;
+
+    > a,
+    > span {
+      display: block;
+      color: $_menu-aside-3-color;
+      line-height: 1.2;
+
+      &.icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 29px;
+        height: 35px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        border-bottom: none;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 7px;
+          height: 7px;
+          border: 2px solid $_menu-aside-3-color;
+          border-left-width: 0;
+          border-bottom-width: 0;
+          transition: .3s;
+          margin-top: -4px;
+          transform-origin: 50% 50%;
+          transform: rotate(135deg);
+        }
+
+        @include hover-focus() {
+
+          &:before {
+            border-color: $_menu-aside-3-color-hover;
+          }
+        }
+
+        &.collapsed {
+
+          &:before {
+            margin-top: 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    > a {
+      color: $_menu-aside-3-color;
+      text-decoration: none;
+
+      @include hover-focus() {
+        color: $_menu-aside-3-color-hover;
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu-aside-3-color-active;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: $_menu-aside-3-color-active-hover;
+        }
+      }
+    }
+  }
+
+  .menu_level_1 {
+    padding: 5px 0 15px;
+    font-size: $_menu-aside-3-level-1-font-size;
+  }
+
+  .item_1 {
+
+    > a:not(.icon),
+    > span:not(.icon) {
+      padding: 7px 29px 7px 0;
+      @include font-family-bold();
+      font-size: $_menu-aside-3-level-1-font-size;
+    }
+  }
+
+  .menu_level_2 {
+    font-size: $_menu-aside-3-level-2-font-size;
+
+    .g-wrap & {
+      padding-bottom: 28px;
+    }
+  }
+
+  .item_2 {
+
+    > a:not(.icon),
+    > span:not(.icon) {
+      padding: 7px 29px 7px 20px;
+      font-size: $_menu-aside-3-level-2-font-size;
+
+      @media (max-width: $screen-md-max) {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  .menu_level_3 {
+    font-size: $_menu-aside-3-level-3-font-size;
+
+    .g-wrap & {
+      padding: 0;
+    }
+  }
+
+  .item_3 {
+
+    > a:not(.icon),
+    > span:not(.icon) {
+      padding: 7px 29px 7px 40px;
+      font-size: $_menu-aside-3-level-3-font-size;
+
+      @media (max-width: $screen-md-max) {
+        padding-left: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+mixin sl-prod-list(data)
+  .sl-prod-list(class=data.modifier ? data.modifier : '')
+    if (data.bTitle || (data.nav !== undefined && data.navTop === true))
+      .head
+        .head-left
+          if (data.bTitle)
+            +b-title({
+              title: data.bTitle.title,
+              titleH: data.bTitle.titleH,
+              link: data.bTitle.link
+            })
+        if (data.nav !== undefined && data.navTop === true)
+          .head-right
+            +#{data.nav}()
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              a.prod-block(href='#')
+                .prod-block__inner
+                  .prod-block__title #{slide.title}
+                  .prod-block__pic
+                    img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined && data.navTop !== true)
+        +#{data.nav}()

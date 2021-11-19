@@ -1,0 +1,17 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Контакты';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Адреса и телефоны
+block content
+  include ../../../components/demo/contacts/index
+  include ../../../components/demo/contacts--2/index
+  include ../../../components/demo/contacts-2/index
+  include ../../../components/demo/contacts-3/index
+  include ../../../components/demo/contacts-3--2/index
+  include ../../../components/demo/contacts-4/index
+  include ../../../components/demo/map/map/index
+  include ../../../components/demo/contacts-form/index

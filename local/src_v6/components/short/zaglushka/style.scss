@@ -1,0 +1,15 @@
+.zaglushka {
+  padding: 30px 0;
+
+  .text {
+    margin-bottom: 4px;
+  }
+
+  .mail {
+    margin-top: 20px;
+
+    + .mail {
+      margin-top: 0;
+    }
+  }
+}

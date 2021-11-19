@@ -1,0 +1,148 @@
+/* sl-pager-8.scss */
+
+// var ****************************************************************************************************************
+$_sl-pager-bg:                              $brand-gray-2;
+$_sl-pager-active-bg:                       $brand-1;
+$_sl-pager-item-width:                      50px;
+$_sl-pager-item-height:                     36px;
+$_sl-pager-splash-width:                    44px;
+$_sl-pager-splash-height:                   6px;
+$_sl-pager-transition:                      all .2s ease;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.sl-pager-8 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $_sl-pager-item-width;
+    height: $_sl-pager-item-height;
+    cursor: pointer;
+
+    &.slick-active {
+      cursor: default;
+
+      button {
+        cursor: inherit;
+      }
+    }
+  }
+
+  button {
+    display: block;
+    position: relative;
+    width: $_sl-pager-splash-width;
+    height: $_sl-pager-splash-height;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-size: 0;
+  }
+
+  &:not(.animate) {
+
+    li {
+
+      .desktop & {
+
+        &:not(.slick-active) {
+
+          @include hover-focus() {
+
+            button {
+              background: $_sl-pager-active-bg;
+            }
+          }
+        }
+      }
+
+      &.slick-active {
+
+        button {
+          background: $_sl-pager-active-bg;
+        }
+      }
+    }
+
+    button {
+      background: $_sl-pager-bg;
+      transition: $_sl-pager-transition;
+    }
+  }
+
+  &.animate {
+
+    ul {
+      transition-duration: inherit;
+    }
+
+    button {
+      background: $_sl-pager-bg;
+      transition: $_sl-pager-transition;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        opacity: 0;
+        background: $_sl-pager-active-bg;
+        transition: none;
+      }
+    }
+
+    li {
+
+      &:not(.active) {
+
+        .desktop & {
+
+          @include hover-focus() {
+
+            button {
+              background: $_sl-pager-active-bg;
+            }
+          }
+        }
+      }
+    }
+
+    .active {
+      transition-duration: inherit;
+
+      button {
+        transition-property: none;
+        transition-duration: inherit;
+
+        &:before {
+          width: 100%;
+          opacity: 1;
+          transition-property: width;
+          transition-duration: inherit;
+          transition-timing-function: linear;
+        }
+      }
+    }
+  }
+}

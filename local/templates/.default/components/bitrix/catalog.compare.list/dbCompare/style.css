@@ -1,0 +1,7 @@
+.fly{
+    position:absolute;
+    z-index:5
+}
+.compair-prod{
+    min-width: 100px;
+}

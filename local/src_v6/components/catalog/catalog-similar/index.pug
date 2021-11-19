@@ -1,0 +1,46 @@
+.catalog-similar
+  .b-title
+    .h2.b-title__title Похожие товары
+  .tabs
+    ul.nav.nav-tabs.list-reset(role='tablist')
+      li.nav-item(role='presentation')
+        a.nav-link.active(href='#catalog-similar-tab-1', aria-controls='catalog-similar-tab-1', role='tab', data-toggle='tab')
+          span Ламинат
+      li.nav-item(role='presentation')
+        a.nav-link(href='#catalog-similar-tab-2', aria-controls='catalog-similar-tab-2', role='tab', data-toggle='tab')
+          span Линолеум
+      li.nav-item(role='presentation')
+        a.nav-link(href='#catalog-similar-tab-3', aria-controls='catalog-similar-tab-3', role='tab', data-toggle='tab')
+          span Панели ПВХ
+      li.nav-item(role='presentation')
+        a.nav-link(href='#catalog-similar-tab-4', aria-controls='catalog-similar-tab-4', role='tab', data-toggle='tab')
+          span Сайдинг
+    .tab-content
+      #catalog-similar-tab-1.tab-pane.fade.in.active.show(role='tabpanel')
+        .items.clearfix
+          - var k = 0;
+          while k < 5
+            - k++
+            .item
+              include ../cat-item/index
+      #catalog-similar-tab-2.tab-pane.fade(role='tabpanel')
+        .items.clearfix
+          - var k = 0;
+          while k < 5
+            - k++
+            .item
+              include ../cat-item/index
+      #catalog-similar-tab-3.tab-pane.fade(role='tabpanel')
+        .items.clearfix
+          - var k = 0;
+          while k < 5
+            - k++
+            .item
+              include ../cat-item/index
+      #catalog-similar-tab-4.tab-pane.fade(role='tabpanel')
+        .items.clearfix
+          - var k = 0;
+          while k < 5
+            - k++
+            .item
+              include ../cat-item/index

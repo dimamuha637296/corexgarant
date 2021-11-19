@@ -1,0 +1,257 @@
+.catalog-filter
+  a.catalog-filter-collapse.collapsed(data-toggle='collapse', href='#collapseFilter')
+    | Подобрать товары по параметрам
+  #collapseFilter.bx-filter.collapse
+    .bx-filter-section.container-fluid
+      form.smartfilter
+        .row.filter-block.clearfix
+          .catalog-filter-title Подобрать товары
+          //param
+          .col-12.bx-filter-parameters-box.bx-active
+            .bx-filter-container-modef
+              .bx-filter-popup-result.right(id='modef' style='display: inline-block;')
+                | Выбрано:
+                span#modef_num 7
+                span.arrow
+                a(href="#" target="anytarget")
+                  | Показать
+            .bx-filter-parameters-box-title
+              span
+                | Цена
+              i.filter-angle(data-role="prop_angle")
+            .bx-filter-block(data-role='bx_filter_block')
+              .row.bx-filter-parameters-box-container.price-inputs
+                .col-6.col-md-3.col-lg-6.bx-filter-parameters-box-container-block.bx-left
+                  .bx-filter-input-container
+                    input.min-price(type='text', name='minprice', value='3,50', size='5', onkeyup='')
+                .col-6.col-md-3.col-lg-6.bx-filter-parameters-box-container-block.bx-right
+                  .bx-filter-input-container
+                    input.max-price(type='text', name='maxprice', value='150', size='5', onkeyup='')
+                .col-12.col-md-6.col-lg-12.bx-ui-slider-track-container
+                  .bx-ui-slider-track
+                    .bx-ui-slider-part.p1
+                      span 1
+                    .bx-ui-slider-part.p2
+                      span 2
+                    .bx-ui-slider-part.p3
+                      span 3
+                    .bx-ui-slider-part.p4
+                      span 4
+                    .bx-ui-slider-part.p5
+                      span 5
+                    .bx-ui-slider-pricebar-vd
+                    .bx-ui-slider-pricebar-vn
+                    .bx-ui-slider-pricebar-v
+                    .bx-ui-slider-range
+                      a.bx-ui-slider-handle.left(href='#')
+                      a.bx-ui-slider-handle.right(href='#')
+                .bx-ui-slider-track-container
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Материал
+              include ../info-popup/index
+              i.filter-angle(data-role="prop_angle")
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-select-container
+                  .bx-filter-select-block
+                    .bx-filter-select-text(data-role='currentOption') Все
+                    .bx-filter-select-arrow
+                    input(type="radio", name="inp1", value="val1")
+                    input(type="radio", name="inp2", value="val2")
+                    input(type="radio", name="inp3", value="val3")
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Производитель
+              i.filter-angle(data-role="prop_angle")
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_all_arrFilter_01', for='all_arrFilter_01')
+                    input.ui-checkbox#all_arrFilter_01(type='checkbox', value='Y', name='all_arrFilter_01', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Все') Все
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_arrFilter_01')
+                    input.ui-checkbox#arrFilter_01(type='checkbox', value='Y', name='arrFilter_01', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Италия «Фирстиль»') Италия «Фирстиль»
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_arrFilter_02')
+                    input.ui-checkbox#arrFilter_02(type='checkbox', value='Y', name='arrFilter_02', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Китай «Гун Джой Ли»') Китай «Гун Джой Ли»
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_arrFilter_03')
+                    input.ui-checkbox#arrFilter_03(type='checkbox', value='Y', name='arrFilter_03', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Россия «Grishko»') Россия «Grishko»
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_arrFilter_04')
+                    input.ui-checkbox#arrFilter_04(type='checkbox', value='Y', name='arrFilter_04', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Румыния «Радужный Вэй»') Румыния «Радужный Вэй»
+                .checkbox
+                  label.bx-filter-param-label(data-role='label_arrFilter_05')
+                    input.ui-checkbox#arrFilter_05(type='checkbox', value='Y', name='arrFilter_05', onclick='smartFilter.click(this)')
+                    span.bx-filter-param-text(title='Румыния «Радужный Вэй» 2') Румыния «Радужный Вэй» 2
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Производитель
+              i.filter-angle(data-role="prop_angle")
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-param-btn-inline
+                  input#arrFilter_11(type='checkbox', name='arrFilter_11', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_11', data-role='label_arrFilter_11', onclick="smartFilter.keyup(BX('arrFilter_11')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_01.jpg');", title="Описание")
+                  input#arrFilter_12(type='checkbox', name='arrFilter_12', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_12', data-role='label_arrFilter_12', onclick="smartFilter.keyup(BX('arrFilter_12')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_02.jpg');", title="Описание")
+                  input#arrFilter_13(type='checkbox', name='arrFilter_13', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_13', data-role='label_arrFilter_13', onclick="smartFilter.keyup(BX('arrFilter_13')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_03.jpg');", title="Описание")
+                  input#arrFilter_14(type='checkbox', name='arrFilter_14', value='Y')
+                  label.bx-filter-param-label.disabled(for='arrFilter_14', data-role='label_arrFilter_14', onclick="smartFilter.keyup(BX('arrFilter_14')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_04.jpg');", title="Описание")
+                  input#arrFilter_15(type='checkbox', name='arrFilter_15', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_15', data-role='label_arrFilter_15', onclick="smartFilter.keyup(BX('arrFilter_15')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_05.jpg');", title="Описание")
+                  input#arrFilter_16(type='checkbox', name='arrFilter_16', value='Y')
+                  label.bx-filter-param-label.bx-active(for='arrFilter_16', data-role='label_arrFilter_16', onclick="smartFilter.keyup(BX('arrFilter_16')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_06.jpg');", title="Описание")
+                  input#arrFilter_17(type='checkbox', name='arrFilter_17', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_17', data-role='label_arrFilter_17', onclick="smartFilter.keyup(BX('arrFilter_17')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_07.jpg');", title="Описание")
+                  input#arrFilter_18(type='checkbox', name='arrFilter_18', value='Y')
+                  label.bx-filter-param-label(for='arrFilter_18', data-role='label_arrFilter_18', onclick="smartFilter.keyup(BX('arrFilter_18')); BX.toggleClass(this, 'bx-active');")
+                    span.bx-filter-param-btn.bx-color-sl
+                      span.bx-filter-btn-color-icon(style="background-image:url('" + DB.DIR + "img/tmp/basket/catalog-color_08.jpg');", title="Описание")
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Тип инструмента
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-select-container
+                  .bx-filter-select-block
+                    .bx-filter-select-text(data-role='currentOption') Все
+                    .bx-filter-select-arrow
+                    input(type="radio", name="inp1", value="val1")
+                    input(type="radio", name="inp2", value="val2")
+                    input(type="radio", name="inp3", value="val3")
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-50.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Напряжение
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-select-container
+                  .bx-filter-select-block
+                    .bx-filter-select-text(data-role='currentOption') Все
+                    .bx-filter-select-arrow
+                    input(type="radio", name="inp1", value="val1")
+                    input(type="radio", name="inp2", value="val2")
+                    input(type="radio", name="inp3", value="val3")
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Ёмкость батареи
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-select-container
+                  .bx-filter-select-block
+                    .bx-filter-select-text(data-role='currentOption') Все
+                    .bx-filter-select-arrow
+                    input(type="radio", name="inp1", value="val1")
+                    input(type="radio", name="inp2", value="val2")
+                    input(type="radio", name="inp3", value="val3")
+          //- param
+          .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+            span.bx-filter-container-modef
+            .bx-filter-parameters-box-title
+              span.bx-filter-parameters-box-hint
+                | Потребляемый объем
+            .bx-filter-block(data-role='bx_filter_block')
+              .bx-filter-parameters-box-container
+                .bx-filter-select-container
+                  .bx-filter-select-block
+                    .bx-filter-select-text(data-role='currentOption') Все
+                    .bx-filter-select-arrow
+                    input(type="radio", name="inp1", value="val1")
+                    input(type="radio", name="inp2", value="val2")
+                    input(type="radio", name="inp3", value="val3")
+          .col-12
+            //- more collapsed
+            .more-character(role='tablist')
+              .panel-heading(role='tab', id='headingOne')
+                a.collapsed(role='button', data-toggle='collapse', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne') Дополнительные параметры
+              #collapseOne.collapse(role='tabpanel', aria-labelledby='headingOne')
+                .row
+                  //- param
+                  .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+                    span.bx-filter-container-modef
+                    .bx-filter-parameters-box-title
+                      span.bx-filter-parameters-box-hint
+                        | Ёмкость батареи
+                    .bx-filter-block(data-role='bx_filter_block')
+                      .bx-filter-parameters-box-container
+                        .bx-filter-select-container
+                          .bx-filter-select-block
+                            .bx-filter-select-text(data-role='currentOption') Все
+                            .bx-filter-select-arrow
+                            input(type="radio", name="inp1", value="val1")
+                            input(type="radio", name="inp2", value="val2")
+                            input(type="radio", name="inp3", value="val3")
+                  //- param
+                  .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+                    span.bx-filter-container-modef
+                    .bx-filter-parameters-box-title
+                      span.bx-filter-parameters-box-hint
+                        | Ёмкость батареи
+                    .bx-filter-block(data-role='bx_filter_block')
+                      .bx-filter-parameters-box-container
+                        .bx-filter-select-container
+                          .bx-filter-select-block
+                            .bx-filter-select-text(data-role='currentOption') Все
+                            .bx-filter-select-arrow
+                            input(type="radio", name="inp1", value="val1")
+                            input(type="radio", name="inp2", value="val2")
+                            input(type="radio", name="inp3", value="val3")
+                  //- param
+                  .col-12.col-md-6.col-lg-12.bx-filter-parameters-box.block-width-100.bx-active
+                    span.bx-filter-container-modef
+                    .bx-filter-parameters-box-title
+                      span.bx-filter-parameters-box-hint
+                        | Ёмкость батареи
+                    .bx-filter-block(data-role='bx_filter_block')
+                      .bx-filter-parameters-box-container
+                        .bx-filter-select-container
+                          .bx-filter-select-block
+                            .bx-filter-select-text(data-role='currentOption') Все
+                            .bx-filter-select-arrow
+                            input(type="radio", name="inp1", value="val1")
+                            input(type="radio", name="inp2", value="val2")
+                            input(type="radio", name="inp3", value="val3")
+          .col-12.bx-filter-button-box
+            .bx-filter-block
+              .bx-filter-parameters-box-container
+                +btn-primary({type: 'input', className: 'btn-themes', text: 'Показать'})
+                +btn-link({type: 'input', text: 'Сбросить фильтр'})

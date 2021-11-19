@@ -1,0 +1,18 @@
+.text-block {
+  margin: 0 0 30px;
+  padding-right: 30px;
+
+  .title {
+    margin: 0 0 26px;
+  }
+
+  .text {
+
+    @media (max-width: $screen-sm-max) {
+
+      p {
+        font-size: $font-size-base;
+      }
+    }
+  }
+}

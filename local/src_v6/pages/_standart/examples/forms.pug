@@ -1,0 +1,34 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Формы';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/pages/etalon/form-1/index
+  include ../../../components/pages/etalon/form-2/index
+  .h2 Форма-2
+  include ../../../components/base/forms/form_2/form/index
+  .h2 Форма-2 (Вертикальная + валидация с дропдауном)
+  include ../../../components/base/forms/form_2/form-2/index
+  .h2 Датапикер с селектом месяца и года
+  .form-horizontal
+    .fieldset
+      +form_row({
+        fields: {
+          controlType: 'datepicker2',
+          labelText: 'Дата посещения',
+          id: 'datepicker-2',
+          required: true
+        }
+      })
+  .h2 Датапикер с маской
+  .form-horizontal
+    .fieldset
+      +form_row({
+        fields: {
+          controlType: 'datepicker_mask',
+          labelText: 'Дата посещения',
+          id: 'datepicker-3',
+          required: true
+        }
+      })

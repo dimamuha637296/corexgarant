@@ -1,0 +1,29 @@
+include ../../../components/base/forms/form_1/form/index
+.h2
+  | Напишите нам сообщение или задайте вопрос
+- var formID = 'form-map';
++form_1({
+    formID: formID,
+    hasValidation: true,
+    rows: [
+        {
+            labelText: 'Имя и фамилия',
+            id: formID + '-FIO',
+            required: true
+        },
+        {
+            labelText: 'Электронная почта',
+            id: formID + '-EMAIL',
+            type: 'email',
+            required: true
+        },
+        {
+            controlType: 'textarea',
+            labelText: 'Сообщение',
+            id: formID + '-MESSAGE',
+            cols: 60,
+            rows: 4,
+            required: true
+        }
+    ]
+})

@@ -1,0 +1,33 @@
+.contacts-head-base
+  // Nav tabs
+  ul.nav.list-reset.open-dropdown(role="tablist")
+    li.nav-item
+      a.nav-link.active(href='#tab-120', data-toggle='tab') Минск
+    li.nav-item
+      a.nav-link(href='#tab-121', data-toggle='tab') Москва
+  // Tab panes
+  .tab-content
+    #tab-120.tab-pane.fade.show.active
+      .tel
+        a(href='tel:+375291632322')
+          span +375 (17)
+            =' '
+            b 233-66-36
+            =' '
+            i (многоканальный)
+      .tel
+        a(href='tel:+375295662322') +375 (29)
+          =' '
+          b 233-65-35
+    #tab-121.tab-pane.fade
+      .tel
+        a(href='tel:+375291632322')
+          span +375 (17)
+            =' '
+            b 233-66-36
+            =' '
+            i (многоканальный)
+      .tel
+        a(href='tel:+375295662322') +375 (29)
+          =' '
+          b 233-66-36

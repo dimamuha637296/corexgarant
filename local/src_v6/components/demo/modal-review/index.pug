@@ -1,0 +1,139 @@
+include ../../../components/block/f_star/index
+#modal-reviews.modal.fade.in(tabindex='-1', role='dialog', aria-hidden='false')
+  .modal-dialog.modal-fluid
+    .modal-content
+      .modal-header
+        .modal-title.h2
+          | Напишите нам сообщение или задайте вопрос
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body
+        .forms
+          .row
+            .col-12
+              form#form-popup.form-horizontal(method='post', action='/')
+                fieldset.fieldset
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-FIO-popup')
+                      | Имя и фамилия
+                      +f_star()
+                    .text.col-12
+                      input#form-FIO-popup.form-control(type='text', name='form-FIO-popup', maxlength='50', spellcheck='true', value='', required='')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-EMAIL-popup')
+                      | Электронная почта
+                      +f_star()
+                    .text.col-12
+                      input#form-EMAIL-popup.form-control(type='email', name='form-EMAIL-popup', maxlength='50', spellcheck='true', value='', placeholder='email@example.com', required='')
+                    .controls.col-12
+                  // row
+                  #rating-1.form-group.control-group
+                    label.name.label-pt.col-12(for='form-RATING-1')
+                      | Оценка
+                      +f_star()
+                    .text.col-lg-6.col-sm-5.col-12.rating
+                      ul.list-rating.list-reset.star-list(data-category='cost')
+                        li.star-item
+                        li.star-item
+                        li.star-item
+                        li.star-item
+                        li.star-item
+                      input#form-RATING-1.input-hidden.text(type='text', name='STARS', maxlength='1', spellcheck='true', required='', value='')
+                    .controls.col-12
+                  // row
+                  .form-group.control-group
+                    label.name.col-12(for='form-MESSAGE-popup')
+                      | Сообщение
+                      +f_star()
+                    .text.col-12
+                      textarea#form-MESSAGE-popup.form-control(name='form-MESSAGE-popup', maxlength='500', cols='60', rows='4', spellcheck='true', required='')
+                    .controls.col-12
+                  // row
+                  .form-group
+                    .name.col-12
+                    .col-12.d-md-flex.align-items-center
+                      +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+                      .form_required
+                        +f_star()
+                          =' '
+                        | — поля обязательные к заполнению
+script.
+    !function () {
+        'use strict';
+
+        // Form rating
+        function rating() {
+            var parentRaiting = $('#rating-1');
+            if (parentRaiting.length) {
+                var starHover = parentRaiting.find('.star-item');
+                var inpHidd = parentRaiting.find(".input-hidden");
+                if (starHover.length && inpHidd.length) {
+                    parentRaiting.each(function () {
+                        var t = $(this);
+                        inpHidd.val(null);
+                        t.on('click', '.star-item', function () {
+                            var self = $(this);
+                            var itemStar = self.parent().find('.star-item');
+                            var indexStar = self.index() + 1;
+                            var category = self.parent().attr('data-category');
+                            inpHidd.val(indexStar);
+                            inpHidd.focus();//.click();
+                            for (var o = 0; o < 5; o++) {
+                                itemStar.eq(o).removeClass('active')
+                            }
+                            for (var i = 0; i < indexStar; i++) {
+                                itemStar.eq(i).addClass('active')
+                            }
+                        });
+                    });
+                    starHover.hover(function () {
+                        var t = $(this),
+                            itemStar = t.parent().find('.star-item'),
+                            indexHover = t.index() + 1;
+                        for (var i = 0; i < indexHover; i++) {
+                            itemStar.eq(i).addClass('hover')
+                        }
+                    }, function () {
+                        var t = $(this),
+                            itemStar = t.parent().find('.star-item'),
+                            indexHover = t.index();
+                        for (var i = 0; i < indexHover + 1; i++) {
+                            itemStar.eq(i).removeClass('hover')
+                        }
+                    });
+                }
+            }
+        }
+
+        // Form validation
+        function initValid() {
+            // Validation options http://jqueryvalidation.org/documentation/
+            var form_validator = $('#form-popup');
+            if (form_validator.length && $.fn.validate) {
+                form_validator.validate({
+                    rules: {
+                        'form-FIO-popup': {
+                            required: true,
+                            minlength: 2
+                        },
+                        'form-EMAIL-popup': {
+                            required: true
+                        },
+                        'form-MESSAGE-popup': {
+                            required: true
+                        },
+                        'form-RATING-1': {
+                            minlength: 1
+                        }
+                    }
+                });
+            }
+        }
+
+        $(function () {
+            initValid();
+            rating();
+        });
+    }();

@@ -1,0 +1,11 @@
+.banner {
+  margin-bottom: 50px;
+
+  > a {
+    display: block;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 40px;
+  }
+}

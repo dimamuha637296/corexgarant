@@ -1,0 +1,10 @@
+.search-head-3.hide-print
+  form(action='/search/', method='get')
+    fieldset.field
+      input#search-head-inp.input(
+      type='search',
+      placeholder='Поиск по названию товара, категории или артикулу',
+      name='q',
+      maxlength='50',
+      required='')
+      button.submit(type='submit') Найти

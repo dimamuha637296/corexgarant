@@ -1,0 +1,70 @@
+.h2 H2 Заголовок таблицы с числами
+.table-responsive.table-numb
+  table
+    thead
+      tr
+        th(rowspan='2')
+          | Наименование параметров
+        th.cost(colspan='2')
+          | Стоимость, бел.руб.
+          include ../../../block/f_star/index
+          | :
+      tr.quant
+        th
+          | 1 гость
+        th
+          | 2 гостя
+    tbody
+      tr
+        td
+          | 2-комнатный 1-местный «Люкс» с двухспальной кроватью
+        td.text-right
+          | 552 000
+        td.text-right
+          | 828 000
+      tr
+        td
+          | 1-комнатный 1-местный (тахта)
+        td.text-right
+          | 331 000
+        td.text-right
+          | 496 500
+      tr
+        td
+          | 1-комнатный 2-местный (2 полуторные кровати)
+        td.text-right
+          | 221 000
+        td.text-right
+          | 442 000
+      tr
+        td
+          | 1-комнатный 2-местный (двухъярусная кровать)
+        td.text-right
+          | 110 000
+        td.text-right
+          | 220 000
+      tr
+        td
+          | Номер 2-комнатный 1-местный (люкс) с двухспальной кроватью и отдельным входом
+        td.text-right
+          | 1 233 000
+          - var f_star = {text: '**'};
+          include ../../../block/f_star/index
+        td.text-right
+          | 1 877 000
+          - var f_star = {text: '**'};
+          include ../../../block/f_star/index
+      tr
+        td
+          | Номер 1-комнатный (2 раздельные кровати)
+        td.text-right
+          | 430 000
+        td.text-right
+          | 860 000
+      tr
+        td
+          | Номер «VIP»
+        td.text-right
+          | 1 019 000
+        td.text-right
+          | 1 556 000

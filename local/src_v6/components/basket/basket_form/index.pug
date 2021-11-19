@@ -1,0 +1,7 @@
+form#basket_form.basket_form(method='post', action='/personal/cart/', name='basket_form')
+  #basket_form_container
+    .bx_ordercart
+      include ../ordercart/ordercart_sort/index
+      #basket_items_list(style='display:block')
+        include ../ordercart/ordercart_table/index
+        include ../ordercart/ordercart_pay/index

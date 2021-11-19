@@ -1,0 +1,23 @@
+.lang-mob-2 {
+  padding: 0 ($grid-gutter-width / 2);
+
+  .list {
+    margin: 0;
+    @include clearfix;
+  }
+
+  .item {
+    float: left;
+
+    + .item {
+      margin-left: 5px;
+    }
+  }
+
+  .link {
+    @include font-family-light();
+    @include mobile-height-item();
+    font-size: 14px;
+    display: block;
+  }
+}

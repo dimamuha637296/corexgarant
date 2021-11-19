@@ -1,0 +1,64 @@
+.contacts-2 {
+  margin: 0 0 40px;
+
+  &__item {
+    display: flex;
+    margin: 0 0 20px;
+
+    @media (max-width: $screen-md-max) {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    background: $brand-white;
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  &__text {
+    width: 100%;
+    padding: 30px 28px 35px;
+    border-left: 3px solid $brand-1;
+    color: $headings-color;
+    font-size: 15px;
+    line-height: 1.2;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 20px;
+    }
+  }
+
+  &__title {
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__address {
+    margin: 0 0 12px;
+  }
+
+  &__phones {
+
+    &:last-child {
+
+      a {
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin: 0 0 12px;
+    }
+  }
+}

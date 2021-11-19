@@ -1,0 +1,13 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Поиск';
+  - DB.DIR = '../../';
+block pagehead
+block title
+  h1#title
+    | Поиск
+block content
+  include ../../../components/demo/search/index
+  include ../../../components/demo/search-result/index
+  include ../../../components/demo/search-list/index
+  include ../../../components/demo/search-no-result/index

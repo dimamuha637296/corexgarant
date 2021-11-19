@@ -1,0 +1,66 @@
+.bx_ordercart_order_table_container
+  table.table-reset.tbi.no-hover
+    thead.tbi-thead
+      tr
+        td.item(colspan='2')
+          | Товары
+        td.custom.right
+          | Скидка
+        td.custom.right
+          | Цена
+        td.custom.right
+          | Количество
+        td.custom.right
+          | Сумма
+    tbody.tbi-tbody
+      - var n = 0
+      - var m = 0
+      while n < 2
+        - m++
+        if (n % 3 === 0)
+          - m = 1
+        - n++
+        tr
+          td.tbi-td.itemphoto
+            .bx_ordercart_photo_container
+              a(href='#')
+                .bx_ordercart_photo
+                  img(src=DB.DIR + 'img/tmp/basket/catalog-cart_0' + m + '.jpg', alt='photo', title='photo')
+          td.tbi-td.item
+            .h2.bx_ordercart_itemtitle
+              a(href='#')
+                | Нижнее белье Розовое Смущенье
+            .bx_ordercart_itemart
+              | Цвет: 
+              span
+                | Розовый
+                span
+                  br
+                  | Размеры одежды: 
+                  span
+                    | XS
+                    span
+                      br
+          td.tbi-td.custom.right
+            .tbi-thead_xs
+              | Скидка
+            .tbi-td_i
+              | 0%
+          td.tbi-td.price.right
+            .tbi-thead_xs
+              | Цена
+            .tbi-td_i
+              .current_price
+                | 1&nbsp;199&nbsp;руб.
+            .old_price.right
+          td.tbi-td.custom.right
+            .tbi-thead_xs
+              | Количество
+            .tbi-td_i
+              | 1&nbsp;шт
+          td.tbi-td.custom.right
+            .tbi-thead_xs
+              | Сумма
+            .tbi-td_i
+              .total_price
+                | 1&nbsp;199&nbsp;руб.

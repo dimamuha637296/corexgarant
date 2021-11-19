@@ -1,0 +1,41 @@
+img {
+  vertical-align: middle;
+  border-style: none; // Remove the border on images inside links in IE 10-.
+}
+
+svg {
+  // Workaround for the SVG overflow bug in IE10/11 is still required.
+  // See https://github.com/twbs/bootstrap/issues/26878
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive,
+.g-wrap img,
+.modal img {
+  display: block;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get
+}
+
+// Floats for images
+.fl-img,
+img[align="left"] { // align - Bitrix wisywyg styles
+  display: block;
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.fr-img,
+img[align="right"] { // align - Bitrix wisywyg styles
+  display: block;
+  float: right;
+  margin: 0 0 10px 20px;
+}
+.fm-img,
+.fc-img,
+img[align="middle"],
+img[align="center"] { // align - Bitrix wisywyg styles
+  display: block;
+  margin: 0 auto;
+}

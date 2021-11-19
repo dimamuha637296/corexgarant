@@ -1,0 +1,17 @@
+mixin checkbox(data)
+  -
+    var className = data.className !== undefined ? data.className : 'ui-checkbox';
+    var attr = {
+      type: 'checkbox'
+    };
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    if (data.value !== undefined) attr.value = data.value;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  .checkbox
+    label
+      input(class=className)&attributes(attr)
+      - var text = data.text !== undefined ? data.text : '';
+      span #{text}

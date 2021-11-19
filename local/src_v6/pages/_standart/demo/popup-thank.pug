@@ -1,0 +1,14 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Попап спасибо';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Попап спасибо
+block content
+  include ../../../components/demo/popup-thank-btn/index
+  - var success = true
+  include ../../../components/demo/popup-thank/index
+  - var success = false
+  - var popupThankId = 'FRM_contacts2';
+  include ../../../components/demo/popup-thank/index

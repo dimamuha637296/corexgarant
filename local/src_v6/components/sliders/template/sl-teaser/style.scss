@@ -1,0 +1,124 @@
+$_sl-teaser-item-height:                     205px;
+$_sl-teaser-next-width:                      20px;
+
+.sl-teaser {
+  margin: 0 0 24px;
+  position: relative;
+
+  .wrap {
+    position: relative;
+  }
+
+  // Slider
+  .slider {
+
+    .js-off & {
+      height: $_sl-teaser-item-height;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .inner {
+    float: left;
+    padding: 0 ($grid-gutter-width / 2) 25px;
+    width: 310px;
+
+    @media (max-width: $screen-xs-max) {
+      width: 280px;
+    }
+  }
+
+  .link {
+    position: relative;
+    display: block;
+    min-height: 150px;
+    overflow: hidden;
+    transition: $transition-link;
+    box-shadow: none;
+
+    @include hover-focus() {
+      box-shadow: $box-shadow-base;
+
+      .wrap-i {
+        transform: translate3d(0, -5px, 0);
+      }
+    }
+  }
+
+  .pic {
+    min-width: 100%;
+  }
+
+  .wrap-i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px 16px 15px;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    transition: $transition-link;
+    transform: translate3d(0, 0, 0);
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0,0,0,.7);
+    }
+  }
+
+  .title {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    font-size: 21px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    max-height: 2em;
+    @include font-family-medium();
+    text-transform: uppercase;
+
+    @media (max-width: $screen-md-max) {
+      font-size: 19px;
+      margin-bottom: 2px;
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      font-size: 18px;
+    }
+  }
+
+  .text {
+    font-size: 15px;
+    line-height: (20/15);
+    max-height: (20/15) * 2em;
+    overflow: hidden;
+    color: #fff;
+
+    @media (max-width: $screen-md-max) {
+      font-size: 14px;
+    }
+  }
+
+  [class*=sl-nav] {
+
+    @media (max-width: $screen-xs-max) {
+
+      .prev {
+        left: -10px;
+      }
+
+      .next {
+        right: -10px;
+      }
+    }
+  }
+}

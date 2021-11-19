@@ -1,0 +1,37 @@
+include ../../../components/block/b-title/index
+if (advantages === undefined)
+  -
+    var advantages = {
+      title: 'Почему мы?',
+      list: [
+        {
+          img: 'img/tmp/advantages-01.svg',
+          title: 'Полный цикл услуг',
+          desc: 'Разрабатываем идеи для декора, ищем лучшие решения в производстве строительных материалов и в отделке помещений, основываясь на желаниях наших клиентов и тенденциях современного рынка. Производим шеф монтаж, осуществляя контроль качества на всех этапах'
+        },
+        {
+          img: 'img/tmp/advantages-02.svg',
+          title: 'Широкий ассортимент',
+          desc: 'У нас широкий ассортимент отделочных материалов от ведущих мировых производителей, которые являются профессионалами в данной области и ежегодно представляют новинки в напольных, настенных покрытиях, а также в лакокрасочной продукции'
+        },
+        {
+          img: 'img/tmp/advantages-03.svg',
+          title: 'Пожизненная гарантия качества',
+          desc: 'Мы предлагаем пожизненную гарантию качества на отделочные материалы: приобретая высококачественную продукцию в компании «Стройтекс ТК» и используя верную технологию укладки (нанесения), вы можете быть уверены в идеальном и долговечном результате.'
+        }
+      ]
+    };
+.advantages
+  +b-title({
+      mod: 'no-decor',
+      title: advantages.title,
+      titleH: 'h2'
+  })
+  .advantages__list
+    each item in advantages.list
+      .advantages__item
+        .advantages__inner
+          .advantages__pic
+            img.advantages__img(src=DB.DIR + item.img, alt=item.title)
+          .h3.advantages__title #{item.title}
+          .advantages__desc #{item.desc}

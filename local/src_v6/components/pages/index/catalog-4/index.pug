@@ -1,0 +1,90 @@
+include ../../../block/b-title/index
+include ../../../../components/base/btns/btn/index
+-
+  var catalog4Data = [
+    {
+    level1: 'Разработка проектов',
+    pic: 'catalog-4-0.png',
+    level2: [
+      'Корпоративные сайты, Интернет-магазины, Промо-сайты, Landing Pages, Порталы, Сервисы',
+      'Экспресс-разработка ',
+      'Разработка на “1С-Битрикс”, Drupal, ModX, WordPress',
+      'Мобильные приложения (под IOS, Android, на базе “1С-Битрикс”)',
+      'IT-аутсорсинг (PHP, Java, .NET, C++, C#, Lotus)'
+    ]
+    },
+    {
+    level1: 'Продвижение сайтов',
+    pic: 'catalog-4-1.png',
+    level2: [
+      'Продвижение по позициям',
+      'Экспресс-SEO',
+      'Развитие проектов (Повышение конверсии, Веб-аналитика)',
+      'SEO-аудит',
+      'Стратегический поисковый маркетинг',
+      'SERM-управление репутацией в поиске'
+    ]
+    }
+  ];
+  var catalog4Data2 = [
+    {
+    level1: 'Техническая поддержка',
+    pic: 'catalog-4-2.png',
+    level2: [
+      'Продажа и продление лицензий "1С-Битрикс"',
+      'Доработки проектов',
+      'Адаптивная верстка сайтов',
+      'Перенос на "1С-Битрикс"',
+      'Интеграция со сторонними системами (1С, CRM, ERP)',
+      'Технический аудит'
+    ]
+    },
+    {
+    level1: 'Битрикс 24',
+    pic: 'catalog-4-3.png',
+    level2: [
+      'Продажа и продление лицензий на Битрикс 24',
+      'Внедрение и настройка функционала Битрикс 24',
+      'Интеграция Битрикс 24 с 1С и другими системами',
+      'Индивидуальные доработки',
+      'Обучение и консультации'
+    ]
+    }
+  ]
+.catalog-4
+  .bg
+  .bg-wrap
+    +b-title({
+        title: 'Услуги компании',
+        titleH: 'h1',
+        link: 'Перейти в каталог'
+    })
+    .list_1.row
+      each item, i in catalog4Data
+        .item_1.col-md-12.col-lg-6
+          .media-old
+            .media-left-old
+              img(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.level1)
+            .media-body-old
+              .title
+                a(href='#') #{item.level1}
+              ul.list_2.list-reset
+                each item_2, i_2 in item.level2
+                  li.item_2
+                    a(href='#') #{item_2}
+    .collapse(id='accordion-60')
+      .list_1.row
+        each item, i in catalog4Data2
+          .item_1.col-md-12.col-lg-6
+            .media-old
+              .media-left-old
+                img(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.level1)
+              .media-body-old
+                .title
+                  a(href='#') #{item.level1}
+                ul.list_2.list-reset
+                  each item_2, i_2 in item.level2
+                    li.item_2
+                      a(href='#') #{item_2}
+    .b-btn
+      +btn-success({type: 'button', className: 'collapsed', text: '<span class="dash">Показать весь каталог</span>'})(data-toggle='collapse' data-target='#accordion-60')

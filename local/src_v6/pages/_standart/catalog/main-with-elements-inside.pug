@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Catalog main page with element inside';
+  - DB.DIR = '../../';
+block title
+  h1#title.catalog-title
+    | Автоэлектроника
+block content
+  include ../../../components/catalog/catalog-category2/index

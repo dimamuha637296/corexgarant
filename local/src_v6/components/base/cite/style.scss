@@ -1,0 +1,51 @@
+$cite-border-color:                 $brand-1;
+
+.cite {
+  color: $caption-color;
+  font-size: 13px;
+  line-height: (18/13);
+  border: 0 solid $cite-border-color;
+
+  &.left {
+    width: 29%;
+    margin: 5px 40px 10px 0;
+    padding: 0 28px 0 0;
+    float: left;
+    border-right-width: 1px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &.right {
+    width: 37.5%;
+    margin: 5px 0 10px 34px;
+    padding: 0 0 0 28px;
+    float: right;
+    border-left-width: 1px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .title {
+    @include font-family-bold();
+    font-size: 14px;
+    line-height: (22/15);
+    margin: -5px  0 .75em;
+    color: $headings-color;
+  }
+
+  p {
+    margin: 0 0 .8em;
+    @include font-family-italic();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+$_search_head_base-height: 32px;
+$_search_head_base-font-size: 14px;
+$_search_head_base-line-height: 1.3; // !!Only multiplier!!
+$_search_head_base-border-radius: $border-radius-small;
+$_search_head_base-text-color: $text-color;
+$_search_head_base-background-color: #fff;
+$_search_head_base-border-width: 1px;
+$_search_head_base-border-color: #ccc;
+$_search_head_base-border-color-focus: darken($_search_head_base-border-color, 10%);
+$_search_head_base-padding-left: 16px;
+$_search_head_base-padding-right: 35px;
+
+.search-head-base {
+
+  .field {
+    position: relative;
+    width: 100%;
+  }
+
+  .input {
+    height: $_search_head_base-height;
+    padding: (floor((($_search_head_base-height - ($_search_head_base-border-width * 2)) - (round($_search_head_base-font-size * $_search_head_base-line-height))) / 2)) $_search_head_base-padding-right (floor((($_search_head_base-height - ($_search_head_base-border-width * 2)) - (round($_search_head_base-font-size * $_search_head_base-line-height))) / 2)) $_search_head_base-padding-left; // So IE normally display the input line in the middle
+    line-height: (round($_search_head_base-font-size * $_search_head_base-line-height));
+    font-size: $_search_head_base-font-size;
+    border-radius: $_search_head_base-border-radius;
+    color: $_search_head_base-text-color;
+    background: $_search_head_base-background-color;
+    border: $_search_head_base-border-width solid $_search_head_base-border-color;
+    width: 100%;
+
+    @include placeholder();
+
+    &:focus {
+      border-color: $_search_head_base-border-color-focus;
+    }
+  }
+
+  .submit {
+
+  }
+
+  .btn-search {
+    border: none;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    position: absolute;
+    right: 14px;
+    top: 8px;
+    background: $_search_head_base-background-color;
+    @include png();
+    @include png-search-btn();
+
+    @include hover-focus() {
+      @include png-search-btn-hover();
+    }
+  }
+}

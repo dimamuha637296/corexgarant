@@ -1,0 +1,21 @@
+.hamburger-closer {
+  position: absolute;
+  left: 100%;
+  top: 0;
+
+  .pm-closer {
+    width: $header-mob-height;
+    height: $header-mob-height;
+    background: $header-additional-background;
+    cursor: pointer;
+
+    &:before {
+      @include svg;
+      @include svg-hamburger-closer-menu();
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -8px 0 0 -8px;
+    }
+  }
+}

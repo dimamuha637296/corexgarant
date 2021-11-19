@@ -1,0 +1,13 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Галерея';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Галерея наших работ
+block content
+  include ../../../components/demo/gallery/albums/index
+  include ../../../components/demo/gallery/albums-2/index
+  include ../../../components/demo/gallery/auto/index
+  include ../../../components/demo/gallery/list/index
+  include ../../../components/demo/gallery/main-list/index

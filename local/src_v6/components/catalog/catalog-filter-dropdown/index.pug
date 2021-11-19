@@ -1,0 +1,32 @@
+#smartFilterDropDown32.catalog-filter-dropdown(style='z-index: 1000; position: absolute; top: 695px; left: 52px;')
+  table.popup-window(cellspacing='0')
+    tbody
+      tr.popup-window-top-row
+        td.popup-window-left-column
+          .popup-window-left-spacer
+        td.popup-window-center-column
+        td.popup-window-right-column
+          .popup-window-right-spacer
+      tr.popup-window-content-row
+        td.popup-window-left-column
+        td.popup-window-center-column
+          #popup-window-content-smartFilterDropDown32.popup-window-content
+            .bx-filter-select-popup(data-role='dropdownContent', style='display: block;')
+              ul.list-reset
+                li
+                  label.bx-filter-param-label( data-role='label_all_arrFilter_01', onclick="smartFilter.selectDropDownItem(this, 'all_arrFilter_01')") All
+                li
+                  label.bx-filter-param-label( data-role='label_arrFilter_01', onclick="smartFilter.selectDropDownItem(this, 'arrFilter_01')") XS
+                li
+                  label.bx-filter-param-label( data-role='label_arrFilter_02', onclick="smartFilter.selectDropDownItem(this, 'arrFilter_02')") S
+                li
+                  label.bx-filter-param-label( data-role='label_arrFilter_03', onclick="smartFilter.selectDropDownItem(this, 'arrFilter_03')") M
+                li
+                  label.bx-filter-param-label( data-role='label_arrFilter_04', onclick="smartFilter.selectDropDownItem(this, 'arrFilter_04')") L
+                li
+                  label.bx-filter-param-label( data-role='label_arrFilter_05', onclick="smartFilter.selectDropDownItem(this, 'arrFilter_05')") XL
+        td.popup-window-right-column
+      tr.popup-window-bottom-row
+        td.popup-window-left-column
+        td.popup-window-center-column
+        td.popup-window-right-column

@@ -1,0 +1,27 @@
+/*full-bg-1.scss*/
+
+// var *************************************************************************************************************
+$_full-bg-1-width-width:                          600%;
+$_full-bg-1-width-2-height:                       5px;
+
+// mixins **************************************************************************************************************
+
+// styles  *************************************************************************************************************
+.full-bg-1 {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $_full-bg-1-width-width;
+    margin-left: (ceil($_full-bg-1-width-width / -2));
+    height: 100%;
+    background: $brand-1;
+    opacity: .15;
+    z-index: -1;
+  }
+}

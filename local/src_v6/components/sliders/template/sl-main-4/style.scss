@@ -1,0 +1,162 @@
+$_sl-main-4_height:       400px;
+$_sl-main-4_bg:           rgba(#f48022,.8);
+
+.sl-main-4 {
+
+  .wrap {
+    min-height: $_sl-main-4_height;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.4s;
+
+    &.not-init {
+      opacity: 0;
+
+      .slide {
+
+        + .slide {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slider {
+    overflow: hidden;
+    height: $_sl-main-4_height;
+  }
+
+  .slide {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: $_sl-main-4_height;
+    background-position: center right;
+    cursor: pointer;
+    border-left: 1px solid #fff;
+
+    &:first-child {
+      border: none;
+    }
+
+    &.active {
+      cursor: default;
+
+      .vertical-block {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  .slide-block {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 16%;
+    transform: translate(0, -50%);
+    background: $_sl-main-4_bg;
+    color: #fff;
+    padding: 0 60px 30px;
+
+    @media (max-width: $screen-md-max) {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: none;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .label {
+    display: inline-block;
+    text-transform: uppercase;
+    background: $link-color;
+    padding: 4px 6px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    margin-top: 10px;
+    font-size: 30px;
+    @include font-family-bold;
+    line-height: 1.2;
+    max-height: (1.2em * 3);
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    @media (max-width: $screen-md-max) {
+      font-size: 24px;
+      max-height: (1.2em * 3);
+    }
+
+    @media (max-width: $screen-sm-max) {
+      max-height: (1.2em * 4);
+      font-size: 18px;
+    }
+  }
+
+  .text {
+    margin-bottom: 10px;
+    line-height: 1.8;
+    max-height: (1.8em * 6);
+    overflow: hidden;
+
+    @media (max-width: $screen-md-max) {
+      max-height: (1.8em * 8);
+    }
+
+    @media (max-width: $screen-sm-max) {
+      line-height: 1.6;
+      max-height: (1.6em * 10);
+      font-size: 12px;
+    }
+  }
+
+  .wrap-more {
+
+    a {
+      text-decoration: none;
+      color: $link-color;
+      font-size: 13px;
+
+      @include hover-focus() {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .vertical-block {
+    position: absolute;
+    height: 380px;
+    right: 15px;
+    top: 10px;
+    color: #fff;
+    font-size: 24px;
+    @include font-family-bold;
+    line-height: 1.2;
+    width: 1.2em * 2;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.5s;
+
+    span {
+      position: relative;
+      display: block;
+      transform: rotate(-90deg) translate(-42%, -280%);
+      height: 100%;
+      width: 380px;
+      max-height: 1.2em * 2;
+      overflow: hidden;
+      text-shadow: 0 0 5px #666666;
+    }
+  }
+}

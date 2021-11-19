@@ -1,0 +1,11 @@
+include ../../../../components/base/modal/index
+script.
+    !function () {
+        'use strict';
+
+        $(function () {
+            if ($.fn.mCustomScrollbar) {
+                mCustomScrollbar.init($('.modal-body'), 340);
+            }
+        });
+    }();

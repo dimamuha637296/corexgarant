@@ -1,0 +1,51 @@
+$_accordion-padding-left:             26px;
+$_accordion-top:                      8px;
+$_accordion-font-size:                1.8rem;
+
+.accordion {
+  margin: 0 0 40px;
+
+  .panel {
+    padding-left: $_accordion-padding-left;
+
+    .link {
+      font-size: $_accordion-font-size;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+
+      &:before {
+        font-size: 7px;
+        position: absolute;
+        top: $_accordion-top;
+        left: -$_accordion-padding-left + 2px;
+        transform: rotate(-180deg);
+        transition: transform .3s ease;
+      }
+      
+      @include hover-focus {
+        color: $link-color-hover;
+
+        &:before {
+          @include svg-arrow-hover();
+        }
+      }
+    }
+
+    .collapsed {
+      color: $link-color;
+
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .acc-heading {
+    padding: 0 0 13px;
+  }
+
+  .acc-body {
+    padding-bottom: 27px;
+  }
+}

@@ -1,0 +1,15 @@
+.catalog-table-2 {
+
+  .item {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    & + .item {
+      border-top: 1px solid $border-radius-base;
+    }
+  }
+}

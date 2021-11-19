@@ -1,0 +1,26 @@
+if (elementPrevs === undefined)
+  -
+    var elementPrevs = [
+      {
+        img: 'img/tmp/element-prevs-0.jpg',
+        title: 'Ламинат Tarkett Манон'
+      },
+      {
+        img: 'img/tmp/element-prevs-1.jpg',
+        title: 'Ламинат Kronostar Дуб'
+      },
+      {
+        img: 'img/tmp/element-prevs-2.jpg',
+        title: 'Ламинат Tarkett Cinema Mерлин'
+      }
+    ];
+.element-prevs
+  .h2 Ранее просмотренные
+  .wrap
+    .row
+      each item in elementPrevs
+        .col-xl-2.col-md-3.col-12.col
+          a.inner(href="#")
+            .img-wrap
+              img(src=DB.DIR + item.img, alt=item.title)
+            .item-title #{item.title}

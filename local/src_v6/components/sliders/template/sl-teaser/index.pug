@@ -1,0 +1,16 @@
+mixin sl-teaser(data)
+  .sl-teaser
+    .wrap.cursor
+      .slider
+        each slide in data.slides
+          .inner
+            a.link(href='#')
+              img.pic(src=DB.DIR + 'img/tmp/' + slide.pic alt=slide.title)
+              .wrap-i
+                .title #{slide.title ? slide.title : 'Заголовок слайда'}
+                if (slide.text)
+                  .text #{slide.text}
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

@@ -1,0 +1,47 @@
+.tabs-accordion {
+
+  // work
+
+  .nav {
+
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .acc-heading {
+
+    @media (min-width: $screen-md-min) {
+      display: none;
+    }
+  }
+
+  .tab-content {
+
+    @media (min-width: $screen-md-min) {
+
+      .collapse {
+        display: block;
+      }
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 0;
+      margin: 0;
+
+      > .tab-pane {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  // styles
+
+  .acc-body {
+
+    @media (max-width: $screen-sm-max) {
+      padding: 2rem 1.8rem;
+    }
+  }
+}

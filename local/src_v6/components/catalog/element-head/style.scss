@@ -1,0 +1,84 @@
+.element-head {
+  margin-bottom: 10px;
+
+  .item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    text-decoration: none;
+
+    @media (max-width: $screen-lg-max) {
+      margin-right: 15px;
+    }
+
+    @media (max-width: $screen-md-max) {
+      padding-right: 12px;
+      margin-right: 12px;
+    }
+
+    &.avail-item {
+      color: #016b2c;
+      @include font-family-bold();
+    }
+  }
+
+  a.item {
+
+    @include hover-focus() {
+
+      .icon {
+
+        &.comp {
+
+          &:before {
+            @include svg-element-head-compare-hov();
+          }
+        }
+
+        &.whishlist {
+
+          &:before {
+            @include svg-element-head-whish-hov();
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    margin-right: 9px;
+    align-items: center;
+    justify-content: center;
+
+    &.avail {
+
+      &:before {
+        @include svg();
+        @include svg-element-head-avail();
+        vertical-align: middle;
+      }
+    }
+
+    &.comp {
+
+      &:before {
+        @include svg();
+        @include svg-element-head-compare();
+        vertical-align: middle;
+      }
+    }
+
+    &.whishlist {
+
+      &:before {
+        @include svg();
+        @include svg-element-head-whish();
+        vertical-align: middle;
+      }
+    }
+  }
+}

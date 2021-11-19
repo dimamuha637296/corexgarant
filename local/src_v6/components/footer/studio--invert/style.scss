@@ -1,0 +1,24 @@
+.studio {
+
+  &--invert {
+
+    .text-wrap {
+      color: #4a90e2;
+    }
+
+    .link {
+      color: #4a90e2;
+    }
+
+    a.link {
+      text-decoration-color: rgba(#4a90e2, 0.7);
+
+      &:hover,
+      &:focus {
+        color: #4a90e2;
+        text-decoration: none;
+        text-decoration-color: rgba(#4a90e2, 0);
+      }
+    }
+  }
+}

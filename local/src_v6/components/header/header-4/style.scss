@@ -1,0 +1,39 @@
+.header {
+
+  &--4 {
+
+    .header__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 -10px;
+    }
+
+    .menu-head-2 {
+      width: 30%;
+
+      @media (max-width: $screen-lg-max) {
+        width: 20%;
+      }
+    }
+
+    .menu-head-2,
+    .exit,
+    .compare,
+    .lang-2,
+    .contacts-head-2 {
+      padding: 0 10px;
+    }
+
+    .logo-desk {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .pic {
+        padding-right: 0;
+      }
+    }
+  }
+}

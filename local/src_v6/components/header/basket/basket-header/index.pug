@@ -1,0 +1,12 @@
+if (basketEmpty === undefined)
+  - var basketEmpty = false;
+.basket-header(class=basketEmpty ? 'empty-basket' : '')
+  .wrap
+    a.link(href='#')
+      i.ico
+      =' '
+      span В корзине
+  if (basketEmpty)
+    .text пока пусто
+  else
+    .text 12 товаров на 246 руб

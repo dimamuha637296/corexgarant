@@ -1,0 +1,26 @@
+mixin sl-project(data)
+  .sl-project(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not.full-wrap
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              .pic
+                img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+              .slide-block
+                .container
+                  .slide-block_w
+                .info
+                  .counter-wrap
+                    include ../../util/slide-counter/index
+                  .title-wrap
+                    .title #{slide.title}
+                  .list-info
+                    each item_2 in slide.listInfo
+                      .item
+                        .name #{item_2.name}
+                        .descr #{item_2.descr}
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

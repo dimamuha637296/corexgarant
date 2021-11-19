@@ -1,0 +1,4 @@
+.logo-svg
+  .pic
+    #{DB.isMain === true ? 'span' : 'a'}&attributes(DB.isMain === true ? {} : { 'href': '/' })
+      img(src=DB.DIR + 'img/logo-svg.svg', alt=DB.companyName)

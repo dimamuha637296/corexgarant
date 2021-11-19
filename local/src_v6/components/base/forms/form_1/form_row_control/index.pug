@@ -1,0 +1,8 @@
+mixin form_row_control(data)
+  - var controlType = data.fields.controlType !== undefined ? data.fields.controlType : 'input';
+  +#{controlType}(data.fields)
+  if (data.dropdownValidation === true)
+    .error-drop
+      button.error-icon(data-toggle="dropdown") ?
+      .dropdown-menu.dropdown-menu-right
+        .controls

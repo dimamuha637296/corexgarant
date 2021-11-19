@@ -1,0 +1,16 @@
+mixin sl-vertical(data)
+  .sl-vertical(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              .pic
+                img.img(src=DB.DIR + slide.pic, alt=slide.title ? slide.title : 'alt')
+              .text-wrap
+                .title #{slide.title ? slide.title : 'Заголовок слайда'}
+                if (slide.text)
+                  p.text #{slide.text}
+      if (data.pager !== undefined)
+        +#{data.pager}()
+    +#{data.nav}()

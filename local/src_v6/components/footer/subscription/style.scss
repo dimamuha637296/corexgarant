@@ -1,0 +1,90 @@
+.subscription {
+  position: relative;
+  margin: 0 0 43px;
+  @include clearfix;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 25px;
+  }
+
+  .bg {
+    background: #2d3e4f;
+    width: $site-max-width;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+  }
+
+  .bg-wrap {
+    position: relative;
+    padding: 18px 0 14px;
+  }
+
+  .control-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .title {
+    text-transform: uppercase;
+    @include font-family-medium();
+    font-size: 18px;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 8px;
+    padding-right: 15px;
+
+    @media (max-width: $screen-md-max) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .input-wrap {
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+
+    @media (max-width: $screen-xs-max) {
+      display: block;
+      flex: auto;
+    }
+  }
+
+  .input {
+    margin-bottom: 10px;
+    flex: 1;
+    max-width: 80%;
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .b-btn {
+    padding-left: 15px;
+    max-width: 200px;
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-lg-min) {
+      min-width: 200px;
+      max-width: 250px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding-left: 0;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    padding: 8px 20px;
+  }
+}

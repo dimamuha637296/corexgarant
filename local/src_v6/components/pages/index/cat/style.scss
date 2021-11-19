@@ -1,0 +1,204 @@
+$_cat-transition: all .2s ease-out;
+
+.cat {
+  padding: 38px 0 0;
+  margin: 0 0 50px;
+
+  &__b-title {
+    text-align: center;
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
+    margin: 0 0 14px;
+    @include font-family-bold;
+    color: $link-color;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: (round($font-size-h1 * .7));
+    }
+  }
+
+  &__b-text {
+    text-align: center;
+    margin: 0 auto 37px;
+    max-width: 880px;
+  }
+
+  &__list {
+    @include clearfix;
+    margin: 0 -5px;
+  }
+
+  &__item {
+    padding: 0 5px;
+    float: left;
+    margin: 0 0 10px;
+    transform: matrix(1, 0, 0, 1, 0, 0);// Fix bug with other items animation
+  }
+
+  @mixin small-element() {
+
+    .btn {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .cat__wrap {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .cat__title {
+      font-size: 14px;
+    }
+
+    .cat__text {
+      font-size: 20px;
+      max-height: 1.2 * 4em;
+    }
+  }
+
+  .cols-2 {
+    width: 50%;
+    height: 420px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      @include small-element;
+    }
+  }
+
+  .cols-3 {
+    width: 33.3%;
+    height: 280px;
+
+    @media (max-width: $screen-lg-max) {
+      @include small-element;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+
+      @media (min-width: $screen-lg-min) {
+
+        .desktop & {
+
+          &:after {
+            opacity: 1;
+          }
+
+          .cat__img {
+            transform: scale(1.2) translate(-50%, -50%);
+          }
+
+          .cat__wrap {
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%);
+      opacity: 1;
+      transition: $_cat-transition;
+
+      @media (min-width: $screen-lg-min) {
+
+        .desktop & {
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0 0;
+    transition: transform 3s linear;
+
+    .g-wrap & {
+      max-width: initial;
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    color: $body-bg-outer-color;
+    transition: $_cat-transition;
+    transition-delay: .1s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 23px;
+    z-index: 3;
+
+    @media (min-width: $screen-lg-min) {
+
+      .desktop & {
+        bottom: -75px;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    max-height: 1.2*2em;
+    overflow: hidden;
+    margin: 0 0 3px;
+  }
+
+  &__text {
+    font-size: 29px;
+    line-height: 1.2;
+    max-height: 1.2 * 3em;
+    overflow: hidden;
+    margin: 0 0 14px;
+  }
+
+  &__btn {
+    margin: 0 0 20px;
+
+    .btn {
+      padding: 17px 46px;
+
+      @media (max-width: $screen-lg-max) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @media (max-width: $screen-lg-max) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}

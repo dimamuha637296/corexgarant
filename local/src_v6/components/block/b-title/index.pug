@@ -1,0 +1,9 @@
+mixin b-title(data)
+  .b-title
+    .b-title__title-wrap
+      if (data.title)
+        #{data.titleIsLink === true ? 'a': 'div'}.b-title__title(class=data.titleH ? data.titleH : 'h2')&attributes(data.titleIsLink === true ? { 'href': '#' } : {}) #{data.title}
+      if (data.link)
+        a.b-title__link(href='#') #{data.link}
+    if (data.descr)
+      p.b-title__descr !{data.descr}

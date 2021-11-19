@@ -1,0 +1,44 @@
+.item-size {
+
+  ul {
+    margin: 0;
+    font-size: 0;
+  }
+
+  li {
+    min-width: 37px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid $border-color-base;
+
+    &.bx_active {
+      border-color: $link-color;
+
+      a {
+        color: $link-color;
+      }
+    }
+
+    @include hover-focus() {
+      border-color: $link-color;
+
+      a {
+        color: $link-color;
+      }
+    }
+
+    a {
+      max-height: 21px;
+      overflow: hidden;
+      display: block;
+      padding: 0 8px;
+      @include font-family-bold();
+      text-decoration: none;
+      color: $text-color;
+      font-size: 12px;
+      line-height: (21/12);
+    }
+  }
+}

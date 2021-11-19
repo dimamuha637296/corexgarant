@@ -1,0 +1,32 @@
+$_payment-width:                       3px;
+
+.payment {
+
+  .title {
+    color: $text-footer-color;
+    font-size: 14px;
+    line-height: (21/14);
+    margin: 0 0 10px;
+  }
+
+  .list {
+    margin: 0 -$_payment-width;
+  }
+
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 12px;
+    padding: 0 $_payment-width;
+  }
+
+  .link {
+    opacity: 1;
+    display: block;
+    transition: all .15s ease;
+
+    @include hover-focus {
+      opacity: .7;
+    }
+  }
+}

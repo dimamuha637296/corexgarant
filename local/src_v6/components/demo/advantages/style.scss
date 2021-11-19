@@ -1,0 +1,37 @@
+.advantages {
+  margin: 0 0 32px;
+
+  .b-title {
+    margin-top: 29px;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    margin: 0 0 20px;
+  }
+
+  &__inner {
+    padding: 23px 29px 28px;
+    border: 1px solid $brand-gray-4;
+
+    @media (max-width: $screen-xs-max) {
+      padding: 20px;
+    }
+  }
+
+  &__pic {
+    height: 58px;
+    margin: 0 0 9px;
+  }
+
+  &__img {
+    max-height: 100%;
+  }
+
+  &__title {
+
+    .g-wrap & {
+      margin: 0 0 11px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+include ../../core/init/index
+include ../../core/layout/global_variables/index
+block pageVars
+doctype html
+html(lang='ru-RU')
+  head
+    include ../../core/layout/head/index
+  body.ru.js-off.pm-close(class=DB.bodyClass + ' ' + (DB.isMain === true ? 'main' : 'inner'))
+    #db.db.g-wrap
+      include ../../components/outer-bg/index
+      .outer-bg.pm-content
+        header.header(class=DB.headerModifier)
+          block header
+            include ../../components/header/header/index
+        .g-main
+          .container
+            if (DB.layout !== 'simple')
+              block breadcrumbs
+                if (DB.isMain !== true)
+                  include ../../components/base/breadcrumb/index
+              block title
+                h1#title H1 Заголовок страницы. В магазинах начался сезон скидок
+              if (DB.layout === 'aside')
+                .row
+                  aside.g-sidebar.col-lg-3.col-12.d-print-none
+                    block aside
+                      include ../../components/aside/menu-aside-3/index
+                  main#workarea.g-content.col-lg-9.col-12
+                    block content
+              else
+                main#workarea.g-content
+                  block content
+            else
+              block content
+        footer.footer.d-print-none
+          block footer
+            include ../../components/footer/footer/index
+      block additional
+        include ../../components/extra/pm/index
+        include ../../components/extra/scroll-to-top/index
+        include ../../components/header/menu-base/menu-base/index
+        include ../../components/extra/cookies/index
+      block popup
+        include ../../components/modals/quest-modal/index

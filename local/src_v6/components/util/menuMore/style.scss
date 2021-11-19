@@ -1,0 +1,31 @@
+.js-menuMore {
+
+  .menu_level_1 {
+    display: table;
+  }
+
+  .item_1 {
+    display: table-cell;
+  }
+
+  .submenu {
+
+    .item_1 {
+      display: block;
+    }
+  }
+
+  .more {
+
+    .g-wrap & {
+      display: none;
+    }
+
+    &.shown {
+
+      .g-wrap & {
+        display: table-cell;
+      }
+    }
+  }
+}

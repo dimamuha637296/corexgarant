@@ -1,0 +1,81 @@
+.cert-list.stack.gallery-hover.js-width
+  - var i = 0
+  while i < 7
+    - i++
+    .item(class=i === 3 ? 'gallery-stack' : '')
+      if (i !== 2)
+        //- С картинками
+        .pic.js-width-trg
+          .pic_i
+            if (i === 3 || i === 5)
+              a.link(href=DB.DIR + 'img/tmp/cert-list-' + i + '-big.jpg', title='Лицензия лист 1', data-gallery='' +
+              '[{"href":DB.DIR + "img/tmp/cert-list-' + i + '-big-2.jpg","title":"Лицензия лист 2"},' +
+              '{"href":DB.DIR + "img/tmp/cert-list-' + i + '-big-3.jpg","title":"Лицензия лист 3"}]')
+                i.icon.svg-loop
+                img(src=DB.DIR + 'img/tmp/cert-list-' + i + '-small.jpg', alt='certificates', title='Лицензия лист 1')
+            else
+              a.link(href=DB.DIR + 'img/tmp/cert-list-' + i + '-big.jpg', title='Лицензия лист 1')
+                i.icon.svg-loop
+                img(src=DB.DIR + 'img/tmp/cert-list-' + i + '-small.jpg', alt='certificates', title='Лицензия лист 1')
+      else
+        //- Без картинки
+      .wrap
+        .title.h3
+          | Диплом «Лучшая риэлтерская компания» H3
+        .text
+          | Минским горисполкомом 15 сентября 2009 г. в Единый государственный регистр юридических лиц и индивидуальных
+          |  предпринимателей внесена запись о государственной регистрации Общества с ограниченной ответственностью
+          |  «Хостинг ТУТ» (ООО «Хостинг ТУТ») с регистрационным номером 191175957
+  script.
+      !function () {
+          'use strict';
+
+          // init popup-gallery
+          function popupCert() {
+              var galleryList = $('.cert-list');
+              if (!galleryList.length || !$.fn.magnificPopup) {
+                  return false;
+              }
+              galleryList.find('.item').find('.link').each(function () {
+                  var self = $(this);
+                  var data = self.data('gallery');
+                  var src = [{
+                      src: self.attr('href'),
+                      title: self.attr('title')
+                  }];
+                  if ((typeof data) !== 'undefined') {
+                      for (var i = 0; i < data.length; i++) {
+                          src.push({
+                              src: data[i].href,
+                              title: data[i].title
+                          });
+                      }
+                  }
+                  self.magnificPopup({
+                      type: 'image',
+                      closeOnContentClick: false,
+                      closeBtnInside: false,
+                      mainClass: 'mfp-with-zoom mfp-img-mobile',
+                      image: {
+                          verticalFit: true
+                      },
+                      gallery: {
+                          enabled: true //false
+                      },
+                      zoom: {
+                          enabled: true,
+                          duration: 300, // don't forget to change the duration also in CSS
+                          opener: function () {
+                              return self;
+                          }
+                      },
+                      items: src
+                  });
+              });
+          }
+
+          // Call functions
+          $(window).on('load', function () {
+              popupCert();
+          });
+      }();

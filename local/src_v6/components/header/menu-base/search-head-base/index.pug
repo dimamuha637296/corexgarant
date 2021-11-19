@@ -1,0 +1,11 @@
+.search-head-base.hide-print
+  form(action='/search/', method='get')
+    fieldset.field
+      input#searchinp.input(
+      type='search',
+      placeholder='Поиск по сайту',
+      name='q',
+      maxlength='50',
+      required='')
+      span.submit
+        input.btn-search(name='btn-search', type='submit', value='')

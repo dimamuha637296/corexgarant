@@ -1,0 +1,21 @@
+.element-reason {
+  padding: 13px 18px;
+  border-left: 3px solid $link-color-hover;
+  background-color: #fef7f2;
+
+  @media (max-width: $screen-md-max) {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    margin-bottom: 6px;
+    @include font-family-bold();
+    font-size: 14px;
+  }
+
+  .desc {
+    color: #8e969a;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}

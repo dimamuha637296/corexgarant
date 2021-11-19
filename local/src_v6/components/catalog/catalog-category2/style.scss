@@ -1,0 +1,42 @@
+.catalog-detail {
+  @include border();
+  
+  a {
+    text-decoration: none;
+  }
+
+  .title-cat {
+    font-size: 22px;
+    line-height: (24/22);
+    @include font-family-bold();
+    margin-bottom: 32px;
+    
+    > a,
+    > span {
+      color: $text-color;
+    }
+  }
+
+  .block {
+    border: none;
+  }
+
+  #db & .item {
+    margin-bottom: 27px;
+
+    &:before {
+      margin: 30px 0;
+    }
+  }
+
+  .text {
+    margin-bottom: 35px;
+  }
+
+  .link-up {
+
+    > a {
+      text-decoration: underline;
+    }
+  }
+}

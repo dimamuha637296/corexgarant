@@ -1,0 +1,101 @@
+.registration
+  .row
+    .col-12.col-md-8.col-lg-6
+      form#form-auth.form-1(name='form_auth', method='post', target='_top', action='/about/authorization/?login=yes')
+        fieldset.fieldset
+          // row
+          .alert.alert-danger(role='alert') Неверный логин или пароль
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG-NAME')
+              |  Имя
+            .text.col-12
+              input#REG-NAME.form-control(type='text', name='REG-NAME', maxlength='255', value='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG-LASTNAME')
+              |  Фамилия
+            .text.col-12
+              input#REG-LASTNAME.form-control(type='text', name='REG-LASTNAME', maxlength='255', value='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_LOGIN')
+              | Логин
+            .text.col-12
+              input#REG_LOGIN.form-control(type='text', name='REG_LOGIN', maxlength='255', value='', spellcheck='true', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_PASSWORD2')
+              | Пароль
+            .text.col-12
+              input#REG_PASSWORD.form-control(type='password', name='REG_PASSWORD', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_PASSWORD2')
+              | Подтверждение пароля
+            .text.col-12
+              input#REG_PASSWORD2.form-control(type='password', name='REG_PASSWORD2', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='REG_EMAIL')
+              | Эл. почта
+            .text.col-12
+              input#REG_EMAIL.form-control(type='email', name='REG_EMAIL', maxlength='255', value='', required='')
+            .controls.col-12
+          // row
+          .form-group.control-group
+            label.name.col-12(for='AUTH_CAPTCHA_PROMT')
+              input(type='hidden', name='captcha_sid', value='014fe49849e2ee886aaa9c9f3d2e3d44')
+              | Введите символы на картинке:
+            .text.col-12
+              .captcha_img
+                img(src=DB.DIR + '/img/tmp/captcha.jpg', alt='CAPTCHA')
+              input#AUTH_CAPTCHA_PROMT.form-control(type='text', name='captcha_word', maxlength='50', value='', size='15')
+            .controls.col-12
+          // row
+          .form-group
+            .col-12.d-md-flex.align-items-center
+              +btn-primary({type: 'input', className: 'btn_submit', text: 'Регистрация'})(name='Login')
+              .form_required
+                a(href='auth.html', target='_blank') Войти
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-auth');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'REG_LOGIN': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'REG_PASSWORD': {
+                              required: true
+                          },
+                          'REG_PASSWORD2': {
+                              required: true
+                          },
+                          'REG_EMAIL': {
+                              required: true
+                          },
+                          'captcha_word': {
+                              required: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

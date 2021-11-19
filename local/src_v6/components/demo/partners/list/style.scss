@@ -1,0 +1,45 @@
+/*partners-list.scss*/
+
+// var *****************************************************************************************************************
+//@_partners-list:          29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.partners-list {
+  margin-bottom: 50px;
+
+  .icon {
+	position: relative;
+	font-size: 11px;
+	color: $caption-color;
+
+	&:before {
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  margin-left: 5px;
+	}
+  }
+
+  .item {
+	margin: 0 0 55px;
+  }
+
+  .pic {
+	margin-bottom: 21px;
+	display: table;
+
+	a {
+	  display: table-cell;
+	  vertical-align: bottom;
+	}
+  }
+
+  .title {
+    @include font-family-medium();
+    font-size: $font-size-h4;
+    line-height: $line-height-h4;
+    margin: 0 0 5px;
+  }
+}

@@ -1,0 +1,85 @@
+$_files-color:                       $brand-1;
+$_files-right-width:                 11px;
+
+.files {
+  margin: 0 0 50px;
+
+  .list {
+    margin: 0;
+  }
+
+  .files-item {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .files-link {
+    display: block;
+    position: relative;
+    padding: 0 0 0 45px;
+
+    @include hover-focus() {
+
+      .files-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .files-icon {
+    border: 2px solid $_files-color;
+    border-radius: $border-radius-base;
+    display: block;
+    width: 28px;
+    height: 36px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    padding: 18px 0 0 1px;
+    font-style: normal;
+    text-transform: uppercase;
+    @include font-family-bold();
+    color: $_files-color;
+    font-size: 9px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all .15s ease;
+  }
+
+  .icon-inner {
+    width: $_files-right-width;
+    height: $_files-right-width;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 2px solid $_files-color;
+    border-bottom: 2px solid $_files-color;
+
+    &:before {
+      position:absolute;
+      right: -1px;
+      top: -1px;
+      content:'';
+      border-top: $_files-right-width solid $_files-color;
+      border-left: $_files-right-width solid transparent;
+    }
+
+    &:after {
+      position:absolute;
+      right: -2px;
+      top: -2px;
+      content:'';
+      border-top: $_files-right-width solid $body-bg-color;
+      border-left: $_files-right-width solid transparent;
+    }
+  }
+
+  .files-text {
+    @include caption-text();
+    padding: 0 0 0 45px;
+  }
+}

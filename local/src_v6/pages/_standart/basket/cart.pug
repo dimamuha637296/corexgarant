@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Basket step 1';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Корзина
+block content
+  include ../../../components/basket/basket_form/index

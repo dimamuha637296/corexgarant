@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Рассылки';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Рассылки
+block content
+  include ../../../components/demo/subscr/index

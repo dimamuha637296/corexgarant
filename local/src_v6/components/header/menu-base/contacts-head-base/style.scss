@@ -1,0 +1,42 @@
+.contacts-head-base {
+
+  .nav-tabs {
+    margin-bottom: 5px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    line-height: 1;
+    margin-right: 23px;
+    display: block;
+  }
+
+  .tel {
+    line-height: 1;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-size: 17px;
+      line-height: (24/17);
+      margin-right: 2px;
+
+      @media (max-width: $screen-lg-max) {
+        font-size: 16px;
+      }
+
+      @include hover-focus() {
+        color: lighten($text-color, 40%);
+      }
+    }
+
+    i {
+      color: #919191;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 14px;
+      }
+    }
+  }
+}

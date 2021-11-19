@@ -1,0 +1,125 @@
+//-
+  modules/reviews.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .reviews - модуль Отзывы (modules/reviews.less)
+  .js-cutter - блок с текстом, который зарезается по кол-ву символов
+  data-max-symb="50" - число символов, при привышении которых зарезается текст, необязательный атрибут (по умолчанию = 150)
+.reviews.border
+  .item
+    .row
+      .col-md-3.col-sm-4.col-12
+        .rating
+          ul.list-rating.list-reset.star-list-small(data-category='cost')
+            li.star-item.active
+            li.star-item.active
+            li.star-item.active
+            li.star-item.active
+            li.star-item.active
+        .name
+          | Рождественский Константин Александрович
+        time.date(datetime='2014-06-20') 20 июня 2014
+      .col-md-9.col-sm-8.col-12
+        .question
+          span.js-cutter Хочу выразить огромную благодарность лучшему сотруднику Батиенко Оксане за помощь в продаже 1-комнатной и покупке 3-комнатной квартиры в Минске. Это очень понимающий, отзывчивый, чуткий и человек хорошо знающий свое Хочу выразить огромную благодарность лучшему сотруднику Батиенко Оксане за помощь в продаже 1-комнатной и покупке 3-комнатной квартиры в Минске. Это очень понимающий, отзывчивый, чуткий и человек хорошо знающий свое
+        .answer
+          .title
+            | Ответ компании:
+          .text
+            | Уважаемый Владимир Александрович! Спасибо Вам, что нашли время сказать нам слова благодарности. Мы постоянно совершенствуем свою работу и очень приятно слышать, что Вы высоко оценили оказанную нами помощь по продаже квартиры и в оформлении сделки, чуткость и оперативность специалистов. Обращайтесь к нам, Владимир Александрович, будем рады Вам помочь!
+          .who
+            | Екатерина, ведущий специалист
+  .item
+    .row
+      .col-md-3.col-sm-4.col-12
+        .rating
+          ul.list-rating.list-reset.star-list-small(data-category='cost')
+            li.star-item.active
+            li.star-item.active
+            li.star-item.active
+            li.star-item.active
+            li.star-item
+        .name
+          | Рождественский Константин
+          | Александрович
+        time.date(datetime='2014-05-30') 30 мая 2014
+      .col-md-9.col-sm-8.col-12
+        .question
+          span.js-cutter Хотел бы поблагодарить специалиста Елену Шуть.
+        .answer
+          .title
+            | Ответ компании:
+          .text
+            | Уважаемый Владимир Александрович! Спасибо!
+          .who
+            | Екатерина, ведущий специалист
+  .item
+    .row
+      .col-md-3.col-sm-4.col-12
+        .rating
+          ul.list-rating.list-reset.star-list-small(data-category='cost')
+            li.star-item.active
+            li.star-item
+            li.star-item
+            li.star-item
+            li.star-item
+        .name
+          | ООО «О-ЛО-ЛО»
+        time.date(datetime='2014-05-30') 30 мая 2014
+      .col-md-9.col-sm-8.col-12
+        .question
+          span.js-cutter(data-max-symb='50') Уважаемая Бабич Вероника Владимировна! Хотим выразить свою признательность за ваш профессионализм и за полный контроль сделки по продаже и покупке нашей семьей квартиры. Могу смело рекомендовать вас и ваши деловые качества друзьям Уважаемая Бабич Вероника Владимировна! Хотим выразить свою признательность за ваш профессионализм и за полный контроль сделки по продаже и покупке нашей семьей квартиры. Могу смело рекомендовать вас и ваши деловые качества друзьям
+        .answer
+          .title
+            | Ответ компании:
+          .text
+            | Уважаемый Владимир Александрович! Спасибо Вам, что нашли время сказать нам слова благодарности. Мы постоянно совершенствуем свою работу и очень приятно слышать, что Вы высоко оценили оказанную нами помощь по продаже квартиры и в оформлении сделки, чуткость и оперативность специалистов. Обращайтесь к нам, Владимир Александрович, будем рады Вам помочь!
+          .who
+            | Екатерина, ведущий специалист
+script.
+    !function () {
+        'use strict';
+
+        function moreCutter() {
+            var opt = {
+                block: $('.js-cutter'),
+                data: 'max-symb',
+                show: 'Весь отзыв',
+                hide: 'Скрыть отзыв'
+            };
+            if (!opt.block.length) {
+                return false;
+            }
+            opt.maxSymb = 150;
+            opt.block.each(function () {
+                var self = $(this);
+                var text = self.text();
+                var selfData = self.data(opt.data);
+                if (self.data(opt.data) !== undefined) {
+                    opt.maxSymb = parseInt(selfData);
+                }
+                if (text.length > opt.maxSymb) {
+                    var newText = text.substr(0, (opt.maxSymb - 3)) + '...';
+                    self.html(newText);
+                    self.parent().append('<span class="js-more collapsed lnk-pseudo">' +
+                        '<span class="opener">' + opt.show + '</span>' +
+                        '<span class="closer">' + opt.hide + '</span>' +
+                        '</span>');
+                    var moreLink = self.siblings('.js-more');
+                    moreLink.on('click', function () {
+                        if (moreLink.hasClass('collapsed')) {
+                            self.html(text);
+                            moreLink.removeClass('collapsed');
+                        } else {
+                            self.html(newText);
+                            moreLink.addClass('collapsed');
+                        }
+                    });
+                }
+            });
+        }
+
+        $(function () {
+            moreCutter();
+        });
+    }();

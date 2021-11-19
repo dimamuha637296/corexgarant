@@ -1,0 +1,13 @@
+.item-quantity {
+  position: relative;
+  max-width: 150px;
+  margin-bottom: 10px;
+  
+  @media (max-width: $screen-lg-max) {
+    max-width: 100px;
+  }
+
+  .ui-button-icon-space {
+    display: none;
+  }
+}

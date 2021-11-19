@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Замена src изображений в зависимости от разрешения';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Замена src изображений в зависимости от разрешения
+block content
+  include ../../../components/examples/srcSet/index

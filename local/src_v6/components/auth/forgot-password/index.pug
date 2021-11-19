@@ -1,0 +1,45 @@
+.forgot-password
+  .h3 Выслать контрольную строку
+  .text Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+  form#form-forgot_password.form-1(name='form-forgot_password', method='post', target='_top', action='/auth/?forgot_password=yes')
+    fieldset.fieldset
+      // row
+      .alert.alert-danger(role='alert') Логин или E-Mail не найдены.
+      // row
+      .form-group.control-group
+        label.name.col-12(for='FORGOT-PWD_LOGIN')
+          | Логин или E-mail
+        .col-12
+          input#FORGOT-PWD_LOGIN.form-control.regdata(type='text', name='USER_LOGIN', maxlength='255', value='')
+        .controls.col-12
+      // row
+      .form-group
+        .col-12.btn-wrap
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Выслать'})(name='send_account_info')
+          .form_required-wrap
+            .form_required
+              a(href='#', target='_blank') Авторизация
+  script.
+      !function () {
+          'use strict';
+  
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-forgot_password');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'USER_LOGIN': {
+                              required: true,
+                              minlength: 2
+                          }
+                      }
+                  });
+              }
+          }
+  
+          $(function () {
+              initValid();
+          });
+      }();

@@ -1,0 +1,15 @@
+mixin btn-refresh(data)
+  -
+    var attr = {};
+    var tag = data.type || 'a';
+    var className = data.className !== undefined ? ' ' + data.className : '';
+    var disClass = data.disabled !== true ? '' : ' disabled';
+    var spinClass = data.spin !== true ? '' : ' spin';
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+    if (data.attributes) attr = Object.assign({}, attr, attributes);
+  case tag
+    when 'a'
+      - attr.href = '#';
+    when 'button'
+      - attr.type = 'button';
+  #{tag}.btn.btn-refresh(class=spinClass + disClass + className)&attributes(attr)

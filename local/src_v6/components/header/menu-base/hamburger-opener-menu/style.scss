@@ -1,0 +1,140 @@
+$_hamburger-bg:                 $link-color;
+
+.hamb-wrap-opener {
+  position: relative;
+  float: right;
+
+  .g-header.min & {
+    margin-top: 19px;
+  }
+
+  .hamburger {
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $_hamburger-bg;
+    float: right;
+    border: none;
+    cursor: pointer;
+    height: 34px;
+    transition: 0.3s;
+    padding: 0 48px 0 0;
+    background: transparent;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    width: auto;
+
+    @include hover-focus {
+      color: $link-color-hover;
+
+      .ico {
+
+        &,
+        &:before,
+        &:after {
+          background: $link-color-hover;
+        }
+      }
+    }
+
+    .txt {
+      display: block;
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @media (max-width: $screen-lg-max) {
+        display: none;
+      }
+    }
+
+    &.pm-opener {
+      opacity: 1;
+    }
+
+    .ico {
+      top: 50%;
+      margin-top: -3px;
+      border: none;
+      width: 34px;
+      left: auto;
+
+      &,
+      &:before,
+      &:after {
+        position: absolute;
+        height: 3px;
+        right: 0;
+        background: $_hamburger-bg;
+        transition: transform 0.3s, background 0.15s ease;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        width: 100%;
+        transform-origin: 3px center;
+      }
+
+      &:before {
+        top: 9px;
+      }
+
+      &:after {
+        top: -9px;
+      }
+    }
+
+    &.opened {
+
+      .ico {
+        transform: scale3d(0.8, 0.8, 0.8);
+        background: transparent;
+
+        &:before,
+        &:after {
+          transform-origin: 50% 50%;
+          top: 0;
+          background: #EEE9E3;
+        }
+
+        &:before {
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+
+        &:after {
+          transform: rotate3d(0, 0, 1, -45deg);
+        }
+
+        .no-csstransforms3d & {// IE9
+          background: transparent;
+          position: static;
+          &:before,
+          &:after {
+            left: 0;
+            transform-origin: initial;
+          }
+          &:before {
+            transform: rotate(45deg);
+            top: 41%;
+          }
+          &:after {
+            transform: rotate(-45deg);
+            bottom: 42%;
+            top: auto;
+            left: -1px;
+          }
+        }
+      }
+
+      &.pm-opener {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+include ../../../components/base/btns/btn/index
+.subscription
+  .bg
+  .bg-wrap
+    form#form-subscript-confirm.b-form(action='/personal/subscribe/subscr_edit.php')
+      fieldset
+        .control-group
+          .title Подписка на&nbsp;рассылку
+          .input-wrap
+            input.input.form-control(type='email', name='sf_EMAIL', placeholder='email@adress.com', value='')
+            .b-btn
+              +btn-primary({type: 'input', text: 'Подписаться'})(name='OK')
+  script.
+      !function () {
+          'use strict';
+
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-subscript-confirm');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'sf_EMAIL': {
+                              required: true,
+                              email: true
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

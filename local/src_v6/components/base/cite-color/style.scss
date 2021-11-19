@@ -1,0 +1,50 @@
+.cite-color {
+  color: $caption-color;
+  font-size: $font-size-sm;
+  line-height: (18/13);
+  background: $brand-white;
+  box-shadow: $box-shadow-base;
+
+  &.left {
+    width: 32%;
+    margin: 5px 40px 25px 0;
+    padding: 30px 28px;
+    float: left;
+    border-right-width: 1px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &.right {
+    width: 32%;
+    margin: 5px 0 25px 34px;
+    padding: 30px 28px;
+    float: right;
+    border-left-width: 1px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .title {
+    @include font-family-bold();
+    font-size: $font-size-sm;
+    line-height: (22/15);
+    margin: -5px  0 .75em;
+    color: $headings-color;
+  }
+
+  p {
+    margin: 0 0 .8em;
+    @include font-family-italic();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

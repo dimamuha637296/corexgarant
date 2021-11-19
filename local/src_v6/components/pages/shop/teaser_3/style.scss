@@ -1,0 +1,97 @@
+.teaser_3 {
+  margin: 0 0 40px;
+
+  @media (max-width: $screen-md-max) {
+    margin-bottom: 25px;
+  }
+
+  .wrap {
+
+    @media (max-width: $screen-md-max) {
+      display: flex;
+      margin: 0 ($grid-gutter-width / -2);
+    }
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .item {
+    height: 187px;
+
+    @media (max-width: $screen-md-max) {
+      width: 50%;
+      padding: 0 ($grid-gutter-width / 2);
+    }
+
+    @media (max-width: $screen-sm-max) {
+      width: auto;
+      max-width: 373px;
+      margin: 0 auto 20px;
+      height: auto;
+      padding: 0;
+    }
+
+    + .item {
+
+      @media (min-width: $screen-lg-min) {
+        margin-top: $grid-gutter-width;
+      }
+    }
+  }
+
+  .inner {
+    position: relative;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+
+    @include hover-focus() {
+      opacity: .8;
+    }
+  }
+
+  .img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    max-width: inherit;
+
+    @media (max-width: $screen-sm-max) {
+      position: static;
+      transform: translateX(0);
+      max-width: 100%;
+      min-height: inherit;
+      min-width: inherit;
+    }
+  }
+
+  .text-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+
+    @media (max-width: $screen-lg-max) {
+      padding: 15px;
+    }
+  }
+
+  .title {
+    max-height: ($line-height-h3 * 4em);
+    overflow: hidden;
+    color: #fff;
+    margin: 0;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.forgot-password {
+
+  .h3 {
+    margin-top: 0;
+  }
+
+  .alert {
+    margin-bottom: 24px;
+  }
+
+  .text {
+    margin-bottom: 20px;
+  }
+  
+  .or {
+    margin: 17px 0;
+  }
+
+  .form-group {
+
+    .btn-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      @media (max-width: $screen-xs-max) {
+        display: block;
+      }
+    }
+
+    .btn_submit {
+      font-size: 18px;
+      letter-spacing: .5px;
+      line-height: 1;
+      padding: 9px 30px 11px;
+
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .form_required-wrap {
+      display: flex;
+      flex: 1;
+      max-width: 100%;
+      justify-content: space-between;
+
+      @media (max-width: $screen-xs-max) {
+        display: block;
+      }
+    }
+
+    .form_required {
+
+      @media (max-width: $screen-sm-max) {
+        padding-top: 0
+      }
+
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 15px;
+      }
+
+      &.forgot-password {
+        text-align: right;
+
+        @media (max-width: $screen-xs-max) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

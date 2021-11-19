@@ -1,0 +1,37 @@
+-
+  var data = [
+    {
+      city: 'Минск',
+      address: 'пр-т Партизанский, 19А, оф. 211'
+    },
+    {
+      city: 'Витебск',
+      address: 'пр-т Черняховского, 33'
+    },
+    {
+      city: 'Гомель',
+      address: 'ул. Барыкина, 143, комн. 7'
+    },
+    {
+      city: 'Брест',
+      address: 'ул. Московская, 332/3Б'
+    },
+    {
+      city: 'Могилёв',
+      address: 'ул. Первомайская, 29, оф. 417'
+    },
+    {
+      city: 'Гродно',
+      address: 'ул. Горького, 49-214'
+    }
+  ];
+.map-block
+  .map-block__title Компания Туссон
+  .map-block__descr
+    | Холдинговая структура, состоящая из группы самостоятельных предприятий, имеющих филиалы во всех региональных центрах страны
+  .map-block__places
+    ul.map-block__list.list-reset
+      each item in data
+        li.map-block__item
+          .map-block__city #{item.city}
+          .map-block__address #{item.address}

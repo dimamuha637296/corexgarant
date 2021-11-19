@@ -1,0 +1,23 @@
+.cursor {
+
+  .caroufredsel_wrapper,
+  .slick-list {
+    cursor: url('../img/cursor/openhand.cur'), move !important;
+
+    &:active {
+      cursor: url('../img/cursor/closedhand.cur'), move !important;
+    }
+
+    .ie & {
+      cursor: url('local/templates/.default/img/cursor/openhand.cur'), move !important; // не будут работать на вёрстке
+    }
+  }
+
+  .ie &.cursor-active {
+
+    .caroufredsel_wrapper,
+    .slick-list {
+      cursor: url('local/templates/.default/img/cursor/closedhand.cur'), move !important; // не будут работать на вёрстке
+    }
+  }
+}

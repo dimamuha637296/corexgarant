@@ -1,0 +1,6 @@
+mixin radio_group(data)
+  -
+    var list = data.list !== undefined ? data.list : [];
+  each item in list
+    - item.name = data.name;
+    +radio(item)

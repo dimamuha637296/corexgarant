@@ -1,0 +1,128 @@
+
+$_menu-mob-level-1-font-size:     14px;
+$_menu-mob-level-2-font-size:     14px;
+$_menu-mob-color:                 $text-color;
+$_menu-mob-color-hover:           $link-color-hover;
+$_menu-mob-color-active:          #8b8b8b;
+
+.exit-mob {
+  margin: 0 ($grid-gutter-width / -2);
+  padding: 0 ($grid-gutter-width / 2);
+
+  [class*="menu_level_"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  [class*="item_"] {
+    position: relative;
+    font-size: 14px;
+    @include font-family-light;
+    color: $link-color;
+
+    > a,
+    > span {
+      display: block;
+      @include mobile-height-item();
+      padding-right: $header-mob-height;
+      padding-left: ($grid-gutter-width / 2);
+    }
+  }
+
+  .link {
+
+    @include hover-focus() {
+
+      .ico {
+
+        &:before {
+          @include svg-exit-mob-hover();
+        }
+      }
+    }
+  }
+
+  .ico {
+    display: inline-block;
+    margin-right: 5px;
+
+    &:before {
+      @include svg;
+      @include svg-exit-mob();
+    }
+  }
+
+  .menu_level_1 {
+    font-size: $_menu-mob-level-1-font-size;
+  }
+
+  .item_1 {
+
+    + .item_1 {
+      border-top: 1px solid $border-color-base;
+    }
+
+    .icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $header-mob-height;
+      height: $header-mob-height;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      border-bottom: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        transform: rotate(90deg);
+        transition: .3s;
+        border-top: 3px solid transparent;
+        border-left: 5px solid $_menu-mob-color;
+        border-bottom: 3px solid transparent;
+      }
+
+      @include hover-focus() {
+
+        &:before {
+          border-left-color: $_menu-mob-color-hover;
+        }
+      }
+
+      &.collapsed {
+
+        &:before {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .menu_level_2 {
+    font-size: $_menu-mob-level-2-font-size;
+    background: $header-additional-background;
+    border-top: 1px solid $body-bg-color;
+  }
+
+  .item_2 {
+
+    + .item_2 {
+      border-top: 1px solid $body-bg-color;
+    }
+
+    > a,
+    > span {
+      padding-left: 31px;
+    }
+  }
+}

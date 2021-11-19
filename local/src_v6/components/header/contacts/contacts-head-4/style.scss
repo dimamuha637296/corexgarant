@@ -1,0 +1,62 @@
+.contacts-head-4 {
+
+  .wrap {
+    padding-top: 12px;
+    padding-bottom: 14px;
+  }
+
+  .list {
+    margin: 0;
+  }
+
+  .item {
+    @include font-family-bold();
+    letter-spacing: -1.5px;
+    color: $link-color;
+    font-size: 33px;
+    text-align: right;
+
+    > a,
+    > span {
+      text-decoration: none;
+    }
+
+    > a {
+      color: transparent;
+      background: linear-gradient(to right, $link-color 48%,rgba(255,255,255,0.5) 50%, $link-color 52%);
+      background-repeat: no-repeat;
+      background-size: 500% 500%;
+      background-position: 100% 50%;
+      -webkit-background-clip: text;
+      animation: shine 8s ease-in-out infinite;
+
+      @include hover-focus() {
+
+        &,
+
+        .js-off &,
+        .ie & {
+          color: $text-color;
+        }
+      }
+
+      .js-off &,
+      .ie & {
+        color: $link-color;
+        background: transparent;
+        animation: none;
+      }
+
+      @keyframes shine {
+
+        0% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
+  }
+}

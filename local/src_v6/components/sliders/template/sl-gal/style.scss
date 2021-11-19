@@ -1,0 +1,85 @@
+.sl-gal {
+
+  .wrap {
+    position: relative;
+
+    @media (max-width: $screen-sm-max) {
+      margin: 0 -10px;
+    }
+
+    &.inited-not {
+
+      .slide {
+
+        &:nth-child(1) {
+          float: none;
+        }
+
+        &:nth-child(1n+2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slider {
+
+  }
+
+  .slide {
+    position: relative;
+  }
+
+  .pic {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+
+    @media (max-width: $screen-md-max) {
+      height: 350px;
+    }
+
+    @media (max-width: $screen-md-max) {
+      height: 300px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      max-width: inherit;
+    }
+  }
+
+  .counter-wrap {
+    position: absolute;
+    bottom: 40px;
+    left: 35px;
+
+    .slide-counter {
+      font-size: 12px;
+      background-color: $link-color;
+      padding: 3px 9px;
+    }
+  }
+
+  .nav-wrap {
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+  }
+}

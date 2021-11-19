@@ -1,0 +1,16 @@
+include ../../../../components/base/btns/btn/index
+.search-mob.dropdown.js-dropdown-full-width
+  .dropdown-toggle(data-toggle='dropdown')
+  .dropdown-menu
+    .container
+      .search-head-mob
+        form(action='/search/', method='get')
+          fieldset.field
+            input#searchinp-mob.input(
+            type='search',
+            placeholder='Поиск по сайту',
+            name='q-mob',
+            maxlength='50',
+            required='')
+            span.submit
+              +btn-primary({type: 'input', className: 'btn-search', text: 'Найти'})(name='btn-search')

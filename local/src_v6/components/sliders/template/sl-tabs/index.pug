@@ -1,0 +1,25 @@
+mixin sl-tabs(data)
+  .sl-tabs(class=data.modifier ? data.modifier : '')
+    .tabs
+      .tabs-wrap
+        ul.nav.nav-tabs.list-reset(role='tablist')
+          each tab, i in data.tabs
+            li.nav-item
+              a.nav-link(class=i === 0 ? 'active' : '', href='#sl-tab-' + i, data-toggle='tab')
+                span #{tab.title}
+        .tab-content
+          each tab, i in data.tabs
+            .tab-pane.fade(id='sl-tab-' + i, class=i === 0 ? 'in active show' : '', role='tabpanel')
+              .wrap.cursor.inited-not
+                .slider
+                  each slide in tab.slides
+                    .slide
+                      .inner
+                        .pic
+                          img(src=DB.DIR + 'img/tmp/' + slide.pic, alt='alt')
+                        .b-wrap
+                          .text #{slide.text}
+                if (data.pager !== undefined)
+                  +#{data.pager}()
+                if (data.nav !== undefined)
+                  +#{data.nav}()

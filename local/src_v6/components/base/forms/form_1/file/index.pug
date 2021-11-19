@@ -1,0 +1,13 @@
+mixin file(data)
+  -
+    var className = data.className !== undefined ? data.className : 'form-control ui-file';
+    var attr = {};
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    attr.type = 'file'
+    if (data.max !== undefined) attr.max = data.max;
+    if (data.min !== undefined) attr.min = data.min;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  input(class=className)&attributes(attr)

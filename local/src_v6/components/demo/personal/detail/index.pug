@@ -1,0 +1,149 @@
+//-
+  modules/personal-detail.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .personal-detail  - модуль Сотрудники,  детальное описанаие
+  .js-width - минимальная ширина блока с картинкой в одном ряду расставляется скриптом
+  .js-width-trg - блок для которого выставляется минимальная ширина в столбце
+.personal-detail.js-width.js-hover
+  .item.js-hover-wrap
+    .pic.js-width-trg
+      a.link.js-hover-trg(href='#')
+        i.icon
+        img(src=DB.DIR + 'img/tmp/modules/personal-10.jpg', alt='personal', title='personal')
+    .wrap
+      .title
+        a.js-hover-trg(href='#')
+          | Андренко Антон Анатольевич (h3)
+      .caption-text
+        | Исполнительный Директор Ассоциации
+      .text
+        p
+          b Представляет члена Ассоциации:
+          |  АВАНГАРД ЛИЗИНГ, ЗАО
+          br
+          b Профессиональный опыт и интересы:
+          |  Профессиональный финансист. MBA. Активный участник лизингового рынка Республики Беларусь. Заинтересован в привлечении долгосрочных инвестиций. Имеет богатый опыт привлечения фондирования путем облигационных эмиссий на рынке Республики. Имеет богатый опыт привлечения фондирования путем облигационных эмиссий на рынке Республики.
+        p
+          | Электронная почта:
+          =' '
+          a(href='mailto:anton@avangard.by') anton@avangard.by
+  .item
+    .pic.js-width-trg
+      i.icon
+      img(src=DB.DIR + 'img/tmp/modules/personal-11.jpg', alt='personal', title='personal')
+    .wrap
+      .title
+        | Ярошев Михаил Николаевич
+      .caption-text
+        | Заместитель директора по договорной и общеправовой работе
+      .text
+        p
+          b Девиз в работе:
+          |  служба и дружба — две параллельные линии, не пересекаются.
+          br
+          b Любимое место:
+          |  набережные Минска, везде, где есть вода.
+          br
+          b Стаж работы в компании:
+          |  16 лет.
+          br
+        p
+          a(href='#') Подробная информация
+  .item.js-hover-wrap
+    .pic.js-width-trg
+    .wrap
+      .title
+        | Громова Елена Алексеевна
+      .caption-text
+        | Риэлтор
+      .text
+        b Девиз в работе:
+        |  главное в работе — коммуникабельность, взаимопонимание, терпение и чувство плеча коллег. А принцип работы — все для клиента.
+        br
+        b Любимое место:
+        |  Старый город, Немига, Троицкое предместье, площадь Свободы, Ботанический сад, парк Горького.
+        |                 Стаж работы в компании: 16 лет.
+  .item.js-hover-wrap
+    .pic.js-width-trg
+      a.link.js-hover-trg(href='#')
+        i.icon
+        img(src=DB.DIR + 'img/tmp/modules/personal-12.jpg', alt='personal', title='personal')
+    .wrap
+      .title
+        a.js-hover-trg(href='#')
+          | Громова Елена Алексеевна
+      .caption-text
+        | Риэлтор
+      .text
+        b Девиз в работе:
+        |  главное в работе — коммуникабельность, взаимопонимание, терпение и чувство плеча коллег. А принцип работы — все для клиента.
+        br
+        b Любимое место:
+        |  Старый город, Немига, Троицкое предместье, площадь Свободы, Ботанический сад, парк Горького.
+        |                 Стаж работы в компании: 16 лет.
+  .item.js-hover-wrap
+    .pic.js-width-trg
+      a.link.js-hover-trg(href='#')
+        i.icon
+        img(src=DB.DIR + 'img/tmp/modules/personal-12.jpg', alt='personal', title='personal')
+    .wrap
+      .title
+        a.js-hover-trg(href='#')
+          | Громова Елена Алексеевна
+      .caption-text
+        | Риэлтор
+      .text
+        p
+          | Благодарю компании за своевременный и качественный сервис. Гаражные ворота были установлены в строго оговоренный срок. Качество работы уже проверено временем, никаких нареканий или претензий нет.
+        b Благодарственные письма:
+        .preview.popup-gal
+          - var i = 0
+          while i < 7
+            - i++
+            .preview-item
+              a.link-loop.link(href=DB.DIR + 'img/tmp/demo/cert/personal-' + i + '-big.jpg', title='Лицензия лист 1')
+                i.icon-loop.svg-loop
+                img(src=DB.DIR + 'img/tmp/demo/cert/personal-' + i + '-small.jpg', alt='certificates', title='Лицензия лист 1')
+  script.
+      !function () {
+          'use strict';
+
+          // popup with arrows
+          function popupGalleryArrow() {
+              var galleryList = $('.popup-gal');
+              if (galleryList.length && $.fn.magnificPopup) {
+                  galleryList.each(function () {
+                      $(this).magnificPopup({
+                          delegate: '.link',
+                          type: 'image',
+                          closeOnContentClick: false,
+                          closeBtnInside: false,
+                          mainClass: 'mfp-with-zoom mfp-img-mobile',
+                          image: {
+                              verticalFit: true,
+                              titleSrc: function (item) {
+                                  return item.el.attr('title');
+                              }
+                          },
+                          gallery: {
+                              enabled: true
+                          },
+                          zoom: {
+                              enabled: true,
+                              duration: 300, // don't foget to change the duration also in CSS
+                              opener: function (element) {
+                                  return element.find('img');
+                              }
+                          }
+                      });
+                  });
+              }
+          }
+
+
+          // Call functions
+          $(window).on('load', function () {
+              popupGalleryArrow()
+          });
+      }();

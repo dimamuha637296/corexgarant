@@ -1,0 +1,86 @@
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-padding-y:                   1.25rem;
+$alert-padding-x:                   2rem;
+$alert-margin-bottom:               1rem;
+$alert-border-radius:               .4rem;
+$alert-border-width:                1px;
+$alert-color:                       #fff;
+
+@mixin alert-variant($background, $border, $color) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  .alert-link {
+    color: darken($color, 10%);
+  }
+}
+
+
+//
+// Base styles
+//
+
+.alert {
+  //display: flex;
+  //align-items: center;
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  border-radius: $alert-border-radius;
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  color: inherit;
+}
+
+.alert-link {
+  @include font-family-bold;
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+  padding-right: ($close-font-size + $alert-padding-x * 2);
+
+  // Adjust close link position
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $alert-padding-y $alert-padding-x;
+    color: inherit;
+  }
+}
+
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+.alert-primary {
+  @include alert-variant(lighten($brand-1, 37%), lighten($brand-1, 33%), darken($brand-1, 27%));
+}
+.alert-success {
+  @include alert-variant(lighten($brand-success, 37%), lighten($brand-success, 33%), darken($brand-success, 27%));
+}
+.alert-info {
+  @include alert-variant(lighten($brand-info, 37%), lighten($brand-info, 33%), darken($brand-info, 27%));
+}
+.alert-warning {
+  @include alert-variant(lighten($brand-warning, 37%), lighten($brand-warning, 33%), darken($brand-warning, 27%));
+}
+.alert-danger {
+  @include alert-variant(lighten($brand-danger, 37%), lighten($brand-danger, 33%), darken($brand-danger, 27%));
+}

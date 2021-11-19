@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Карта сайта';
+  - DB.DIR = '../../';
+block pagehead
+block title
+  h1#title
+    | Карта сайта
+block content
+  include ../../../components/demo/sitemap/index

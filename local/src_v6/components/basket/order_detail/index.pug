@@ -1,0 +1,165 @@
+include ../../../components/base/btns/btn/index
+.bx_my_order_switch
+  a.bx_mo_link(href='../basket/order.html') В список заказов
+.bx_order_list
+  .table-responsive
+    table.bx_order_list_table.no-hover
+      thead
+        tr
+          th(colspan='2')
+            | Заказ №3333335678 	от 12.04.2016
+      tbody
+        tr
+          td
+            | Текущий статус:
+          td
+            | Принят, ожидается оплата (от 12.04.2016)
+        tr
+          td
+            | Сумма:
+          td
+            | 12 397 руб.
+        tr
+          td Отменен:
+          td
+            | Нет   [
+            a(href='#') Отменить
+            | ]
+        tr
+          td(colspan='2') Данные вашей учетной записи
+        tr
+          td Логин:
+          td KonstantinoKonstantin
+        tr
+          td E-Mail адрес:
+          td
+            a(href='mailto:konstantin@gmail.com') konstantin@gmail.com
+        tr
+          td(colspan='2') Параметры заказа
+        tr
+          td Тип плательщика:
+          td Физическое лицо
+        tr
+          td(colspan='2') Личные данные
+        tr
+          td Ф.И.О.:
+          td
+            | Константин Константинопольский
+        tr
+          td E-Mail:
+          td
+            | konstantin@gmail.com
+        tr
+          td Телефон:
+          td
+            | +375 29 365-48-52
+        tr
+          td(colspan='2') Данные для доставки
+        tr
+          td Индекс:
+          td
+            | 220000
+        tr
+          td Местоположение:
+          td
+            | Беларусь, Минская область, г. Молодечно, ул. Космонавтов 12
+        tr
+          td Город:
+          td
+            | Молодечно
+        tr
+          td Адрес доставки:
+          td
+            | Беларусь, Минская область, г. Молодечно, ул. Космонавтов 12
+        tr
+          td(colspan='2') Параметры доставки и оплаты
+        tr
+          td Платёжная система:
+          td
+            | Наличные курьеру
+        tr
+          td Оплачен:
+          td
+            | Нет
+        tr
+          td Служба доставки:
+          td
+            | Доставка курьером
+  h3 Содержимое заказа
+  table.bx_order_list_table_order.no-hover
+    thead
+      tr
+        th(colspan='2') Наименование
+        th.custom.price Цена
+        th.custom.amount Свойства
+        th.custom.amount Тип цены
+        th.custom.price Количество
+    tbody
+      tr
+        td.custom.img
+          .bx_ordercart_photo_container
+            a(href='#')
+              .bx_ordercart_photo(style="background-image:url(" + DB.DIR + "img/tmp/basket/order_detail-catalog-cart_01.jpg)")
+        td.custom.name
+          a(href='#', target='_blank')
+            | Платье Модница на Прогулке
+        td.custom.price
+          span.fm Цена:
+          |  4 999 руб.
+        td.custom
+          span.fm Свойства:
+          ul.list-reset.bx_ol_sku_prop
+            li
+              | Цвет:
+              | &nbsp;белый
+            li
+              | Размеры одежды:
+              =' '
+              b XS
+        td.custom.amount
+          span.fm Тип цены:
+          |  Розничная цена
+        td.custom.price
+          span.fm Количество:
+          |  2 шт
+      tr
+        td.custom.img
+          .bx_ordercart_photo_container
+            a(href='#')
+              .bx_ordercart_photo(style="background-image:url(" + DB.DIR + "img/tmp/basket/order_detail-catalog-cart_01.jpg)")
+        td.custom.name
+          a(href='#', target='_blank')
+            | Штаны Жизнь в Абстракции
+        td.custom.price
+          span.fm Цена:
+          |  1 899 руб.
+        td.custom
+          span.fm Свойства:
+          ul.list-reset.bx_ol_sku_prop
+            li
+              | Цвет:
+              img(src=DB.DIR + 'img/tmp/basket/order_detail-catalog-color_01.jpg', width='30', height='30', title='Оранжевый с Красным', alt='Оранжевый с Красным')
+            li
+              | Размеры одежды:
+              =' '
+              b XS
+        td.custom.amount
+          span.fm Тип цены:
+          |  Розничная цена
+        td.custom.price
+          span.fm Количество:
+          |  1 шт
+  table.table-reset.bx_ordercart_order_sum.no-hover
+    tbody
+      tr
+        td.custom_t1 Товаров на:
+        td.custom_t2 11 897 руб.
+      tr
+        td.custom_t1 Стоимость доставки:
+        td.custom_t2 500 руб.
+      tr
+        td.custom_t1.fwb Итого:
+        td.custom_t2.fwb 12 397 руб.
+
+  .bx_ordercart_order_pay_center
+    +btn-primary({text: 'Вернуться назад'})

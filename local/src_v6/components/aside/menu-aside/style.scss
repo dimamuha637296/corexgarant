@@ -1,0 +1,130 @@
+/* menu-aside.less */
+
+// var ****************************************************************************************************************
+$_menu_aside-font-size: 16px;
+$_menu_aside-color: $link-color;
+$_menu_aside-color-hover: $link-color-hover;
+$_menu_aside-color-active: $link-color-active;
+$_menu_aside-color-active-hover: $link-color-active-hover;
+$_menu_aside-level-2-font-size: ceil(($_menu_aside-font-size * 0.9));
+$_menu_aside-level-3-font-size: ceil(($_menu_aside-font-size * 0.8));
+$_menu_aside-level-4-font-size: $_menu_aside-level-3-font-size;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.menu-aside {
+  margin-bottom: 50px;
+  font-size: $_menu_aside-font-size;
+
+  @media (max-width: $grid-breakpoint-max) {
+    display: none;
+  }
+
+  [class*="item_"] {
+    margin-bottom: 9px;
+    display: block;
+
+    > a,
+    > span {
+      color: $_menu_aside-color;
+    }
+
+    > a {
+
+      @include hover-focus() {
+        color: $_menu_aside-color-hover;
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu_aside-color-active;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: $_menu_aside-color-active-hover;
+        }
+      }
+    }
+  }
+
+  .menu_level_1 {
+    margin: 0;
+  }
+
+  .item_1 {
+    margin-bottom: 12px;
+  }
+
+  .menu_level_2 {
+    font-size: $_menu_aside-level-2-font-size;
+    margin: 13px 0 12px 6.5%;
+  }
+
+  .menu_level_3 {
+    font-size: $_menu_aside-level-3-font-size;
+    margin: 10px 0 12px 7%;
+  }
+
+  .menu_level_4 {
+    font-size: $_menu_aside-level-4-font-size;
+    margin: 10px 0 12px 5.5%;
+  }
+
+  &.style-2 {
+    background: #f4f6f9;
+
+    .menu_level_1 {
+      margin: 0;
+    }
+
+    .item_1 {
+      margin-bottom: 0;
+
+      > a,
+      > span {
+        text-decoration: none;
+        display: block;
+        padding: 13px 20px 13px;
+        font-size: 18px;
+        line-height: (22/18);
+
+      }
+
+      @include hover-focus() {
+        background: $link-color;
+
+        > a {
+          color: #fff;
+        }
+      }
+
+      &.active {
+
+        > a {
+
+          @include hover-focus() {
+            color: $_menu_aside-color-active-hover;
+          }
+        }
+
+        @include hover-focus() {
+          background: none;
+        }
+      }
+
+      &:last-child {
+
+        > a,
+        > span {
+          padding-bottom: 23px;
+        }
+      }
+    }
+  }
+}

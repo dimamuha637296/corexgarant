@@ -1,0 +1,24 @@
+.studio {
+
+  &--white {
+
+    .text-wrap {
+      color: $brand-white;
+    }
+
+    .link {
+      color: $brand-white;
+    }
+
+    a.link {
+      text-decoration-color: rgba($brand-white, 0.7);
+
+      &:hover,
+      &:focus {
+        color: $brand-white;
+        text-decoration: none;
+        text-decoration-color: rgba($brand-white, 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+include ../../../components/base/btns/btn/index
+#bx_catalog_compare_block.bx_compare.bx_blue
+  h1.title-main Сравнение товаров
+  .bx_sort_container
+    a.sortbutton.current(href='#', rel='nofollow') Все характеристики
+    a.sortbutton(href='#', rel='nofollow') Только различающиеся
+  .table_compare
+    table.data-table
+      tbody
+        tr.tr-pic
+          td
+          td
+            .pic
+              a.close(href="#")
+              img(src=DB.DIR + 'img/tmp/catalog/catalog-7.jpg', alt='Товар 1', title='Товар 1')
+          td
+            .pic
+              a.close(href="#")
+              img(src=DB.DIR + 'img/tmp/catalog/catalog-9.jpg', alt='Товар 2', title='Товар 2')
+          td
+            .pic
+              a.close(href="#")
+              img(src=DB.DIR + 'img/tmp/catalog/catalog-6.jpg', alt='Товар 3', title='Товар 3')
+          td
+            .pic
+              a.close(href="#")
+              img(src=DB.DIR + 'img/tmp/catalog/catalog-9.jpg', alt='Товар 4', title='Товар 4')
+          td
+            .pic
+              a.close(href="#")
+              img(src=DB.DIR + 'img/tmp/catalog/catalog-6.jpg', alt='Товар 5', title='Товар 5')
+        tr
+          td Название
+          td
+            a(href='#').title Дрель-шуруповерт BS 14-A
+            +btn-primary({className: 'bx_bt_button btn-sm', text: 'В корзину'})(rel='nofollow')
+          td
+            a(href='#').title Дрель-шуруповерт BS 14-A
+            +btn-primary({className: 'bx_bt_button btn-sm', text: 'В корзину'})(rel='nofollow')
+          td
+            a(href='#').title Дрель-шуруповерт BS 14-A
+            +btn-primary({className: 'bx_bt_button btn-sm', text: 'В корзину'})(rel='nofollow')
+          td
+            a(href='#').title Дрель-шуруповерт BS 14-A
+            +btn-primary({className: 'bx_bt_button btn-sm', text: 'В корзину'})(rel='nofollow')
+          td
+            a(href='#').title Дрель-шуруповерт BS 14-A
+            +btn-primary({className: 'bx_bt_button btn-sm', text: 'В корзину'})(rel='nofollow')
+        tr.price
+          td Цена
+          td 1 559 руб.
+          td 1 099 руб.
+          td 1 399 руб.
+          td 1 099 руб.
+          td 1 399 руб.
+        tr
+          td Артикул
+          td 2285756
+          td 2285756
+          td 2285756
+          td 2285756
+          td 2285756
+        tr
+          td Напряжение
+          td 14,4 V/AC
+          td 14,4 V/AC
+          td 14,4 V/AC
+          td 14,4 V/AC
+          td 14,4 V/AC
+        tr
+          td Вес с батареей
+          td 1,7 кг
+          td 1,7 кг
+          td 1,7 кг
+          td 1,7 кг
+          td 1,7 кг
+        tr
+          td Длина
+          td 185 мм
+          td 185 мм
+          td 185 мм
+          td 185 мм
+          td 185 мм
+        tr
+          td Высота
+          td 248 мм
+          td 248 мм
+          td 248 мм
+          td 248 мм
+          td 248 мм

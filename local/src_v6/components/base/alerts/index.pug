@@ -1,0 +1,8 @@
+- var alertsData = ['primary', 'success', 'info', 'warning', 'danger'];
+.h2 Alerts
+each item in alertsData
+  .alert(class='alert-' + item, role='alert') #{item}
+.h2 Alert with dismiss
+each item in alertsData
+  .alert.alert-dismissible.fade.show(class='alert-' + item, role='alert') #{item}
+    button.close.close--small(type='button', data-dismiss="alert" aria-label="Close")

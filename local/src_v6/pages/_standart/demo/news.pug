@@ -1,0 +1,17 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Новости';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Новости компании
+block content
+  include ../../../components/demo/news-list/index
+  include ../../../components/base/pager/index
+  include ../../../components/demo/news-list-big/index
+  .h1
+    | Страница  с полным текстом новости в 2 строки (H1)
+  include ../../../components/demo/news-detail/index
+  .h1
+    | Страница  с полным текстом новости в 2 строки (H1)
+  include ../../../components/demo/news-detail-big/index

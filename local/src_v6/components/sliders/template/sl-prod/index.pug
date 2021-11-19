@@ -1,0 +1,8 @@
+mixin sl-prod(data)
+  .sl-prod(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider.popup-gallery
+        each slide in data.slides
+          .slide
+            a(href=DB.DIR + 'img/tmp/' + slide.pic).inner
+              img.img(src=DB.DIR + 'img/tmp/' +  slide.pic, alt='ÖLFLEX® CLASSIC 100 300/500 V')

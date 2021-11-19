@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="7.993px"
+        height="6.007px"
+        viewBox="0 0 7.993 6.007"
+        enable-background="new 0 0 7.993 6.007"
+        xml:space="preserve"
+>
+    <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            fill="#{$brand-1}"
+            d="M0,1.507L1.342,0l2.654,2.989L6.652,0l1.341,1.508L3.994,6.007L0,1.507z"
+    />
+</svg>

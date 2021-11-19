@@ -1,0 +1,53 @@
+//
+// Tables-2 (adaptive)
+// --------------------------------------------------
+.table-adaptive {
+
+  table {
+
+    .table-cell-label {
+      display: none;
+    }
+
+    @media (max-width: $screen-sm-max) {
+
+      thead {
+        display: none;
+      }
+
+      tbody {
+        display: block;
+        @include clearfix;
+      }
+
+      tr {
+        @include clearfix;
+        float: left;
+        width: 100%;
+      }
+
+      td {
+        float: left;
+        width: 100%;
+        padding: 9px 11px 11px;
+      }
+
+      .table-cell-label {
+        display: block;
+        float: left;
+        width: 50%;
+        padding-right: 20px;
+        color: $headings-color;
+        font-size: 15px;
+        line-height: (19/15);
+        @include font-family-bold();
+      }
+
+      .table-cell-content {
+        display: block;
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+- var title = ['Могу ли я сделать валютный перевод в валюте отличной от доллара и евро?', 'Мой перевод несколько дней находится в статусе «На обработке», почему?', 'Почему получателю пришла сумма меньше, чем я отправлял?', 'Могу ли я посмотреть историю моих платежей?', 'Как узнать причину отклонения перевода?'];
+- var text = ['Добрый день! Поездку в Турцию можно начинать планировать в конце января — начале февраля, когда появляются цены на отели по акции раннего бронирования. Главное, что Вы должны помнить при бронирования тура по акции, в дальнейшем Вам нельзя будет переиграть даты, количество людей или отель. Так что нужно точно знать сроки поездки, быть уверенным, что все участники смогут поехать и тщательно выбрать отель. В этом Вам могут помочь наши менеджеры.', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.', 'Максимальная сумма (лимит) рассчитывается в валюте перевода по безналичному курсу банка, лимит зафиксирован в рублях, при смене курса валюты вместе с ним изменяется лимит.', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.'];
+- var n = 0
+.h2 Автоплатежи - collapse
+.accordion
+  #accordion-7.acc-group
+    while n < 5
+      - n++
+      .panel
+        .acc-heading
+          a.link.svg-arrow(data-toggle='collapse', href='#accordion-1' + n + '', class=n !== 4 ? 'collapsed' : '')
+            span.dash #{title[n - 1]}
+        .collapse(id='accordion-1' + n + '', class=n === 4 ? 'show' : '')
+          .acc-body #{text[n - 1]}

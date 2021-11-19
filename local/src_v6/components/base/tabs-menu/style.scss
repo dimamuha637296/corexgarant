@@ -1,0 +1,94 @@
+#db .tabs-menu {
+
+  // work part
+  &__list {
+
+    .desktop & {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .mobile &,
+    .tablet & {
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+
+    .mobile &,
+    .tablet & {
+      flex-shrink: 0;
+    }
+  }
+
+  &__item--more {
+    display: none;
+
+    &--visible {
+      display: block;
+    }
+
+    > .active {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  // style part
+
+  &__inner {
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 100%;
+      transition: opacity .3s ease;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:before {
+      left: -1px;
+      background: linear-gradient(to right, $brand-white 0%,rgba($brand-white, .2) 50%, rgba($brand-white, 0) 100%);
+    }
+
+    &:after {
+      right: -1px;
+      background: linear-gradient(to left, $brand-white 0%,rgba($brand-white, .2) 50%, rgba($brand-white, 0) 100%);
+    }
+
+    &.scrolling {
+
+      &:before,
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.blur-left {
+
+      &:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.blur-right {
+
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

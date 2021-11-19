@@ -1,0 +1,139 @@
+.form-group {
+  @include make-row();
+  margin-bottom: 1.7rem;
+
+  .btn_submit {
+    flex-shrink: 0;
+    margin-right: 3.7%;
+  }
+
+  .form_required {
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 11px;
+    }
+  }
+
+  .checkbox,
+  .radio {
+    padding-left: 2px;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    .g-wrap & {
+      padding-top: 0;
+    }
+
+    &.fs {
+      padding-left: 0;
+    }
+  }
+
+  .single-check,
+  .group-check {
+    padding-top: 10px;
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 6px;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #aab1bc;
+    font-size: 14px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 $border-radius-base $border-radius-base 0;
+
+    @include hover-focus() {
+      background: $link-color;
+    }
+  }
+
+  .controls {
+    font-size: $input-font-size;
+
+    > label {
+      margin-bottom: 0;
+      line-height: $input-line-height;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .error {
+      color: $state-danger-text;
+    }
+
+    .valid {
+      color: $state-success-text;
+    }
+  }
+
+  .input-group {
+    position: relative;
+
+    &.date {
+      max-width: 200px;
+
+      .form-control {
+        padding-right: 50px;
+      }
+    }
+  }
+}
+
+.col-form-label {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 0; // Override the `<label>/<legend>` default
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  color: #595959;
+}
+
+.help-block {
+  display: block; // account for any element using help-block
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #989898; // lighten the text some for contrast
+  @include font-family-italic();
+  font-size: 13px;
+  line-height: (13/11);
+}
+
+// Form validation
+@mixin form-control-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
+
+  .help-block,
+  .control-label,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label {
+    color: $text-color;
+  }
+
+  .form-control {
+    border-color: $border-color;
+
+    &:focus {
+      border-color: darken($border-color, 10%);
+    }
+  }
+}
+
+.has-success {
+  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+
+.has-error {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}

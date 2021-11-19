@@ -1,0 +1,133 @@
+$_contacts-head-2-color:                               $link-color;
+$_contacts-head-2-color-hover:                         $link-color-hover;
+$_contacts-head-2-color-active:                        $link-color-hover;
+$_contacts-head-2-color-active-hover:                  $_contacts-head-2-color;
+$_contacts-head-2-padding-width:                       14px;
+$_contacts-head-2-arrow-height:                        5px;
+
+.contacts-head-2 {
+
+  .b-wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+
+  .drop {
+    position: relative;
+    @include font-family-light;
+    font-size: 14px;
+
+    @include hover-focus() {
+
+      .submenu {
+        display: block;
+      }
+    }
+  }
+
+  .drop-link {
+    max-width: 130px;
+    overflow: hidden;
+    display: block;
+    text-align: right;
+
+    .link {
+      white-space: nowrap;
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-right: 3px solid transparent;
+        border-top: 3px solid $_contacts-head-2-color;
+        border-left: 3px solid transparent;
+        display: inline-block;
+        position: relative;
+        top: -3px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .link {
+    display: inline;
+
+    @include hover-focus() {
+
+      &:after {
+        border-top-color: $_contacts-head-2-color-hover;
+      }
+
+      .text {
+        color: $_contacts-head-2-color-hover;
+      }
+    }
+
+    .text {
+      cursor: pointer;
+      display: inline-block;
+      line-height: 1;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+      color: $_contacts-head-2-color;
+    }
+  }
+
+  .submenu {
+    padding: 11px 16px 1px;
+    min-width: 150px;
+    left: -17px;
+
+    .item {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .tel {
+    margin: 0 10px;
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-size: 16px;
+      @include font-family-medium;
+      line-height: (24/16);
+
+      @media (max-width: $screen-md-max) {
+        font-size: 13px;
+      }
+
+      @include hover-focus() {
+        color: lighten($text-color, 40%);
+      }
+    }
+  }
+
+  .btn-quest {
+    text-align: left;
+    margin-top: 0;
+
+    a {
+      @include font-family-light;
+      font-size: 14px;
+      color: $_contacts-head-2-color;
+      text-decoration: none;
+      display: block;
+      padding: 11px 14px 12px;
+      background: $header-additional-background;
+
+      @include hover-focus() {
+        color: $_contacts-head-2-color-hover;
+      }
+    }
+  }
+}

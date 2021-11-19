@@ -1,0 +1,38 @@
+/* blockquote-style-5.scss */
+
+// var ****************************************************************************************************************
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+
+blockquote.style-5 {
+  border: 3px solid $brand-1;
+  color: $brand-1;
+  margin: 52px 0 43px;
+  padding: 41px 49px;
+  position: relative;
+  font-size: 35px;
+  line-height: 1.2;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 16px;
+    padding: 21px 29px;
+  }
+
+  .head-text {
+    position: absolute;
+    top: -11px;
+    left: 30px;
+    font-size: 18px;
+    line-height: 1;
+    color: $brand-1;
+    background: #fff;
+    padding: 0 20px;
+    text-transform: uppercase;
+
+    @media (max-width: $screen-xs-max) {
+      left: 8px;
+    }
+  }
+}

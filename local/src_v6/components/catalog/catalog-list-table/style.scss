@@ -1,0 +1,169 @@
+.catalog-table {
+  @include border();
+
+  @media (max-width: $screen-md-max) {
+
+    .price {
+      margin-bottom: 0;
+    }
+
+    .price-old {
+      margin-bottom: 8px;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+
+    .wrap {
+      @include clearfix;
+    }
+
+    .pic {
+      width: 11%;
+      padding-right: 10px;
+      display: block;
+      float: left;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .descr-wrap {
+      float: left;
+      width: 49%;
+    }
+
+    .price-wrap {
+      float: left;
+      width: 20%;
+      text-align: right;
+    }
+
+    .buy {
+      float: right;
+      width: 20%;
+      padding-left: 20px;
+      text-align: right;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+
+    .pic {
+      width: 11%;
+    }
+
+    .descr-wrap {
+      width: 56%;
+    }
+
+    .price-wrap {
+      width: 15%;
+    }
+
+    .buy {
+      width: 18%;
+    }
+  }
+
+  @media (min-width: $screen-xl-min) {
+
+    .pic {
+      width: 28%;
+    }
+
+    .descr-wrap {
+      width: 35%;
+    }
+
+    .price-wrap {
+      width: 15%;
+    }
+
+    .buy {
+      width: 22%;
+    }
+  }
+
+  #db & .item {
+
+    &:after {
+      margin: 15px 0;
+    }
+  }
+
+  .price {
+    font-size: 18px;
+    line-height: (21/18);
+    @include font-family-bold();
+  }
+
+  .price-old {
+    font-size: 14px;
+    line-height: (18/11);
+    text-decoration: line-through;
+  }
+
+  .title {
+    margin-bottom: 7px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .wrap {
+
+    @media (max-width: $screen-sm-max) {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+
+  .pic {
+    position: relative;
+
+    a {
+      display: block;
+    }
+  }
+
+  .btn-pm {
+    max-width: 107px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    input {
+      border-radius: $border-radius-base;
+    }
+  }
+
+  .label_compare {
+
+    @media (min-width: $screen-md-min) {
+      justify-content: flex-end;
+    }
+  }
+
+  .btn-b {
+    margin-bottom: 12px;
+    font-size: .8em;
+  }
+
+  .buy-one-click {
+    text-decoration: none;
+  }
+
+  .btn-buy {
+    margin-bottom: 5px;
+  }
+
+  .item-quantity {
+
+    @media (min-width: $screen-md-min) {
+      float: right;
+    }
+  }
+}

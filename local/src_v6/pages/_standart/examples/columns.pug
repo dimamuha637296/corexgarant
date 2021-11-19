@@ -1,0 +1,7 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Колонки';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/base/columns/index

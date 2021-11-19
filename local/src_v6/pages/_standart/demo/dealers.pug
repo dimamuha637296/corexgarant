@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Дилеры';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Дилеры
+block content
+  include ../../../components/demo/dealers-filter/index
+  include ../../../components/demo/map/map/index
+  include ../../../components/demo/dealers-table/index

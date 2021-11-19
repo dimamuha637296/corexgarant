@@ -1,0 +1,13 @@
+.b-info-2 {
+  overflow: hidden;
+  padding: 23px 22px 26px;
+  border-left: 3px solid $brand-1;
+  margin: 0 0 40px;
+  background: $brand-white;
+  box-shadow: $box-shadow-base;
+  color: $brand-black;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 30px;
+  }
+}

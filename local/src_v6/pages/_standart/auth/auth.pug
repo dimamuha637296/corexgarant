@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Authorization';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Авторизация
+block content
+  include ../../../components/auth/auth/index

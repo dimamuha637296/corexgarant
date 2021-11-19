@@ -1,0 +1,50 @@
+-
+  var data = [
+    {
+      text: 'Краткая инструкция по эксплуатации мобильного телефона Nokia 3310 Black (Русский, English, Espaniol)',
+      file: 'pdf',
+      size: '(.pdf, 26 Кб)'
+    },
+    {
+      text: 'Прайс лист ноябрьской поставки',
+      file: 'xls',
+      size: '(.xls, 26 Кб)'
+    },
+    {
+      text: 'Архив накладных',
+      file: 'rar',
+      size: '(.rar, 0,4 Мб)'
+    },
+    {
+      text: 'Фото новой коллекции',
+      file: 'jpg',
+      size: '(.jpg, 1,2 Мб)'
+    },
+    {
+      text: 'Прайс лист на безалкогольную продукцию (июнь 2014)',
+      file: 'docx',
+      size: '(.docx, 261 Кб)'
+    }
+  ];
+- var n = 0
+while n < 3
+  - n++
+  .h3
+    if (n === 1)
+      | Файлы в один столбец:
+    else if (n === 2)
+      | Файлы в два столбца:
+    else if (n === 3)
+      | Файлы в три столбца:
+  .files.clearfix
+    .row
+      div(class=n === 1 ? 'col-sm-7' : n === 2 ? 'col-12 col-sm-10 col-lg-8' : 'col-12')
+        ul.list.list-reset.row-clear.row
+          for item in data
+            li.files-item(class=n === 1 ? 'col-12' : n === 2 ? 'col-12 col-sm-6' : 'col-12 col-sm-4')
+              a.files-link(href='#')
+                i.files-icon
+                  i.icon-inner
+                  | #{item.file}
+                span.files-title #{item.text}
+              .files-text #{item.size}

@@ -1,0 +1,235 @@
+/* sl-project.scss */
+
+// var ****************************************************************************************************************
+$_sl-project-desktop-height:                    600px;
+$_sl-project-xs-height:                         400px;
+$_sl-project-pb:                                50px;
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.sl-project {
+  padding-bottom: $_sl-project-pb;
+  margin-bottom: 55px;
+
+  .wrap {
+
+    &.inited-not {
+
+      .slide {
+
+        &:nth-child(1) {
+          float: none;
+        }
+
+        &:nth-child(1n+2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slider {
+    position: relative;
+    height: 100%;
+  }
+
+  .slide {
+    position: relative;
+    overflow: hidden;
+    height: $_sl-project-desktop-height;
+
+    @media (max-width: $screen-sm-max) {
+      height: $_sl-project-xs-height;
+    }
+
+    .js-off &,
+    &.slick-current {
+
+      .info {
+        opacity: 1;
+        right: 0;
+        transition: right 1s ease, opacity 1s ease;
+      }
+    }
+  }
+
+  .prev,
+  .next {
+    width: 6%;
+  }
+
+  .inner {
+    height: 100%;
+  }
+
+  .pic {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(#000, .15);
+    }
+
+    img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: inherit;
+    }
+  }
+
+  .slide-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .slide-block_w {
+    padding-right: 32%;
+
+    @media (max-width: $screen-sm-max) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .counter-wrap {
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 8px;
+    }
+
+    .current-slide {
+      font-size: 18px;
+      @include font-family-bold;
+    }
+  }
+
+  .title-wrap {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      bottom: -22px;
+      width: 40px;
+      height: 4px;
+      background: $link-color;
+
+      @media (max-width: $screen-sm-max) {
+        display: none;
+      }
+    }
+  }
+
+  .title {
+    position: relative;
+    @include font-family-bold;
+    @include max-height(30, 37, 3);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 60px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+  }
+
+  .info {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    opacity: 0;
+    transition: right .8s ease, opacity .8s ease;
+    height: 100%;
+    width: 30%;
+    padding: 55px 75px 45px 50px;
+    background: rgba(17, 25, 40, .8);
+    overflow: hidden;
+    color: #fff;
+
+    @media (max-width: $screen-md-max) {
+      width: 34%;
+      padding: 30px 55px 30px 40px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 25px 55px 25px 30px;
+      width: 45%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding: 20px 10px;
+      width: 100%;
+      height: auto;
+      left: 0;
+      bottom: 0;
+      top: auto;
+      background: rgba(0,0,0,.5);
+    }
+
+    .list-info {
+      overflow: hidden;
+
+      @media (max-width: $screen-sm-max) {
+        display: none;
+      }
+    }
+
+    .item {
+      margin-bottom: 33px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        float: left;
+        width: 33.333%;
+        margin-bottom: 18px;
+        padding-right: 15px;
+
+        &:nth-child(3n+1) {
+          clear: both;
+        }
+      }
+    }
+
+    .name {
+      @include font-family-bold;
+      @include max-height(22, 27, 2);
+      margin-bottom: 7px;
+
+      @media (max-width: $screen-sm-max) {
+        max-height: none;
+        margin-bottom: 0;
+      }
+    }
+
+    .descr {
+      @include max-height(16, 24, 2);
+
+      @media (max-width: $screen-sm-max) {
+        max-height: none;
+      }
+    }
+
+    .mCSB_dragger_bar {
+      background: $link-color;
+    }
+  }
+}

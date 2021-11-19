@@ -1,0 +1,111 @@
+$_element-accord-padding-l:                        37px;
+$_element-accord-top:                              10px;
+
+.element-accord {
+  margin: 0 0 40px;
+
+  .panel {
+
+    &:last-child {
+      border-bottom: 1px solid $border-color-base;
+    }
+
+    .link {
+      border-top: 1px solid $border-color-base;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 5px 0;
+
+      &:before {
+        right: 10px;
+        font-size: 6px;
+        position: absolute;
+        top: $_element-accord-top;
+        transform: rotate(-180deg);
+        transition: transform .3s ease;
+      }
+
+      @include hover-focus() {
+        color: $link-color-hover;
+        background-color: #f7f7f7;
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      padding: 0 $_element-accord-padding-l;
+      position: relative;
+      font-size: 18px;
+      line-height: (26/18);
+
+      &:before {
+        left: 4px;
+        top: 3px;
+        position: absolute;
+      }
+    }
+
+    .collapsed {
+      color: $link-color;
+
+      &:before {
+        top: $_element-accord-top;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .acc-body {
+    padding: 3px 0 30px $_element-accord-padding-l;
+  }
+
+  .video {
+
+    &:before {
+      @include png;
+      @include png-element-video;
+    }
+  }
+
+  .list-ic {
+
+    &:before {
+      @include png;
+      @include png-element-list;
+    }
+  }
+
+  .request {
+
+    &:before {
+      @include png;
+      @include png-element-request;
+    }
+  }
+
+  .arrow {
+
+    &:before {
+      @include png;
+      @include png-element-arrow;
+    }
+  }
+
+  .download {
+
+    &:before {
+      @include png;
+      @include png-element-download;
+    }
+  }
+
+  .tools {
+
+    &:before {
+      @include png;
+      @include png-element-tools;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+#modalCalc.modal-calc.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .h2.modal-title
+          | Рассчитать нужное количество
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body
+        form#form-modal-calc-2.form-horizontal(method='post', action='/')
+          fieldset.fieldset
+            .row.form-group.control-group
+              label.name.label-pt.col-lg-4.col-sm-4.col-12(for='form-room-length-2')
+                | Длина комнаты, м
+              .text.col-lg-3.col-sm-3.col-12
+                input#form-room-length-2.form-control(type='text', name='form-room-length-2', maxlength='50', spellcheck='true', value='', placeholder='250', required='')
+              .controls.col-lg-5.col-sm-5.col-12
+            .row.form-group.control-group
+              label.name.label-pt.col-lg-4.col-sm-4.col-12(for='form-room-width-2')
+                | Ширина комнаты, м
+              .text.col-lg-3.col-sm-3.col-12
+                input#form-room-width-2.form-control(type='text', name='form-room-width-2', maxlength='50', spellcheck='true', placeholder='230', required='')
+              .controls.col-lg-3.col-sm-4.col-12
+            .row.form-group.control-group
+              label.name.label-pt.col-lg-4.col-sm-4.col-12(for='form-room-area-2')
+                | Площадь комнаты, м
+                sup 2
+              .text.col-lg-3.col-sm-3.col-12
+                input#form-room-area-2.form-control(type='text', name='form-room-area-2', maxlength='50', spellcheck='true', value='', placeholder='320', required='')
+              .controls.col-lg-3.col-sm-4.col-12
+            .row.form-group.control-group
+              .name.label-pt.col-lg-4.col-sm-4.col-12.modal-calc__stacking
+                | Тип укладки
+              .col-lg-8.col-sm-8.col-12
+                .modal-calc__radio-wrap
+                  input#form-stacking-type-straight-2.modal-calc__radio-input(type='radio', name='form-stacking-type', value='1', checked='')
+                  label.modal-calc__radio-label(for='form-stacking-type-straight-2') Вдоль
+                .modal-calc__radio-wrap
+                  input#form-stacking-type-diag-2.modal-calc__radio-input(type='radio', name='form-stacking-type', value='2', checked='checked')
+                  label.modal-calc__radio-label(for='form-stacking-type-diag-2') Поперёк
+        include ../../catalog/calc-result/index
+        .btn-wrap
+          a.btn.reset-btn(href='#')
+            span Сбросить результаты
+          a.btn.retun-btn(href='#')
+            span Вернуться к покупкам

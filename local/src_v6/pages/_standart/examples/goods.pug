@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Товары';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Товары
+block content
+  include ../../../components/pages/shop/goods/index
+  include ../../../components/pages/shop/goods-2/index

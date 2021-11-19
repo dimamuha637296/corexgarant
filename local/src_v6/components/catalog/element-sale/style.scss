@@ -1,0 +1,72 @@
+$_es_stock-bg:                          #3a8a5a;
+$_es_hit-bg:                            #db342e;
+$_es_recommend-bg:                      #f26101;
+$_es_new-bg:                            #0079c8;
+
+.element-sale {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0;
+
+  &.no-pic {
+    position: relative;
+    margin-bottom: 10px;
+    top: auto;
+    left: auto;
+
+    .icon {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 5px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 5px;
+
+    &.recommend {
+
+      span {
+        background-color: $_es_recommend-bg;
+      }
+    }
+
+    &.new {
+
+      span {
+        background-color: $_es_new-bg;
+      }
+    }
+
+    &.sale {
+
+      span {
+        background-color: $_es_stock-bg;
+      }
+
+    }
+
+    &.hit {
+
+      span {
+        background-color: $_es_hit-bg;
+      }
+    }
+
+    span {
+      display: inline-block;
+      background-color: $brand-info;
+      font-size: 11px;
+      @include  font-family-bold();
+      color: #fff;
+      text-transform: uppercase;
+      @include nowrap;
+      line-height: 1;
+      max-width: 150px;
+      padding: 4px 8px 5px;
+      border-radius: $border-radius-base;
+    }
+  }
+}

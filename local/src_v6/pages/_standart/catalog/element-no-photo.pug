@@ -1,0 +1,23 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Element without photo';
+  - DB.DIR = '../../';
+  - DB.layout = 'wide';
+  - DB.catalogTovarIsAvail = true;
+  - DB.catalogPic = false;
+block pagehead
+  include ../../../components/block/ya-share2-styles/index
+block title
+  include ../../../components/catalog/element-title/index
+block content
+  include ../../../components/catalog/element-sale/index
+  include ../../../components/catalog/element-descr/index
+  include ../../../components/block/ya-share2/index
+  include ../../../components/catalog/element-descr-accord/index
+  include ../../../components/catalog/element-descr-table/index
+  include ../../../components/catalog/element-link-all/index
+  include ../../../components/catalog/element-prevs/index
+  include ../../../components/catalog/element-seo-text/index
+block popup
+  include ../../../components/modals/modal-calc/index
+  include ../../../components/modals/modal-buy/index

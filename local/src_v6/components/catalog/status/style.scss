@@ -1,0 +1,68 @@
+.cat-status {
+  @include font-family-bold();
+  font-size: 11px;
+
+  &.available,
+  &.much,
+  &.medium {
+    color: #016b2c;
+  }
+
+  &.not-available,
+  &.few {
+    color: #b1b8bc;
+  }
+
+  &.available {
+
+    .cat-status-icon {
+
+      &:before {
+        @include svg-cat-item-available();
+      }
+    }
+  }
+
+  &.much {
+
+    .cat-status-icon {
+
+      &:before {
+        @include svg-cat-item-much();
+      }
+    }
+  }
+
+  &.medium {
+
+    .cat-status-icon {
+
+      &:before {
+        @include svg-cat-item-medium();
+      }
+    }
+  }
+
+  &.few {
+
+    .cat-status-icon {
+
+      &:before {
+        @include svg-cat-item-few();
+      }
+    }
+  }
+
+  .cat-status-icon {
+    margin-right: 4px;
+
+    &:before {
+      @include svg();
+      vertical-align: middle;
+    }
+  }
+
+  span {
+    vertical-align: -1px;
+  }
+}

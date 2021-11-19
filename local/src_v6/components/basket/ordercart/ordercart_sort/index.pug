@@ -1,0 +1,19 @@
+.bx_sort_container
+  span.ordercart-title
+    | Товары в корзине:
+  a#basket_toolbar_buttonbx_sort_container.item.current(href='javascript:void(0)', onclick='showBasketItemsList()')
+    | Готовые к заказу
+    #normal_count.flat
+      | &nbsp;(2)
+  a#basket_toolbar_button_delayed.item(href='javascript:void(0)', onclick='showBasketItemsList(2)')
+    | Отложенные
+    #delay_count.flat
+      | &nbsp;(1)
+  a#basket_toolbar_button_subscribed.item(href='javascript:void(0)', onclick='showBasketItemsList(3)')
+    | Ожидаемые
+    #subscribe_count.flat
+      | &nbsp;(0)
+  a#basket_toolbar_button_not_available.item(href='javascript:void(0)', onclick='showBasketItemsList(4)')
+    | Отсутствуют
+    #not_available_count.flat
+      | &nbsp;(0)

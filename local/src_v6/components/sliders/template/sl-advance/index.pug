@@ -1,0 +1,29 @@
+mixin sl-advance(data)
+  .sl-advance(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not.full-wrap
+      if (data.bg === undefined)
+        - data.bg = 'sl-advance-bg.jpg';
+      .bg
+        img(src=DB.DIR + 'img/tmp/' + data.bg, alt=data.title || 'alt')
+      .wrap_i
+        if (data.title)
+          .title #{data.title}
+        .slider
+          each slide in data.slides
+            .slide
+              .inner
+                .container
+                  .half.right
+                    .pic
+                      img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title || 'alt')
+                  .half.left
+                    .ttl #{slide.title}
+                    .value #{slide.value}
+                    .descr #{slide.text}
+        if (data.pager !== undefined)
+          +#{data.pager}()
+        if (data.nav !== undefined)
+          +#{data.nav}()
+        if (data.btnText)
+          .btn-wrap
+            +btn-primary({text: data.btnText})

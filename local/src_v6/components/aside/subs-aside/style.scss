@@ -1,0 +1,46 @@
+.subs-aside {
+  margin-bottom: 30px;
+
+  @media (max-width: $grid-breakpoint-max) {
+    display: none;
+  }
+
+  .pm & {
+
+    @media (max-width: $screen-md-max) {
+      display: block;
+    }
+  }
+
+  .control-group {
+
+    .controls {
+      padding-left: 18px;
+      padding-top: 5px;
+    }
+  }
+
+  .text {
+    @include clearfix;
+    background: #fff;
+
+    .form-control {
+      float: left;
+      width: 55%;
+    }
+  }
+
+  .b-btn {
+    float: right;
+    width: 45%;
+    padding: 0 0 0 5px;
+    height: 100%;
+
+    .btn {
+      font-size: 12px;
+      height: 100%;
+      width: 100%;
+      padding: 10px 5px 10px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.bx_section
+  .h3
+    | Служба доставки
+  .bx_block.w100.vertical
+    .bx_element
+      input#ID_DELIVERY_ID_1(type='radio', name='DELIVERY_ID', value='1', checked='', onclick='submitForm();')
+      label(for='ID_DELIVERY_ID_1', onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();")
+        span.bx_logotype
+          span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/logo-default-d.gif);')
+        span.bx_description
+          span.name
+            strong
+              | Доставка курьером
+          span.bx_result_price
+            | Стоимость:
+            b
+              |  500&nbsp;руб.
+            br
+          span
+            | Доставка осуществляется в течение дня в удобное для вас время.
+            br
+      .clear
+  .bx_block.w100.vertical
+    .bx_element
+      input#ID_DELIVERY_ID_2(type='radio', name='DELIVERY_ID', value='2', onclick='submitForm();')
+      label(for='ID_DELIVERY_ID_2', onclick="BX('ID_DELIVERY_ID_2').checked=true;submitForm();")
+        span.bx_logotype
+          span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/logo-default-d.gif);')
+        span.bx_description
+          span.name
+            strong
+              | Самовывоз
+          span.bx_result_price
+            | Стоимость:
+            b
+              |  0&nbsp;руб.
+            br
+          span
+            | Вы можете самостоятельно забрать заказ из нашего магазина.
+            br
+      .clear

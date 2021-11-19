@@ -1,0 +1,17 @@
+$_slide-counter-bg:             transparent;
+$_slide-counter-color:          #fff;
+$_slide-counter-fz:             14px;
+
+.slide-counter {
+  color: $_slide-counter-color;
+  background: $_slide-counter-bg;
+  font-size: $_slide-counter-fz;
+
+  .inited-not & {
+    display: none;
+  }
+
+  .devider {
+    padding: 0 5px;
+  }
+}

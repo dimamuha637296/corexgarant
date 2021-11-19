@@ -1,0 +1,8 @@
+.faq
+  .row
+    .col-lg-9.col-sm-8.col-12
+      p
+        | Нам часто пишут покупатели, задавая многочисленные вопросы. Очень часто вопросы повторяются, и, чтобы о них узнали многие, мы создали у нас на сайте страницу, где специалисты компании ЕВРОКЛИМАТ будут отвечать на самые различные вопросы:
+    .col-lg-3.col-sm-4.col-12
+      +btn-primary({type: 'button', className: 'btn-sm', text: 'Задать вопрос'})(data-toggle='modal', data-target='#modal-reviews')
+include ../modal-review/index

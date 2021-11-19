@@ -1,0 +1,70 @@
+.section
+  .bx_section
+    .h3
+      | Платежная система
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_3(type='radio', name='PAY_SYSTEM_ID', value='3', checked='checked', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_3', onclick="BX('ID_PAY_SYSTEM_ID_3').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/order-yandex.gif);')
+          span.bx_description
+            span.clear
+            strong
+              | Яндекс.Деньги
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_4(type='radio', name='PAY_SYSTEM_ID', value='4', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_4', onclick="BX('ID_PAY_SYSTEM_ID_4').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/order-visa.gif);')
+          span.bx_description
+            span.clear
+            strong
+              | Банковские карты
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_5(type='radio', name='PAY_SYSTEM_ID', value='5', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_5', onclick="BX('ID_PAY_SYSTEM_ID_5').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/order-terminal.gif);')
+          span.bx_description
+            span.clear
+            strong
+              | Терминалы
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_1(type='radio', name='PAY_SYSTEM_ID', value='1', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_1', onclick="BX('ID_PAY_SYSTEM_ID_1').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/logo-default-ps.gif);')
+          span.bx_description
+            strong
+              | Наличные курьеру
+            span
+              | Оплата наличными при получении заказа курьеру.
+        .clear
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_7(type='radio', name='PAY_SYSTEM_ID', value='7', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_7', onclick="BX('ID_PAY_SYSTEM_ID_7').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/order-bank.gif);')
+          span.bx_description
+            strong
+              | Сбербанк
+            span
+              | Вы можете оплатить заказ в любом отделении Сбербанка. За услугу по переводу денег с Вас возьмут от 3 до 7% от стоимости заказа, в зависимости от региона. Перечисление денег займет порядка 10 дней.
+        .clear
+    .bx_block.w100.vertical
+      .bx_element
+        input#ID_PAY_SYSTEM_ID_2(type='radio', name='PAY_SYSTEM_ID', value='2', onclick='changePaySystem();')
+        label(for='ID_PAY_SYSTEM_ID_2', onclick="BX('ID_PAY_SYSTEM_ID_2').checked=true;changePaySystem();")
+          span.bx_logotype
+            span(style='background-image:url(' + DB.DIR + 'img/tmp/basket/logo-default-ps.gif);')
+          span.bx_description
+            strong
+              | Наложенный платеж
+            span
+              | Оплата с помощью наложенного платежа
+        .clear

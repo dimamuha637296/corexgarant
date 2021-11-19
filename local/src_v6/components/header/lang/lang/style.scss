@@ -1,0 +1,49 @@
+.lang {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: $screen-lg-max) {
+    margin-right: -20px;
+  }
+
+  .list {
+    margin: 0 -2px;
+  }
+
+  .item {
+    float: left;
+    padding: 0 2px;
+    @include font-family-medium();
+
+    > a,
+    > span {
+      font-size: 15px;
+      line-height: (18/15);
+      display: block;
+      max-width: 85px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 3px 8px 4px;
+      border-radius: 10px;
+      color: #686868;
+
+      @media (max-width: $screen-lg-max) {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+
+      &.active {
+        color: $headings-color;
+        background: #e6e6e6;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+      }
+    }
+
+    > a {
+      @include hover-focus() {
+        color: $link-color-hover;
+      }
+    }
+  }
+}

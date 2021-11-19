@@ -1,0 +1,15 @@
+extends ../../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Main page 2';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../../';
+  - DB.isMain = true;
+block title
+  h1.hidden#title H1 Заголовок страницы. В магазинах начался сезон скидок
+block content
+  include ../../../../components/pages/index/sl-main/index
+  include ../../../../components/pages/index/cat/index
+  include ../../../../components/pages/index/cat--2/index
+  include ../../../../components/pages/index/about/index
+  include ../../../../components/pages/index/advant/index
+  include ../../../../components/pages/index/sl-partners/index

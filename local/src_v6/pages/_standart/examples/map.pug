@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Карты';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Карты
+block content
+  include ../../../components/demo/map/map/index
+  include ../../../components/demo/map/map-wide/index

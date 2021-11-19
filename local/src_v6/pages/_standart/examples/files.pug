@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Файлы для скачивания';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  h2 Список файлов
+  include ../../../components/base/files/index
+  h2 Список файлов (svg)
+  include ../../../components/base/files-svg/index
+block aside

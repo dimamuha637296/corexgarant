@@ -1,0 +1,33 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Element with slider';
+  - DB.DIR = '../../';
+  - DB.layout = 'wide';
+  - DB.catalogTovarIsAvail = true;
+  - DB.catalogPic = true;
+block pagehead
+  include ../../../components/block/ya-share2-styles/index
+block title
+  include ../../../components/catalog/element-title/index
+block content
+  .row
+    .col-12.col-lg-4
+      .sl-prod-wrap
+        include ../../../components/catalog/element-sale/index
+        include ../../../components/catalog/sl-prod/index
+        include ../../../components/catalog/sl-prod-nav/index
+    .col-12.col-lg-5
+      include ../../../components/catalog/element-descr/index
+      include ../../../components/catalog/element-reason/index
+      include ../../../components/block/ya-share2/index
+    .col-12.col-lg-3
+      include ../../../components/catalog/element-advantages/index
+  include ../../../components/catalog/element-descr-tabs/index
+  include ../../../components/catalog/element-descr-table/index
+  include ../../../components/catalog/catalog-similar/index
+  include ../../../components/catalog/element-link-all/index
+  include ../../../components/catalog/element-prevs/index
+  include ../../../components/catalog/element-seo-text/index
+block popup
+  include ../../../components/modals/modal-calc/index
+  include ../../../components/modals/modal-buy/index

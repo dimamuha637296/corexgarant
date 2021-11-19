@@ -1,0 +1,112 @@
+.lang-drop {
+  height: 100%;
+
+  @media (min-width: $screen-md-min) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 15px 0 24px;
+  }
+
+  &__link {
+    @include font-family-medium;
+    color: #0c0c0c;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 15px 10px 10px;
+    display: block;
+    min-width: 52px;
+
+    > span {
+      display: block;
+      @include max-height(16, 16, 1);
+      max-width: 40px;
+    }
+
+    @media (max-width: $grid-breakpoint-max) {
+      @include mobile-height;
+      color: $link-color;
+      @include font-family-regular;
+      padding-top: 12px;
+    }
+  }
+
+  a.lang__link {
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    > .lang-drop__link {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: $transition-link;
+
+        @media (max-width: $screen-sm-max) {
+          border-top-color: $link-color;
+        }
+      }
+
+      &:hover,
+      &:focus {
+
+        &:after {
+          border-top-color: $link-color;
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    margin: 0;
+    min-width: inherit;
+    padding: 0;
+    border: 0;
+    display: none;
+    position: absolute;
+    left: 0 !important;
+    top: 0 !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+    width: 100%;
+    box-shadow: $box-shadow-base;
+    background-color: #fff;
+    border-radius: $border-radius-base;
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__item {
+
+    &.active {
+
+      & > .lang-drop__link {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 6px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          @media (max-width: $screen-sm-max) {
+            border-bottom-color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}

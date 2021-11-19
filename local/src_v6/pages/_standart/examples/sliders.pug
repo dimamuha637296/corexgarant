@@ -1,0 +1,40 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Слайдеры';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  h2 Слайдер #1.
+  include ../../../components/examples/sliders/sl-main/index
+  h2 Слайдер #2. Слайдер на всю ширину контентной области.
+  include ../../../components/pages/index/sl-main/index
+  h2 Слайдер #3. Слайдер на всю ширину контентной области. Стрелки прибиты к краям
+  include ../../../components/examples/sliders/sl-main--2/index
+  h2 Слайдер #4. Слайдер с сайдбаром.
+  include ../../../components/examples/sliders/sl-project/index
+  h2 Слайдер #5. Слайдер c активными ссылками.
+  include ../../../components/examples/sliders/sl-cat/index
+  h2 Слайдер #6. Слайдер со списком партнёров
+  include ../../../components/pages/index/sl-partners/index
+  h2 Слайдер #7. Слайдер со списком партнёров (c фоном)
+  include ../../../components/examples/sliders/sl-partners--2/index
+  h2 Слайдер #8. Слайдер 2 карточки. Весь слайд - ссылка
+  include ../../../components/examples/sliders/sl-shares/index
+  h2 Слайдер #9. Слайдер c пэйджером ввиде ссылок.
+  include ../../../components/examples/sliders/sl-main-3/index
+  h2 Слайдер #10
+  include ../../../components/examples/sliders/sl-prod-list/index
+  h2 Слайдер #11
+  include ../../../components/examples/sliders/sl-prod-list--2/index
+  h2 Слайдер #12
+  include ../../../components/examples/sliders/sl-main-4/index
+  h2 Слайдер #13
+  include ../../../components/examples/sliders/sl-advance/index
+  h2 Слайдер #14 Слайдер со счётчиком
+  include ../../../components/examples/sliders/sl-gal/index
+  h2 Слайдер #15 Сладеры в табах
+  include ../../../components/examples/sliders/sl-tabs/index
+  h2 Слайдер #16 Вериткальный слайдер
+  include ../../../components/examples/sliders/sl-vertical/index
+  h2 Слайдер #17 Слайдер с пагинацией-таймером
+  include ../../../components/examples/sliders/sl-main--3/index

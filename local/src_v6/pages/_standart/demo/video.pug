@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Видео';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Видео
+block content
+  include ../../../components/demo/b-video/index

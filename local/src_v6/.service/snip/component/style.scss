@@ -1,0 +1,19 @@
+.test {
+
+  // Вставка SVG спрайта
+  .svg {
+    @include svg();
+    @include svg-arrow();
+  }
+
+  // Вставка PNG спрайта
+  .png {
+    @include png();
+    @include png-search-btn();
+  }
+
+  // Вставка изображения фоном как base64
+  .base64 {
+    background: url('./../../base64/base64-example.svg');
+  }
+}

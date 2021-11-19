@@ -1,0 +1,13 @@
+include ../meta/index
+title #{DB.pageTitle}
+include ../manifest/index
+block css-libs
+  //- The block is necessary for building CSS libraries
+link(rel='stylesheet', href=DB.DIR + 'css/app.min.css')
+script(src=DB.DIR + 'js/libs/jquery-3.3.1.min.js')
+script(src=DB.DIR + 'js/libs/modernizr-custom.min.js')
+script(src=DB.DIR + 'js/libs/current-device.min.js')
+block js-libs
+  //- The block is necessary for building JS libraries
+block pagehead
+script(src=DB.DIR + 'js/app.min.js')

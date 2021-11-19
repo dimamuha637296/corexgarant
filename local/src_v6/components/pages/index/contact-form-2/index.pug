@@ -1,0 +1,79 @@
+include ../../../base/forms/form_1/form/index
+.contact-form-2
+  form#form-contact(method='post', action='/')
+    fieldset.fieldset
+      .form-group
+        .text.col-12.control-group.dropdown-valid
+          .input-wrap
+            input.form-control(type='text' name='form-contact-FIO', required='', placeholder='ФИО')
+            .error-drop
+              button.error-icon(data-toggle='dropdown') ?
+              .dropdown-menu.dropdown-menu-right
+                .controls
+        .text.col-12.control-group.dropdown-valid
+          .input-wrap
+            input.form-control(type='text' name='form-contact-COMPANY', required='', placeholder='Компания')
+            .error-drop
+              button.error-icon(data-toggle='dropdown') ?
+              .dropdown-menu.dropdown-menu-right
+                .controls
+        .text.col-12.col-sm-6.control-group.dropdown-valid
+          .input-wrap
+            input.form-control.js_mask_tel(type='tel' name='form-contact-TEL', required='', placeholder='Телефон')
+            .error-drop
+              button.error-icon(data-toggle='dropdown') ?
+              .dropdown-menu.dropdown-menu-right
+                .controls
+        .text.col-12.col-sm-6.control-group.dropdown-valid
+          .input-wrap
+            input.form-control(type='email' name='form-contact-EMAIL', required='', placeholder='Email')
+            .error-drop
+              button.error-icon(data-toggle='dropdown') ?
+              .dropdown-menu.dropdown-menu-right
+                .controls
+        .text.col-12.control-group.dropdown-valid
+          .input-wrap
+            textarea.form-control(name='form-contact-MESSAGE', placeholder='Сообщение', maxlength='500', rows='3', cols='60')
+            .error-drop
+              button.error-icon(data-toggle='dropdown') ?
+              .dropdown-menu.dropdown-menu-right
+                .controls
+      .form-group
+        .col-12
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Отправить'})(name='submit')
+  script.
+      !function () {
+          'use strict';
+
+          // Form validation
+          function initValid() {
+              // Validation options http://jqueryvalidation.org/documentation/
+              var form_validator = $('#form-contact');
+              if (form_validator.length && $.fn.validate) {
+                  form_validator.validate({
+                      rules: {
+                          'form-contact-COMPANY': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-contact-FIO': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-contact-TEL': {
+                              required: true,
+                              minlength: 2
+                          },
+                          'form-contact-EMAIL': {
+                              required: true,
+                              minlength: 2
+                          }
+                      }
+                  });
+              }
+          }
+
+          $(function () {
+              initValid();
+          });
+      }();

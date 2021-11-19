@@ -1,0 +1,18 @@
+.element-title {
+  margin-bottom: 28px;
+  margin-right: 150px;
+  font-size: 0;
+
+  @media (max-width: $screen-md-max) {
+    margin-right: 0;
+  }
+
+  .title {
+    display: inline;
+    margin-bottom: 0;
+
+    @media (max-width: $screen-md-max) {
+      margin-right: 20px;
+    }
+  }
+}

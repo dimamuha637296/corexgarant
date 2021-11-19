@@ -1,0 +1,22 @@
+$_b-color_bg:                   $brand-gray-2;
+
+.b-color {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    max-width: $site-max-width;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 320px;
+    background: $_b-color_bg;
+  }
+
+  &__wrap {
+    overflow: hidden;
+    position: relative;
+  }
+}

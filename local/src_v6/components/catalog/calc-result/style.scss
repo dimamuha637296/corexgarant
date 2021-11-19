@@ -1,0 +1,51 @@
+.calc-result {
+
+  .quantity {
+    max-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  .total__price {
+    min-width: 90px;
+  }
+
+  .btn.in-card  {
+
+    &:before {
+      margin-top: 2px;
+    }
+  }
+
+  .g-wrap & .btn {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .g-wrap & .btn.in-card {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+
+  .bs_size_more {
+    display: none;
+  }
+
+  .bx_ordercart_wrap {
+    max-width: 220px;
+
+    @media (max-width: $screen-md-max) {
+      max-width: inherit;
+    }
+  }
+
+  .bx_ordercart_itemtitle {
+    overflow: hidden;
+    max-height: (1.1 * 2em);
+  }
+
+  .bx_ordercart_order_table_container {
+    padding-bottom: 5px;
+  }
+}

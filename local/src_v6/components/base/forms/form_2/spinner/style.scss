@@ -1,0 +1,76 @@
+.ui-spinner-2 {
+  display: block;
+
+  .g-wrap & {
+    position: relative;
+    vertical-align: middle;
+    padding: 0;
+    border: none;
+  }
+
+  input {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  .ui-spinner-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 50%;
+    border-bottom: 1px solid $link-color;
+    background-color: $link-color;
+    user-select: none;
+    text-shadow: 1px 1px #FFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-right: 3px solid transparent;
+      border-bottom: 3px solid #fff;
+      border-left: 3px solid transparent;
+    }
+  }
+
+  .ui-spinner-down {
+    top: auto;
+    bottom: 0;
+    border-radius: 0 0 $border-radius-base 0;
+
+    &:after {
+      border-top: 3px solid #fff;
+      border-right: 3px solid transparent;
+      border-bottom: none;
+      border-left: 3px solid transparent;
+    }
+
+    @include hover-focus() {
+
+      &:after {
+        border-top-color: #ccc;
+      }
+    }
+  }
+
+  .ui-spinner-up {
+    border-radius: 0 $border-radius-base 0 0;
+
+    @include hover-focus() {
+
+      &:after {
+        border-bottom-color: #ccc;
+      }
+    }
+  }
+}

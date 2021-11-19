@@ -1,0 +1,12 @@
+include ../../../components/base/btns/btn/index
+.h2 Выпадающее меню - Dropdown
+.dropdown
+  +btn-primary({type:'button', className: 'dropdown-toggle', text: 'Dropdown button'})(data-toggle="dropdown", id="dropdownMenuButton")
+  .dropdown-menu(aria-labelledby="dropdownMenuButton")
+    ul.list-reset
+      li
+        a.dropdown-item(href='#') Action
+      li
+        a.dropdown-item(href='#') Another action
+      li
+        a.dropdown-item(href='#') Something else here

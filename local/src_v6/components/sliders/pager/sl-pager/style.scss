@@ -1,0 +1,62 @@
+$_sl-pager-bg:                            transparent;
+$_sl-pager-active-bg:                     #fff;
+$_sl-pager-dot-width:                     10px;
+
+.sl-pager {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+
+  ul {
+    margin: 0;
+  }
+
+  li,
+  > a {
+    cursor: pointer;
+    display: inline-block;
+    width: $_sl-pager-dot-width;
+    height: $_sl-pager-dot-width;
+    margin: 0 $_sl-pager-dot-width/2;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $_sl-pager-bg;
+      border-radius: 50%;
+      transition: $transition-link;
+      border: 1px solid $_sl-pager-active-bg;
+    }
+
+    .desktop & {
+
+      @include hover-focus() {
+
+        &:after {
+          background: $_sl-pager-active-bg;
+        }
+      }
+    }
+
+    &.selected,
+    &.slick-active {
+      cursor: default;
+
+      &:after {
+        background: $_sl-pager-active-bg;
+      }
+    }
+
+    button,
+    span {
+      display: none;
+    }
+  }
+}

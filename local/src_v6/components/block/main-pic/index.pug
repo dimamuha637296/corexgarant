@@ -1,0 +1,18 @@
+if (mainPic === undefined)
+  -
+    var mainPic = {
+      mod: '',
+      pic: 'img/tmp/main-pic_01.jpg',
+      title: 'О Студии',
+      descr: 'Мы будем рады проконсультировать вас по вашему проекту и предложить свою экспертизу в решении бизнес-задач.'
+    }
+.main-pic(class=mainPic.mod ? mainPic.mod : '')
+  .main-pic__bg
+    img.main-pic__pic(src=DB.DIR + mainPic.pic, alt='alt')
+  .main-pic__wrap
+    include ../../base/breadcrumb/index
+    .main-pic__text-wrap
+      if (mainPic.title)
+        h1.main-pic__title #{mainPic.title}
+      if (mainPic.descr)
+        .main-pic__descr #{mainPic.descr}

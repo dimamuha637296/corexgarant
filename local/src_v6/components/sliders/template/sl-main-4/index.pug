@@ -1,0 +1,21 @@
+mixin sl-main-4(data)
+  .sl-main-4(class=data.modifier ? data.modifier : '')
+    .wrap.not-init.full-wrap
+      .slider
+        each slide in data.slides
+          .slide(style='background-image: url(' + DB.DIR + 'img/tmp/' + slide.pic + ')')
+            .slide-block
+              if(slide.label)
+                .label #{slide.label}
+              .title #{slide.title ? slide.title : 'Заголовок слайда'}
+              if (slide.text)
+                p.text #{slide.text}
+              if (slide.btnText)
+                .wrap-more
+                  a(href='#') #{slide.btnText}
+            .vertical-block
+              span #{slide.title ? slide.title : 'Заголовок слайда'}
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

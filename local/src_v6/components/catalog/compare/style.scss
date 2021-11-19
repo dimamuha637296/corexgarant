@@ -1,0 +1,196 @@
+$_bx_compare-width:           230px;
+$_bx_compare-width-xs:        210px;
+$_bx_compare-width-first:     225px;
+$_bx_compare-width-first-xs:  170px;
+
+.bx_compare {
+
+  .title-main {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 11px;
+  }
+
+  .bx_sort_container {
+    display: block;
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  .sortbutton {
+    padding: 11px 15px;
+    font-size: 12px;
+    line-height: 1em;
+    text-decoration: none;
+    border: 1px solid $link-color;
+    color: $link-color;
+    transition: all .2s;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 8px 7px 9px;
+    }
+
+    &.current {
+      color: #000;
+      border-color: transparent;
+      background: #ddd;
+      cursor: default;
+    }
+
+    &:not(.current):hover {
+      border-color: transparent;
+      background: #a6a6a6;
+      color: #000;
+    }
+  }
+
+  .close {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: -16px;
+    right: 0;
+    opacity: 1;
+    text-shadow: none;
+
+    @media (max-width: $screen-lg-max) {
+      right: 15px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 2px;
+      left: 0;
+      top: 8px;
+      width: 100%;
+      background: #959595;
+      transition: .15s;
+    }
+
+    &:before {
+      transform: rotate3d(0,0,1,45deg);
+    }
+
+    &:after {
+      transform: rotate3d(0,0,1,-45deg);
+    }
+
+    @include hover-focus() {
+
+      &:before,
+      &:after {
+        background: $link-color-hover;
+      }
+    }
+  }
+
+  .table_compare {
+    overflow-x: auto;
+    min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-bottom: ($line-height-base * 0.75);
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      // Tighten up spacing
+      > .table {
+        margin-bottom: 0;
+      }
+    }
+
+    .data-table {
+      margin-bottom: 23px;
+      width: auto;
+
+      td {
+        position: relative;
+      }
+
+      tbody {
+
+        tr {
+
+          .g-wrap & {
+            border-bottom-color: #ebebeb;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          #db & {
+
+            @include hover-focus() {
+              background: none;
+            }
+          }
+
+          td {
+            min-width: $_bx_compare-width;
+            max-width: $_bx_compare-width;
+            overflow: hidden;
+            font-size: 12px;
+            line-height: 1.2;
+            padding: 8px 5px;
+
+            @media (max-width: $screen-sm-max) {
+              max-width: $_bx_compare-width-xs;
+              min-width: $_bx_compare-width-xs;
+            }
+
+            &:first-child {
+              max-width: $_bx_compare-width-first;
+              min-width: $_bx_compare-width-first;
+              @include font-family-bold();
+              padding-left: 0;
+
+              @media (max-width: $screen-sm-max) {
+                max-width: $_bx_compare-width-first-xs;
+                min-width: $_bx_compare-width-first-xs;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bx_bt_button {
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 14px;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .pic {
+    margin: 0 auto;
+    display: block;
+    padding: 15px 0 16px;
+    width: 100%;
+
+    img {
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .price {
+    @include font-family-bold();
+  }
+}

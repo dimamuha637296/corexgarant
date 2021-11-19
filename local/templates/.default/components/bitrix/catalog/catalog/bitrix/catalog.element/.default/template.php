@@ -1,0 +1,566 @@
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+$this->setFrameMode(true);
+//pr($arResult["IMAGES"]);
+$imCount = count($arResult["IMAGES"]);
+$sale = $arResult['PROPERTIES']['FLG_SALE']['VALUE'] && isset($arResult['PROPERTIES']['FLG_SALE']['VALUE']);
+$new = $arResult['PROPERTIES']['FLG_NEW']['VALUE'] && isset($arResult['PROPERTIES']['FLG_NEW']['VALUE']);
+$hit = $arResult['PROPERTIES']['FLG_HIT']['VALUE'] && isset($arResult['PROPERTIES']['FLG_HIT']['VALUE']);
+$availability = $arResult['PROPERTIES']['FLG_AVAILABLE']['VALUE'] && isset($arResult['PROPERTIES']['FLG_AVAILABLE']['VALUE']);
+$article = $arResult['PROPERTIES']['ARTICLE']['VALUE'] && strlen($arResult['PROPERTIES']['ARTICLE']['VALUE'])>0;
+$price = $arResult['PROPERTIES']['PRICE']['VALUE'] && strlen($arResult['PROPERTIES']['PRICE']['VALUE'])>0;
+$oldPrice = $arResult['PROPERTIES']['OLD_PRICE']['VALUE'] && strlen($arResult['PROPERTIES']['OLD_PRICE']['VALUE'])>0;
+$brand = $arResult["BRAND"];
+$detText = $arResult["DETAIL_TEXT"];
+$characteristics =  intval($arResult['CHARACTERISTICS_COUNT'])>0;
+$dopDesc = count($arResult['PROPERTIES']['DESCRIPTION']['VALUE'])>0 && $arResult['PROPERTIES']['DESCRIPTION']['VALUE'][0]["TEXT"];
+$files = count($arResult['MORE_FILES']) > 0;
+$video = count($arResult['PROPERTIES']['VIDEO']['VALUE']) > 0 ;
+?>
+<h1 class="mt_0 " id="title" itemprop="name">
+	<?if(strlen($arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) >0):?>
+		<?=$arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]?>
+	<?else:?>
+		<?=$arResult["NAME"]?>
+	<?endif;?>
+</h1>
+
+<div class="row mb_3">
+
+	<div class="col-12 col-sm-7">
+		<?if($sale || $new || $hit):?>
+			<div class="element-sale">
+				<?if($sale):?>
+					<div class="icon percent"></div>
+				<?endif;?>
+				<?if($new):?>
+					<div class="icon new"></div>
+				<?endif;?>
+				<?if($hit):?>
+					<div class="icon sale"></div>
+				<?endif;?>
+			</div>
+		<?endif;?>
+		<?if($arResult["IMAGES"]):?>
+			<div class="sl-element inited-not">
+				<div class="wrapper">
+					<div class="inner">
+						<div class="wrapper cursor">
+							<div id="carousel" class="popup-gallery">
+								<?$i=1;foreach($arResult["IMAGES"] as $key => $img):?>
+									<div class="sl-item" data-slide="<?=$i?>">
+										<a href="<?=$img["BIG_IMG"]["src"]?>" title="<?=$img["NAME"]["description"]?>">
+											<img<?if($i==1):?> itemprop="image"<?endif;?> src="<?=$img["IMG"]["src"]?>" alt="<?=$img["NAME"]["description"]?>" title="<?=$img["NAME"]["description"]?>">
+										</a>
+									</div>
+								<?$i++;endforeach; ?>
+							</div>
+						</div>
+						<?if($imCount >1):?>
+							<div class="pager-wrapper hidden-print">
+								<?if($imCount >7):?>
+									<a id="gal_prev" class="prev ic-sl-prev" href="#"></a>
+									<a id="gal_next" class="next ic-sl-next" href="#"></a>
+								<?endif;?>
+								<div id="pager">
+									<?$i=1;foreach($arResult["IMAGES"] as $key => $img):?>
+										<div class="pag sl-item" data-slide="<?=$i?>">
+											<img src="<?=$img["SMALL_IMG"]["src"]?>" alt="<?=$img["NAME"]["description"]?>" title="<?=$img["NAME"]["description"]?>">
+										</div>
+										<?$i++;endforeach; ?>
+								</div>
+							</div>
+						<?endif;?>
+					</div>
+				</div>
+			</div>
+            <script>
+                !function () {
+                    'use strict';
+                    var sliderBlock = $('.sl-element');
+                    var $carousel = $('#carousel'),
+                        $pager = $('#pager');
+                    var dataIndex = 0;
+                    var pagerItems = $pager.find('.sl-item');
+                    var galPrev = $('.ic-sl-prev');
+                    var galNext = $('.ic-sl-next');
+                    var $visible;
+
+                    function pagerInit() {
+                        $visible = $pager.triggerHandler('currentVisible').length;
+                        $pager.find('.sl-item').removeClass('selected');
+                        $pager.find('.sl-item').eq(dataIndex).addClass('selected');
+                        if (!$pager.length && pagerItems.length > $visible) {
+                            galPrev.hide();
+                            galNext.hide();
+                        }
+                    }
+
+                    function pagerSlideTo(data) {
+                        dataIndex = data.items.visible.first().data('slide');
+                        if ($pager.length) {
+                            $pager.trigger('slideTo', ['.pag.sl-item[data-slide="' + dataIndex + '"]']);
+                            $pager.find('.sl-item').removeClass('selected');
+                        }
+                    }
+
+                    function pagerSetSelected() {
+                        var countSl = pagerItems.length;
+                        var hFirstSlide = $pager.find('.sl-item:first').outerWidth(true);
+                        var num = 0;
+                        $pager.find('.sl-item').each(function(){
+                            if ($(this).outerWidth(true) !== hFirstSlide) {
+                                num = $(this).index() + 1;
+                                return false;
+                            }
+                        });
+                        var selectNum = countSl - num + 1;
+                        if ($pager.length) {
+                            if (dataIndex >= selectNum) {
+                                $pager.find('.sl-item').removeClass('selected');
+                                $pager.find('.sl-item').eq(dataIndex - selectNum).addClass('selected');
+                            } else {
+                                $pager.find('.sl-item').eq(0).addClass('selected');
+                            }
+                        }
+                    }
+
+                    function slider() {
+                        sliderBlock.removeClass('inited-not');
+
+                        $carousel.carouFredSel({
+                            responsive: true,
+                            width: '100%',
+                            height: 275,
+                            auto: false,
+                            circular: false,
+                            infinite: false,
+                            items: {
+                                visible: 1
+                            },
+                            prev: '#gal_prev',
+                            next: '#gal_next',
+                            scroll: {
+                                timeoutDuration: 2000,
+                                pauseOnHover: true,
+                                fx: 'crossfade',
+                                onBefore: function (data) {
+                                    pagerSlideTo(data);
+                                },
+                                onAfter: function () {
+                                    pagerSetSelected();
+                                }
+                            },
+                            swipe: {
+                                onMouse: true,
+                                onTouch: true,
+                                excludedElements: 'button, input, select, textarea, .noSwipe, .btn'
+                            }
+                        });
+
+                        if ($pager.length) {
+                            $pager.carouFredSel({
+                                width: '100%',
+                                auto: false,
+                                height: 80,
+                                circular: false,
+                                infinite: false,
+                                items: {
+                                    start: 0
+                                },
+                                scroll: {
+                                    items: 1,
+                                    fx: 'directscroll',
+                                    pauseOnHover: true
+                                },
+                                onCreate: function () {
+                                    pagerInit();
+                                }
+                            });
+                            $pager.on('click', '.sl-item', function () {
+                                $pager.find('.slide').removeClass('selected');
+                                var src = $(this).data('slide');
+                                $carousel.trigger('slideTo', ['.sl-item[data-slide="' + src + '"]']);
+                                $(this).addClass('selected');
+                            });
+                        }
+
+                        sliderBlock.addClass('inited');
+                    }
+
+                    function popupGallery() {
+                        $('.popup-gallery').magnificPopup({
+                            delegate: 'a',
+                            type: 'image',
+                            tLoading: 'Loading image #%curr%...',
+                            mainClass: 'mfp-img-mobile',
+                            gallery: {
+                                enabled: true,
+                                navigateByImgClick: true,
+                                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                            },
+                            image: {
+                                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                                titleSrc: function (item) {
+                                    return false;
+                                }
+                            },
+                            zoom: {
+                                enabled: true,
+                                duration: 300, // don't foget to change the duration also in CSS
+                                opener: function(element) {
+                                    return element.find('img');
+                                }
+                            }
+                        });
+                    }
+
+                    $(function () {
+                        slider();
+                        popupGallery();
+                    });
+                    $(window).load(function () {
+                        slider();
+                        popupGallery();
+                    });
+                }();
+            </script>
+		<?endif;?>
+	</div>
+	<div class="col-12 col-sm-5">
+		<div class="element-descr">
+			<div class="no-item">
+				<?if($availability):?>
+					<span class="available weee nowrap">
+				        <?=GetMessage("DB_PRODUCT_YES")?>
+                    </span>
+				<?else:?>
+					<?=GetMessage("DB_PRODUCT_NOT")?>
+				<?endif;?>
+			</div>
+			<?if($brand):?>
+				<div class="all-brand">
+					<div class="media-old">
+						<div class="pic media-left-old">
+							<img src="<?=$arResult["BRAND"]["IMG"]["src"]?>" alt="<?=$arResult["BRAND"]["NAME"]?>" title="<?=$arResult["BRAND"]["NAME"]?>">
+						</div>
+						<div class="media-body-old">
+							<div class="text">
+								<a href="<?=$arResult["BRAND"]["DETAIL_PAGE_URL"]?>"><?=GetMessage("DB_ALL_BRANDS")?><br><?=$arResult["BRAND"]["NAME"]?></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?endif;?>
+			<?if($oldPrice || $price):?>
+				<div class="price-wrap">
+					<?if($oldPrice):?>
+						<div class="price-old">
+							<?=number_format($arResult['PROPERTIES']['OLD_PRICE']['VALUE'], 0, '', ' ')?> <?=$arParams["CATALOG_CURRENCY"]?>
+						</div>
+					<?endif;?>
+					<?if($price):?>
+						<div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+							<meta itemprop="priceCurrency" content="BYR">
+                    <span itemprop="price" content="<?=$arResult['PROPERTIES']['PRICE']['VALUE']?>">
+                        <?=number_format($arResult['PROPERTIES']['PRICE']['VALUE'], 0, '', ' ')?> <?=$arParams["CATALOG_CURRENCY"]?>
+                    </span>
+						</div>
+					<?endif;?>
+				</div>
+			<?endif;?>
+			<div class="buy">
+				<button class="btn btn-default css_submit_catalog" type="button" data-toggle="modal" data-target="#FRM_catalog" data-name="<?=$arResult["NAME"]?>">
+					<?=(strlen($arParams["BTN_NAME"])>0 ? $arParams["BTN_NAME"] : GetMessage("DB_DEFAULT_NAME_BTN"))?>
+				</button>
+			</div>
+			<div class="text">
+				<?if($article):?>
+					<div class="p">
+						<?=$arResult['PROPERTIES']['ARTICLE']['NAME']?>: <b><?=$arResult['PROPERTIES']['ARTICLE']['VALUE']?></b>
+					</div>
+				<?endif;?>
+				<?//*?>
+				<?if($arResult["PREVIEW_TEXT"]):?>
+					<?
+					$strlPrev = false;
+					$prevText = strip_tags(htmlspecialchars_decode($arResult["PREVIEW_TEXT"]));
+					if(strlen($prevText)> $arParams["DETAIL_LONG_TEXT"]){
+						$strlPrev = true;
+					}
+
+					?>
+					<div itemprop="description">
+						<div class="p">
+							<?=substr($prevText, 0, $arParams["DETAIL_LONG_TEXT"])?>
+							<?if($strlPrev):?>
+								<div class="accordion">
+									<div class="acc-group">
+										<div class="panel">
+											<div id="accordion-20" class="collapse">
+												<div class="acc-body"><?=substr($prevText, $arParams["DETAIL_LONG_TEXT"])?></div>
+											</div>
+											<div class="acc-heading">
+												<a data-toggle="collapse" href="#accordion-20" class="link collapsed">
+                                                <span class="dash">
+                                                    <span class="closer"><?=GetMessage("DB_PREV_OPEN")?></span>
+                                                    <span class="opener"><?=GetMessage("DB_PREV_CLOSE")?></span>
+                                                </span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?endif;?>
+						</div>
+					</div>
+				<?endif;?>
+			</div>
+		</div>
+
+	</div>
+</div>
+<?$APPLICATION->IncludeFile(
+	SITE_DIR.'include/catalog_social.php',
+	Array($arResult['OG']),
+	Array("MODE"=>"text", "SHOW_BORDER" => true, "NAME" => "catalog_social", 'TEMPLATE' => 'default.php')
+);?>
+<?if($arParams["DETAIL_ACORDEON"] != "Y"):?>
+	<?if($detText || $characteristics || $dopDesc || $video || $files):?>
+		<?$tab =true;?>
+		<div class="element-tabs" role="tabpanel">
+			<ul class="nav nav-tabs list-reset" role="tablist">
+				<?if($detText):?>
+					<li <?if($tab):?>class="active" <?$tab=false;?><?endif;?> role="presentation">
+						<a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab"><?=Getmessage("DB_TAB_TEXT")?></a>
+					</li>
+				<?endif;?>
+				<?if($characteristics):?>
+					<li <?if($tab):?>class="active" <?$tab=false;?><?endif;?> role="presentation">
+						<a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab"><?=Getmessage("DB_TAB_CHAR")?></a>
+					</li>
+				<?endif;?>
+				<?if($dopDesc):?>
+					<?$g=10;foreach($arResult['PROPERTIES']['DESCRIPTION']['VALUE'] as $key => $arDesc):?>
+						<li <?if($tab && $g==10):?>class="active" <?$tab=false;?><?endif;?> role="presentation">
+							<a href="#tab-<?=$g?>" aria-controls="tab-<?=$g?>" role="tab" data-toggle="tab">
+								<?=($arResult['PROPERTIES']['DESCRIPTION']['DESCRIPTION'][$key]?$arResult['PROPERTIES']['DESCRIPTION']['DESCRIPTION'][$key]:GetMessage("DB_DEFAULT_NAME_TAB"))?>
+							</a>
+						</li>
+						<?$g++;endforeach;?>
+				<?endif;?>
+				<?if($video):?>
+					<li <?if($tab):?>class="active" <?$tab=false;?><?endif;?> role="presentation">
+						<a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab"><?=Getmessage("DB_TAB_VIDEO")?></a>
+					</li>
+				<?endif;?>
+				<?if($files):?>
+					<li <?if($tab):?>class="active" <?$tab=false;?><?endif;?> role="presentation">
+						<a href="#tab-4" aria-controls="tab-4" role="tab" data-toggle="tab"><?=Getmessage("DB_TAB_FILES")?></a>
+					</li>
+				<?endif;?>
+			</ul>
+			<?($tab =true);?>
+			<div class="tab-content">
+				<?if($detText):?>
+					<div id="tab-1" class="tab-pane fade<?if($tab):?> in active<?$tab=false;?><?endif;?>" role="tabpanel">
+						<?=$arResult["~DETAIL_TEXT"]?>
+					</div>
+				<?endif;?>
+				<?if($characteristics):?>
+					<div id="tab-2" class="tab-pane fade<?if($tab):?> in active<?$tab=false;?><?endif;?>" role="tabpanel">
+						<div class="table-responsive element-table">
+							<table>
+								<?foreach($arResult['CHARACTERISTICS'] as $arChar):?>
+									<tr>
+										<td><?=$arChar["NAME"]?>
+											<?if($arChar["HINT"]):?>
+												<span class="info">
+                                                <span class="symbol">?</span>
+                                                <span class="info-block">
+                                                <span class="arrow"></span>
+													<?=$arChar["HINT"]?>
+                                                </span>
+                                            </span>
+											<?endif;?>
+										</td>
+										<td>
+											<?if($arChar["VALUE_XML_ID"] == "Y"):?>
+												<span class="yes"></span>
+											<?elseif($arChar["VALUE_XML_ID"] == "N"):?>
+												<span class="not"></span>
+											<?else:?>
+												<?=$arChar["VALUE"]?>
+											<?endif;?>
+										</td>
+									</tr>
+								<?endforeach;?>
+							</table>
+						</div>
+					</div>
+				<?endif;?>
+				<?if($dopDesc):?>
+					<?$j=10;foreach($arResult['PROPERTIES']['DESCRIPTION']['~VALUE'] as $key => $arDesc):?>
+						<div id="tab-<?=$j?>" class="tab-pane fade<?if($tab):?> in active<?$tab=false;?><?endif;?>" role="tabpanel">
+							<?=$arDesc["TEXT"]?>
+						</div>
+						<?$j++;endforeach;?>
+				<?endif;?>
+				<?if($video):?>
+					<div id="tab-3" class="tab-pane fade" role="tabpanel">
+						<div class="row">
+							<?foreach($arResult['PROPERTIES']['VIDEO']['~VALUE'] as $num => $arVideo):?>
+								<div class="col-10 col-md-5 col-sm-10">
+									<iframe width="400" height="345" src="<?=$arVideo?>" allowfullscreen></iframe>
+								</div>
+							<?endforeach;?>
+						</div>
+						<div class="clear"></div>
+					</div>
+				<?endif;?>
+				<?if($files):?>
+					<div id="tab-4" class="tab-pane fade<?if($tab):?> in active<?$tab=false;?><?endif;?>" role="tabpanel">
+						<?$arResult['MORE_FILES']['ARGS']['COLUM'] = intval($arParams["COLUMN_COUNT_FOR_MORE_FILES"]) > 0 ? $arParams["COLUMN_COUNT_FOR_MORE_FILES"] : 2;
+						$arResult['MORE_FILES']['ARGS']['COLUM_MAX'] = $arParams['COLUM_GRID'];
+						$arResult['MORE_FILES']['ARGS']['FORSE_DOWN_LOAD'] = "N";
+						?>
+						<div class="b-dop_files">
+							<?if($arResult['PROPERTIES']['MORE_FILES_TITLE']['VALUE']):?>
+								<h3 class="mb_2"><?=$arResult['PROPERTIES']['MORE_FILES_TITLE']['VALUE']?>:</h3>
+							<?endif;?>
+							<?$APPLICATION->IncludeComponent(
+								$arResult['MORE_FILES']['COMPONENT']['NAME'],$arResult['MORE_FILES']['COMPONENT']['TEMPLATE'],
+								$arResult['MORE_FILES']['ARGS'],
+								false, array('HIDE_ICONS' => 'Y')
+							);
+							?>
+						</div>
+					</div>
+				<?endif;?>
+			</div>
+		</div>
+	<?endif;?>
+
+<?else:?>
+	<div class="element-accord">
+		<div id="accordion" class="acc-group">
+			<?if($detText):?>
+				<div class="panel">
+					<div class="acc-heading">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordion-1" class="link arrow collapsed">
+							<span class="icon list"><?=GetMessage("DB_ACORDEON_DETAIL_TEXT")?></span>
+						</a>
+					</div>
+					<div id="accordion-1" class="collapse">
+						<div class="acc-body"><?=$arResult["~DETAIL_TEXT"]?></div>
+					</div>
+				</div>
+			<?endif;?>
+
+			<?if($dopDesc):?>
+				<?$g=10;foreach($arResult['PROPERTIES']['DESCRIPTION']['~VALUE'] as $key => $arDesc):?>
+					<div class="panel">
+						<div class="acc-heading">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion-<?=$g?>" class="link arrow collapsed">
+								<span class="icon "><?=($arResult['PROPERTIES']['DESCRIPTION']['DESCRIPTION'][$key]?$arResult['PROPERTIES']['DESCRIPTION']['DESCRIPTION'][$key]:GetMessage("DB_DEFAULT_NAME_TAB"))?></span>
+							</a>
+						</div>
+						<div id="accordion-<?=$g?>" class="collapse">
+							<div class="acc-body"><?=$arDesc["TEXT"]?></div>
+						</div>
+					</div>
+					<?$g++;endforeach;?>
+			<?endif;?>
+
+			<?if($video):?>
+				<div class="panel">
+					<div class="acc-heading">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordion-2" class="link arrow collapsed">
+							<span class="icon video"><?=GetMessage("DB_TAB_VIDEO")?></span>
+						</a>
+					</div>
+					<div id="accordion-2" class="collapse">
+						<div class="row mt_1 mb_1">
+							<?foreach($arResult['PROPERTIES']['VIDEO']['~VALUE'] as $num => $arVideo):?>
+								<div class="col-10 col-md-5 col-sm-10">
+									<iframe width="400" height="345" src="<?=$arVideo?>" allowfullscreen></iframe>
+								</div>
+							<?endforeach;?>
+						</div>
+					</div>
+				</div>
+			<?endif;?>
+			<?if($files):?>
+				<div class="panel">
+					<div class="acc-heading">
+						<a data-toggle="collapse" data-parent="#accordion" href="#accordion-112" class="link arrow collapsed">
+							<span class="icon "><?=GetMessage("DB_TAB_FILES")?></span>
+						</a>
+					</div>
+					<div id="accordion-112" class="collapse">
+						<div class="b-dop_files">
+							<?$arResult['MORE_FILES']['ARGS']['COLUM'] = intval($arParams["COLUMN_COUNT_FOR_MORE_FILES"]) > 0 ? $arParams["COLUMN_COUNT_FOR_MORE_FILES"] : 2;
+							$arResult['MORE_FILES']['ARGS']['COLUM_MAX'] = $arParams['COLUM_GRID'];
+							$arResult['MORE_FILES']['ARGS']['FORSE_DOWN_LOAD'] = "N";
+							?>
+							<?$APPLICATION->IncludeComponent(
+								$arResult['MORE_FILES']['COMPONENT']['NAME'],$arResult['MORE_FILES']['COMPONENT']['TEMPLATE'],
+								$arResult['MORE_FILES']['ARGS'],
+								false, array('HIDE_ICONS' => 'Y')
+							);
+							?>
+						</div>
+					</div>
+				</div>
+
+			<?endif;?>
+			<?/*?>
+            <div class="panel">
+                <div class="acc-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion-3" class="link arrow collapsed">
+                        <span class="icon request">Отзывы</span>
+                    </a>
+                </div>
+                <div id="accordion-3" class="collapse in">
+                    <div class="acc-body">Максимальная сумма (лимит) рассчитывается в валюте перевода <a href="#">по безналичному курсу банка,</a>                    лимит зафиксирован в рублях, при смене курса валюты вместе с ним изменяется лимит.
+                    </div>
+                </div>
+            </div>
+             <?//*/;?>
+
+		</div>
+	</div>
+	<?if($characteristics):?>
+		<div class="h2"><?=GetMessage("DB_TAB_CHAR")?></div>
+		<div class="table-responsive element-table">
+			<table>
+				<?foreach($arResult['CHARACTERISTICS'] as $arChar):?>
+					<tr>
+						<td><?=$arChar["NAME"]?>
+							<?if($arChar["HINT"]):?>
+								<span class="info">
+							<span class="symbol">?</span>
+							<span class="info-block">
+							<span class="arrow"></span>
+								<?=$arChar["HINT"]?>
+							</span>
+						</span>
+							<?endif;?>
+						</td>
+						<td>
+							<?if($arChar["VALUE_XML_ID"] == "Y"):?>
+								<span class="yes"></span>
+							<?elseif($arChar["VALUE_XML_ID"] == "N"):?>
+								<span class="not"></span>
+							<?else:?>
+								<?=$arChar["VALUE"]?>
+							<?endif;?>
+						</td>
+					</tr>
+				<?endforeach;?>
+			</table>
+
+		</div>
+	<?endif;?>
+
+<?endif;?>
+<?//pr($arResult['CHARACTERISTICS'])?>

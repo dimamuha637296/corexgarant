@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Registration';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Регистрация
+block content
+  include ../../../components/auth/registration_form/index

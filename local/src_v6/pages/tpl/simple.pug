@@ -1,0 +1,29 @@
+include ../../components/short/layout-simple/index
+include ../../core/layout/global_variables/index
+- DB.bodyClass = 'inner layout-simple'; // Body className
+- DB.pageTitle = 'Заглушка'; // Page title
+- DB.layout = 'simple'; // Layout type: wide, aside
+- DB.DIR = '../../'; // The path relative to the folder src/pages
+block pageVars
+doctype html
+html(lang='ru-RU')
+  head
+    include ../../core/layout/head/index
+  body.ru.js-off.pm-close(class=DB.bodyClass)
+    #db.g-wrap
+      .outer-bg.pm-content
+        header.header(class=DB.headerModifier)
+          block header
+            .header__layout-simple.container
+              include ../../components/header/logo/logo-png/index
+        .g-main
+          .container
+            block content
+        footer.footer.d-print-none
+          block footer
+            .container
+              .row.footer__row
+                .footer__left-col.col-lg-7.col-md-5.col-12
+                  include ../../components/footer/logo-foot-2/index
+                .footer__right-col.col-lg-5.col-md-7.col-12
+                  include ../../components/footer/studio/index

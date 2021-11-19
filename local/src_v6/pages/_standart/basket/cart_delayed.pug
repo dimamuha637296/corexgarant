@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Basket delayed';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block title
+  h1#title Корзина (Отложенные)
+block content
+  include ../../../components/basket/basket_form_delayed/index

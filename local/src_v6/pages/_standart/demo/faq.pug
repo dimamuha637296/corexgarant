@@ -1,0 +1,11 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Вопрос-Ответ';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Вопросы
+block content
+  include ../../../components/base/accordion/index
+  include ../../../components/demo/faq-modal/index
+  include ../../../components/demo/faq/index

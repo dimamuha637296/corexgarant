@@ -1,0 +1,105 @@
+/* sl-nav-3.scss */
+
+// var ****************************************************************************************************************
+$_sl-nav-width--lg:                        70px;
+$_sl-nav-width:                            40px;
+$_sl-nav-width--xs:                        10%;
+
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.sl-nav-3 {
+
+  .prev,
+  .next {
+    display: none;
+    width: $_sl-nav-width;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    color: #fff;
+
+    &.slick-arrow {
+      display: block;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: $_sl-nav-width--lg;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      width: $_sl-nav-width--xs;
+    }
+
+    &:before {
+      font-size: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include svg;
+      @include svg-sl-nav-3-next;
+
+      .inited-not & {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:active {
+
+      &:before {
+        opacity: .6;
+      }
+    }
+
+    &.slick-disabled,
+    &.disabled {
+
+      &:before {
+        opacity: .6;
+      }
+    }
+  }
+
+  .prev {
+    left: -10px;
+
+    .wrap & {
+      left: -$_sl-nav-width;
+
+      @media (min-width: $screen-lg-min) {
+        left: -$_sl-nav-width--lg;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        left: 0;
+      }
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) scale(-1, 1);
+    }
+  }
+
+  .next {
+    right: -10px;
+
+    .wrap & {
+      right: -$_sl-nav-width;
+
+      @media (min-width: $screen-lg-min) {
+        right: -$_sl-nav-width--lg;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        right: 0;
+      }
+    }
+  }
+}

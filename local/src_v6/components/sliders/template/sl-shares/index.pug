@@ -1,0 +1,19 @@
+mixin sl-shares(data)
+  .sl-shares(class=data.modifier ? data.modifier : '')
+    .title Акции
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .share-card(class=slide.accentSlide === true ? 'accent-slide' : '')
+              .pic
+                img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+              .inner
+                .title !{slide.title}
+                .text #{slide.text}
+                .btn-wrap
+                  +btn-primary({text: slide.btnText, outline: true})
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()

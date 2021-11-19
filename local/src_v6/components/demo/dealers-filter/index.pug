@@ -1,0 +1,55 @@
+.dealers-filter
+  form#form-dealers.form-horizontal(method='post', action='/')
+    fieldset.fieldset
+      // row
+      .form-group.control-group.city
+        .item
+          label.name.label-pt(for='form-COUNTRY')
+            | Страна
+          .text
+            select#form-COUNTRY.form-control.ui-select(name='form-COUNTRY')
+              option(value='', selected='', disabled='')  
+              option(value='1') Республика Беларусь
+              option(value='2', disabled='') Российская Федерация
+              option(value='3') Украина
+              option(value='4') Республика Польша
+        .item
+          label.name.label-pt(for='form-CITY')
+            | Город
+          .text
+            select#form-CITY.form-control.ui-select(name='form-CITY')
+              option(value='', selected='', disabled='')  
+              option(value='1') Минск
+              option(value='2', disabled='') Брест
+              option(value='3') Витебск
+              option(value='4') Гомель
+              option(value='5') Гродно
+              option(value='6') Могилев
+      // row
+      .form-group.control-group.point
+        .text
+          .checkbox
+            label
+              input(type='checkbox', value='all', name='form-CHECKBOX', checked='')
+              span.btn-point
+                span.lnk-pseudo Вся сеть
+          .checkbox
+            label
+              input(type='checkbox', value='1', name='form-CHECKBOX')
+              span.btn-point.star
+                span.lnk-pseudo Банкоматы
+          .checkbox
+            label
+              input(type='checkbox', value='2', name='form-CHECKBOX')
+              span.btn-point.airplane
+                span.lnk-pseudo Кассы
+          .checkbox
+            label
+              input(type='checkbox', value='3', name='form-CHECKBOX', disabled='')
+              span.btn-point
+                span.lnk-pseudo Инфокиоски
+          .checkbox
+            label
+              input(type='checkbox', value='4', name='form-CHECKBOX')
+              span.btn-point.airplane
+                span.lnk-pseudo Центры покупки запчастей

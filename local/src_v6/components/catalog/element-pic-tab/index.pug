@@ -1,0 +1,54 @@
+.element-pic-tab(role='tabpanel')
+  .tab-content.popup-gallery
+    - var n = 6
+    while n < 13
+      - n++
+      .tab-pane.fade(role='tabpanel', class=n == 7 ? 'in active show' : '', id='tab-pic-' + n)
+        a.link(href=DB.DIR + 'img/tmp/catalog/catalog-' + n + '.jpg')
+          img(src=DB.DIR + 'img/tmp/catalog/catalog-' + n + '.jpg', alt='element')
+  ul.nav.nav-tabs.list-reset(role='tablist')
+    - var m = 6
+    while m < 13
+      - m++
+      li.nav-item
+        a.nav-link(class=m == 7 ? 'active' : '' href='#tab-pic-' + m, data-toggle='tab')
+          img(src=DB.DIR + 'img/tmp/catalog/catalog-' + m + '.jpg', alt='element')
+  script.
+      !function () {
+          'use strict';
+
+          function popupGallery() {
+              $('.popup-gallery').magnificPopup({
+                  delegate: 'a',
+                  type: 'image',
+                  tLoading: 'Loading image #%curr%...',
+                  mainClass: 'mfp-img-mobile',
+                  gallery: {
+                      enabled: true,
+                      tCounter: '<span class="mfp-counter">%curr% / %total%</span>',
+                      navigateByImgClick: true,
+                      preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                  },
+                  image: {
+                      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                      titleSrc: function () {
+                          return false;
+                      }
+                  },
+                  zoom: {
+                      enabled: true,
+                      duration: 300, // don't foget to change the duration also in CSS
+                      opener: function (element) {
+                          return element.find('img');
+                      }
+                  }
+              });
+          }
+
+          $(function () {
+              popupGallery();
+          });
+          $(window).on('load', function () {
+              popupGallery();
+          });
+      }();

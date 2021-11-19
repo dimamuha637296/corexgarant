@@ -1,0 +1,100 @@
+include ../../../components/base/btns/btn/index
+if (catItemInfo === undefined)
+  -
+    var catItemInfo = {
+      img: 'img/tmp/cat-item-0.jpg',
+      title: 'Ламинат Tarkett Манон',
+      article: '504426002',
+      rating: 4,
+      colors: [
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg'
+      ],
+      moreColors: 'ещё 30',
+      desc: 'Класс применения: 32<br>Замковая система 2-lock<br>Срок гарантии: 25 лет<br>Размер панели, мм: 1292x331x8',
+      feature: 'Используеться дополнительная силиконовая обработка замка против влажности',
+      oldPrice: '7,55',
+      price: '6.38',
+      sale: 'Реккомендуем',
+      saleStyle: 'recommend',
+      status: {
+        type: 'available', //'available', 'few', 'medium', 'much', 'not-available'}
+        text: 'в наличии'
+      }
+    }
+.cat-item
+  .wrap.clearfix
+    a.link.clearfix(href="#")
+      .img-wrap
+        if (catItemInfo.sale !== undefined)
+          .element-sale
+            .icon(class=catItemInfo.saleStyle)
+              span #{catItemInfo.sale}
+        img(src=DB.DIR + catItemInfo.img, alt=catItemInfo.title)
+      .title-wrap
+        if (catItemInfo.sale !== undefined)
+          .element-sale
+            .icon(class=catItemInfo.saleStyle)
+              span #{catItemInfo.sale}
+        .title #{catItemInfo.title}
+    .subtitle.clearfix
+      .article-wrap
+        span Артикул:
+        =' '
+        span.article #{catItemInfo.article}
+      .rating
+        ul.list-rating.list-reset.star-list.star-list-small(data-category='cost')
+          - n = 0;
+          while n < 5
+            - n++
+            li.star-item(class=n <= catItemInfo.rating ? 'active' : '')
+    .colors-wrap.clearfix
+      .available-colors Доступные цвета:
+      .colors
+        ul.colors-list.list-reset.clearfix
+          each color in catItemInfo.colors
+            li.color
+              a(href='#')
+                img(src=DB.DIR + color, alt='alt')
+        if(catItemInfo.moreColors)
+          a.more-colors(href="#")
+            span #{catItemInfo.moreColors}
+    .property-wrap
+      .property-name
+        | Ширина рулона, м
+        sup 2
+        | :
+      - var itemSizeCollapse = false;
+      - var itemSizes = ['1,5', '2,5'];
+      include ../item-size/index
+    .price-wrap
+      .old-price #{catItemInfo.oldPrice}
+      .current-price
+        | от
+        span.price #{catItemInfo.price}
+        span.currency BYN
+    .subprice-wrap.clearfix
+      .subprice
+        span за штуку
+      - var statusData = catItemInfo.status;
+      include ../status/index
+    .more-info-wrap.clearfix
+      a(href="#").more-info
+        span Подробнее
+      .buttons
+        a(href="#").compare
+        a(href="#").whishlist
+    .b-btn-wrap
+      .b-btn
+        +btn-primary({text: 'В корзину'})
+      .b-btn
+        a.lnk-pseudo.buy-one-click(href='#') Купить в 1 клик
+    .mid-info
+      .mid-info-wrap
+        .desc-wrap
+          .desc-title Особенности:
+          .desc !{catItemInfo.desc}
+        .feature-wrap
+          .feature-title Почему стоит купить?
+          .feature #{catItemInfo.feature}

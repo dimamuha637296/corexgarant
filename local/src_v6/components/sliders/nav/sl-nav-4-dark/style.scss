@@ -1,0 +1,62 @@
+.sl-nav-4-dark {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .prev,
+  .next {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+    transition: $transition-default;
+
+    .js-off & {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include svg;
+      @include svg-sl-nav-4-next-black;
+
+      .inited-not & {
+        display: none;
+      }
+    }
+
+    @include hover-focus() {
+
+      &:before {
+        @include svg-sl-nav-4-next-hover-black;
+      }
+    }
+
+    &:active {
+      opacity: .8;
+    }
+
+    &.disabled {
+      display: none;
+    }
+  }
+
+  .prev {
+    left: 0;
+
+    &:before {
+      transform: translate(-50%, -50%) scale(-1, 1);
+    }
+  }
+
+  .next {
+    right: 0;
+  }
+}

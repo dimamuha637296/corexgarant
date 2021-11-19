@@ -1,0 +1,63 @@
+/*partners-detail.less*/
+
+// var *****************************************************************************************************************
+//@_partners-detail:          29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.partners-detail {
+  margin-bottom: 50px;
+
+  .item {
+    @include clearfix();
+
+    + .item {
+
+      &:before {
+        content: '';
+        height: 1px;
+        background: $border-color-base;
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  .icon {
+	position: relative;
+
+	&:before {
+	  margin-left: 5px;
+	}
+  }
+
+  .pic {
+	margin: 0 0 15px;
+
+	@media (min-width: $screen-sm-min) {
+	  max-width: 30%;
+	  float: left;
+	  margin-right: 30px;
+	  margin-bottom: 0;
+	}
+
+    a {
+      display: block;
+    }
+  }
+
+  .wrap {
+	overflow: hidden;
+  }
+
+  .title {
+    @include font-family-medium();
+    font-size: $font-size-h3;
+    line-height: $line-height-h3;
+    margin: $head-margin-h3;
+	margin-top: 0;
+  }
+}

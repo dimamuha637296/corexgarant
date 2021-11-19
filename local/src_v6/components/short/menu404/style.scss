@@ -1,0 +1,12 @@
+.menu404 {
+  padding-top: 20px;
+  margin-bottom: 30px;
+
+  @media (max-width: $screen-md-max) {
+    padding-top: 0;
+  }
+
+  .item_1 {
+    margin: 0 0 8px;
+  }
+}

@@ -1,0 +1,77 @@
+//-
+  modules/personal-comb.html
+  Standart_project v0.6.0
+  Borovoy Studio - https://db.by/
+  .personal-detail  - модуль Сотрудники,  детальное описанаие
+  .comb - комбинированный вид списка, в последнем детальном блоке не убирает разделитель
+  .js-height - минимальная высота блока с картинкой в одном ряду расставляется скриптом
+  .js-trg - блок для которого выставляется минимальная высота в ряду
+.h2
+  | Комбинированное представление списка сотрудников (H2)
+.personal-detail.comb.js-hover
+  .item.js-hover-wrap
+    .pic
+      a.link.js-hover-trg(href='#')
+        i.icon
+        img(src=DB.DIR + 'img/tmp/modules/personal-10.jpg', alt='personal', title='personal')
+    .wrap
+      .title
+        a.js-hover-trg(href='#')
+          | Андренко Антон Анатольевич (h3)
+      .caption-text
+        | Исполнительный Директор Ассоциации
+      .text
+        p
+          b Представляет члена Ассоциации:
+          |  АВАНГАРД ЛИЗИНГ, ЗАО
+          br
+          b Профессиональный опыт и интересы:
+          |  Профессиональный финансист. MBA. Активный участник лизингового рынка Республики Беларусь. Заинтересован в привлечении долгосрочных инвестиций. Имеет богатый опыт привлечения фондирования путем облигационных эмиссий на рынке Республики. Имеет богатый опыт привлечения фондирования путем облигационных эмиссий на рынке Республики.
+        p
+          | Электронная почта:
+          =' '
+          a(href='mailto:anton@avangard.by') anton@avangard.by
+.personal-list.js-height.js-hover
+  .row.row-clear
+    .item.col-md-4.col-sm-6.col-12.js-hover-wrap
+      .wrap
+        .pic-wrap.js-trg
+          .pic_o
+            .pic
+              a.link.js-hover-trg(href='#')
+                i.icon
+                img(src=DB.DIR + 'img/tmp/modules/personal-4.jpg', alt='personal', title='personal')
+        .title
+          a.js-hover-trg(href='#')
+            | Винар Валерий Николаевич
+      .caption-text
+        p
+          | Главный инженер ОАО «Белшина»
+    .item.col-md-4.col-sm-6.col-12.js-hover-wrap
+      .wrap
+        .pic-wrap.js-trg
+          .pic_o
+            .pic
+              a.link.js-hover-trg(href='#')
+                i.icon
+                img(src=DB.DIR + 'img/tmp/modules/personal-5.jpg', alt='personal', title='personal')
+        .title
+          a.js-hover-trg(href='#')
+            | Белякова Татьяна Николаевна
+      .caption-text
+        p
+          | Заместитель генерального директора ОАО «Белшина» по экономике и финансам
+    .item.col-md-4.col-sm-6.col-12.js-hover-wrap
+      .wrap
+        .pic-wrap.js-trg
+          .pic_o
+            .pic
+              a.link.js-hover-trg(href='#')
+                i.icon
+                img(src=DB.DIR + 'img/tmp/modules/personal-6.jpg', alt='personal', title='personal')
+        .title
+          a.js-hover-trg(href='#')
+            | Кристина Колпакова
+      .caption-text
+        p
+          | Главный диспетчер

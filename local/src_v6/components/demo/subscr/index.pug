@@ -1,0 +1,166 @@
+include ../../../components/block/f_star/index
+.subscr
+  form#form-subscript-confirm2.form-horizontal(method='post', action='/')
+    fieldset.fieldset
+      .alert.alert-danger(role='alert')
+        | Неверный логин или пароль
+      .alert.alert-success(role='alert')
+        | Параметры подписки сохранены
+      .title.h3
+        | Подтверждение подписки
+      .form-group.control-group
+        .col-sm-7.col-12
+          label.name(for='form-CODE')
+            | Введите код подтверждения подписки
+            +f_star()
+          .text
+            input#form-CODE.form-control(type='text', name='form-CODE', maxlength='50', spellcheck='true', value='', required='')
+            .controls.col-12
+          p
+            | Дата генерации кода подтверждения
+          p
+            | 07.09.2015 14:51:30
+        .text.col-sm-5.col-12
+          p.small
+            | Если вы еще не получили письмо с кодом подтверждения, вы можете повторно
+            =' '
+            a(href='#') запросить код.
+      .form-group
+        .col-12
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Подтвердить'})(name='submit')
+        .col-12.form_required
+          +f_star()
+            =' '
+          | — поля обязательные к заполнению
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-subscript-confirm');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form-CODE': {
+                                required: true,
+                                minlength: 2
+                            }
+                        }
+                    });
+                }
+            }
+
+            $(function () {
+                initValid();
+            });
+        }();
+  form#form-subscript-settings.form-horizontal(method='post', action='/')
+    fieldset.fieldset
+      .title.h3
+        | Настройки подписки
+      .form-group.control-group
+        .col-sm-7.col-12
+          label.name(for='form-EMAIL')
+            | Ваш e-mail
+            +f_star()
+          .text
+            input#form-EMAIL.form-control(type='text', name='form-EMAIL', maxlength='50', spellcheck='true', value='', required='')
+            .controls.col-12
+          .text
+            | Рубрики подписки
+            +f_star()
+          .text
+            .checkbox
+              label
+                input.ui-checkbox(id='RUB_ID', checked='checked', type='checkbox', name='RUB_ID', value='1')
+                span Новости
+        .text.col-sm-5.col-12
+          p.small
+            | После добавления или изменения адреса подписки вам будет выслан код подтверждения.
+          p.small
+            | Подписка будет не активной до ввода кода подтверждения.
+      .form-group
+        .col-12
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Изменить'})(name='submit')
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Сброс'})(type='reset' name='submit')
+        .col-12.form_required
+          +f_star()
+            =' '
+          | — поля обязательные к заполнению
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-subscript-settings');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form-EMAIL': {
+                                required: true
+                            }
+                        }
+                    });
+                }
+            }
+
+            $(function () {
+                initValid();
+            });
+        }();
+  form#form-subscript.form-horizontal(method='post', action='/')
+    fieldset.fieldset
+      .h3
+        | Состояние подписки
+      .row
+        .col-12
+          p
+            | Ваша подписка не подтверждена. Чтобы подтвердить подписку, введите код подтверждения в форме выше.
+        .col-sm-4.col-12
+          p
+            | Подписка подтверждена:
+        .col-12
+          p
+            | Нет
+      .row
+        .col-sm-4.col-12
+          p
+            | Подписка активна:
+        .col-sm-4.col-12
+          p
+            | Нет
+      .row
+        .col-sm-4.col-12
+          p
+            | Идентификатор подписки:
+        .col-sm-4.col-12
+          p
+            | 31
+      .row
+        .col-sm-4.col-12
+          p
+            | Дата добавления:
+        .col-sm-4.col-12
+          p
+            | 07.09.2015 14:38:03
+      .row
+        .col-sm-4.col-12
+          p
+            | Подписка подтверждена:
+        .col-sm-4.col-12
+          p
+            | 07.09.2015 15:00:10
+      .row
+        .col-sm-4.col-12
+          p
+            | Дата модификации:
+        .col-sm-4.col-12
+          p
+            | 07.09.2015 15:00:10
+      .form-group
+        .col-12
+          +btn-primary({type: 'input', className: 'btn_submit', text: 'Отписаться'})(name='submit')

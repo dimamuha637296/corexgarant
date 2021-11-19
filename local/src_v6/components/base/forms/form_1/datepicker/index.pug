@@ -1,0 +1,64 @@
+mixin datepicker(data)
+  -
+    var className = data.className !== undefined ? data.className : 'form-control';
+    var attr = {
+      type: 'text'
+    };
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    if (data.placeholder !== undefined) attr.placeholder = data.placeholder;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  .input-group.date
+    input(class=className)&attributes(attr)
+    span.icon.svg-datepicker-calendar
+  script.
+      !function () {
+          'use strict';
+
+          function setResizeHandler(calendar) {
+              $(window).on('resize', function () {
+                  calendar.datepicker('hide');
+              });
+          }
+
+          function setIconClickHandler(calendar) {
+              var icon = calendar.siblings('.icon');
+              if (icon.length) {
+                  icon.off('click.calendar').on('click.calendar', function () {
+                      calendar.datepicker('show');
+                  });
+              }
+          }
+
+          function initDatepicker(id) {
+              // https://jqueryui.com/datepicker/
+              // http://api.jqueryui.com/datepicker/
+              // time picker addon http://trentrichardson.com/examples/timepicker/
+              var calendar = $(id);
+              if (calendar.length && $.fn.datepicker) {
+                  calendar.datepicker({
+                      changeMonth: false,
+                      changeYear: false,
+                      showOtherMonths: true,
+                      selectOtherMonths: true,
+                      minDate: 7,
+                      maxDate: 18,
+                      dateFormat: 'dd.mm.yy',
+                      beforeShow: function (input, element) {
+                          element.dpDiv.addClass('ui-datepicker-1');
+                      },
+                      onClose: function (selectedDate, element) {
+                          calendar.datepicker('setDate', selectedDate);
+                          element.dpDiv.removeClass('ui-datepicker-1');
+                      }
+                  });
+                  setIconClickHandler(calendar);
+                  setResizeHandler(calendar);
+              }
+          }
+          $(function () {
+              initDatepicker('##{data.id}');
+          });
+      }();

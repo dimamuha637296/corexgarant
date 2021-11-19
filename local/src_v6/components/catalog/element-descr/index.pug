@@ -1,0 +1,77 @@
+if (cardInfo === undefined)
+  -
+    var cardInfo = {
+      title: '',
+      rating: 4,
+      status: {
+        type: 'available', //'available', 'few', 'medium', 'much', 'not-available'}
+        text: 'в наличии'
+      },
+      article: '1833',
+      color: 'img/tmp/element-descr-color.jpg',
+      oldPrice: '77,07',
+      currentPrice: '36,07'
+    }
+.element-descr(class=DB.catalogTovarIsAvail === false ? 'not-avail' : '')
+  .wrap(class=DB.catalogPic === false ? 'no-pic' : '')
+    include ../element-head/index
+    .desc.clearfix
+      .info-wrap
+        ul.properties.list-reset
+          li
+            .name Артикул:
+            span.article #{cardInfo.article}
+          li
+            .name Декор:
+            span Белый дуб
+          li
+            .name Дополнительные цвета:
+            .colors-wrap
+              ul.colors.list-reset
+                - var n = 0
+                while n < 8
+                  - n++
+                  li.color(class=n === 1 ? 'active' : '')
+                    a(href="#")
+                      img(src=DB.DIR + cardInfo.color, alt='alt')
+              .collapse(id='accordion-31')
+                ul.colors.list-reset
+                  - var n = 0
+                  while n < 8
+                    - n++
+                    li.color
+                      a(href="#")
+                        img(src=DB.DIR + cardInfo.color, alt='alt')
+              .more-colors.collapsed(data-toggle='collapse', data-target='#accordion-31')
+                span.lnk-pseudo
+                  span.opener
+                    | + ещё 30
+                  span.closer
+                    | скрыть все
+          li
+            .name
+              | Ширина рулона, м
+              sup 2
+              | :
+            - var itemSizes = ['1,5', '2,5', '5,5', '1,5', '2,5', '5,5'];
+            include ../item-size/index
+      if (DB.catalogTovarIsAvail !== false)
+        .buy-wrap
+          include ../item-quantity-2/index
+          .price-wrap
+            .price-old
+              span.price-old #{cardInfo.oldPrice}
+              span.currency BYN
+            .price
+              span.price #{cardInfo.currentPrice}
+              span.currency BYN / ШТ.
+          .btn-b
+            +btn-primary({className: 'buy-btn', text: 'В корзину'})(id='seo-list-table-1')
+            +btn-primary({className: 'buy-btn', text: 'В корзине', disabled: true})(id='seo-list-table-1--2')
+          .btn-b
+            a.lnk-pseudo.buy-one-click(href='#', data-id='745', data-type='catalog', data-toggle='modal', data-target='#buyOneClickForm', onclick='return false;')
+              span Купить в 1 клик
+          .calc-btn-wrap.linoleum
+              a.calc-btn(href="#", data-toggle='modal', data-target='#modalCalc')
+                i.icon
+                span Рассчитать

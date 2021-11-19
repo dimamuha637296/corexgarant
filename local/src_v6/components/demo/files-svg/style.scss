@@ -1,0 +1,43 @@
+.files-svg {
+  margin: 0 0 50px;
+
+  .list {
+    margin: 0;
+  }
+
+  .files-item {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .files-link {
+    display: block;
+    padding: 0 0 0 40px;
+    position: relative;
+
+    @include hover-focus() {
+      .files-icon {
+        opacity: .7;
+      }
+    }
+  }
+
+  .files-icon {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .files-title {
+    overflow: hidden;
+  }
+
+  .files-text {
+    @include caption-text();
+    padding: 0 0 0 40px;
+  }
+}

@@ -1,0 +1,83 @@
+if (catItemTableInfo === undefined)
+  -
+    var catItemTableInfo = {
+      img: 'img/tmp/cat-item-0-table.jpg',
+      title: 'Ламинат Tarkett Манон',
+      article: '504426002',
+      rating: 4,
+      colors: [
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg',
+        'img/tmp/cat-item-color-0.jpg'
+      ],
+      moreColors: 'Доступно ещё 30',
+      desc: [
+        'Класс применения: 32',
+        'Замковая система 2-lock',
+        'Срок гарантии: 25 лет',
+        'Размер панели, мм: 1292x331x8'
+      ],
+      oldPrice: '7,55',
+      price: '6.38',
+      sale: 'Реккомендуем',
+      saleStyle: 'reccomend',
+      status: {
+        type: 'available', //'available', 'few', 'medium', 'much', 'not-available'}
+        text: 'в наличии'
+      }
+    }
+.cat-item-table
+  .row
+    .col.col-8.col-md-6.col-xl-7
+      a(href='#').link
+        if (catItemTableInfo.sale !== undefined)
+          .element-sale
+            .icon(class=catItemTableInfo.saleStyle)
+              span #{catItemTableInfo.sale}
+        img.pic(src=DB.DIR + catItemTableInfo.img, alt=catItemTableInfo.title, title=catItemTableInfo.title)
+      .title-wrap
+        a(href='#').title #{catItemTableInfo.title}
+      .rating
+        ul.list-rating.list-reset.star-list.star-list-small(data-category='cost')
+          - n = 0;
+          while n < 5
+            - n++
+            li.star-item(class=n <= catItemTableInfo.rating ? 'active' : '')
+      .info
+        - var statusData = catItemTableInfo.status;
+        include ../status/index
+        .article-wrap
+          span Артикул:
+          =' '
+          span.article #{catItemTableInfo.article}
+        .colors-wrap.clearfix
+          .available-colors Доступные цвета:
+          .colors
+            ul.colors-list.list-reset.clearfix
+              each color in catItemTableInfo.colors
+                li.color
+                  a(href='#')
+                    img(src=DB.DIR + color, alt='alt')
+            if(catItemTableInfo.moreColors)
+              a.more-colors(href="#")
+                span #{catItemTableInfo.moreColors}
+    .col-3.d-none.d-md-block
+      .desc-wrap
+        each item in catItemTableInfo.desc
+          .desc #{item}
+    .col.col-4.col-md-3.col-xl-2
+      .price-wrap
+        .old-price #{catItemTableInfo.oldPrice}
+        .current-price
+          | от
+          =' '
+          span.price #{catItemTableInfo.price}
+          =' '
+          span.currency BYN
+      .subprice-wrap.clearfix
+        .subprice
+          span за штуку
+      .buy
+        +btn-primary({className: 'btn-xs btn-buy', text: 'В корзину'})(href='javascript:void(0)')

@@ -1,0 +1,54 @@
+$_font-family-sans-serif: Helvetica, Arial, sans-serif;
+
+@mixin font-face($font-family, $font) {
+  @font-face {
+    font-display: swap;// Настройте показ всего текста во время загрузки веб-шрифтов
+    font-family: '#{$font}';
+    font-style: normal;
+    font-weight: 400;
+    src: local('#{$font-family}'),
+    local('#{$font}'),
+    url('../fonts/#{$font}.woff2') format('woff2'),
+    url('../fonts/#{$font}.woff') format('woff');
+  }
+}
+
+@mixin skip-font-styles() {
+  font-weight: normal;
+  font-style: normal;
+}
+
+@include font-face('Roboto Regular', Roboto-Regular);
+$font-r: Roboto-Regular, $_font-family-sans-serif;
+@mixin font-family-regular() {
+  font-family: $font-r;
+  @include skip-font-styles();
+}
+
+@include font-face('Roboto Bold', Roboto-Bold);
+$font-b: Roboto-Bold, $_font-family-sans-serif;
+@mixin font-family-bold() {
+  font-family: $font-b;
+  @include skip-font-styles();
+}
+
+@include font-face('Roboto Italic', Roboto-Italic);
+$font-i: Roboto-Italic, $_font-family-sans-serif;
+@mixin font-family-italic() {
+  font-family: $font-i;
+  @include skip-font-styles();
+}
+
+@include font-face('Roboto Light', Roboto-Light);
+$font-l: Roboto-Light, $_font-family-sans-serif;
+@mixin font-family-light() {
+  font-family: $font-l;
+  @include skip-font-styles();
+}
+
+@include font-face('Roboto Medium', Roboto-Medium);
+$font-m: Roboto-Medium, $_font-family-sans-serif;
+@mixin font-family-medium() {
+  font-family: $font-m;
+  @include skip-font-styles();
+}

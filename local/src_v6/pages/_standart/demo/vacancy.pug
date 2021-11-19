@@ -1,0 +1,12 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Вакансии';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Вакансии в нашей компании
+block content
+  include ../../../components/demo/vacancy/list/index
+  include ../../../components/demo/vacancy/collapse/index
+  include ../../../components/demo/vacancy/no-result/index
+  include ../../../components/demo/modal-vacancy/index

@@ -1,0 +1,7 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Скроллинг к нужному блоку';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/examples/scrollTo/index

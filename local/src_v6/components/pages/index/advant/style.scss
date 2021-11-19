@@ -1,0 +1,77 @@
+.advant {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: $site-max-width;
+    margin-left: ($site-max-width / -2);
+    height: 100%;
+    left: 50%;
+    top: 0;
+    background: url('../img/tmp/advant.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  &__wrap {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    padding: 35px 0 0;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-h1;
+    @include font-family-bold;
+    margin: 0 0 32px;
+    color: $link-color;
+    text-align: center;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: (round($font-size-h1 * .6));
+    }
+  }
+
+  &__item {
+    margin-bottom: 38px;
+  }
+
+  .media-body-old {
+
+    @media (min-width: $screen-xl-min) {
+      padding-right: 10px;
+    }
+  }
+
+  &__img {
+    width: 66px;
+  }
+
+  &__i-title {
+    font-size: 30px;
+    line-height: 1.5;
+    color: $body-bg-outer-color;
+
+    @media (max-width: $screen-lg-max) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 18px;
+    }
+  }
+
+  &__i-text {
+    color: #a6a6a6;
+    font-size: 18px;
+    line-height: (24/18);
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 16px;
+    }
+  }
+}

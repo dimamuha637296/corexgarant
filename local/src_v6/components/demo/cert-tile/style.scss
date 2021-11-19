@@ -1,0 +1,48 @@
+/*cert-tile.scss*/
+
+// var *****************************************************************************************************************
+//@_cert-tile: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.cert-tile {
+  margin-bottom: 40px;
+  @include gallery-hover();
+
+  .item {
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-xs-max) {
+      width: 50%;
+
+      &:nth-of-type(2n+1) {
+        clear: both;
+      }
+    }
+  }
+
+  .js-trg {
+    display: table;
+    margin-bottom: 3px;
+  }
+
+  .pic {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 8px;
+  }
+
+  .title {
+    margin: 0 0 5px;
+    max-width: 220px;
+  }
+
+  .caption-text {
+    max-width: 220px;
+
+    p {
+      margin-bottom: .5em;
+    }
+  }
+}

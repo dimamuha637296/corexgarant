@@ -1,0 +1,83 @@
+if (catData === undefined)
+  -
+    var catData = {
+      title: "Наши товары",
+      text: "ООО «ИнстантБел» предлагает широкий спектр упаковки для мясной промышленности. В нашем ассортименте – натуральная черева, все виды искусственных оболочек для колбас, целлюлозная плёнка, пищевые ингредиенты и другие расходные и упаковочные материалы от известных мировых производителей, а также комплексные пищевые добавки собственного производства.",
+      list: [
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара",
+          text: "Натуральная оболочка",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара анонс данного товара",
+          text: "Колбасная оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка оболочка",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара",
+          text: "Колбасная оболочка"
+        },
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-3",
+          img: "img/tmp/cat-2.jpg",
+          text: "Колбасная оболочка",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-3",
+          img: "img/tmp/cat-2.jpg"
+        },
+        {
+          className: "cols-3",
+          img: "img/tmp/cat-2.jpg",
+          title: "Краткий анонс данного товара",
+          text: "Колбасная оболочка",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара",
+          text: "Колбасная оболочка",
+          btn: "Перейти в каталог"
+        },
+        {
+          className: "cols-2",
+          img: "img/tmp/cat-1.jpg",
+          title: "Краткий анонс данного товара",
+          text: "Колбасная оболочка",
+          btn: "Перейти в каталог"
+        }
+      ]
+    };
+.cat(class=catData.className ? catData.className : '')
+  if (catData.title)
+    .cat__b-title #{catData.title}
+  if (catData.text)
+    .cat__b-text #{catData.text}
+  .cat__list
+    for item in catData.list
+      .cat__item(class=item.className)
+        a.cat__link(href='#')
+          img.cat__img(src=DB.DIR + item.img, alt='alt', title='title')
+          .cat__wrap
+            if (item.title)
+              .cat__title #{item.title}
+            if (item.text)
+              .cat__text #{item.text}
+            if (item.btn)
+              .cat__btn
+                +btn-primary({type: 'span', text: item.btn, outline: true})

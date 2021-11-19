@@ -1,0 +1,81 @@
+include ../../../../components/base/btns/btn/index
+div
+  .h2 Кнопки - Buttons
+  div
+    .h3 тег &lt;button&gt;
+    +btn-primary({type: 'button', text: 'Primary'})
+    +btn-secondary({type: 'button', text: 'Secondary'})
+    +btn-third({type: 'button', text: 'Third'})
+    +btn-success({type: 'button', text: 'Success'})
+    +btn-danger({type: 'button', text: 'Danger'})
+    +btn-warning({type: 'button', text: 'Warning'})
+    +btn-info({type: 'button', text: 'Info'})
+    +btn-light({type: 'button', text: 'Light'})
+    +btn-dark({type: 'button', text: 'Dark'})
+    +btn-link({type: 'button', text: 'Link'})
+    +btn-refresh({type: 'button'})
+    +btn-refresh({type: 'button', spin: true})
+  div
+    .h3 тег &lt;button&gt; outline
+    +btn-primary({type: 'button', text: 'Primary', outline: true})
+    +btn-secondary({type: 'button', text: 'Secondary', outline: true})
+    +btn-third({type: 'button', text: 'Third', outline: true})
+    +btn-success({type: 'button', text: 'Success', outline: true})
+    +btn-danger({type: 'button', text: 'Danger', outline: true})
+    +btn-warning({type: 'button', text: 'Warning', outline: true})
+    +btn-info({type: 'button', text: 'Info', outline: true})
+    +btn-light({type: 'button', text: 'Light', outline: true})
+    +btn-dark({type: 'button', text: 'Dark', outline: true})
+  div
+    .h3 тег &lt;button&gt; disabled
+    +btn-primary({type: 'button', text: 'Primary', disabled: true})
+    +btn-secondary({type: 'button', text: 'Secondary', disabled: true})
+    +btn-third({type: 'button', text: 'Third', disabled: true})
+    +btn-success({type: 'button', text: 'Success', disabled: true})
+    +btn-danger({type: 'button', text: 'Danger', disabled: true})
+    +btn-warning({type: 'button', text: 'Warning', disabled: true})
+    +btn-info({type: 'button', text: 'Info', disabled: true})
+    +btn-light({type: 'button', text: 'Light', disabled: true})
+    +btn-dark({type: 'button', text: 'Dark', disabled: true})
+    +btn-link({type: 'button', text: 'Link', disabled: true})
+    +btn-refresh({type: 'button', disabled: true})
+    +btn-refresh({type: 'button', spin: true, disabled: true})
+  div
+    .h3
+      | тег &lt;a&gt;
+    +btn-primary({text: 'Primary'})
+    +btn-secondary({text: 'Secondary'})
+    +btn-third({text: 'Third'})
+    +btn-success({text: 'Success'})
+    +btn-danger({text: 'Danger'})
+    +btn-warning({text: 'Warning'})
+    +btn-info({text: 'Info'})
+    +btn-light({text: 'Light'})
+    +btn-dark({text: 'Dark'})
+    +btn-link({text: 'Link'})
+    +btn-refresh({})
+    +btn-refresh({spin: true})
+  div
+    .h3
+      | тег &lt;input&gt;
+    +btn-primary({type: 'input', text: 'Primary'})
+    +btn-secondary({type: 'input', text: 'Secondary'})
+    +btn-third({type: 'input', text: 'Third'})
+    +btn-success({type: 'input', text: 'Success'})
+    +btn-danger({type: 'input', text: 'Danger'})
+    +btn-warning({type: 'input', text: 'Warning'})
+    +btn-info({type: 'input', text: 'Info'})
+    +btn-light({type: 'input', text: 'Light'})
+    +btn-dark({type: 'input', text: 'Dark'})
+    +btn-link({type: 'input', text: 'Link'})
+  div
+    .h3
+      | размеры кнопок
+    +btn-primary({type: 'button', className: 'btn-lg', text: 'Size-lg'})
+    +btn-primary({type: 'button', text: 'Size'})
+    +btn-primary({type: 'button', className: 'btn-sm', text: 'Size-sm'})
+    +btn-primary({type: 'button', className: 'btn-xs', text: 'Size-xs'})
+    +btn-refresh({type: 'button', className: 'btn-lg', spin: true})
+    +btn-refresh({type: 'button', spin: true})
+    +btn-refresh({type: 'button', className: 'btn-sm', spin: true})
+    +btn-refresh({type: 'button', className: 'btn-xs', spin: true})

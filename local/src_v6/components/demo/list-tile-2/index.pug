@@ -1,0 +1,37 @@
+if (listTile2 === undefined)
+  -
+    var listTile2 = {
+      list: [
+        {
+          img: "img/tmp/list-tile-2-01.svg",
+          text: "Качество текстильных колбасных оболочек всегда на высоком уровне"
+        },
+        {
+          img: "img/tmp/list-tile-2-02.svg",
+          text: "Единственный производитель текстильных колбасных оболочек в РБ"
+        },
+        {
+          img: "img/tmp/list-tile-2-03.svg",
+          text: "Коллектив «ТВИЛАЙМ» — это молодая, творческая, команда, ориентированная на индивидуальный подход к каждому клиенту"
+        },
+        {
+          img: "img/tmp/list-tile-2-04.svg",
+          text: "Постоянное развитие сотрудников, внедряемые в производство колбасных оболочек инновации технологических новинок"
+        },
+        {
+          img: "img/tmp/list-tile-2-05.svg",
+          text: "Низкие цены на наши колбасные оболочки"
+        },
+        {
+          img: "img/tmp/list-tile-2-06.svg",
+          text: "Бесперебойные поставки. Наши склады всегда имеют необходимый запас высококачественного сырья"
+        }
+      ]
+    }
+.list-tile-2
+  .list-tile-2__list.row
+    each item in listTile2.list
+      .list-tile-2__item.col-12.col-md-6
+        .list-tile-2__pic
+          img(src=DB.DIR + item.img, alt='alt')
+        .list-tile-2__text !{item.text}

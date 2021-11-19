@@ -1,0 +1,53 @@
+.logo-desk {
+
+  .layout-simple & {
+    padding: 15px 0;
+  }
+
+  .pic {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 36px 0 0;
+    width: 220px;
+
+    @media (max-width: $screen-lg-max) {
+      padding: 0 20px 0 0;
+      width: 180px;
+    }
+
+    > a,
+    > span {
+      display: block;
+    }
+
+    img {
+      max-height: 100px;
+    }
+  }
+
+  .title {
+    font-size: 17px;
+    line-height: (24/17);
+    color: #616161;
+    @include font-family-light();
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 30px 0 32px;
+    border-left: 1px solid $border-color-base;
+
+    @media (max-width: $screen-lg-max) {
+      padding: 0 0 0 20px;
+      font-size: 16px;
+    }
+
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+
+    span {
+      display: block;
+      overflow: hidden;
+      max-height: (24/17) * 4em;
+    }
+  }
+}

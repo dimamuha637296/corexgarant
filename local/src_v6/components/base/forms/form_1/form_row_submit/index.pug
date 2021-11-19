@@ -1,0 +1,13 @@
+mixin form_row_submit(data)
+  .form-group
+    -
+      if (data.submitBtnClass === undefined) data.submitBtnClass = 'btn_submit';
+      if (data.submitBtnText === undefined) data.submitBtnText = 'Отправить';
+      if (data.requiredText === undefined) data.requiredText = '— поля обязательные к заполнению';
+    .col-xl-10.col-md-9.col-12.offset-xl-2.offset-md-3.d-md-flex.align-items-center
+      +btn-primary({type: 'input', className: data.submitBtnClass, text: data.submitBtnText})(name='submit')
+      if (data.hasRequired === true)
+        .form_required
+          +f_star()
+          =' '
+          | #{data.requiredText}

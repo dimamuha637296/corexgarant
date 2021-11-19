@@ -1,0 +1,380 @@
+.element-descr {
+
+  &.not-avail {
+
+    .info-wrap {
+      float: none;
+      width: 100%;
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .wrap {
+
+      &.no-pic {
+
+        .desc {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .wrap {
+    margin-bottom: 20px;
+    border-right: 1px solid $border-color-base;
+    padding-right: 20px;
+
+    @media (max-width: $screen-md-max) {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    &.no-pic {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  .desc {
+    padding-bottom: 9px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid $border-color-base;
+  }
+
+  .info-wrap {
+    float: left;
+    width: 65.5%;
+    padding-right: 10px;
+    border-right: 1px solid $border-color-base;
+
+    @media (max-width: $screen-lg-max) {
+      width: 60%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      float: none;
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 20px;
+      border-right: none;
+    }
+
+    &.no-border {
+      float: none;
+      width: 100%;
+      border-right: none;
+    }
+  }
+
+  .buy-wrap {
+    float: right;
+    text-align: right;
+    width: 34.5%;
+    padding-left: 10px;
+
+    @media (max-width: $screen-lg-max) {
+      width: 40%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      float: none;
+      width: 100%;
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+
+  .properties {
+    margin: 0;
+
+    .name {
+      display: inline-block;
+      color: $text-color;
+      font-size: 14px;
+      line-height: (20/14);
+      @include font-family-bold();
+      margin-bottom: 10px;
+      margin-right: 13px;
+    }
+
+    .article {
+      color: #b1b8bc;
+    }
+  }
+
+  .colors-wrap {
+
+    > .colors {
+      margin-right: 23px;
+    }
+  }
+
+  .colors {
+    display: inline-block;
+  }
+
+  .color {
+    display: inline-block;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &.active {
+
+      > a {
+
+        &:before {
+          border-color: $link-color-hover;
+        }
+      }
+    }
+
+    > a {
+      display: block;
+      border-radius: 50%;
+      height: 33px;
+      width: 33px;
+      overflow: hidden;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid transparent;
+      }
+    }
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .more-colors {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 19px;
+    padding-bottom: 2px;
+    @include font-family-bold();
+    font-size: 12px;
+    color: $text-color;
+
+    @include hover-focus() {
+
+      .lnk-pseudo {
+        color: $link-color-hover;
+        border-bottom-color: $link-color-hover;
+      }
+    }
+
+    span {
+      padding-bottom: 1px;
+    }
+
+    .lnk-pseudo {
+      color: $text-color;
+      border-bottom: 1px solid;
+    }
+  }
+
+  .item-quantity-2 {
+    margin-bottom: 10px;
+  }
+
+  .price-old {
+    text-decoration: line-through;
+    font-size: 13px;
+    line-height: 1;
+    color: #bdc2c6;
+
+    span.price-old {
+      margin-right: 4px;
+    }
+
+    .currency {
+      color: #bdc2c6;
+    }
+  }
+
+  .price {
+    margin-bottom: 5px;
+    font-size: 24px;
+    @include font-family-bold();
+    color: #006c2b;
+
+    span.price {
+      margin-right: 4px;
+    }
+  }
+
+  .currency {
+    @include font-family-regular();
+    font-size: 12px;
+    color: $text-color;
+  }
+
+  .btn-b {
+
+    .btn {
+      @include font-family-regular();
+      font-size: 12px;
+    }
+  }
+
+  .buy-btn {
+    margin-bottom: 6px;
+  }
+
+  .buy-one-click {
+    font-size: 14px;
+    color: $text-color;
+    text-decoration: none;
+    border-bottom: none;
+
+    @include hover-focus() {
+      color: $link-color-hover;
+    }
+  }
+
+  .calc-wrap {
+    float: left;
+    padding-right: 26px;
+
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+      float: none;
+      width: 100%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding-right: 10px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding-right: 0;
+      float: none;
+    }
+  }
+
+  .calc-btn-wrap {
+    float: left;
+    border-left: 1px solid $border-color-base;
+    margin-top: 10px;
+    padding-left: 28px;
+
+    &.linoleum {
+      float: right;
+      border-left: 0;
+      margin-top: 25px;
+      padding-left: 0;
+
+      @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+        float: right;
+      }
+
+      @media (max-width: $screen-md-max) {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        float: left;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+      float: none;
+      width: 100%;
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    @media (max-width: $screen-md-max) {
+      padding-left: 20px;
+      padding-top: 5px;
+      margin-top: 0;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding-left: 5px;
+      border-left: none;
+    }
+  }
+
+  .calc-title {
+    margin-bottom: 8px;
+    @include font-family-bold();
+    font-size: 14px;
+  }
+
+  .calc-wrap-col {
+    display: inline-block;
+    max-width: 79px;
+  }
+
+  .col-text {
+    font-size: 13px;
+    color: #b4bbbe;
+  }
+
+  .calc-input {
+    border: 1px solid $border-color-base;
+    border-radius: 3px;
+    padding: 10px 10px 10px 14px;
+    max-width: 79px;
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 64px;
+      padding: 10px 5px;
+      margin-bottom: 4px;
+    }
+
+    @include placeholder(#b1b8bc);
+  }
+
+  .calc-symbol {
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 6px;
+    font-size: 18px;
+    @include font-family-bold();
+  }
+
+  .calc-btn {
+    display: inline-block;
+    max-height: 19px;
+    overflow: hidden;
+    @include font-family-regular();
+    color: $text-color;
+    font-size: 13px;
+    text-decoration: none;
+
+    @include hover-focus() {
+      color: $link-color-hover;
+
+      .icon {
+
+        &:before {
+          @include svg-element-descr-calc-hover();
+        }
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 9px;
+
+      &:before {
+        @include svg();
+        @include svg-element-descr-calc();
+        vertical-align: middle;
+      }
+    }
+  }
+}

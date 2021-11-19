@@ -1,0 +1,78 @@
+@mixin btn-color($bg, $color: $brand-white, $outline: false) {
+  @if $outline == true {
+    background:           none;
+    border-color:         $bg;
+    color:                $bg;
+  } @else {
+    background:           $bg;
+    border-color:         $bg;
+    color:                $color;
+  }
+
+  @include hover-focus  {
+    background:           darken($bg, 10%);
+    border-color:         darken($bg, 12%);
+    color:                $color;
+  }
+
+  &:active,
+  &.active {
+    background:           darken($bg, 20%);
+    border-color:         darken($bg, 22%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background:           $disabled-color;
+    border-color:         $disabled-color;
+    color:                $brand-white;
+  }
+}
+
+.btn-success {
+  @include btn-color($brand-success);
+}
+
+.btn-success-outline {
+  @include btn-color($brand-success, $brand-white, true);
+}
+
+.btn-danger {
+  @include btn-color($brand-danger);
+}
+
+.btn-danger-outline {
+  @include btn-color($brand-danger, $brand-white, true);
+}
+
+.btn-warning {
+  @include btn-color($brand-warning, $brand-gray-9);
+}
+
+.btn-warning-outline{
+  @include btn-color($brand-warning, $brand-gray-9, true);
+}
+
+.btn-info {
+  @include btn-color($brand-info, $brand-white);
+}
+
+.btn-info-outline{
+  @include btn-color($brand-info, $brand-white, true);
+}
+
+.btn-light {
+  @include btn-color($brand-light, $brand-gray-9);
+}
+
+.btn-light-outline {
+  @include btn-color($brand-light, $brand-gray-9, true);
+}
+
+.btn-dark {
+  @include btn-color($brand-dark, $brand-white);
+}
+
+.btn-dark-outline {
+  @include btn-color($brand-dark, $brand-white, true);
+}

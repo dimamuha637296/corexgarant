@@ -1,0 +1,219 @@
+/*menu-accordion.scss*/
+
+// var *****************************************************************************************************************
+$_menu-accordion-border-width: 4px; //только четные
+$_menu-accordion-color: #000;
+$_menu-accordion-link-color: $link-color;
+$_menu-accordion-link-color-hover: $link-color-hover;
+$_menu-accordion-padding: 7px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.menu-accordion {
+  padding-right: 40px;
+
+  @media (max-width: $screen-md-max) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: $grid-breakpoint-max) {
+    display: none;
+  }
+
+  .title {
+    font-size: 24px;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+    @include font-family-medium();
+  }
+
+  [class*="item_"] {
+    display: block;
+
+    > a {
+      color: $_menu-accordion-link-color;
+
+      @include hover-focus() {
+        color: $link-color-hover;
+      }
+    }
+
+    > span {
+      color: $_menu-accordion-color;
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu-accordion-color;
+      }
+
+      > a {
+
+        @include hover-focus() {
+          color: $_menu-accordion-link-color-hover;
+        }
+      }
+    }
+  }
+
+  .accordion {
+
+    .acc-heading {
+      position: relative;
+      padding: 0 0 11px 0;
+    }
+
+    .acc-body {
+      padding-bottom: 0;
+    }
+
+    .panel {
+      padding-left: 0;
+    }
+  }
+
+  .item_1 {
+    font-size: 18px;
+
+    &.active {
+
+      .acc-heading {
+
+        > a,
+        > span {
+          color: $_menu-accordion-color;
+        }
+
+        > a {
+
+          @include hover-focus() {
+            color: $_menu-accordion-link-color-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_level_2 {
+    font-size: 15px;
+    margin: 0 0 18px 15px;
+
+    .item_2 {
+      margin-bottom: 14px;
+    }
+  }
+
+  .menu_level_3 {
+
+    #db & {
+      font-size: 13px;
+      margin: 16px 0 0 3px;
+      padding: 0;
+    }
+
+    .item_3 {
+      margin-bottom: 8px;
+
+      &:before {
+        padding-right: 2px;
+      }
+    }
+  }
+
+  .menu_level_4 {
+    font-size: 13px;
+    padding: 0;
+    margin: 5px 0 0 13px;
+
+    .item_4 {
+      margin-bottom: 5px;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .open-menu {
+    display: block;
+    position: absolute;
+    transform: rotate(0deg);
+    padding: $_menu-accordion-padding;
+    top: 2px;
+    left: -24px;
+    transform-origin: ($_menu-accordion-border-width/2 + $_menu-accordion-padding) center 0;
+
+    &:before {
+      content: '';
+      display: block;
+      border: $_menu-accordion-border-width solid;
+      border-color: transparent transparent transparent $link-color;
+    }
+
+    @include hover-focus() {
+
+      &:before {
+        border-color: transparent transparent transparent $link-color-hover;
+      }
+    }
+
+    &.collapsed {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.style-2 {
+
+    [class*="item_"] {
+
+      @include hover-focus() {
+        background: $link-color;
+
+        > a,
+        > span {
+          color: #fff;
+        }
+      }
+    }
+
+    .accordion {
+      border: 1px solid $border-color-base;
+      border-bottom: none;
+    }
+
+    .panel {
+      padding: 0;
+      background: #f4f6f9;
+    }
+
+    .acc-heading {
+      display: inline-block;
+      font-size: 18px;
+      @include font-family-medium();
+      padding: 14px 0px 11px 16px;
+
+      + div {
+        background: #fff;
+      }
+    }
+
+    .open-menu {
+      left: auto;
+      right: -26px;
+      top: 18px;
+    }
+
+    .menu_level_2 {
+      margin: 0;
+
+      .item_2 {
+        margin-bottom: 0;
+        padding: 15px 0 14px 30px;
+        border-bottom: 1px solid $border-color-base;
+      }
+    }
+  }
+}

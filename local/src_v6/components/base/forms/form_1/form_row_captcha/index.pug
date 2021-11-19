@@ -1,0 +1,24 @@
+mixin form_row_captcha(data)
+  -
+    var captchaId = data.formID + '-CAPTCHA';
+    if (data.captchaLabel === undefined) data.captchaLabel = 'Введите символы с картинки';
+  .form-group.control-group(class=data.dropdownValidation === true ? 'dropdown-valid' : '')
+    label.col-form-label.col-xl-2.col-md-3.col-12(for=captchaId)
+      | #{data.captchaLabel}
+      +f_star()
+    .text.col-xl-6.col-md-5.col-12
+      .captcha_img
+        img(src=DB.DIR + 'img/tmp/captcha.jpg', alt='Captcha', title='Captcha')
+      mixin captcha_input()
+        input.form-control(id=captchaId, name=captchaId, required='', aria-required='true')
+      if (data.dropdownValidation === true)
+        .input-wrap
+          +captcha_input()
+          .error-drop
+            button.error-icon(data-toggle="dropdown") ?
+            .dropdown-menu.dropdown-menu-right
+              .controls
+      else
+        +captcha_input()
+    if (data.dropdownValidation !== true)
+      .controls.col-md-4.col-12

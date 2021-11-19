@@ -1,0 +1,28 @@
+if (popupThankId === undefined)
+  - var popupThankId = 'FRM_contacts';
+.modal.fade.in(id=popupThankId + (success === true ? '' : '-error'))
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .h2.modal-title.text-success(id=popupThankId + 'OK_TITLE' class=success === true ? '' : 'hidden') Отправлено
+        .h2.modal-title.text-danger(id=popupThankId + 'ERROR_TITLE' class=success === true ? 'hidden' : '') Ошибка
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+      .modal-body(id=popupThankId + 'Label')
+        .OK_TEXT(id=popupThankId + 'OK_TEXT')
+          p Наш менеджер получил вот такое сообщение:
+          table.table
+            tbody
+              tr
+                td Отправлено
+                td 04.03.16, 14:38
+              tr
+                td Контактное лицо
+                td Ковальский Андрей
+              tr
+                td Электронная почта
+                td westy.by@gmail.com
+              tr
+                td Сообщение
+                td Тестовое сообщение для проверки работы модального окна и переноса текста внутри ячейки таблицы
+          p
+            | Мы свяжемся с Вами в течение нескольких дней. Ожидайте ответ на указанные в форме контакты.

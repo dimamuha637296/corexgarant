@@ -1,0 +1,10 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Словарь терминов';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Словарь терминов
+block content
+  include ../../../components/demo/glossary/index
+  include ../../../components/demo/rubrics/index

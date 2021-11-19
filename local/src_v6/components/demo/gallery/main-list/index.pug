@@ -1,0 +1,102 @@
+-
+  var data = {
+    list: [
+      {
+        ico: 'video',
+        pic: 'main-list-1.jpg',
+        href: 'https://www.youtube.com/watch?v=rMdmADlfswA',
+        data: '',
+        className: 'popup-youtube',
+        title: 'Фото'
+      },
+      {
+        ico: false,
+        pic: 'main-list-2.jpg',
+        href: '../../img/tmp/gallery-1.jpg',
+        data: '',
+        className: 'popup-image',
+        title: 'Фото'
+      },
+      {
+        ico: false,
+        pic: 'main-list-3.jpg',
+        href: '../../img/tmp/gallery-2.jpg',
+        data: '[{"src": "../../img/tmp/gallery-3.jpg", "title": "Фото-3"}, {"src": "../../img/tmp/gallery-4.jpg", "title": "Фото-4"}]',
+        className: 'popup-image',
+        title: 'Фото'
+      }
+    ]
+  };
+.h2 Галлерея с видко, с одиночным фото, с множеством фото в попапе
+.main-list.arrow.js-popup-universal
+  .main-list__list
+    for item, i in data.list
+      .main-list__item.item
+        a.main-list__wrap(title='Фото ' + i, href=item.href, class=item.className, data-gallery=item.data)
+          .main-list__pic
+            if (item.ico)
+              .main-list__ico(class=item.ico)
+            img(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.title, title=item.title)
+script.
+    !function () {
+        'use strict';
+
+        function popupGallery() {
+            var galleryList = $('.js-popup-universal');
+            if (!galleryList.length || !$.fn.magnificPopup) {
+                return false;
+            }
+            var item = galleryList.find('.main-list__wrap');
+            item.each(function () {
+                var self = $(this);
+                if (self.hasClass('popup-youtube')) {
+                    self.magnificPopup({
+                        disableOn: 700,
+                        type: 'iframe',
+                        mainClass: 'mfp-fade',
+                        removalDelay: 160,
+                        preloader: false,
+                        fixedContentPos: false
+                    });
+                } else if (self.hasClass('popup-image')) {
+                    var src = [{
+                        src: self.attr('href'),
+                        title: self.attr('title')
+                    }];
+                    var data = self.data('gallery');
+                    if (typeof data !== 'undefined' && data.length) {
+                        for (var i = 0; i < data.length; i++) {
+                            src.push({
+                                src: data[i].src,
+                                title: data[i].title
+                            });
+                        }
+                    }
+                    self.magnificPopup({
+                        type: 'image',
+                        closeOnContentClick: false,
+                        closeBtnInside: false,
+                        mainClass: 'mfp-with-zoom mfp-img-mobile',
+                        image: {
+                            verticalFit: true
+                        },
+                        gallery: {
+                            enabled: true //false
+                        },
+                        zoom: {
+                            enabled: true,
+                            duration: 300, // don't forget to change the duration also in CSS
+                            opener: function () {
+                                return self;
+                            }
+                        },
+                        items: src
+                    });
+                }
+            });
+        }
+
+        $(function () {
+            popupGallery();
+        });
+    }();

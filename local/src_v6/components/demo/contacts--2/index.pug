@@ -1,0 +1,71 @@
+.contacts(itemtype="http://schema.org/Organization" itemscope="")
+  .text-lg(itemprop="name")
+    | Частное предприятие «Студия Борового»
+  .h2.title(itemtype="http://schema.org/PostalAddress" itemscope="" itemprop="address")
+    span(itemprop='streetAddress') г. Минск, ул. Каховская, 70а, 4 этаж,
+    span(itemprop='postalCode')  220068
+  .tel
+    ul.list-reset.text-lg
+      li(itemprop='telephone') +375 (17) 233-66-36 Городской
+      li(itemprop='telephone') +375 (17) 233-65-47 Городской
+      li(itemprop='telephone') +375 (29) 163-23-22 Velcom
+    ul.list-reset
+      li
+        a(href='mailto:info@db.by')
+          span(itemprop='email') info@db.by
+        |  — пишите по любым вопросам
+      li
+        a(href='mailto:dv@db.by')
+          span(itemprop='email') dv@db.by
+        |  — партнерство и сотрудничество
+      li
+        a(href='mailto:hr@db.by')
+          span(itemprop='email') hr@db.by
+        |  — предложить на рассмотрение свое резюме
+  table.mail.table-div.table-reset
+    tbody
+      tr
+        td
+          | Отдел продаж
+        td
+          a(href='mailto:info@kupalauski.by') info@kupalauski.by
+      tr
+        td
+          | Сотрудничество
+        td
+          a(href='mailto:sotrud@kupalauski.by') sotrud@kupalauski.by
+  .popup-btn
+    span(data-toggle='modal', data-target='#modal-contacts')
+      i.svg-contacts-mail
+      span.dot.lnk-pseudo Написать нам сообщение
+  include ../contacts-modal/index
+  .time
+    .h4
+      | Принимаем заказы:
+    ul.list-reset
+      li
+        | будние: с 9 до 18,
+      li
+        | выходные: с 10 до 16.
+  .h3 Заказ услуг и консультация
+  .tel
+    ul.list-reset.text-lg
+      li(itemprop='telephone') +375 (17) 233-66-36 Городской
+      li(itemprop='telephone') +375 (17) 233-65-47 Городской
+      li(itemprop='telephone') +375 (29) 163-23-22 Velcom
+  ul.list-reset
+    li
+      | E-mail:
+      a(href='mailto:info@db.by')
+        span(itemprop='email') info@db.by
+    li
+      | Skype:
+      a(href='skype:BorovoyStudio') BorovoyStudio
+  .h3 Присоединяйтесь к нам в социальных сетях
+  ul.list-reset
+    li
+      | Facebook:
+      a(href='Facebook.com/Borovoystudio') Facebook.com/Borovoystudio
+    li
+      | Twitter:
+      a(href='Twitter.com/Db_by') Twitter.com/Db_by

@@ -1,0 +1,40 @@
+/*full-bg.scss*/
+
+// var *************************************************************************************************************
+$_full-width-title-bg:                          #D7D7D7;
+
+// mixins **************************************************************************************************************
+
+// styles  *************************************************************************************************************
+
+// Полоса заголовка на всю ширину блока
+.full-width-title {
+  overflow: hidden;
+  max-width: 100%;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 8px;
+      width: 2000px;
+      height: 1px;
+      background-color: $_full-width-title-bg;
+      margin-right: 7px;
+    }
+
+    &:before {
+      right: 100%;
+    }
+
+    &:after {
+      left: 100%;
+    }
+  }
+}

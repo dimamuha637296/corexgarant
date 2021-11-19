@@ -1,0 +1,97 @@
+/*sitemap.scss*/
+
+// var *****************************************************************************************************************
+//@_sitemap: 29px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.sitemap {
+  margin: 0 0 50px;
+
+  .tab-list {
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      margin-bottom: 6px;
+      display: inline-block;
+
+      @media (max-width: $screen-xs-max) {
+        display: block;
+      }
+
+      &.active {
+
+        a {
+          color: $text-color;
+          cursor: default;
+        }
+
+        .lnk-pseudo {
+          color: $text-color;
+          cursor: default;
+          border: none;
+          @include font-family-bold();
+        }
+      }
+
+      @media (min-width: $screen-sm-min) {
+
+        + li {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+
+  .menu_level_1 {
+
+    .item_1 {
+      margin-bottom: 40px;
+
+      > a {
+        font-size: 18px;
+        @include font-family-bold();
+        color: $headings-color;
+
+        @include hover-focus() {
+          color: $link-color-hover;
+        }
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: $list-level-2-margin-top 0 $list-level-2-margin-bottom;
+
+      .g-wrap & {
+
+        @media (max-width: $screen-xs-max) {
+          padding-left: 0;
+        }
+      }
+
+      li {
+        margin-bottom: $list-item-2-margin-bottom;
+
+        &:before {
+
+          .g-wrap & {
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_level_2 {
+
+    .item_2 {
+      margin-bottom: 12px;
+    }
+  }
+}

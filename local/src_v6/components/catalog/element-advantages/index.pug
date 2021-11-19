@@ -1,0 +1,33 @@
+if (elementAdvantages === undefined)
+  -
+    var elementAdvantages = [
+      {
+        img: 'img/tmp/element-advantages-0.png',
+        title: 'Способы оплаты',
+        desc: 'Наличными, банковской картой, картами рассрочек, безналичным платежом.'
+      },
+      {
+        img: 'img/tmp/element-advantages-1.png',
+        title: 'Доставка',
+        desc: 'По Минску курьером — сегодня, бесплатно от 50 руб. По Беларуси курьером.'
+      },
+      {
+        img: 'img/tmp/element-advantages-2.png',
+        title: 'Рассрочка',
+        desc: 'Халва, Карта Покупок, Магнит'
+      },
+      {
+        img: 'img/tmp/element-advantages-3.png',
+        title: 'Услуги',
+        desc: 'Укладка напольных покрытий, выезд замерщика с образцами, доставка на этаж бесплатно'
+      }
+    ]
+.element-advantages
+  ul.list.list-reset
+    each item in elementAdvantages
+      li.media.item
+        .media-left.img-wrap
+          img(src=DB.DIR + item.img, alt=item.title)
+        .media-body
+          .title #{item.title}
+          .desc #{item.desc}

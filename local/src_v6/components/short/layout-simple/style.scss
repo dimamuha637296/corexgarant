@@ -1,0 +1,62 @@
+.layout-simple {
+
+  .g-main {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    @media (min-width: $screen-sm-min) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    // IE Fix
+    .ie & {
+
+      @media (min-width: $screen-sm-min) {
+        padding-bottom: 0;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        min-height: inherit;
+        font-size: 0;
+      }
+    }
+  }
+
+  .footer__row {
+    align-items: flex-end;
+  }
+
+  .footer__left-col {
+    order: 1;
+  }
+
+  .footer__middle-col {
+    order: 2;
+
+    @media (min-width: $screen-lg-min) {
+      justify-content: center;
+      display: flex;
+    }
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      order: 3;
+    }
+  }
+
+  .footer__right-col {
+    order: 3;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      order: 2;
+    }
+  }
+}

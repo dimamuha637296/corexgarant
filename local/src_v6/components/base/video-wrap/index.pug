@@ -1,0 +1,12 @@
+.video-wrap
+  .wrap
+    a.link(href='#')
+      .icon
+      .title Как мы делаем моцареллу
+      .text По своей внутренней структуре моцарелла немного слоистая и не содержит пузырьков воздуха.
+    .close-link-video.ic-close
+    video(poster=DB.DIR + 'img/tmp/video-poster.jpg', loop='loop').video
+      source(src=DB.DIR + 'video/video.mp4', type='video/mp4')
+      |    Тег video не поддерживается вашим браузером.
+      a(href=DB.DIR + 'video/video.mp4') Скачайте видео
+      | .

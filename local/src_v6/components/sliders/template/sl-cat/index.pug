@@ -1,0 +1,31 @@
+mixin sl-cat(data)
+  .sl-cat(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        for slide in data.slides
+          .slide
+            .inner
+              .pic
+                img.img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+              .side-wrap
+                .side-wrap-text
+                  span.prod-quant #{slide.productQuant}
+                  span.product #{slide.product}
+              .b-wrap
+                .title #{slide.title}
+                .text #{slide.text}
+                .b-btn
+                  +btn-primary({text: slide.btnText})
+      if (data.pager !== undefined)
+        +#{data.pager}()
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    .sl-cat-links
+      for slide in data.slides
+        a.link(class=slide.active === true ? "active" : " ", href='#')
+          .icon
+            img(src=DB.DIR + 'img/tmp/' + slide.icon, alt=slide.title)
+          .link-text-wrap
+            .link-title #{slide.title}
+            span.link-prod-quant #{slide.productQuant}
+            span.link-product #{slide.product}

@@ -1,0 +1,27 @@
+if (listTile === undefined)
+  -
+    var listTile = {
+      list: [
+        {
+          img: "img/tmp/list-tile-01.jpg",
+          title: "Полупроницаемая оболочка"
+        },
+        {
+          img: "img/tmp/list-tile-02.jpg",
+          title: "Перевозка цистернами"
+        },
+        {
+          img: "img/tmp/list-tile-03.jpg",
+          title: "Экспедирование грузов"
+        }
+      ]
+    }
+.list-tile
+  .list-tile__list.row
+    each item in listTile.list
+      .list-tile__item.col-12.col-md-4.col-lg-4
+        a.list-tile__inner(href='#')
+          .list-tile__pic
+            .list-tile__pic-inner
+              img.list-tile__img(src=DB.DIR + item.img, alt=item.title)
+          .list-tile__title !{item.title}

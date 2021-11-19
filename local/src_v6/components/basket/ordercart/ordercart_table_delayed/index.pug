@@ -1,0 +1,68 @@
+.bx_ordercart_order_table_container
+  table#basket_items.table-reset.tbi.no-hover
+    thead.tbi-thead
+      tr
+        td#col_NAME.item(colspan='2')
+          | Товары
+        td#col_DISCOUNT.custom
+          | Скидка
+        td#col_PRICE.price
+          | Цена
+        td#col_QUANTITY.custom
+          | Количество
+        td#col_SUM.custom
+          | Сумма
+        td.custom
+    tbody.tbi-tbody
+      - var n = 0
+      - var m = 0
+      while n < 1
+        - m++
+        if (n % 3 === 0)
+          - m = 1
+        - n++
+        tr(id='tr_' + m + '')
+          td.tbi-td.itemphoto
+            .bx_ordercart_photo_container
+              a(href='#')
+                .bx_ordercart_photo
+                  img(src=DB.DIR + 'img/tmp/basket/catalog-cart_0' + m + '.jpg', alt='photo', title='photo')
+          td.tbi-td.item
+            .h2.bx_ordercart_itemtitle
+              a(href='#')
+                | Нижнее белье Розовое Смущенье
+            .bx_ordercart_itemart
+            .bx_item_detail_scu_small_noadaptive
+              span.bx_item_section_name_gray
+                | Цвет:
+              - var itemColors = ['img/tmp/basket/ordercart-table-catalog-color_01.jpg', 'img/tmp/basket/ordercart-table-catalog-color_02.jpg']; 
+              include ../../../catalog/item-color/index
+            .bx_item_detail_size_small_noadaptive
+              span.bx_item_section_name_gray
+                | Размеры одежды:
+              - var itemSizeElement = m;
+              include ../../../catalog/item-size/index
+          td.tbi-td.custom
+          td.tbi-td.price
+            .tbi-thead_xs
+              | Цена
+            .tbi-td_i
+              .current_price
+                | 1&nbsp;399&nbsp;руб.
+              .type_price
+                | Тип цены
+              .type_price_value
+                | Розничная цена
+          td.tbi-td.custom
+            .tbi-thead_xs
+              | Количество
+            .tbi-td_i
+              div
+              | 1&nbsp;шт
+          td.tbi-td.custom
+            | 1399 руб.
+          td.tbi-td.control
+            a(href='#')
+              | Добавить в корзину
+            a(href='#')
+              | Удалить

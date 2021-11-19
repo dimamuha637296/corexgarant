@@ -1,0 +1,19 @@
+$grid-breakpoints: (
+        xs: $screen-xs-min,
+        sm: $screen-sm-min,
+        md: $screen-md-min,
+        lg: $screen-lg-min,
+        xl: $screen-xl-min
+);
+
+$container-max-widths: (
+        sm: $container-sm,
+        md: $container-md,
+        lg: $container-lg,
+        xl: $container-xl
+);
+
+@import "../core/base_styles/grid/mixins/breakpoints";
+@import "../core/base_styles/grid/mixins/grid-framework";
+@import "../core/base_styles/grid/mixins/grid";
+@import "../core/base_styles/grid/grid";

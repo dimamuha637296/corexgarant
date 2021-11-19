@@ -1,0 +1,10 @@
+if (statusData === undefined)
+  -
+    var statusData = {
+      type: 'available', //'available', 'few', 'medium', 'much', 'not-available'}
+      text: 'в наличии'
+    };
+.cat-status(class=statusData.type)
+  if (statusData.type !== 'not-available')
+    i.cat-status-icon
+  span #{statusData.text}

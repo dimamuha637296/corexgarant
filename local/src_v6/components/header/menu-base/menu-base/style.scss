@@ -1,0 +1,29 @@
+/* menu-base.scss */
+
+// var ****************************************************************************************************************
+//$_menu-menu-base-color:                       #000;
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+.menu-base {
+  background: $body-bg-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: scroll;
+  z-index: 999;
+
+  .menuDropBase-init & {
+    display: block;
+  }
+
+  @media (max-width: $screen-md-max) {
+    display: none;
+  }
+}

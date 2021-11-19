@@ -1,0 +1,69 @@
+$nav-link-padding-y:                .5rem;
+$nav-link-padding-x:                1.9rem;
+$nav-link-disabled-color:           #6c757d;
+
+$nav-tabs-border-color:             $border-color-base;
+$nav-tabs-border-width:             1px;
+
+$nav-tabs-link-color:               $link-color;
+$nav-tabs-link-bg:                  $body-bg-color;
+
+$nav-tabs-link-font-size:           1.8rem;
+$nav-tabs-link-active-color:        #fff;
+$nav-tabs-link-active-bg:           $link-color;
+
+.tabs {
+  margin: 0 0 40px;
+
+  .nav-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  .nav-link {
+    padding: $nav-link-padding-y $nav-link-padding-x;
+    transition: background ease .15s;
+    color: $nav-tabs-link-color;
+    font-size: $nav-tabs-link-font-size;
+
+    @include hover-focus {
+      color: $link-color-hover;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    > span {
+      border-bottom: 1px dashed;
+    }
+  }
+
+  .nav-link.active,
+  .nav-link.acc-link:not(.collapsed) {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    cursor: default;
+
+    > span {
+      border-bottom: none;
+    }
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  // Tabbable tabs
+  //
+  // Hide tabbable panes to start, show them when `.active`
+
+  .tab-content {
+    padding: 2rem 1.8rem;
+  }
+}

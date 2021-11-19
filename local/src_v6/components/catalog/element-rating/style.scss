@@ -1,0 +1,40 @@
+.element-rating {
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 8px;
+  padding-left: 20px;
+
+  @media (max-width: $screen-md-max) {
+    position: static;
+    padding-left: 0;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    padding-top: 4px;
+  }
+
+  .list {
+    font-size: 0;
+
+    .item {
+      display: inline-block;
+      @include svg();
+      @include svg-element-rating-star();
+      margin-right: 1px;
+      margin-left: 0;
+
+      &.active {
+        @include svg-element-rating-star-active();
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:not(.active) {
+        opacity: 1;
+      }
+    }
+  }
+}

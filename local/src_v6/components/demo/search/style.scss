@@ -1,0 +1,69 @@
+/*search.scss*/
+
+// var *****************************************************************************************************************
+$_search-btn-border-radius: $border-radius-base;
+$_search-btn-padding-horizontal: 31px;
+
+// mixins **************************************************************************************************************
+
+// styles **************************************************************************************************************
+.search {
+  margin: 0 0 40px;
+
+  .field {
+    position: relative;
+    width: 100%;
+  }
+
+  .wrap {
+    display: table-cell;
+    vertical-align: top;
+    width: 10000px;
+  }
+
+  .input {
+    width: 100%;
+    @include  placeholder();
+
+    &:focus {
+      box-shadow: none; // Off form-control box-shadow
+    }
+  }
+
+  label {
+    margin-bottom: 0;
+
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        @include png();
+        @include png-search-btn-xs();
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        z-index: 99;
+      }
+    }
+  }
+
+  .submit {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 15px;
+  }
+
+  .btn {
+    height: 34px;
+    padding: 0 $_search-btn-padding-horizontal;
+
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      padding: 0;
+      color: transparent;
+      text-shadow: none;
+    }
+  }
+}

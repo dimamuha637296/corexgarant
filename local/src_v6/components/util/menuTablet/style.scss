@@ -1,0 +1,25 @@
+$backdrop_z-index:          150;
+
+.backdrop {
+  position: fixed;
+  z-index: $backdrop_z-index;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.touched {
+  position: relative;
+  z-index: $backdrop_z-index + 1;
+
+  #db & + .submenu {
+    display: block;
+
+    .backdrop {
+      position: absolute;
+    }
+  }
+}

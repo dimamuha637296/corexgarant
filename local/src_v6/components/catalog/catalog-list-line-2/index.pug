@@ -1,0 +1,114 @@
+if (catalogLine === undefined)
+  -
+    var catalogLine = [
+      {
+        image: 'img/tmp/catalog-list-line-color-0.jpg',
+        title: 'Ламинат Tarkett Infinite 832',
+        colors: [
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg'
+        ],
+        moreColors: true,
+        status: {
+          type: 'available', //'available', 'few', 'medium', 'much', 'not-available'
+          text: 'в наличии'
+        },
+        oldPrice: '77,07',
+        price: '36,07'
+      },
+      {
+        image: 'img/tmp/catalog-list-line-color-0.jpg',
+        title: 'Ламинат Tarkett',
+        colors: [
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg'
+        ],
+        moreColors: true,
+        status: {
+          type: 'much', //'available', 'few', 'medium', 'much', 'not-available'
+          text: 'осталось много'
+        },
+        oldPrice: '77,07',
+        price: '9999,99'
+      },
+      {
+        image: 'img/tmp/catalog-list-line-color-0.jpg',
+        title: 'Ламинат Tarkett Infinite 832 Ламинат Tarkett Infinite 832',
+        colors: [
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg'
+        ],
+        moreColors: true,
+        status: {
+          type: 'medium', //'available', 'few', 'medium', 'much', 'not-available'
+          text: 'осталось мало'
+        },
+        price: '36,07'
+      },
+      {
+        image: 'img/tmp/catalog-list-line-color-0.jpg',
+        title: 'Ламинат Tarkett Infinite 832',
+        colors: [
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg'
+        ],
+        moreColors: false,
+        status: {
+          type: 'few', //'available', 'few', 'medium', 'much', 'not-available'
+          text: 'осталось очень мало'
+        },
+        price: '360,07'
+      },
+      {
+        image: 'img/tmp/catalog-list-line-color-0.jpg',
+        title: 'Ламинат Tarkett Infinite 832',
+        colors: [
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg',
+          'img/tmp/catalog-list-line-color-0.jpg'
+        ],
+        moreColors: false,
+        status: {
+          type: 'not-available', //'available', 'few', 'medium', 'much', 'not-available'
+          text: 'нет в наличии'
+        },
+        price: '36,07'
+      }
+    ];
+.catalog-line-2.js-width
+  each item in catalogLine
+    .item
+      a(href="#").main-link
+        .pic-wrap
+          img(src=DB.DIR + item.image, alt=item.title, title=item.title)
+        .title-wrap
+          .title #{item.title}
+      .colors-wrap
+        ul.colors.list-reset.clearfix
+          each color in item.colors
+            li.color
+              a(href='#')
+                img(src=DB.DIR + color, alt='alt')
+        if (item.moreColors === true)
+          a(href="#").more-colors
+            span Доступно ещё 30
+      .additional
+        .status-wrap
+          - var statusData = item.status;
+          include ../status/index
+        .price-wrap
+          if (item.oldPrice)
+            .old-price #{item.oldPrice}
+          .current-price
+            | от
+            =" "
+            span.price #{item.price}
+            =" "
+            span.currency BYN
+      .btn-buy-wrap
+        +btn-primary({text: 'Купить'})
+        a.lnk-pseudo.buy-one-click(href='#') Купить в 1 клик

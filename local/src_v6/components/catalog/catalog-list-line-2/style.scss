@@ -1,0 +1,305 @@
+.catalog-line-2 {
+
+  .item {
+    min-height: 72px;
+    display: table;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #eceff3;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .main-link,
+  .colors-wrap,
+  .additional,
+  .status-wrap,
+  .price-wrap,
+  .btn-buy-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .main-link {
+    width: auto;
+    color: $text-color;
+    text-decoration: none;
+
+    @media (max-width: $screen-xs-max) {
+      float: left;
+      margin-bottom: 16px;
+    }
+
+    @include hover-focus() {
+      color: $link-color-hover;
+    }
+  }
+
+  .pic-wrap {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    width: 33px;
+    height: 33px;
+
+    img {
+      position: absolute;
+      max-width: 33px;
+      max-height: 33px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @media (max-width: $screen-xs-max) {
+        top: 0;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .title-wrap {
+    padding-left: 10px;
+    padding-right: 5px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .title {
+    @include font-family-bold();
+    line-height: 1.25;
+  }
+
+  .colors-wrap {
+    width: 130px;
+    padding: 0 5px;
+
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .colors {
+    margin: 0;
+  }
+
+  .color {
+    position: relative;
+    float: left;
+    margin-right: -13px;
+
+    > a {
+      display: block;
+      width: 33px;
+      height: 33px;
+      border: 3px solid $body-bg-color;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        max-height: 100%;
+      }
+    }
+
+    &:nth-child(1) {
+      z-index: 5;
+    }
+
+    &:nth-child(2) {
+      z-index: 4;
+    }
+
+    &:nth-child(3) {
+      z-index: 3;
+    }
+
+    &:nth-child(4) {
+      z-index: 2;
+    }
+
+    &:nth-child(5) {
+      z-index: 1;
+    }
+
+    &:hover,
+    &.bx_active {
+
+      > a {
+        border-color: $link-color-hover;
+      }
+    }
+  }
+
+  .more-colors {
+    display: inline-block;
+    max-height: 16px;
+    overflow: hidden;
+    margin-left: 4px;
+    color: $text-color;
+    font-size: 12px;
+
+    @include hover-focus() {
+      color: $link-color-hover;
+    }
+  }
+
+  .additional {
+    width: 275px;
+    text-align: right;
+
+    @media (max-width: $screen-lg-max) {
+      width: 158px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      width: 130px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      float: left;
+      width: 100%;
+    }
+  }
+
+  .status-wrap {
+    width: 140px;
+    padding: 0 5px;
+    text-align: right;
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+      width: 23px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      padding: 0;
+      width: 100%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 10px;
+    }
+
+    + .price-wrap {
+      margin-top: 6px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      text-align: left;
+    }
+  }
+
+  .status {
+    width: auto;
+    max-height: 15px;
+    float: none;
+    text-align: left;
+
+    @media (max-width: $screen-sm-max) {
+      text-align: right;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      text-align: left;
+    }
+
+    .status-icon {
+      margin-right: 4px;
+
+      @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+        margin-right: 0;
+      }
+
+      &:before {
+        @include svg();
+        vertical-align: middle;
+      }
+    }
+
+    span {
+
+      @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+        display: none;
+      }
+    }
+  }
+
+  .price-wrap {
+    width: 135px;
+    padding: 0 5px;
+    text-align: right;
+
+    @media (max-width: $screen-sm-max) {
+      display: block;
+      padding: 0;
+      width: 100%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      text-align: left;
+    }
+  }
+  
+  .cat-status {
+    
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-max)  {
+      font-size: 0;
+      width: auto;
+    }
+  }
+
+  .old-price {
+    max-height: 14px;
+    overflow: hidden;
+    color: #b1b8bc;
+    font-size: 14px;
+    text-decoration: line-through;
+    line-height: 1;
+  }
+
+  .current-price {
+    overflow: hidden;
+    //max-height: 18px;
+    @include font-family-bold();
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .price {
+    @include font-family-medium;
+    color: $link-color-hover;
+    font-size: 18px;
+  }
+
+  .currency {
+    @include font-family-regular();
+  }
+
+  .btn-buy-wrap {
+    width: 80px;
+    padding-left: 20px;
+    text-align: right;
+
+    @media (max-width: $screen-xs-max) {
+      vertical-align: top;
+      padding-top: 7px;
+    }
+
+    .btn {
+      margin-bottom: 5px;
+      padding: 9px  25px 8px;
+    }
+
+    .buy-one-click {
+      font-size: 14px;
+    }
+
+    .lnk-pseudo {
+
+      @include hover-focus() {
+        text-decoration: none;
+      }
+    }
+  }
+}

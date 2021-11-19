@@ -1,0 +1,8 @@
+if (ratingValue === undefined)
+  - var ratingValue = 4;
+.element-rating
+  ul.list.list-reset
+    - n = 0;
+    while n < 5
+      - n++
+      li.item(class=n <= ratingValue ? 'active' : '')

@@ -1,0 +1,90 @@
+$_search_head-3-height: 40px;
+$_search_head-3-font-size: 14px;
+$_search_head-3-line-height: 1.3; // !!Only multiplier!!
+$_search_head-3-border-radius: $border-radius-base;
+$_search_head-3-text-color: $text-color;
+$_search_head-3-background-color: #fff;
+$_search_head-3-border-width: 1px;
+$_search_head-3-border-color: #ccc;
+$_search_head-3-border-color-focus: darken($_search_head-3-border-color, 10%);
+$_search_head-3-padding-left: 16px;
+$_search_head-3-padding-right: 120px;
+
+.search-head-3 {
+  margin: 20px 0;
+
+  .field {
+    position: relative;
+    width: 100%;
+  }
+
+  .input {
+    height: $_search_head-3-height;
+    padding: (floor((($_search_head-3-height - ($_search_head-3-border-width * 2)) - (round($_search_head-3-font-size * $_search_head-3-line-height))) / 2)) $_search_head-3-padding-right (floor((($_search_head-3-height - ($_search_head-3-border-width * 2)) - (round($_search_head-3-font-size * $_search_head-3-line-height))) / 2)) $_search_head-3-padding-left; // So IE normally display the input line in the middle
+    line-height: (round($_search_head-3-font-size * $_search_head-3-line-height));
+    font-size: $_search_head-3-font-size;
+    border-radius: $_search_head-3-border-radius;
+    color: $_search_head-3-text-color;
+    background: $_search_head-3-background-color;
+    border: $_search_head-3-border-width solid $_search_head-3-border-color;
+    width: 100%;
+
+    @include placeholder(#676767);
+
+    &:-moz-placeholder {
+      @include font-family-light;
+    }
+
+    &::-moz-placeholder {
+      @include font-family-light;
+    }
+
+    &:-ms-input-placeholder {
+      @include font-family-light;
+    }
+
+    &::-webkit-input-placeholder {
+      @include font-family-light;
+    }
+
+    &:focus {
+      border-color: $_search_head-3-border-color-focus;
+    }
+  }
+
+  .submit {
+    padding: 5px 23px 5px 48px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0 $_search_head-3-border-radius $_search_head-3-border-radius 0;
+    box-shadow: inset 0 0 3px rgba(255,255,255,.1);
+    transition: background ease .15s;
+    border: 1px solid;
+    border-top-color:     #5E9BC4;
+    border-left-color:    #0E6EAE;
+    border-right-color:   #0E6EAE;
+    border-bottom-color:  #0B6594;
+    background: linear-gradient(to bottom, rgba(69,125,204,1) 0%,rgba(58,114,193,1) 100%);
+
+    &:before {
+      position: absolute;
+      @include svg();
+      @include svg-search-btn-3();
+      top: 12px;
+      left: 21px;
+      vertical-align: middle;
+    }
+
+    @include hover-focus() {
+      background: linear-gradient(to bottom, rgba(206,24,24,1) 0%,rgba(183,17,40,1) 100%);
+      border-top-color:     #DC694F;
+      border-left-color:    #C12B2D;
+      border-right-color:   #C12B2D;
+      border-bottom-color:  #8E0B17;
+    }
+  }
+}

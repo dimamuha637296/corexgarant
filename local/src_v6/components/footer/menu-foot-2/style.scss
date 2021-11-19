@@ -1,0 +1,132 @@
+$_menu_foot-2-color:                               $text-footer-color;
+$_menu_foot-2-color-hover:                         $_menu_foot-2-color;
+$_menu_foot-2-color-active:                        #000000;
+$_menu_foot-2-color-active-hover:                  $_menu_foot-2-color-active;
+
+.menu-foot-2 {
+
+  @media (max-width: $screen-sm-max) {
+    display: none;
+  }
+
+  .inner {
+    @include clearfix;
+    margin: 0 ($grid-gutter-width / -2);
+  }
+
+  .menu_level_1 {
+    margin: 0;
+    float: left;
+    width: 25%;
+
+    .g-wrap & {
+      padding: 0 ($grid-gutter-width / 2);
+    }
+  }
+
+  [class*=item] {
+
+    > a,
+    > span {
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      color: $_menu_foot-2-color;
+    }
+
+    > a {
+      text-decoration: underline;
+      text-decoration-color: rgba($_menu_foot-2-color, .6);
+
+      @include hover-focus {
+        color: $_menu_foot-2-color-hover;
+        text-decoration: none;
+        text-decoration-color: rgba($_menu_foot-2-color-hover, .6);
+      }
+    }
+
+    &.active {
+
+      > a,
+      > span {
+        color: $_menu_foot-2-color-active;
+      }
+
+      > a {
+        text-decoration-color: rgba($_menu_foot-2-color-active, .6);
+
+        @include hover-focus {
+          color: $_menu_foot-2-color-active-hover;
+          text-decoration-color: rgba($_menu_foot-2-color-active-hover, .6);
+        }
+      }
+    }
+  }
+
+  .item_1 {
+    margin-bottom: 30px;
+
+    > a,
+    > span {
+      @include font-family-medium();
+      text-transform: uppercase;
+    }
+
+    > a {
+      text-decoration: none;
+
+      @include hover-focus {
+        color: $_menu_foot-2-color-hover;
+
+        > span {
+
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+
+      > span {
+        position: relative;
+        display: inline-block;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $_menu_foot-2-color;
+          transition: $transition-link;
+        }
+      }
+    }
+
+    &.active {
+
+      > a {
+
+        > span {
+
+          &:after {
+            background-color: $_menu_foot-2-color-active;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_level_2 {
+    margin: 14px 0 0;
+  }
+
+  .item_2 {
+    display: block;
+    margin: 0 0 8px;
+
+    > a,
+    > span {
+      font-size: 15px;
+    }
+  }
+}

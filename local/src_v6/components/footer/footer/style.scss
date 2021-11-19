@@ -1,0 +1,15 @@
+$_footer-bg:                              $brand-gray-2;
+
+.footer {
+  background: $_footer-bg;
+
+  .layout-simple & {
+    padding: 30px 0 15px;
+  }
+
+  &__small {
+    margin-top: 20px;
+    padding: 25px 0 15px;
+    border-top: 1px solid rgba($text-footer-color, .5);
+  }
+}

@@ -1,0 +1,18 @@
+mixin input(data)
+  -
+    var className = data.className !== undefined ? data.className : 'form-control';
+    var attr = {};
+    if (data.id !== undefined) attr.id = data.id;
+    if (data.name !== undefined) attr.name = data.name;
+    else if (data.id !== undefined) attr.name = attr.id;
+    if (data.type !== undefined) attr.type = data.type;
+    if (data.value !== undefined) attr.value = data.value;
+    if (data.placeholder !== undefined) attr.placeholder = data.placeholder;
+    if (data.maxlength !== undefined) attr.maxlength = data.maxlength;
+    if (data.minlength !== undefined) attr.minlength = data.minlength;
+    if (data.max !== undefined) attr.max = data.max;
+    if (data.min !== undefined) attr.min = data.min;
+    if (data.spellcheck !== undefined) attr.spellcheck = data.spellcheck;
+    if (data.required !== undefined) attr.required = data.required;
+    if (data.disabled !== undefined) attr.disabled = data.disabled;
+  input(class=className)&attributes(attr)

@@ -1,0 +1,9 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Product filter';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Фильтр товаров
+block aside
+  include ../../../components/catalog/catalog-filter/index

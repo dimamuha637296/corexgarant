@@ -1,0 +1,95 @@
+mixin submenu-3(data)
+  if (data === undefined)
+    -
+      var data = [
+        {
+          text: 'О компании',
+          isActive: true,
+          href: '#'
+        },
+        {
+          text: 'Продукция',
+          href: '#',
+          submenu: [
+            {
+              text: 'О компании',
+              isActive: true,
+              href: '#'
+            },
+            {
+              text: 'Продукция',
+              href: '#',
+              submenu: [
+                {
+                  text: 'Наши проекты',
+                  isActive: true
+                },
+                {
+                  text: 'Инструменты и загрузки',
+                  href: '#'
+                },
+                {
+                  text: 'Контакты',
+                  href: '#'
+                }
+              ]
+            },
+            {
+              text: 'Услуги',
+              isActive: true
+            },
+            {
+              text: 'Наши проекты',
+              href: '#'
+            },
+            {
+              text: 'Инструменты и загрузки',
+              href: '#'
+            },
+            {
+              text: 'Контакты',
+              href: '#'
+            }
+          ]
+        },
+        {
+          text: 'Услуги',
+          isActive: true
+        },
+        {
+          text: 'Наши проекты',
+          href: '#'
+        },
+        {
+          text: 'Инструменты и загрузки',
+          href: '#'
+        },
+        {
+          text: 'Контакты',
+          href: '#'
+        }
+      ];
+  .submenu-3
+    ul.menu_level_2.list-reset
+      each item_2 in data
+        li.item_2(class=item_2.isActive === true ? 'active' : '')
+          #{item_2.href ? 'a' : 'span'}&attributes(item_2.href ? {'href': item_2.href} : {} )
+            span #{item_2.text}
+            if (item_2.submenu)
+              .icon
+          if (item_2.submenu)
+            .submenu-inner
+              ul.menu_level_3.list-reset
+                each item_3 in item_2.submenu
+                  li.item_3(class=item_3.isActive === true ? 'active' : '')
+                    #{item_3.href ? 'a' : 'span'}&attributes(item_3.href ? {'href': item_3.href} : {} )
+                      span #{item_3.text}
+                      if (item_3.submenu)
+                        .icon
+                    if (item_3.submenu)
+                      .submenu-inner
+                        ul.menu_level_4.list-reset
+                          each item_4 in item_3.submenu
+                            li.item_4(class=item_4.isActive === true ? 'active' : '')
+                              #{item_4.href ? 'a' : 'span'}&attributes(item_4.href ? {'href': item_4.href} : {} )
+                                span #{item_4.text}

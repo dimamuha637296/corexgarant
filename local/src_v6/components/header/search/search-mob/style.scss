@@ -1,0 +1,86 @@
+$_search-mob-bg-dropdown:                        $brand-gray-1;
+
+.search-mob {
+  position: relative;
+
+  .dropdown-toggle {
+    @include mobile-height;
+    cursor: pointer;
+
+    &:before {
+      @include svg();
+      @include svg-search-btn_mob();
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    padding: 17px 0 18px;
+    border-radius: 0;
+    border: none;
+    background: $_search-mob-bg-dropdown;
+  }
+
+  &.show {
+    background: $_search-mob-bg-dropdown;
+
+    .dropdown-toggle {
+
+      &:before {
+        @include svg-search-btn_mob--hover();
+      }
+    }
+  }
+}
+
+$_search_head_mob-height: 32px;
+$_search_head_mob-font-size: 14px;
+$_search_head_mob-line-height: 1.3; // !!Only multiplier!!
+$_search_head_mob-border-radius: $border-radius-base;
+$_search_head_mob-text-color: $text-color;
+$_search_head_mob-background-color: #fff;
+$_search_head_mob-btn-color: #427CC8;
+$_search_head_mob-border-width: 1px;
+$_search_head_mob-border-color: #ccc;
+$_search_head_mob-border-color-focus: darken($_search_head_mob-border-color, 10%);
+$_search_head_mob-padding-left: 16px;
+$_search_head_mob-padding-right: 90px;
+
+.search-head-mob {
+
+  .field {
+    position: relative;
+    width: 100%;
+  }
+
+  .input {
+    height: $_search_head_mob-height;
+    padding: (floor((($_search_head_mob-height - ($_search_head_mob-border-width * 2)) - (round($_search_head_mob-font-size * $_search_head_mob-line-height))) / 2)) $_search_head_mob-padding-right (floor((($_search_head_mob-height - ($_search_head_mob-border-width * 2)) - (round($_search_head_mob-font-size * $_search_head_mob-line-height))) / 2)) $_search_head_mob-padding-left; // So IE normally display the input line in the middle
+    line-height: (round($_search_head_mob-font-size * $_search_head_mob-line-height));
+    font-size: $_search_head_mob-font-size;
+    border-radius: $_search_head_mob-border-radius;
+    color: $_search_head_mob-text-color;
+    background: $_search_head_mob-background-color;
+    border: $_search_head_mob-border-width solid $_search_head_mob-border-color;
+    width: 100%;
+    @include placeholder();
+
+    &:focus {
+      border-color: $_search_head_mob-border-color-focus;
+    }
+  }
+
+  .btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 82px;
+    height: $_search_head_mob-height;
+    padding: 0;
+    border: 0;
+    border-radius: 0 $_search_head_mob-border-radius $_search_head_mob-border-radius 0;
+    @include font-family-medium();
+  }
+}

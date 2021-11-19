@@ -1,0 +1,15 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Таблицы';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  include ../../../components/base/tables/simple/index
+  include ../../../components/base/tables/caption/index
+  include ../../../components/base/tables/no_border/index
+  include ../../../components/base/tables/full_border/index
+  include ../../../components/base/tables/numb/index
+  include ../../../components/base/tables/adapt_1/index
+  include ../../../components/base/tables/adapt_1--2/index
+  include ../../../components/base/tables/adapt_1--3/index
+  include ../../../components/base/tables/slider/index

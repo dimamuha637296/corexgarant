@@ -1,0 +1,20 @@
+extends ../../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Header (Type 5)';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../../';
+  - DB.headerModifier = 'header--5 fixed-header-2';
+block header
+  include ../../../../components/header/header-5/index
+block content
+  include ../../../../components/pages/index/sl-main/index
+  include ../../../../components/pages/index/teaser_2/index
+  include ../../../../components/pages/index/sl-teaser/index
+  include ../../../../components/pages/index/catalog-4/index
+  include ../../../../components/pages/index/services/index
+  .row
+    .col-md-12.col-lg-8
+      include ../../../../components/pages/index/text-block/index
+    .col-md-12.col-lg-4
+      include ../../../../components/pages/index/news-main-3/index
+  include ../../../../components/pages/index/sl-partners/index

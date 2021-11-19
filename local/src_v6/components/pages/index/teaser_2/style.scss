@@ -1,0 +1,65 @@
+.teaser_2 {
+  margin-bottom: 20px;
+
+  .item {
+    margin-bottom: $grid-gutter-width;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .inner {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+
+    @include hover-focus() {
+      opacity: .8;
+    }
+
+    &.color-0 {
+      background: #0c52ba;
+    }
+
+    &.color-1 {
+      background: #238a33;
+    }
+
+    &.color-2 {
+      background: #ba7020;
+    }
+
+    &.color-3 {
+      background: #55ba53;
+    }
+  }
+
+  .wrap {
+    position: relative;
+    padding: 10px 20px 10px 60px;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .pic {
+    max-width: 50px;
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    transform: translateY(-50%);
+  }
+
+  .img {
+    max-height: 50px;
+  }
+
+  .title {
+    color: #fff;
+    margin-top: 0;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+}

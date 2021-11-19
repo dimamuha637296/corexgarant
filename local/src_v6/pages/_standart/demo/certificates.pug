@@ -1,0 +1,12 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Сертификаты';
+  - DB.DIR = '../../';
+block title
+  h1#title
+    | Дипломы и сертификаты
+block content
+  include ../../../components/demo/cert-list/index
+  .h2
+    | Сертификаты плиткой
+  include ../../../components/demo/cert-tile/index

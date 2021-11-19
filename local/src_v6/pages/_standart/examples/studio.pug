@@ -1,0 +1,12 @@
+extends ../../tpl/main
+block pageVars
+  - DB.pageTitle = 'Копирайты студии';
+  - DB.layout = 'wide';
+  - DB.DIR = '../../';
+block content
+  div(style='padding: 15px 15px 1px; margin: 0 0 20px; background: #f7f8f3;')
+    include ../../../components/footer/studio/index
+  div(style='padding: 15px 15px 1px; margin: 0 0 20px; background: #2c2c2c;')
+    include ../../../components/footer/studio--invert/index
+  div(style='padding: 15px 15px 1px; margin: 0 0 20px; background: #2c2c2c;')
+    include ../../../components/footer/studio--white/index

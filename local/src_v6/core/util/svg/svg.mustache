@@ -1,0 +1,28 @@
+@mixin svg() {
+  content: ' ';
+  display: inline-block;
+}
+
+[class*='svg-'] {
+  display: inline-block;
+
+  &:before {
+    @include svg;
+  }
+}
+
+{{#svgArr}}
+@mixin svg-{{filename}} {
+  background-image:url('data:image/svg+xml,{{dataurl}}');
+  width: {{width}}px;
+  height: {{height}}px;
+}
+
+.svg-{{filename}} {
+
+  &:before {
+    @include svg-{{filename}};
+  }
+}
+
+{{/svgArr}}

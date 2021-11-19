@@ -1,0 +1,135 @@
+.albums-2 {
+  margin-bottom: 50px;
+
+  &__item {
+    display: block;
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-md-max) {
+
+      .albums-2__img-wrap {
+
+        &:before {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 268px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+
+      .albums-2__img-wrap {
+
+        &:before {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__item-wrap {
+    height: 210px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__img-wrap {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:before {
+      content: '';
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      background-color: #000;
+      opacity: 0.3;
+      transition: all .3s ease-out;
+    }
+
+    .ie & {
+      transform: rotate(0.01deg); // IE hover shanking fix
+    }
+  }
+
+  &__img {
+    z-index: 1;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%,-50%) scale(1);
+    backface-visibility: hidden;
+    transition: all .45s ease-out;
+
+    .g-wrap & {
+      max-width: none;
+    }
+  }
+
+  &__text {
+    z-index: 2;
+    position: relative;
+    padding: 20px 40px;
+    transition: all .45s ease-out;
+
+    @media (max-width: $screen-lg-max) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__title {
+    overflow: hidden;
+    margin-bottom: 20px;
+    color: #fff;
+    @include font-family-italic();
+    font-size: 25px;
+    line-height: 1.25;
+    max-height: 1.25 * 3em;
+
+    @media (max-width: $screen-lg-max) {
+      font-size: 22px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 20px;
+    }
+  }
+
+  &__desc {
+    overflow: hidden;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.45;
+    max-height: 1.45 * 3em;
+  }
+}

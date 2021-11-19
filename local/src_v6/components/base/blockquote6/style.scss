@@ -1,0 +1,69 @@
+/* blockquote-style-6.scss */
+
+// var ****************************************************************************************************************
+
+
+// mixins *************************************************************************************************************
+
+// styles *************************************************************************************************************
+
+blockquote.style-6 {
+  padding: 0 50px 30px;
+  margin: 0 0 40px 0;
+  overflow: hidden;
+  font-size: 18px;
+  color: #434a54;
+  border-bottom: 1px solid $_blockquote-border-color;
+  text-align: center;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0 30px 25px;
+    font-size: 16px;
+  }
+
+  .title {
+    color: $headings-color;
+    font-size: 24px;
+    @include font-family-medium();
+    margin-bottom: 8px;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 20px;
+    }
+  }
+
+  .title-small {
+    padding: 0 25px;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    @include font-family-medium();
+    font-size: 15px;
+    line-height: 1;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 14px;
+    }
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 1000%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $_blockquote-border-color;
+    }
+
+    &:after {
+      left: 100%;
+    }
+
+    &:before {
+      right: 100%;
+    }
+  }
+}
