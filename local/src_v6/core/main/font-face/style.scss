@@ -18,37 +18,130 @@ $_font-family-sans-serif: Helvetica, Arial, sans-serif;
   font-style: normal;
 }
 
-@include font-face('Roboto Regular', Roboto-Regular);
-$font-r: Roboto-Regular, $_font-family-sans-serif;
+@include font-face('Raleway', Raleway-Regular);
+$font-r: Raleway-Regular, $_font-family-sans-serif;
 @mixin font-family-regular() {
   font-family: $font-r;
   @include skip-font-styles();
 }
 
-@include font-face('Roboto Bold', Roboto-Bold);
-$font-b: Roboto-Bold, $_font-family-sans-serif;
+@include font-face('Raleway', Raleway-Bold);
+$font-b: Raleway-Bold, $_font-family-sans-serif;
 @mixin font-family-bold() {
   font-family: $font-b;
   @include skip-font-styles();
 }
 
-@include font-face('Roboto Italic', Roboto-Italic);
-$font-i: Roboto-Italic, $_font-family-sans-serif;
+@include font-face('Raleway', Raleway-SemiBold);
+$font-sb: Raleway-SemiBold, $_font-family-sans-serif;
+@mixin font-family-semibold() {
+  font-family: $font-sb;
+  @include skip-font-styles();
+}
+
+@include font-face('Raleway', Raleway-ExtraBold);
+$font-eb: Raleway-ExtraBold, $_font-family-sans-serif;
+@mixin font-family-extrabold() {
+  font-family: $font-eb;
+  @include skip-font-styles();
+}
+
+@include font-face('Raleway', Raleway-Italic);
+$font-i: Raleway-Italic, $_font-family-sans-serif;
 @mixin font-family-italic() {
   font-family: $font-i;
   @include skip-font-styles();
 }
 
-@include font-face('Roboto Light', Roboto-Light);
-$font-l: Roboto-Light, $_font-family-sans-serif;
+@include font-face('Raleway', Raleway-Light);
+$font-l: Raleway-Light, $_font-family-sans-serif;
 @mixin font-family-light() {
   font-family: $font-l;
   @include skip-font-styles();
 }
 
-@include font-face('Roboto Medium', Roboto-Medium);
-$font-m: Roboto-Medium, $_font-family-sans-serif;
+@include font-face('Raleway', Raleway-ExtraLight);
+$font-el: Raleway-ExtraLight, $_font-family-sans-serif;
+@mixin font-family-extralight() {
+  font-family: $font-el;
+  @include skip-font-styles();
+}
+
+@include font-face('Raleway', Raleway-Medium);
+$font-m: Raleway-Medium, $_font-family-sans-serif;
 @mixin font-family-medium() {
   font-family: $font-m;
+  @include skip-font-styles();
+}
+
+@include font-face('Raleway', Raleway-Black);
+$font-bl: Raleway-Black, $_font-family-sans-serif;
+@mixin font-family-black() {
+  font-family: $font-bl;
+  @include skip-font-styles();
+}
+
+
+
+@include font-face('Lato', Lato-Regular);
+$font-lr: Lato-Regular, $_font-family-sans-serif;
+@mixin font-family-lato-regular() {
+  font-family: $font-lr;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-Bold);
+$font-lb: Lato-Bold, $_font-family-sans-serif;
+@mixin font-family-lato-bold() {
+  font-family: $font-lb;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-SemiBold);
+$font-lsb: Lato-SemiBold, $_font-family-sans-serif;
+@mixin font-family-lato-semibold() {
+  font-family: $font-lsb;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-ExtraBold);
+$font-leb: Lato-ExtraBold, $_font-family-sans-serif;
+@mixin font-family-lato-extrabold() {
+  font-family: $font-leb;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-Italic);
+$font-li: Lato-Italic, $_font-family-sans-serif;
+@mixin font-family-lato-italic() {
+  font-family: $font-li;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-Light);
+$font-ll: Lato-Light, $_font-family-sans-serif;
+@mixin font-family-lato-light() {
+  font-family: $font-ll;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-ExtraLight);
+$font-lel: Lato-ExtraLight, $_font-family-sans-serif;
+@mixin font-family-lato-extralight() {
+  font-family: $font-lel;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-Medium);
+$font-lm: Lato-Medium, $_font-family-sans-serif;
+@mixin font-family-lato-medium() {
+  font-family: $font-lm;
+  @include skip-font-styles();
+}
+
+@include font-face('Lato', Lato-Black);
+$font-lbl: Lato-Black, $_font-family-sans-serif;
+@mixin font-family-lato-black() {
+  font-family: $font-lbl;
   @include skip-font-styles();
 }

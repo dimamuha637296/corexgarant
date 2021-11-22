@@ -9,7 +9,7 @@ ws.const.screen = {
  container_sm: 540,
  container_md: 720,
  container_lg: 960,
- container_xl: 1160,
+ container_xl: 1180,
  screen_xs_max: 575.98,
  screen_sm_max: 767.98,
  screen_md_max: 991.98,

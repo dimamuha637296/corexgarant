@@ -215,30 +215,6 @@
 .png-catalog-yes:before {
   @include png-catalog-yes;
 }
-@mixin png-element-hit() {
-  background-position: 0px -160px;
-  width: 42px;
-  height: 42px;
-}
-.png-element-hit:before {
-  @include png-element-hit;
-}
-@mixin png-element-new() {
-  background-position: -44px -160px;
-  width: 42px;
-  height: 42px;
-}
-.png-element-new:before {
-  @include png-element-new;
-}
-@mixin png-element-percent() {
-  background-position: -88px -160px;
-  width: 42px;
-  height: 42px;
-}
-.png-element-percent:before {
-  @include png-element-percent;
-}
 @mixin png-element-sale-2-hit() {
   background-position: -212px 0px;
   width: 30px;
@@ -262,6 +238,30 @@
 }
 .png-element-sale-2-percent:before {
   @include png-element-sale-2-percent;
+}
+@mixin png-element-hit() {
+  background-position: 0px -160px;
+  width: 42px;
+  height: 42px;
+}
+.png-element-hit:before {
+  @include png-element-hit;
+}
+@mixin png-element-new() {
+  background-position: -44px -160px;
+  width: 42px;
+  height: 42px;
+}
+.png-element-new:before {
+  @include png-element-new;
+}
+@mixin png-element-percent() {
+  background-position: -88px -160px;
+  width: 42px;
+  height: 42px;
+}
+.png-element-percent:before {
+  @include png-element-percent;
 }
 @mixin png-dealers-1() {
   background-position: -146px -204px;

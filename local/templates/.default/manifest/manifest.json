@@ -1,6 +1,6 @@
 {
-  "name": "standart",
-  "short_name": "standart",
+  "name": "corexgarant",
+  "short_name": "corexgarant",
   "description": "db.by framework based on Bootstrap",
   "dir": "auto",
   "lang": "ru-RU",
@@ -8,7 +8,7 @@
   "orientation": "portrait",
   "start_url": "/",
   "background_color": "#ffffff",
-  "theme_color": "#3a71c0",
+  "theme_color": "#033550",
   "icons": [
     {
       "src": "android-chrome-36x36.png",
