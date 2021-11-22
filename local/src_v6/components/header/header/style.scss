@@ -1,4 +1,4 @@
-$header-mob-height:                 48px;
+$header-mob-height:                 40px;
 $header-additional-background:      $brand-gray-1;
 $mob-menu-element-width-mob:        40px;
 $mob-menu-element-width-xs:         50px;
@@ -8,11 +8,11 @@ $mob-menu-element-width-xs:         50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $mob-menu-element-width-mob;
-
-  @media (min-width: $screen-sm-min) {
-    width: $mob-menu-element-width-xs;
-  }
+  //width: $mob-menu-element-width-mob;
+  //
+  //@media (min-width: $screen-sm-min) {
+  //  width: $mob-menu-element-width-xs;
+  //}
 }
 
 @mixin mobile-height-item {
@@ -21,33 +21,16 @@ $mob-menu-element-width-xs:         50px;
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  opacity: 1;
+  transition: $transition-default;
 
   @media (max-width: $grid-breakpoint-max) {
-    border-bottom: 1px solid $border-color-base;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 101;
-    background: $body-bg-color;
     min-width: $site-min-width;
-  }
-
-  &__top {
-    padding: 15px 0;
-    border-bottom: 1px solid $border-color-base;
-
-    > .row {
-      align-items: center;
-    }
-  }
-
-  &__bottom {
-    padding: 15px 0;
-
-    > .row {
-      align-items: center;
-    }
   }
 
   &__mob {
@@ -63,14 +46,65 @@ $mob-menu-element-width-xs:         50px;
   }
 
   &__tools {
+    flex: 0 0 100%;
     margin-left: auto;
     display: flex;
   }
 
   &__desktop {
+    background: $brand-white;
+    box-shadow: $box-shadow-base;
 
-    @media (max-width: $grid-breakpoint-max) {
-      display: none;
+    .main & {
+
+      &:not(.header__desktop--scroll) {
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__col {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &--logo {
+      display: flex;
+      align-items: center;
+    }
+
+    &--contacts {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 11px;
+
+      @media (max-width: $screen-sm-max) {
+        margin-right: 0;
+      }
+    }
+
+    &--links {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+    }
+
+    &--hamb {
+      display: flex;
+      align-items: center;
     }
   }
 

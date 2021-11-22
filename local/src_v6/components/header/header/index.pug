@@ -1,30 +1,14 @@
-.header__mob
-  .container
-    include ../../../components/header/logo/logo-mob/index
-    .header__tools
-      include ../../../components/header/contacts/contacts-mob/index
-      include ../../../components/header/search/search-mob/index
-      include ../../../components/header/lang/lang-mob/index
-      include ../../../components/header/hamburger/hamburger-opener/index
+include ../../../components/base/btns/btn/index
+include ../../../components/base/btns/btns-brand/index
+
 .header__desktop
   .container
-    .header__top
-      .row
-        .col-5
-          include ../../../components/header/menu/menu-hor/index
-        .col-3
-          include ../../../components/header/search/search-head/index
-        .col-xl-2.col-lg-1
-          include ../../../components/header/lang/lang/index
-        .col-xl-2.col-lg-3
-          include ../../../components/header/question/btn-question/index
-    .header__bottom
-      .row
-        .col-7.col-xl-6
-          include ../../../components/header/logo/logo-png/index
-        .col-4
-          include ../../../components/header/contacts/contacts-head/index
-        .col-1.col-xl-2
-          include ../../../components/header/menu-base/hamburger-opener-menu/index
-    block menu_head
-      include ../../../components/header/menu/menu-drop-8/index
+    .header__row.row
+      .header__col.header__col--logo
+        include ../../../components/header/logo/logo-png/index
+      .header__col.header__col--contacts
+        include ../../../components/header/contacts/contacts-head-5/index
+      .header__col.header__col--links.d-none.d-md-flex
+        include ../../../components/header/head-links/index
+      .header__col.header__col--hamb
+        include ../../../components/header/hamburger/hamburger-opener/index

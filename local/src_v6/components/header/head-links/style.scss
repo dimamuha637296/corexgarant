@@ -1,0 +1,116 @@
+$head-links-padding-width:          15px;
+$head-links-padding-width-lg:        5px;
+$head-links-padding-width-md:        5px;
+
+.head-links {
+
+  @media (max-width: $screen-md-max) {
+    flex: 1 0 auto;
+    margin-top: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-left: -$head-links-padding-width;
+    margin-right: -$head-links-padding-width;
+
+    @media (max-width: $screen-lg-max) {
+      margin-left: -$head-links-padding-width-lg;
+      margin-right: -$head-links-padding-width-lg;
+    }
+
+    @media (max-width: $screen-md-max) {
+      margin-left: -$head-links-padding-width-md;
+      margin-right: -$head-links-padding-width-md;
+    }
+  }
+
+  &__col {
+    padding-left: $head-links-padding-width;
+    padding-right: $head-links-padding-width;
+
+    @media (max-width: $screen-lg-max) {
+      padding-left: $head-links-padding-width-lg;
+      padding-right: $head-links-padding-width-lg;
+    }
+
+    @media (max-width: $screen-md-max) {
+      padding-left: $head-links-padding-width-md;
+      padding-right: $head-links-padding-width-md;
+    }
+
+    &--logo {
+      flex: 1 0 auto;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &--human {
+
+      .head-links__icon {
+
+        &:before {
+          @include svg-head-links--human();
+
+          @media (max-width: $screen-sm-max) {
+            width: 18px;
+            height: 18px;
+          }
+
+          .main .header__desktop:not(.header__desktop--scroll) & {
+
+            @media (min-width: $screen-md-min) {
+              @include svg-head-links--human-white();
+            }
+
+            @media (max-width: $screen-sm-max) {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &--location {
+
+      .head-links__icon {
+
+        &:before {
+          @include svg-head-links--location();
+
+          @media (max-width: $screen-sm-max) {
+            width: 18px;
+            height: 18px;
+          }
+
+          .main .header__desktop:not(.header__desktop--scroll) & {
+
+            @media (min-width: $screen-md-min) {
+              @include svg-head-links--location-white();
+            }
+
+            @media (max-width: $screen-sm-max) {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      @include svg();
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

@@ -122,7 +122,7 @@
             this.window.off('resize.wsMobileMenu').on('resize.wsMobileMenu', function () {
                 clearTimeout(app.timer);
                 app.timer = setTimeout(function () {
-                    app._data.workApp = getInnerWidth() < ws.const.screen.grid_breakpoint_max;
+                    app._data.workApp = getInnerWidth();
                     app.setClickHandlers();
                 }, 300);
             });
@@ -144,7 +144,7 @@
                 blockClass: 'pm-block',
                 closeClass: 'pm-close'
             };
-            this._data.workApp = getInnerWidth() < ws.const.screen.grid_breakpoint_max;
+            this._data.workApp = getInnerWidth();
             this.openBtn = $('.pm-opener');
             this.backdrop = this.block.find('.pm-backdrop');
             this.closeBtn = this.block.find('.pm-backdrop, .pm-closer');

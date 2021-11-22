@@ -55,11 +55,7 @@ h1,
   margin: $head-margin-h1;
 
   @media (max-width: $screen-sm-max) {
-    font-size: decimal-round(($font-size-h1 * .8), 1);
-  }
-
-  @media (max-width: $screen-xs-max) {
-    font-size: decimal-round(($font-size-h1 * .7), 1);
+    font-size: decimal-round(($font-size-h1 * .59), 1);
   }
 
   &.small {
@@ -68,11 +64,7 @@ h1,
     margin: $head-margin-h1-small;
 
     @media (max-width: $screen-sm-max) {
-      font-size: decimal-round(($font-size-h1-small * .8), 1);
-    }
-
-    @media (max-width: $screen-xs-max) {
-      font-size: decimal-round(($font-size-h1-small * .7), 1);
+      font-size: decimal-round(($font-size-h1-small * .6), 1);
     }
   }
 }
@@ -84,11 +76,7 @@ h2,
   margin: $head-margin-h2;
 
   @media (max-width: $screen-sm-max) {
-    font-size: decimal-round(($font-size-h2 * .85), 1);
-  }
-
-  @media (max-width: $screen-xs-max) {
-    font-size: decimal-round(($font-size-h2 * .8), 1);
+    font-size: decimal-round(($font-size-h2 * .6), 1);
   }
 }
 
@@ -110,7 +98,7 @@ h4,
   margin: $head-margin-h4;
 
   @media (max-width: $screen-sm-max) {
-    font-size: decimal-round(($font-size-h4 * .95), 1);
+    font-size: decimal-round(($font-size-h4 * .85), 1);
   }
 }
 

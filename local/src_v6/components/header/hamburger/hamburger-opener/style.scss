@@ -1,14 +1,10 @@
-$_hamburger-bg: $brand-1;
+$_hamburger-bg: $brand-gray-10;
 
 .hamb-wrap {
   position: relative;
   @include mobile-height;
   justify-content: flex-end;
-  width: 29px;
-
-  @media (min-width: $screen-sm-min) {
-    width: 34px;
-  }
+  width: 25px;
 }
 
 .hamburger {
@@ -16,7 +12,7 @@ $_hamburger-bg: $brand-1;
   border: none;
   cursor: pointer;
   height: 16px;
-  width: 18px;
+  width: 25px;
   transition: 0.3s;
   padding: 0;
   background: transparent;
@@ -36,11 +32,18 @@ $_hamburger-bg: $brand-1;
     &:before,
     &:after {
       position: absolute;
-      height: 2px;
+      height: 1px;
       left: 0;
       width: 100%;
-      transition: 0.3s;
+      transition: $transition-default;
       background: $_hamburger-bg;
+
+      .main .header__desktop:not(.header__desktop--scroll) & {
+
+        @media (min-width: $screen-md-min) {
+          background: $brand-white;
+        }
+      }
     }
 
     &:before,
@@ -50,11 +53,11 @@ $_hamburger-bg: $brand-1;
     }
 
     &:before {
-      top: 5px;
+      top: 8px;
     }
 
     &:after {
-      top: -5px;
+      top: -8px;
     }
   }
 
