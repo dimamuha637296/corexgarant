@@ -1,10 +1,10 @@
-$_push-menu-bg:                       #fff;
+$_push-menu-bg:                       $brand-1;
 $_push-menu-transition-time:          .5s;
 $_push-menu-width:                    400px;
 $_push-menu-width--mob:               85%;
 
 .pm-open {
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .pm-content {
@@ -28,7 +28,7 @@ $_push-menu-width--mob:               85%;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba($brand-gray-10,.8);
   opacity: 0;
   transition: opacity $_push-menu-transition-time, z-index $_push-menu-transition-time;
   z-index: -1;
@@ -61,18 +61,19 @@ $_push-menu-width--mob:               85%;
   background: $_push-menu-bg;
   height: 100%;
   position: absolute;
-  transform: translateX(-100%);
+  right: 0;
+  transform: translateX(100%);
   transition: transform $_push-menu-transition-time;
   will-change: transform;
 
   @media (max-width: $screen-md-max) {
     width: $_push-menu-width;
-    transform: translateX(-$_push-menu-width);
+    transform: translateX($_push-menu-width);
   }
 
   @media (max-width: $screen-xs-max) {
     width: $_push-menu-width--mob;
-    transform: translateX(-$_push-menu-width--mob);
+    transform: translateX($_push-menu-width--mob);
   }
 
   .pm-open & {
@@ -82,13 +83,13 @@ $_push-menu-width--mob:               85%;
 
 .pm-inner {
   height: 100%;
-  padding: 0 ($grid-gutter-width / 2);
   position: relative;
   box-shadow: $box-shadow-base;
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 20px 80px 20px 80px;
 }
 
 .pm-head {
@@ -100,6 +101,38 @@ $_push-menu-width--mob:               85%;
 
   &__item {
     border-bottom: 1px solid $border-color-base;
+  }
+}
+
+.pm-pic {
+  margin-bottom: 56px;
+}
+
+.pm-contacts {
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    color: $brand-white;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+  }
+
+  &__icon {
+    font-size: 0;
+    line-height: 1;
+    margin-top: 2px;
+    margin-right: 10px;
   }
 }
 

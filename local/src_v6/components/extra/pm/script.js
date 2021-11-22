@@ -69,8 +69,8 @@
             this.html.addClass(this._const.class.blockClass);
             this.body.addClass(this._const.class.openClass).removeClass(this._const.class.closeClass);
             if (!this._const.pushSite) {
-                this.body.css('padding-right', this._const.bodyPad + this._const.scrollbarWidth);
-                this.gheader.css('padding-right', this._const.bodyPad + this._const.scrollbarWidth);
+                // this.body.css('padding-right', this._const.bodyPad + this._const.scrollbarWidth);
+                // this.gheader.css('padding-right', this._const.bodyPad + this._const.scrollbarWidth);
             }
             this.openBtn.addClass('opened').removeClass('closed');
             this.closeBtn.addClass('opened').removeClass('closed');
@@ -82,8 +82,8 @@
             this.html.removeClass(this._const.class.blockClass);
             this.body.addClass(this._const.class.closeClass).removeClass(this._const.class.openClass);
             if (!this._const.pushSite) {
-                this.body.css('padding-right', this._const.bodyPad);
-                this.gheader.css('padding-right', this._const.bodyPad);
+                // this.body.css('padding-right', this._const.bodyPad);
+                // this.gheader.css('padding-right', this._const.bodyPad);
             }
             this.openBtn.addClass('closed').removeClass('opened');
             this.closeBtn.addClass('closed').removeClass('opened');
@@ -136,7 +136,7 @@
             this.timer = null;
             this._data = {};
             this._const = {
-                bodyPad: parseInt(this.body.css('padding-right')),
+                // bodyPad: parseInt(this.body.css('padding-right')),
                 pushSite: this.block.hasClass('js-push-site')
             };
             this._const.class = {

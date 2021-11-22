@@ -1,6 +1,17 @@
 .pm(class=DB.pmPushSite ? 'js-push-site' : '')
   .pm-backdrop
   .pm-wrap
-    include ../../../components/header/hamburger/hamburger-closer/index
     .pm-inner
+      include ../../../components/header/hamburger/hamburger-closer/index
+      .pm-pic
+        img.pm-img(src=DB.DIR + 'img/tmp/logo-pm.svg', alt=DB.companyName)
       include ../../../components/header/menu/menu-mob/index
+      .pm-contacts
+        .pm-contacts__item
+          a.pm-contacts__link(href='tel:+375172241100')
+            i.pm-contacts__icon.svg-pm-contacts--phone
+            .pm-contacts__text +375 (17) 224-11-00
+        .pm-contacts__item
+          a.pm-contacts__link(href='#')
+            i.pm-contacts__icon.svg-pm-contacts--location
+            .pm-contacts__text г. Минск, пр-т Независимости, 36

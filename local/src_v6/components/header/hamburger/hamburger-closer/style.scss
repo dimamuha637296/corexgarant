@@ -1,12 +1,12 @@
 .hamburger-closer {
   position: absolute;
-  left: 100%;
-  top: 0;
+  right: 14px;
+  top: 32px;
 
   .pm-closer {
-    width: $header-mob-height;
-    height: $header-mob-height;
-    background: $header-additional-background;
+    width: 19px;
+    height: 19px;
+    background: transparent;
     cursor: pointer;
 
     &:before {
@@ -15,7 +15,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: -8px 0 0 -8px;
+      transform: translate(-50%, -50%);
     }
   }
 }

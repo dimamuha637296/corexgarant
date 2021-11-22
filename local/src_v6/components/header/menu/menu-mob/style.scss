@@ -1,14 +1,12 @@
-$_menu-mob-level-1-font-size:     14px;
-$_menu-mob-level-2-font-size:     14px;
-$_menu-mob-level-3-font-size:     14px;
-$_menu-mob-level-4-font-size:     13px;
-$_menu-mob-color:                 $text-color;
-$_menu-mob-color-hover:           $link-color-hover;
-$_menu-mob-color-active:          $link-color-active;
+$_menu-mob-level-1-font-size:     22px;
+$_menu-mob-level-2-font-size:     18px;
+$_menu-mob-level-3-font-size:     16px;
+$_menu-mob-level-4-font-size:     14px;
+$_menu-mob-color:                 $brand-white;
+$_menu-mob-color-hover:           $brand-2;
+$_menu-mob-color-active:          $brand-2;
 
 .menu-mob {
-  margin: 0 ($grid-gutter-width / -2);
-  @include font-family-light;
 
   [class*="menu_level_"] {
     list-style: none;
@@ -21,20 +19,19 @@ $_menu-mob-color-active:          $link-color-active;
 
     > a,
     > span {
-      line-height: 1.2;
-      padding: 16px 0;
-      padding-right: $header-mob-height;
-      padding-left: ($grid-gutter-width / 2);
-      display: block;
+      line-height: 1.4;
+      //letter-spacing: .009em;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      padding-right: 15px;
+      padding-left: 0;
+      display: inline-block;
       color: $_menu-mob-color;
 
       &.icon {
-        display: block;
+        display: inline-block;
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 50px;
-        height: 50px;
+        width: 15px;
+        height: 30px;
         text-align: center;
         padding: 0;
         margin: 0;
@@ -42,26 +39,10 @@ $_menu-mob-color-active:          $link-color-active;
 
         &:before {
           content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          width: 0;
-          height: 0;
+          @include svg();
+          @include svg-menu-mob-arrow();
           transform: rotate(90deg);
-          transition: .3s;
-          border-top: 3px solid transparent;
-          border-left: 5px solid $_menu-mob-color;
-          border-bottom: 3px solid transparent;
-        }
-
-        @include hover-focus() {
-
-          &:before {
-            border-left-color: $_menu-mob-color-hover;
-          }
+          transition: $transition-default;
         }
 
         &.collapsed {
@@ -99,46 +80,43 @@ $_menu-mob-color-active:          $link-color-active;
   }
 
   .menu_level_1 {
-    padding: 0 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
     font-size: $_menu-mob-level-1-font-size;
   }
 
   .item_1 {
-
-    + .item_1 {
-      border-top: 1px solid $border-color-base;
-    }
+    flex: 0 0 50%;
+    max-width: 50%;
+    float: left;
+    padding: 0 10px;
+    margin-bottom: 21px;
   }
 
   .menu_level_2 {
+    padding-top: 11px;
     font-size: $_menu-mob-level-2-font-size;
-    background: $header-additional-background;
-    border-top: 1px solid $body-bg-color;
   }
 
   .item_2 {
+    margin-bottom: 10px;
 
-    + .item_2 {
-      border-top: 1px solid $body-bg-color;
+    &:last-child {
+      margin-bottom: 0;
     }
 
     > a,
     > span {
-      padding-left: 31px;
+      padding-left: 70px;
     }
   }
 
   .menu_level_3 {
     font-size: $_menu-mob-level-3-font-size;
-    background: #ededed;
-    border-top: 1px solid $body-bg-color;
   }
 
   .item_3 {
-
-    + .item_3 {
-      border-top: 1px solid $body-bg-color;
-    }
 
     > a,
     > span {
@@ -148,15 +126,9 @@ $_menu-mob-color-active:          $link-color-active;
 
   .menu_level_4 {
     font-size: $_menu-mob-level-4-font-size;
-    background: #dbdbdb;
-    border-top: 1px solid $body-bg-color;
   }
 
   .item_4 {
-
-    + .item_4 {
-      border-top: 1px solid $body-bg-color;
-    }
 
     > a,
     > span {
