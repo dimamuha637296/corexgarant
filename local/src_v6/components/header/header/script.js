@@ -34,12 +34,13 @@
                 var headerPosition = header.offset().top;
                 if (headerPosition > headerHeight) {
                     if (!header.hasClass('header__desktop--scroll')) {
-                        header.parent('.header').css('opacity', '0');
-                        setTimeout(function() {
-                            header.addClass('header__desktop--scroll');
-                            setMainPadding();
-                            header.parent('.header').css('opacity', '1');
-                        }, 250);
+                        // header.parent('.header').css('opacity', '0');
+                        header.addClass('header__desktop--scroll');
+                        // setTimeout(function() {
+                        //     header.addClass('header__desktop--scroll');
+                        //     setMainPadding();
+                        //     header.parent('.header').css('opacity', '1');
+                        // }, 250);
                     }
                     // setMainPadding();
                 } else {

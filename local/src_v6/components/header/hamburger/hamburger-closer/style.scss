@@ -3,11 +3,37 @@
   right: 14px;
   top: 32px;
 
+  .header & {
+    width: 25px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: -1;
+
+    .pm-open & {
+      z-index: 0;
+      opacity: 1;
+      transition: $transition-default;
+    }
+  }
+
   .pm-closer {
     width: 19px;
     height: 19px;
     background: transparent;
     cursor: pointer;
+
+    @include hover-focus() {
+
+      &:before {
+        @include svg-hamburger-closer-menu-hover();
+
+        .header & {
+          @include svg-hamburger-closer-menu-black();
+        }
+      }
+    }
 
     &:before {
       @include svg;
@@ -16,6 +42,11 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: $transition-default;
+
+      .header & {
+        @include svg-hamburger-closer-menu-black();
+      }
     }
   }
 }

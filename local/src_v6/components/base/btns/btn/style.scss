@@ -11,7 +11,6 @@ button:focus {
 // END reboot
 
 .btn {
-  @include font-family-medium();
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -19,15 +18,21 @@ button:focus {
   max-width: 100%;
   text-decoration: none;
   border: 1px solid transparent;
-  padding: 1.2rem 2.5rem;
-  font-size: $font-size-base;
-  line-height: 1;
+  padding: 19.5px 25px;
+  font-size: 22px;
+  line-height: 1.4;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   border-radius: $border-radius-base;
   color: $brand-white;
   transition: all .15s ease-in-out; // prevent flickering on link buttons
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
+  @media (max-width: $screen-sm-max) {
+    padding-top: 14.5px;
+    padding-bottom: 14.5px;
+  }
 
   // Share hover and focus styles
   @include hover-focus {

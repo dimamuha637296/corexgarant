@@ -40,7 +40,7 @@
   @include png-breadcrumb;
 }
 @mixin png-upload-close-hover() {
-  background-position: -117px -204px;
+  background-position: -102px -204px;
   width: 13px;
   height: 13px;
 }
@@ -48,7 +48,7 @@
   @include png-upload-close-hover;
 }
 @mixin png-upload-close() {
-  background-position: -102px -204px;
+  background-position: -117px -204px;
   width: 13px;
   height: 13px;
 }
@@ -72,7 +72,7 @@
   @include png-bx-sls-close-h;
 }
 @mixin png-bx-sls-close() {
-  background-position: -244px -59px;
+  background-position: -244px -41px;
   width: 16px;
   height: 16px;
 }
@@ -96,7 +96,7 @@
   @include png-filter-btn-disabled;
 }
 @mixin png-sort-block-act() {
-  background-position: -86px -204px;
+  background-position: -70px -204px;
   width: 14px;
   height: 13px;
 }
@@ -104,7 +104,7 @@
   @include png-sort-block-act;
 }
 @mixin png-sort-block() {
-  background-position: -244px -195px;
+  background-position: -86px -204px;
   width: 14px;
   height: 13px;
 }
@@ -112,7 +112,7 @@
   @include png-sort-block;
 }
 @mixin png-sort-line-act() {
-  background-position: -244px -210px;
+  background-position: -244px -195px;
   width: 14px;
   height: 13px;
 }
@@ -120,7 +120,7 @@
   @include png-sort-line-act;
 }
 @mixin png-sort-line() {
-  background-position: -196px -160px;
+  background-position: -244px -210px;
   width: 14px;
   height: 13px;
 }
@@ -128,7 +128,7 @@
   @include png-sort-line;
 }
 @mixin png-sort-table-act() {
-  background-position: -196px -175px;
+  background-position: -196px -160px;
   width: 14px;
   height: 13px;
 }
@@ -136,7 +136,7 @@
   @include png-sort-table-act;
 }
 @mixin png-sort-table() {
-  background-position: -70px -204px;
+  background-position: -196px -175px;
   width: 14px;
   height: 13px;
 }
@@ -208,7 +208,7 @@
   @include png-catalog-no;
 }
 @mixin png-catalog-yes() {
-  background-position: -244px -41px;
+  background-position: -244px -59px;
   width: 16px;
   height: 16px;
 }
@@ -240,7 +240,7 @@
   @include png-element-sale-2-percent;
 }
 @mixin png-element-hit() {
-  background-position: 0px -160px;
+  background-position: -44px -160px;
   width: 42px;
   height: 42px;
 }
@@ -248,7 +248,7 @@
   @include png-element-hit;
 }
 @mixin png-element-new() {
-  background-position: -44px -160px;
+  background-position: -88px -160px;
   width: 42px;
   height: 42px;
 }
@@ -256,7 +256,7 @@
   @include png-element-new;
 }
 @mixin png-element-percent() {
-  background-position: -88px -160px;
+  background-position: 0px -160px;
   width: 42px;
   height: 42px;
 }
@@ -296,7 +296,7 @@
   @include png-main-list-video;
 }
 @mixin png-no-star-big() {
-  background-position: 0px -204px;
+  background-position: -23px -204px;
   width: 21px;
   height: 23px;
 }
@@ -304,7 +304,7 @@
   @include png-no-star-big;
 }
 @mixin png-star-big() {
-  background-position: -23px -204px;
+  background-position: 0px -204px;
   width: 21px;
   height: 23px;
 }
@@ -358,12 +358,4 @@
 }
 .png-exit-header-mob:before {
   @include png-exit-header-mob;
-}
-@mixin png-arr-menu-drop() {
-  background-position: -236px -140px;
-  width: 5px;
-  height: 7px;
-}
-.png-arr-menu-drop:before {
-  @include png-arr-menu-drop;
 }

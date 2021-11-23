@@ -1,10 +1,10 @@
 $_push-menu-bg:                       $brand-1;
 $_push-menu-transition-time:          .5s;
-$_push-menu-width:                    400px;
-$_push-menu-width--mob:               85%;
+$_push-menu-width:                    700px;
+$_push-menu-width--mob:               100%;
 
 .pm-open {
-  //overflow: hidden;
+  overflow: hidden;
 }
 
 .pm-content {
@@ -71,7 +71,7 @@ $_push-menu-width--mob:               85%;
     transform: translateX($_push-menu-width);
   }
 
-  @media (max-width: $screen-xs-max) {
+  @media (max-width: $screen-sm-max) {
     width: $_push-menu-width--mob;
     transform: translateX($_push-menu-width--mob);
   }
@@ -81,15 +81,30 @@ $_push-menu-width--mob:               85%;
   }
 }
 
-.pm-inner {
+.pm-container {
   height: 100%;
-  position: relative;
-  box-shadow: $box-shadow-base;
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.pm-inner {
+  position: relative;
   padding: 20px 80px 20px 80px;
+
+  @media (max-width: $screen-sm-max) {
+    padding-right: 10px;
+    padding-left: 10px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    max-width: 100%;
+    padding-top: 110px;
+  }
 }
 
 .pm-head {
@@ -106,6 +121,14 @@ $_push-menu-width--mob:               85%;
 
 .pm-pic {
   margin-bottom: 56px;
+}
+
+.pm-btn {
+  margin-bottom: 50px;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 41px;
+  }
 }
 
 .pm-contacts {

@@ -66,7 +66,28 @@
 }
 
 .btn-light-outline {
-  @include btn-color($brand-light, $brand-gray-9, true);
+  background:           none;
+  border-color:         $brand-white;
+  color:                $brand-white;
+
+  @include hover-focus  {
+    background:           $brand-white;
+    border-color:         $brand-white;
+    color:                $brand-gray-10;
+  }
+
+  &:active,
+  &.active {
+    background:           darken($brand-white, 20%);
+    border-color:         darken($brand-white, 22%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background:           $disabled-color;
+    border-color:         $disabled-color;
+    color:                $brand-white;
+  }
 }
 
 .btn-dark {

@@ -147,7 +147,7 @@
             this._data.workApp = getInnerWidth();
             this.openBtn = $('.pm-opener');
             this.backdrop = this.block.find('.pm-backdrop');
-            this.closeBtn = this.block.find('.pm-backdrop, .pm-closer');
+            this.closeBtn = $('.pm-backdrop, .pm-closer');
             if (this._const.pushSite) {
                 this.body.addClass('pm-push');
             }
