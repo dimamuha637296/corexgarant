@@ -3,13 +3,48 @@ $_footer-bg:                              $brand-1;
 .footer {
   background: $_footer-bg;
 
+  &__inner {
+    padding-top: 75px;
+
+    @media (max-width: $screen-md-max) {
+      padding-top: 40px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 60px;
+    }
+  }
+
   .layout-simple & {
     padding: 30px 0 15px;
   }
 
   &__small {
-    margin-top: 20px;
-    padding: 25px 0 15px;
-    border-top: 1px solid rgba($text-footer-color, .5);
+    margin-top: 36px;
+    padding: 31px 0 30px;
+    border-top: 1px solid #688696;
+  }
+
+  &__row {
+
+  }
+
+  &__col {
+
+    &--menu {
+      padding-top: 13px;
+    }
+
+    &--contacts {
+      padding-top: 16px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 38px;
+    }
   }
 }

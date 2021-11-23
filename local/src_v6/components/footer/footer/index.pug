@@ -1,23 +1,18 @@
 .footer__inner
   .container
-    include ../../../components/footer/subscription/index
-    .row
-      .col-lg-9.col-12
+    .footer__row.footer__row--top.row
+      .footer__col.footer__col--logo.col-lg-3.col-12
+        include ../../../components/footer/logo-foot/index
+      .footer__col.footer__col--menu.col-lg-6.col-12
         include ../../../components/footer/menu-foot-2/index
-      .col-lg-3.col-12
-        .row
-          .col-sm-6.col-lg-12.col-12
-            include ../../../components/footer/contacts-foot/index
-          .col-sm-6.col-lg-12.col-12
-            include ../../../components/footer/contacts-foot-2/index
+      .footer__col.footer__col--contacts.col-lg-3.col-12
+        +btn-light({text: 'Личный кабинет', className: 'footer__btn', outline: true})
+        include ../../../components/footer/contacts-foot/index
     .footer__small
-      .row.footer__row
-        .footer__left-col.col-md-4.col-12
-          include ../../../components/footer/logo-foot/index
+      .footer__row.footer__row--bottom.row
+        .footer__col.footer__col--copyright.col-md-3.col-12.order-2.order-md-0
           include ../../../components/footer/logo-foot-2/index
-          include ../../../components/footer/menu-foot/index
-        .footer__middle-col.col-md-4.col-12
-          include ../../../components/footer/social-foot/index
-        .footer__right-col.col-md-4.col-12
+        .footer__col.footer__col--policy.col-md-3.col-12.order-0.order-md-1
+          include ../../../components/footer/policy-foot/index
+        .footer__col.footer__col--studio.col-md-6.col-12.order-1.order-md-2
           include ../../../components/footer/studio/index
-          include ../../../components/footer/payment/index

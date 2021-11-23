@@ -1,4 +1,8 @@
-.logo-foot-2 {
+.policy-foot {
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 21px;
+  }
 
   .title {
     font-size: 18px;

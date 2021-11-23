@@ -1,34 +1,21 @@
 .studio {
-  margin-bottom: 15px;
 
-  .inner {
-    display: flex;
-  }
-
-  .pic {
-    flex-shrink: 0;
-    margin-right: 7px;
-
-    img {
-      max-width: 25px;
-      max-height: 25px;
-    }
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 23px;
   }
 
   .text-wrap {
-    padding-top: 2px;
-    color: $text-footer-color;
-    font-size: 14px;
+    font-size: 18px;
     line-height: $line-height-base;
-  }
+    text-align: right;
+    color: #688696;
 
-  .link {
-    color: $text-footer-color;
-    text-decoration-color: rgba($text-footer-color, .7);
+    @media (max-width: $screen-md-max) {
+      font-size: 16px;
+    }
 
-    @include hover-focus() {
-      text-decoration: none;
-      text-decoration-color: rgba($text-footer-color, 0);
+    @media (max-width: $screen-sm-max) {
+      text-align: left;
     }
   }
 }

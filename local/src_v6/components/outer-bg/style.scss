@@ -18,6 +18,7 @@ html body {
 }
 
 .g-wrap {
+  font-feature-settings: 'pnum' on, 'lnum' on;
   overflow: hidden;
   min-width: $site-min-width;
 
