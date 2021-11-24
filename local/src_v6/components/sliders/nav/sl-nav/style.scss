@@ -1,18 +1,25 @@
 // Navigation
 .sl-nav {
 
+  @media (max-width: $screen-sm-max) {
+    display: flex;
+  }
+
   .prev,
   .next {
     display: none;
-    width: 10%;
-    height: 100%;
-    position: absolute;
-    top: 0;
+    width: 80px;
+    height: 90px;
     z-index: 10;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0);
+    background: $brand-1;
     text-decoration: none;
     color: #fff;
+
+    @media (max-width: $screen-sm-max) {
+      width: 50%;
+      height: 62px;
+    }
 
     &.slick-arrow {
       display: block;
@@ -24,7 +31,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-shadow: 1px 2px 2px rgba(0, 0, 0, .43);
       @include svg;
       @include svg-sl-nav-next;
 
@@ -57,22 +63,33 @@
   }
 
   .prev {
-    left: -10px;
-
-    .wrap & {
-      left: 0;
-    }
 
     &:before {
       transform: translate(-50%, -50%) scale(-1, 1);
     }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: -1px;
+      height: 1px;
+      background: #688696;
+
+      @media (max-width: $screen-sm-max) {
+        left: auto;
+        right: 0;
+        top: 10px;
+        bottom: 10px;
+        height: auto;
+        width: 1px;
+      }
+    }
   }
 
   .next {
-    right: -10px;
-
-    .wrap & {
-      right: 0;
-    }
+    order: 1;
   }
 }

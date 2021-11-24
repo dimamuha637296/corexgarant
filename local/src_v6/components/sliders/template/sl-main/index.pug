@@ -6,19 +6,32 @@ mixin sl-main(data)
         each slide in data.slides
           .slide
             .inner
-              .pic
-                img.img(src=DB.DIR + 'img/tmp/' + slide.pic, alt=slide.title)
+              .bg(style=(slide.pic ? 'background-image: url(' + DB.DIR + slide.pic + ')' : ''))
               .container
                 .b-wrap
-                  .h1.title #{slide.title ? slide.title : 'Заголовок слайда'}
+                  .h1.title !{slide.title ? slide.title : 'Заголовок слайда'}
                   if (slide.text)
-                    p.text #{slide.text}
+                    p.text !{slide.text}
                   if (slide.btnText)
-                    .btn-wrap
-                      +btn-primary({text: slide.btnText})
+                    .btn-wrap.d-none.d-md-block
+                      +btn-light({text: slide.btnText, className: 'sl-main-btn', outline: true})
+                  if (slide.btnTextMob)
+                    .btn-wrap.d-block.d-md-none
+                      +btn-primary({text: slide.btnTextMob, className: 'sl-main-btn'})
+                .b-bottom
+                  .b-bottom-wrap
+                    .b-bottom-left
+                      .slide-counter
+                        span.current-slide 00
+                      .text-2-wrap
+                        .text-2 Онлайн-калькулятор для расчета стоимости доставки в любую точку мира
+                        a(href='#').link
+                          | Подробнее
+                          .icon.svg-sl-main-link-arrow
+                    .b-bottom-right
+                      if (data.fullWrap !== true && data.nav !== undefined)
+                        +#{data.nav}()
       if (data.pager !== undefined)
         +#{data.pager}()
       if (data.fullWrap === true && data.nav !== undefined)
         +#{data.nav}()
-    if (data.fullWrap !== true && data.nav !== undefined)
-      +#{data.nav}()
