@@ -1,0 +1,70 @@
+include ../../../base/forms/form_1/form/index
+.form-calculation
+  .form-calculation__inner
+    h3.h3.mt-0.form-calculation__title Откуда
+    form#form-calculation.form-1(name='form_calculation', method='post', target='_top', action='/')
+      fieldset.fieldset
+        .row
+          .col-12
+            // row
+            .form-group.form-group--big.control-group
+              .text.col-12
+                .input-wrap
+                  select#form_calculation_COUNTRY.form-control.form-control--big.ui-select(name='form_calculation_COUNTRY', required)
+                    option(value='', selected, disabled) Тип партнера
+                    option Тип 1
+                    option Тип 2
+              .controls.col-12
+          .col-12
+            // row
+            .form-group.form-group--big.control-group
+              .text.col-12
+                .input-wrap
+                  select#form_calculation_CITY.form-control.ui-select(name='form_calculation_CITY', required)
+                    option(value='', selected, disabled) Выберите категорию
+                    option Тип 1
+                    option Тип 2
+              .controls.col-12
+          .col-12
+            // row
+            .form-group.mb-0
+              .col-12.btn-wrap
+                +btn-secondary({type: 'button', className: 'btn_submit', text: '<span>Далее</span>'})(id='form-calculation-submit')
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-calculation');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form_calculation_COUNTRY': {
+                                required: true
+                            },
+                            'form_calculation_CITY': {
+                                required: true
+                            }
+                        }
+                    });
+                }
+            }
+
+            function validOnButton() {
+                var form = $('#form-calculation');
+                var btn = $('#form-calculation-submit');
+
+                btn.on('click', function () {
+                    if (form.valid()) {
+                        form.submit();
+                    }
+                })
+            }
+
+            $(function () {
+                initValid();
+                validOnButton();
+            });
+        }();

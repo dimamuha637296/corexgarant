@@ -30,8 +30,9 @@ button:focus {
   white-space: nowrap;
 
   @media (max-width: $screen-sm-max) {
-    padding-top: 14.5px;
-    padding-bottom: 14.5px;
+    font-size: 18px;
+    padding-top: 17px;
+    padding-bottom: 17px;
   }
 
   // Share hover and focus styles

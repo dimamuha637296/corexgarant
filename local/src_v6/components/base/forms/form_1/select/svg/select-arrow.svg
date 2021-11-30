@@ -1,18 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="2.9 1.9 10.3 6.3" enable-background="new 2.9 1.9 10.3 6.3" xml:space="preserve">
-<title>стрелка зеленая вниз</title>
-<desc>Created with Sketch.</desc>
-<g id="Титул">
-	<g id="Etalon-page" transform="translate(-2174.000000, -7273.000000)">
-		<g id="инпуты-в-форме" transform="translate(1484.000000, 6971.000000)">
-			<g id="стрелка-зеленая-вниз" transform="translate(692.000000, 304.000000)">
-				<path id="Line-4-Copy-3" fill="none" stroke="#000000" stroke-width="2.2561" stroke-linecap="round" d="M10,1L6,5"/>
-				<path id="Line-4-Copy-2" fill="none" stroke="#000000" stroke-width="2.2561" stroke-linecap="round" d="M2,1l4,4"/>
-			</g>
-		</g>
-	</g>
-</g>
+<svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M19 1L10 11L1 1" stroke="#033550" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

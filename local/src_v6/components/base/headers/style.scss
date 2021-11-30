@@ -78,10 +78,37 @@ h2,
   @media (max-width: $screen-sm-max) {
     font-size: decimal-round(($font-size-h2 * .6), 1);
   }
+
+  &.h2-square {
+    position: relative;
+    padding-left: 50px;
+
+    @media (max-width: $screen-sm-max) {
+      padding-left: 27px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 30px;
+      height: 30px;
+      background: $brand-2;
+
+      @media (max-width: $screen-sm-max) {
+        width: 17px;
+        height: 17px;
+        top: 9px;
+      }
+    }
+  }
 }
 
 h3,
 .h3 {
+  @include font-family-medium();
   font-size: $font-size-h3;
   line-height: $line-height-h3;
   margin: $head-margin-h3;

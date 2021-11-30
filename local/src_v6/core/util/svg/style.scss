@@ -350,9 +350,9 @@
 }
 
 @mixin svg-select-arrow--focus {
-  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%222.9%201.9%2010.3%206.3%22%3E%3Ctitle%3E%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F%20%D0%B2%D0%BD%D0%B8%D0%B7%3C%2Ftitle%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23#{str-slice(#{$link-color}, 2, -1)}%22%20stroke-width%3D%222.256%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%203L8%207M4%203l4%204%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
-  width: 10px;
-  height: 6px;
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2212%22%20viewBox%3D%220%200%2020%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M19%201l-9%2010L1%201%22%20stroke%3D%22%23033550%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 20px;
+  height: 12px;
 }
 
 .svg-select-arrow--focus {
@@ -363,9 +363,9 @@
 }
 
 @mixin svg-select-arrow {
-  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%222.9%201.9%2010.3%206.3%22%3E%3Ctitle%3E%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F%20%D0%B2%D0%BD%D0%B8%D0%B7%3C%2Ftitle%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222.256%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%203L8%207M4%203l4%204%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
-  width: 10px;
-  height: 6px;
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2212%22%20viewBox%3D%220%200%2020%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M19%201l-9%2010L1%201%22%20stroke%3D%22%23033550%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 20px;
+  height: 12px;
 }
 
 .svg-select-arrow {
@@ -567,45 +567,6 @@
 
   &:before {
     @include svg-sl-nav-next;
-  }
-}
-
-@mixin svg-sl-nav-2-next-active {
-  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color-active}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
-  width: 16px;
-  height: 29px;
-}
-
-.svg-sl-nav-2-next-active {
-
-  &:before {
-    @include svg-sl-nav-2-next-active;
-  }
-}
-
-@mixin svg-sl-nav-2-next-hover {
-  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color-hover}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
-  width: 16px;
-  height: 29px;
-}
-
-.svg-sl-nav-2-next-hover {
-
-  &:before {
-    @include svg-sl-nav-2-next-hover;
-  }
-}
-
-@mixin svg-sl-nav-2-next {
-  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
-  width: 16px;
-  height: 29px;
-}
-
-.svg-sl-nav-2-next {
-
-  &:before {
-    @include svg-sl-nav-2-next;
   }
 }
 
@@ -931,6 +892,45 @@
 
   &:before {
     @include svg-cat-item-whishlist;
+  }
+}
+
+@mixin svg-sl-nav-2-next-active {
+  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color-active}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
+  width: 16px;
+  height: 29px;
+}
+
+.svg-sl-nav-2-next-active {
+
+  &:before {
+    @include svg-sl-nav-2-next-active;
+  }
+}
+
+@mixin svg-sl-nav-2-next-hover {
+  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color-hover}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
+  width: 16px;
+  height: 29px;
+}
+
+.svg-sl-nav-2-next-hover {
+
+  &:before {
+    @include svg-sl-nav-2-next-hover;
+  }
+}
+
+@mixin svg-sl-nav-2-next {
+  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2229%22%20viewBox%3D%220%200%2021.092%2040.124%22%3E%3Cpath%20fill%3D%22%23#{str-slice(#{$link-color}, 2, -1)}%22%20d%3D%22M20.799%2019.324c-.053-.053-.119-.081-.18-.119L1.707.293A1%201%200%200%200%20.293%201.708l18.354%2018.354L.293%2038.416a1%201%200%200%200%201.414%201.415L20.62%2020.919c.061-.039.127-.066.18-.119a.995.995%200%200%200%20.287-.738%201%201%200%200%200-.288-.738z%22%2F%3E%3C%2Fsvg%3E');
+  width: 16px;
+  height: 29px;
+}
+
+.svg-sl-nav-2-next {
+
+  &:before {
+    @include svg-sl-nav-2-next;
   }
 }
 

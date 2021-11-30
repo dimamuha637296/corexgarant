@@ -92,17 +92,29 @@
     top: 0;
     right: 0;
     height: 100%;
-    width: 38px;
+    width: 49px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 32px;
+    }
 
     &:before {
       content: '';
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 0;
+      transform: translate(0, -50%);
       @include svg;
       @include svg-select-arrow;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       transition: opacity .25s ease, background-position .25s ease;
+
+      @media (max-width: $screen-sm-max) {
+        width: 12px;
+        height: 8px;
+      }
     }
   }
 
