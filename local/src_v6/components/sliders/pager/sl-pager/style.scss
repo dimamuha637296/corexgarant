@@ -1,5 +1,5 @@
-$_sl-pager-bg:                            transparent;
-$_sl-pager-active-bg:                     #fff;
+$_sl-pager-bg:                            #688696;
+$_sl-pager-active-bg:                     $brand-2;
 $_sl-pager-dot-width:                     10px;
 
 .sl-pager {
@@ -30,9 +30,8 @@ $_sl-pager-dot-width:                     10px;
       left: 0;
       transform: translateY(-50%);
       background: $_sl-pager-bg;
-      border-radius: 50%;
       transition: $transition-link;
-      border: 1px solid $_sl-pager-active-bg;
+      border: 1px solid $_sl-pager-bg;
     }
 
     .desktop & {
@@ -41,6 +40,7 @@ $_sl-pager-dot-width:                     10px;
 
         &:after {
           background: $_sl-pager-active-bg;
+          border-color: $_sl-pager-active-bg;
         }
       }
     }
@@ -51,6 +51,7 @@ $_sl-pager-dot-width:                     10px;
 
       &:after {
         background: $_sl-pager-active-bg;
+        border-color: $_sl-pager-active-bg;
       }
     }
 

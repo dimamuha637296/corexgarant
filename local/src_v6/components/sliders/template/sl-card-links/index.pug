@@ -1,0 +1,13 @@
+include ../../../block/card-links-card/index
+mixin sl-card-links(data)
+  .sl-card-links(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              +card-links-card(slide)
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    if (data.pager !== undefined)
+      +#{data.pager}()

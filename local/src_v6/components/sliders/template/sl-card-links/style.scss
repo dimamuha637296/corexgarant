@@ -1,0 +1,99 @@
+.sl-card-links {
+  position: relative;
+
+  .wrap {
+    position: relative;
+    padding: 0 0 30px;
+
+    &.inited-not {
+
+      .slider {
+        display: flex;
+      }
+
+      .slide {
+        flex: 0 0 25%;
+        max-width: 25%;
+
+        @media (max-width: $screen-lg-max) {
+          flex: 0 0 33.3333%;
+          max-width: 33.3333%;
+        }
+
+        @media (max-width: $screen-md-max) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        @media (max-width: $screen-sm-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &:nth-child(n+5) {
+          display: none;
+        }
+
+        &:nth-child(n+4) {
+
+          @media (max-width: $screen-lg-max) {
+            display: none;
+          }
+        }
+
+        &:nth-child(n+3) {
+
+          @media (max-width: $screen-md-max) {
+            display: none;
+          }
+        }
+
+        &:nth-child(n+2) {
+
+          @media (max-width: $screen-xs-max) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    margin: 0 ($grid-gutter-width / -2);
+
+    @media (max-width: $screen-sm-max) {
+      margin: 0 -5px;
+    }
+  }
+
+  .slide {
+    padding: 0 ($grid-gutter-width / 2);
+
+    @media (max-width: $screen-sm-max) {
+      padding: 0 5px;
+    }
+
+    .slick-initialized & {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .inner {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    flex: 1 0 100%;
+  }
+
+  .slick-track {
+    margin-left: 0;
+  }
+
+  .slick-list {
+  }
+
+  .sl-pager {
+    bottom: 0;
+  }
+}

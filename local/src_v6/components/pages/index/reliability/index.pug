@@ -1,4 +1,7 @@
 include ../../../block/card-links/index
+include ../../../../components/sliders/template/sl-card-links/index
+include ../../../../components/sliders/nav/sl-nav/index
+include ../../../../components/sliders/pager/sl-pager/index
 
 .reliability
   .reliability__title-row.row
@@ -6,26 +9,52 @@ include ../../../block/card-links/index
       .h2.mt-0.reliability__title Корэксгарант — надежная доставка отправлений
     .reliability__title-col.reliability__title-col--text.col-xl-4.col-lg-5.col-12
       .reliability__title-text Гарантируем качественное и беспроблемное поддержание деловых отношений
-  +card-links({
-      colClassName: 'col-lg-4 col-md-6 col-12',
-      cards: [
-          {
-              img: 'img/tmp/card-links-01.svg',
-              imgHover: 'img/tmp/card-links-01-active.svg',
-              title: 'Сохранность',
-              text: 'Доставим посылку до любой точки в полной сохранности'
-          },
-          {
-              img: 'img/tmp/card-links-02.svg',
-              imgHover: 'img/tmp/card-links-02-active.svg',
-              title: 'Оперативность',
-              text: 'Обеспечиваем доставку отправлений в кротчайшие сроки'
-          },
-          {
-              img: 'img/tmp/card-links-03.svg',
-              imgHover: 'img/tmp/card-links-03-active.svg',
-              title: 'Отслеживание',
-              text: 'Предоставляем возможность отслеживания статуса отправления'
-          }
-      ]
-  })
+  .d-none.d-lg-block
+    +card-links({
+        colClassName: 'col-lg-4 col-md-6 col-12',
+        cards: [
+            {
+                img: 'img/tmp/card-links-01.svg',
+                imgHover: 'img/tmp/card-links-01-active.svg',
+                title: 'Сохранность',
+                text: 'Доставим посылку до любой точки в полной сохранности'
+            },
+            {
+                img: 'img/tmp/card-links-02.svg',
+                imgHover: 'img/tmp/card-links-02-active.svg',
+                title: 'Оперативность',
+                text: 'Обеспечиваем доставку отправлений в кротчайшие сроки'
+            },
+            {
+                img: 'img/tmp/card-links-03.svg',
+                imgHover: 'img/tmp/card-links-03-active.svg',
+                title: 'Отслеживание',
+                text: 'Предоставляем возможность отслеживания статуса отправления'
+            }
+        ]
+    })
+  .d-block.d-lg-none
+    +sl-card-links({
+        nav: 'sl-nav',
+        pager: 'sl-pager',
+        slides: [
+            {
+                img: 'img/tmp/card-links-01.svg',
+                imgHover: 'img/tmp/card-links-01-active.svg',
+                title: 'Сохранность',
+                text: 'Доставим посылку до любой точки в полной сохранности'
+            },
+            {
+                img: 'img/tmp/card-links-02.svg',
+                imgHover: 'img/tmp/card-links-02-active.svg',
+                title: 'Оперативность',
+                text: 'Обеспечиваем доставку отправлений в кротчайшие сроки'
+            },
+            {
+                img: 'img/tmp/card-links-03.svg',
+                imgHover: 'img/tmp/card-links-03-active.svg',
+                title: 'Отслеживание',
+                text: 'Предоставляем возможность отслеживания статуса отправления'
+            }
+        ]
+    })
