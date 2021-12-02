@@ -1,6 +1,6 @@
 .form-group {
   @include make-row();
-  margin-bottom: 3.0rem;
+  margin-bottom: 30px;
 
   .btn_submit {
     flex-shrink: 0;

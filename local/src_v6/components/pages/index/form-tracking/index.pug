@@ -1,0 +1,53 @@
+include ../../../base/forms/form_1/form/index
+.form-tracking
+  .form-tracking__inner
+    form#form-tracking.form-1(name='form_tracking', method='post', target='_top', action='/')
+      fieldset.fieldset
+        .row
+          .col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_tracking_NUM.form-control.form-control--dark(type='text', name='form_tracking_NUM', placeholder='Номер отслеживания', value='', required='')
+              .controls.col-12
+          .col-12
+            // row
+            .form-group.mb-0
+              .col-12.btn-wrap
+                +btn-secondary({type: 'button', className: 'btn_submit', text: '<span>Проверить</span>'})(id='form-tracking-submit')
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-tracking');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form_tracking_NUM': {
+                                required: true
+                            }
+                        }
+                    });
+                }
+            }
+
+            function validOnButton() {
+                var form = $('#form-tracking');
+                var btn = $('#form-tracking-submit');
+
+                btn.on('click', function () {
+                    if (form.valid()) {
+                        form.submit();
+                    }
+                })
+            }
+
+            $(function () {
+                initValid();
+                validOnButton();
+            });
+        }();

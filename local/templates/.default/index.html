@@ -388,6 +388,80 @@
 																</div>
 								</div>
 							</div>
+							<div class="tracking">
+								<div class="tracking__inner">
+									<div class="tracking__bg"></div>
+									<div class="tracking__text-wrap">
+										<h2 class="mt-0 h2-square tracking__title">Отследить посылку</h2>
+										<div class="tracking__text">Мы поддерживаем стремление клиента контролировать этапы доставки, поэтому предоставляем возможность отслеживания статуса отправления на сайте</div>
+									</div>
+									<div class="form-tracking">
+										<div class="form-tracking__inner">
+											<form class="form-1" id="form-tracking" name="form_tracking" method="post" target="_top" action="/">
+												<fieldset class="fieldset">
+													<div class="row">
+														<div class="col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control form-control--dark" id="form_tracking_NUM" type="text" name="form_tracking_NUM" placeholder="Номер отслеживания" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-12">
+															<!-- row-->
+															<div class="form-group mb-0">
+																<div class="col-12 btn-wrap">
+																															<button class="btn btn-secondary btn_submit" id="form-tracking-submit" type="button"><span>Проверить</span></button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</fieldset>
+											</form>
+											<script>
+												!function () {
+												    'use strict';
+												
+												    // Form validation
+												    function initValid() {
+												        // Validation options http://jqueryvalidation.org/documentation/
+												        var form_validator = $('#form-tracking');
+												        if (form_validator.length && $.fn.validate) {
+												            form_validator.validate({
+												                rules: {
+												                    'form_tracking_NUM': {
+												                        required: true
+												                    }
+												                }
+												            });
+												        }
+												    }
+												
+												    function validOnButton() {
+												        var form = $('#form-tracking');
+												        var btn = $('#form-tracking-submit');
+												
+												        btn.on('click', function () {
+												            if (form.valid()) {
+												                form.submit();
+												            }
+												        })
+												    }
+												
+												    $(function () {
+												        initValid();
+												        validOnButton();
+												    });
+												}();
+											</script>
+										</div>
+									</div><img class="tracking__img tracking__img--01" src="img/tmp/tracking-01.jpg" alt="tracking-01.jpg"><img class="tracking__img tracking__img--02" src="img/tmp/tracking-02.jpg" alt="tracking-02.jpg">
+								</div>
+							</div>
 						</main>
 					</div>
 				</div>

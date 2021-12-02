@@ -1,0 +1,28 @@
+.form-tracking {
+  max-width: 380px;
+
+  @media (max-width: $screen-sm-max) {
+    max-width: 100%;
+  }
+
+  //.form-group {
+  //  margin-bottom: 19px;
+  //
+  //  @media (max-width: $screen-sm-max) {
+  //    margin-bottom: 14px;
+  //  }
+  //}
+  //
+  .btn-wrap {
+    margin-top: 9px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-top: 0;
+    }
+
+    .btn {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+}

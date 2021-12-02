@@ -56,6 +56,17 @@
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
+
+  &--dark {
+    border-color: $brand-white;
+    color: $brand-white;
+    background: $brand-1;
+
+    &:focus {
+      background: $brand-1;
+      color: $brand-white;
+    }
+  }
 }
 
 @mixin form-control-focus() {
