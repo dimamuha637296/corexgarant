@@ -1,8 +1,10 @@
 .calculation {
   padding-top: 150px;
+  padding-bottom: 70px;
 
   @media (max-width: $screen-md-max) {
     padding-top: 99px;
+    padding-bottom: 35px;
   }
 
   &__row {

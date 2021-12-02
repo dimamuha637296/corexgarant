@@ -1,0 +1,8 @@
+include ../card-links-card/index
+
+mixin card-links(data)
+  .card-links(class=data.className)
+    .card-links__row.row
+      each card in data.cards
+        .card-links__col(class=(data.colClassName ? data.colClassName : 'col-lg-4 col-md-6 col-12'))
+          +card-links-card(card)

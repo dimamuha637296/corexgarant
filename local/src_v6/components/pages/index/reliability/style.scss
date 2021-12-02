@@ -1,0 +1,43 @@
+.reliability {
+  padding-top: 71px;
+  padding-bottom: 130px;
+
+  @media (max-width: $screen-md-max) {
+    padding-top: 35px;
+  }
+
+  &__title-row {
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__title-col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__title {
+    @include font-family-lato-semibold();
+    font-size: 40px;
+    line-height: 1.4;
+    color: $brand-gray-10;
+    margin-bottom: 35px;
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title-text {
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: right;
+    color: $brand-gray-10;
+    margin-bottom: 35px;
+    
+    @media (max-width: $screen-md-max) {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+}

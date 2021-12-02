@@ -1,6 +1,10 @@
 .form-calculation {
   max-width: 380px;
 
+  @media (max-width: $screen-sm-max) {
+    max-width: 100%;
+  }
+
   &__title {
     font-size: 26px;
     margin-bottom: 14px;
