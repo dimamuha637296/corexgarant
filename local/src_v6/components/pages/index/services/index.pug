@@ -1,58 +1,34 @@
-include ../../../block/b-title/index
--
-  var data = [
-  {
-    title: 'БПС-Сбербанк',
-    text: 'Разработка и продвижение сайта',
-    pic: 'services-0.jpg'
-  },
-  {
-    title: 'Крыница',
-    text: 'Разработка корпоративного сайта',
-    pic: 'services-1.jpg'
-  },
-  {
-    title: 'YUKON',
-    text: 'Разработка сайтов и поисковый маркетинг на западные рынки',
-    pic: 'services-2.jpg'
-  },
-  {
-    title: 'ФК “Зенит”',
-    text: 'Программирование и техническая поддержка сайта',
-    pic: 'services-3.jpg'
-  },
-  {
-    title: 'YUKON',
-    text: 'Разработка сайтов и поисковый маркетинг на западные рынки',
-    pic: 'services-2.jpg'
-  },
-  {
-    title: 'ФК “Зенит”',
-    text: 'Программирование и техническая поддержка сайта',
-    pic: 'services-3.jpg'
-  },
-  {
-    title: 'БПС-Сбербанк',
-    text: 'Разработка и продвижение сайта',
-    pic: 'services-0.jpg'
-  },
-  {
-    title: 'Крыница',
-    text: 'Разработка корпоративного сайта',
-    pic: 'services-1.jpg'
-  }
-  ];
+include ../../../block/card-links/index
+
 .services
-  +b-title({
-      title: 'Реализованные проекты',
-      titleH: 'h1',
-      link: 'Перейти в галерею проектов'
+  .services__title-row.row
+    .services__title-col.services__title-col--title.col-lg-6.col-12
+      .h2.mt-0.services__title Корэксгарант — полный спектр курьерских услуг
+    .services__title-col.services__title-col--text.col-lg-5.col-12
+      .services__title-text Мы оказываем услуги экспресс доставки писем, посылок, письменной корреспонденции и документов
+  +card-links({
+      colClassName: 'col-lg-4 col-md-6 col-12',
+      cards: [
+          {
+              className: 'card-links-card--small',
+              img: 'img/tmp/card-links-small-01.svg',
+              imgHover: 'img/tmp/card-links-small-01-active.svg',
+              title: 'Инструкция',
+              text: 'Предлагаем ознакомиться с полной инструкцией оказания услуг'
+          },
+          {
+              className: 'card-links-card--small',
+              img: 'img/tmp/card-links-small-01.svg',
+              imgHover: 'img/tmp/card-links-small-01-active.svg',
+              title: 'Приложение (тарифы)',
+              text: 'Документ наших тарифов для разных стран, регионов и городов'
+          },
+          {
+              className: 'card-links-card--small',
+              img: 'img/tmp/card-links-small-01.svg',
+              imgHover: 'img/tmp/card-links-small-01-active.svg',
+              title: 'Договор',
+              text: 'Ознакомьтесь с договором о предоставлении нами услуг'
+          }
+      ]
   })
-  .row
-    each item, i in data
-      .item.col-12.col-sm-6.col-lg-4.col-xl-3(class=i == 8 ? 'hidden-lg hidden-xs' : '')
-        a.link(href='#')
-          img.pic(src=DB.DIR + 'img/tmp/' + item.pic, alt=item.title)
-          .wrap
-            .h3.title #{item.title}
-            .text #{item.text}

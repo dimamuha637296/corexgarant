@@ -1,5 +1,5 @@
 mixin card-links-card(data)
-  .card-links-card
+  .card-links-card(class=data.className)
     a.card-links-card__inner(href='#')
       if (data.img)
         .card-links-card__img-wrap
