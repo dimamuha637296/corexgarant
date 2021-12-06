@@ -1,16 +1,24 @@
-include ../../../../components/base/btns/btn/index
 .about
   .about__bg
-    .about__bg-i
-      img.parallax(src=DB.DIR+'img/tmp/about.jpg', alt='alt')
-  .about__wrap
-    .about__title О компании
-    .about__text
-      p
-        | Компания была основана в 2007 году.
-        br
-        |Основным профилем деятельности «ИнстантБел» является оптовая торговля.
-      p
-        | Мы — поставщик #1 на территории Республики Беларусь по натуральным колбасным оболочкам (черева, синюги, пузыри); полиамидным и белковым колбасным оболочкам; сеткам и шпагатам для копченостей; пищевому целлофану; клипсам и петлям для колбасных изделий, а также специям и приправам.
-    .about__btn
-      +btn-primary({text: 'Подробнее', outline: true})
+  .about__row.row
+    .about__col.about__col--one
+      h2.h2.mt-0.h2-square.about__title О нашей компании
+      .about__text Курьерская служба доставки «Корэксгарант» — надежный способ доставить документы, отправления, корреспонденцию в сжатые сроки, так же вас приятно порадует большое количество маршрутов: доставка письменной корреспонденции осуществляется по Беларуси, России, странам СНГ и Балтии, ближнему и дальнему зарубежью
+      .about__items
+        .about__items-row.row
+          .about__items-col
+            .about__items-num XX
+            .about__items-text Лет успешной работы
+          .about__items-col
+            .about__items-num XX
+            .about__items-text Стран мы обслуживаем
+    .about__col.about__col--two
+      .about__img-wrap-1
+        img.about__img-1(src=DB.DIR + 'img/tmp/about-01.jpg', alt='about', title='about')
+    .about__col.about__col--three
+      .about__img-wrap-2
+        img.about__img-2(src=DB.DIR + 'img/tmp/about-02.jpg', alt='about', title='about')
+    .about__col.about__col--four
+      .about__text2 Экспресс доставка Корэксгарант — верный партнер, предлагающий высокий сервис, оперативность, сохранность и безопасность по доступной стоимости
+      +btn-light({text: 'Подробнее о нас', className: 'd-none d-lg-block about__btn', outline: true})
+      +btn-primary({text: 'Подробнее о нас', className: 'd-block d-lg-none about__btn'})
