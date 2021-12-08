@@ -1,0 +1,18 @@
+mixin sl-clients(data)
+  .sl-clients(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      h2.mt-0.title !{data.title}
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              a(href='#').img-wrap
+                .img-inner
+                  img(src=DB.DIR + slide.img, alt=(data.slide || 'alt'))
+              a(href='#').img-wrap
+                .img-inner
+                  img(src=DB.DIR + slide.img2, alt=(data.slide || 'alt'))
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    if (data.pager !== undefined)
+      +#{data.pager}()
