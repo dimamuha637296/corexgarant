@@ -1,5 +1,10 @@
 .sl-clients {
   position: relative;
+  margin-bottom: 160px;
+  
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 79px;
+  }
 
   .wrap {
     position: relative;
@@ -140,6 +145,7 @@
     }
 
     @media (max-width: $screen-sm-max) {
+      padding-top: 45px;
       margin-bottom: 10px;
     }
 
@@ -171,12 +177,12 @@
     right: 0;
     padding: 20px;
 
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $screen-sm-max) {
       padding: 10px;
     }
   }
 
   img {
-
+    max-height: 100%;
   }
 }

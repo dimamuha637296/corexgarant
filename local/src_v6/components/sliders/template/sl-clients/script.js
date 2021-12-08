@@ -55,14 +55,6 @@
                             dots: slidesLength > 3
                         }
                     },
-                    // {
-                    //     breakpoint: ws.const.screen.screen_sm_max,
-                    //     settings: {
-                    //         slidesToShow: 2,
-                    //         arrows: slidesLength > 2,
-                    //         dots: slidesLength > 2
-                    //     }
-                    // },
                     {
                         breakpoint: ws.const.screen.screen_xs_max,
                         settings: {

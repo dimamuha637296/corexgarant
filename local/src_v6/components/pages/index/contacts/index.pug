@@ -1,0 +1,85 @@
+.contacts
+  .contacts__row.row
+    .contacts__col.contacts__col--text.col-lg-6.col-12
+      h2.h2.mt-0.h2-square.contacts__title Как нас найти
+      .contacts__items
+        .contacts__items-row.row
+          .contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-map
+                  .contacts__block-title-text Адрес:
+              .contacts__block-text
+                p г. Минск
+                p пр-т Независимости, 36
+          .contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-phone
+                  .contacts__block-title-text Телефоны:
+              .contacts__block-text
+                a(href='tel:+375172241100') +375 (17) 224-11-00
+                a(href='tel:+375296368675') +375 (29) 636-86-75
+          .contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-clock
+                  .contacts__block-title-text Время работы:
+              .contacts__block-text
+                p Будни: 8:30 - 19:00
+                p Выходные: сб, вс
+          .contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-mail
+                  .contacts__block-title-text Электронная почта:
+              .contacts__block-text
+                a(href='mailto:info@korex.by') info@korex.by
+          .contacts__items-col.col-12.d-block.d-md-none
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-map
+                  .contacts__block-title-text Минск, пр-т Независимости, 36
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-phone
+                  a(href='tel:+375172241100').contacts__block-title-text +375 (17) 224-11-00
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-print
+                  a(href='tel:+375172241100').contacts__block-title-text +375 (17) 224-11-00
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-clock
+                  .contacts__block-title-text Будни: 8:30 - 19:00 (вых.:сб, вс)
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  i.contacts__block-title-icon.svg-contacts-mail
+                  a(href='mailto:info@korex.by').contacts__block-title-text info@korex.by
+          .contacts__items-col.col-12
+            .contacts__block
+              .contacts__block-title
+                .contacts__block-title-text-wrap
+                  .contacts__block-title-text Прием заказов для доставки из других <br>городов в РБ/Минск:
+              .contacts__block-text
+                a(href='tel:+375172241100') +375 (17) 224-11-00
+                a(href='mailto:zakaz@korex.by') zakaz@korex.by
+      +btn-primary({text: 'Подробнее', className: 'contacts__btn d-none d-md-block', outline: true})
+      +btn-primary({text: 'Подробнее', className: 'contacts__btn d-block d-md-none'})
+    .contacts__col.contacts__col--map.col-lg-6.col-12
+      .contacts__map-wrap
+        .contacts__map-container
+          if (mapId === undefined)
+            - var mapId = 'map';
+          .contacts__map(id=mapId)
+            iframe(src='https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d75220.1454818802!2d27.5250443!3d53.9027881!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1417006632796',
+              style='border:0;display:block;')
