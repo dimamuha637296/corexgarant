@@ -17,7 +17,8 @@ html(lang='ru-RU')
             if (DB.layout !== 'simple')
               block breadcrumbs
                 if (DB.isMain !== true)
-                  include ../../components/base/breadcrumb/index
+                  //include ../../components/base/breadcrumb/index
+                  include ../../components/base/back/index
               block title
                 h1#title H1 Заголовок страницы. В магазинах начался сезон скидок
               if (DB.layout === 'aside')

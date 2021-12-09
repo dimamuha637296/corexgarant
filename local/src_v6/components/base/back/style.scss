@@ -1,0 +1,52 @@
+.back {
+
+  &__wrap {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-bottom: 27px;
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 14px;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    display: table;
+    color: $brand-gray-10;
+
+    @include hover-focus() {
+      color: $brand-2;
+
+      .back__icon {
+
+        &:before {
+          @include svg-back-active();
+        }
+      }
+    }
+  }
+
+  &__icon {
+    vertical-align: -1px;
+    margin-right: 10px;
+    transition: $transition-default;
+
+    &:before {
+      @include svg();
+      @include svg-back();
+      transition: $transition-default;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 140%;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 14px;
+    }
+  }
+}

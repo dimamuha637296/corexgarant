@@ -1,0 +1,10 @@
+extends ../tpl/main
+block pageVars
+  - DB.pageTitle = 'О нас';
+  - DB.layout = 'wide';
+block title
+  h1.hidden#title H1 Заголовок страницы. В магазинах начался сезон скидок
+block content
+  include ../../components/pages/about/about-2/index
+  include ../../components/pages/about/about-3/index
+  include ../../components/pages/about/card-links/index
