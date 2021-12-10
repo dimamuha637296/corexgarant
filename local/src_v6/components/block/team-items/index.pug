@@ -1,0 +1,8 @@
+include ../team-items-card/index
+
+mixin team-items(data)
+  .team-items(class=data.className)
+    .team-items__row.row
+      each card in data.cards
+        .team-items__col(class=(data.colClassName ? data.colClassName : 'col-xl-3 col-md-4 col-sm-6 col-12'))
+          +team-items-card(card)

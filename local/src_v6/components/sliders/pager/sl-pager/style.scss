@@ -1,15 +1,16 @@
 $_sl-pager-bg:                            #688696;
 $_sl-pager-active-bg:                     $brand-2;
-$_sl-pager-dot-width:                     10px;
+$_sl-pager-dot-width:                     12px;
 
 .sl-pager {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 24px;
+  bottom: 0;
 
   ul {
     margin: 0;
+    line-height: 1;
   }
 
   li,
@@ -18,8 +19,14 @@ $_sl-pager-dot-width:                     10px;
     display: inline-block;
     width: $_sl-pager-dot-width;
     height: $_sl-pager-dot-width;
-    margin: 0 $_sl-pager-dot-width/2;
+    margin: 0 7.5px;
     position: relative;
+
+    @media (max-width: $screen-sm-max) {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+    }
 
     &:after {
       content: '';

@@ -1,0 +1,13 @@
+mixin team-items-card(data)
+  .team-items-card(class=data.className)
+    a.team-items-card__inner(href='#')
+      if (data.img)
+        .team-items-card__img-wrap
+          .team-items-card__img-inner
+            img.team-items-card__img(src=DB.DIR + data.img, alt=(data.title || 'alt'))
+      .team-items-card__text-wrap
+        .team-items-card__text
+          .team-items-card__name !{data.name}
+          .team-items-card__vacancy !{data.vacancy}
+          .team-items-card__tel !{data.tel}
+          .team-items-card__mail !{data.mail}

@@ -1,0 +1,13 @@
+include ../../../block/team-items-card/index
+mixin sl-team-items(data)
+  .sl-team-items(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              +team-items-card(slide)
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    if (data.pager !== undefined)
+      +#{data.pager}()

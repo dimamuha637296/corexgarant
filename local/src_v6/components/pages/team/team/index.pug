@@ -1,0 +1,61 @@
+include ../../../../components/sliders/template/sl-team-items/index
+include ../../../../components/sliders/nav/sl-nav/index
+include ../../../../components/sliders/pager/sl-pager/index
+
+.team
+  h2.mt-0.h2-square.team__title Наша команда
+  .team__text Наша команда — профессионалы с опытом работы, <br>которые помогут вам в любых вопросах
+  +sl-team-items({
+      pager: 'sl-pager',
+      slides: [
+          {
+              img: 'img/tmp/team-item-01.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-02.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-03.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-04.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-01.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-02.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          },
+          {
+              img: 'img/tmp/team-item-03.jpg',
+              name: 'Имя Фамилия',
+              vacancy: 'Должность работника на 2 строки',
+              tel: 'Телефон',
+              mail: 'Электронная почта'
+          }
+      ]
+  })

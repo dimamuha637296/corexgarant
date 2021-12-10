@@ -1,4 +1,4 @@
-.sl-card-links {
+.sl-team-items {
   position: relative;
 
   .wrap {
@@ -64,18 +64,10 @@
 
   .slider {
     margin: 0 ($grid-gutter-width / -2);
-
-    @media (max-width: $screen-sm-max) {
-      margin: 0 -5px;
-    }
   }
 
   .slide {
     padding: 0 ($grid-gutter-width / 2);
-
-    @media (max-width: $screen-sm-max) {
-      padding: 0 5px;
-    }
 
     .slick-initialized & {
       display: flex;
