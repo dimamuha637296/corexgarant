@@ -15,6 +15,7 @@
 		<meta name="msapplication-TileImage" content="manifest/mstile-144x144.png">
 		<meta name="msapplication-config" content="manifest/browserconfig.xml">
 		<meta name="theme-color" content="#033550">
+		<link rel="stylesheet" href="css/libs/slick.min.css">
 		<link rel="stylesheet" href="css/app.min.css">
 		<script src="js/libs/jquery-3.3.1.min.js"></script>
 		<script src="js/libs/modernizr-custom.min.js"></script>
@@ -28,6 +29,7 @@
 		<script src="js/libs/jquery-ui.datepicker.min.js"></script>
 		<script src="js/libs/jquery-ui.datepicker_by.min.js"></script>
 		<script src="js/libs/jquery-ui.datepicker_ru.min.js"></script>
+		<script src="js/libs/slick.min.js"></script>
 		<script src="js/app.min.js"></script>
 	</head>
 	<body class="ru js-off pm-close  inner">
@@ -95,43 +97,119 @@
 						</div>
 						<h1 class="hidden" id="title">H1 Заголовок страницы. В магазинах начался сезон скидок</h1>
 						<main class="g-content" id="workarea">
-														<div class="card-links">
-															<div class="card-links__row row">
-																<div class="card-links__col col-lg-4 col-md-6 col-12">
-																								<div class="card-links-card"><a class="card-links-card__inner" href="#">
-																										<div class="card-links-card__img-wrap">
-																											<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-01.svg" alt="Сохранность"></div>
-																											<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-01-active.svg" alt="Сохранность"></div>
-																										</div>
-																										<div class="card-links-card__text-wrap">
-																											<div class="card-links-card__title">Сохранность</div>
-																											<div class="card-links-card__text">Доставим посылку до любой точки в полной сохранности</div>
-																										</div></a></div>
-																</div>
-																<div class="card-links__col col-lg-4 col-md-6 col-12">
-																								<div class="card-links-card"><a class="card-links-card__inner" href="#">
-																										<div class="card-links-card__img-wrap">
-																											<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-02.svg" alt="Оперативность"></div>
-																											<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-02-active.svg" alt="Оперативность"></div>
-																										</div>
-																										<div class="card-links-card__text-wrap">
-																											<div class="card-links-card__title">Оперативность</div>
-																											<div class="card-links-card__text">Обеспечиваем доставку отправлений в кротчайшие сроки</div>
-																										</div></a></div>
-																</div>
-																<div class="card-links__col col-lg-4 col-md-6 col-12">
-																								<div class="card-links-card"><a class="card-links-card__inner" href="#">
-																										<div class="card-links-card__img-wrap">
-																											<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-03.svg" alt="Отслеживание"></div>
-																											<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-03-active.svg" alt="Отслеживание"></div>
-																										</div>
-																										<div class="card-links-card__text-wrap">
-																											<div class="card-links-card__title">Отслеживание</div>
-																											<div class="card-links-card__text">Предоставляем возможность отслеживания статуса отправления</div>
-																										</div></a></div>
+							<div class="about-2">
+								<div class="about-2__bg"></div>
+								<div class="about-2__row row">
+									<div class="about-2__col about-2__col--text">
+										<div class="h2 h2-square mt-0 about-2__title">О нас</div>
+										<div class="about-2__text">
+											<p>Экспресс доставка Корэксгарант — верный партнер, предлагающий высокий сервис, оперативность, сохранность и безопасность по доступной стоимости.</p>
+											<p>Вас приятно порадует большое количество маршрутов: доставка письменной корреспонденции осуществляется по Беларуси, России, странам СНГ и Балтии, ближнему и дальнему зарубежью</p>
+										</div>
+									</div>
+									<div class="about-2__col about-2__col--pic">
+										<div class="about-2__img-wrap"><img class="about-2__img" src="img/tmp/about-2-01.jpg" alt="alt"></div>
+									</div>
+								</div>
+							</div>
+							<div class="about-3">
+								<div class="about-3__row row">
+									<div class="about-3__col about-3__col--pic">
+										<div class="about-3__img-wrap"><img class="about-3__img" src="img/tmp/about-3-01.jpg" alt="alt"></div>
+									</div>
+									<div class="about-3__col about-3__col--text">
+										<div class="about-3__text">Курьерская служба доставки «Корэксгарант» — надежный способ доставить документы, отправления, корреспонденцию в сжатые сроки.</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-none d-lg-block">
+															<div class="card-links">
+																<div class="card-links__row row">
+																	<div class="card-links__col col-lg-4 col-md-6 col-12">
+																									<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																											<div class="card-links-card__img-wrap">
+																												<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-04.svg" alt="Работаем с 2000 года"></div>
+																												<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-04-active.svg" alt="Работаем с 2000 года"></div>
+																											</div>
+																											<div class="card-links-card__text-wrap">
+																												<div class="card-links-card__title">Работаем с 2000 года</div>
+																												<div class="card-links-card__text">Имеем опыт успешной доставки отправлений более 20 лет</div>
+																											</div></a></div>
+																	</div>
+																	<div class="card-links__col col-lg-4 col-md-6 col-12">
+																									<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																											<div class="card-links-card__img-wrap">
+																												<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-05.svg" alt="Отправляем 10 000 посылок в месяц"></div>
+																												<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-05-active.svg" alt="Отправляем 10 000 посылок в месяц"></div>
+																											</div>
+																											<div class="card-links-card__text-wrap">
+																												<div class="card-links-card__title">Отправляем 10 000 посылок в месяц</div>
+																												<div class="card-links-card__text">Нам доверяют тысячи клиентов</div>
+																											</div></a></div>
+																	</div>
+																	<div class="card-links__col col-lg-4 col-md-6 col-12">
+																									<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																											<div class="card-links-card__img-wrap">
+																												<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-06.svg" alt="Доставляем в 50 стран"></div>
+																												<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-06-active.svg" alt="Доставляем в 50 стран"></div>
+																											</div>
+																											<div class="card-links-card__text-wrap">
+																												<div class="card-links-card__title">Доставляем в 50 стран</div>
+																												<div class="card-links-card__text">Мы отправим вашу посылку в любую точку мира</div>
+																											</div></a></div>
+																	</div>
 																</div>
 															</div>
-														</div>
+							</div>
+							<div class="d-block d-lg-none">
+															<div class="sl-card-links">
+																<div class="wrap cursor inited-not">
+																	<div class="slider">
+																		<div class="slide">
+																			<div class="inner">
+																											<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																													<div class="card-links-card__img-wrap">
+																														<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-04.svg" alt="Работаем с 2000 года"></div>
+																														<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-04-active.svg" alt="Работаем с 2000 года"></div>
+																													</div>
+																													<div class="card-links-card__text-wrap">
+																														<div class="card-links-card__title">Работаем с 2000 года</div>
+																														<div class="card-links-card__text">Имеем опыт успешной доставки отправлений более 20 лет</div>
+																													</div></a></div>
+																			</div>
+																		</div>
+																		<div class="slide">
+																			<div class="inner">
+																											<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																													<div class="card-links-card__img-wrap">
+																														<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-05.svg" alt="Отправляем 10 000 посылок в месяц"></div>
+																														<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-05-active.svg" alt="Отправляем 10 000 посылок в месяц"></div>
+																													</div>
+																													<div class="card-links-card__text-wrap">
+																														<div class="card-links-card__title">Отправляем 10 000 посылок в месяц</div>
+																														<div class="card-links-card__text">Нам доверяют тысячи клиентов</div>
+																													</div></a></div>
+																			</div>
+																		</div>
+																		<div class="slide">
+																			<div class="inner">
+																											<div class="card-links-card"><a class="card-links-card__inner" href="#">
+																													<div class="card-links-card__img-wrap">
+																														<div class="card-links-card__img-inner"><img class="card-links-card__img" src="img/tmp/card-links-06.svg" alt="Доставляем в 50 стран"></div>
+																														<div class="card-links-card__img-inner-hover"><img class="card-links-card__img-hover" src="img/tmp/card-links-06-active.svg" alt="Доставляем в 50 стран"></div>
+																													</div>
+																													<div class="card-links-card__text-wrap">
+																														<div class="card-links-card__title">Доставляем в 50 стран</div>
+																														<div class="card-links-card__text">Мы отправим вашу посылку в любую точку мира</div>
+																													</div></a></div>
+																			</div>
+																		</div>
+																	</div>
+																								<div class="sl-nav"><a class="next" href="#"></a><a class="prev" href="#"></a></div>
+																</div>
+																							<div class="js-sl-pager sl-pager"></div>
+															</div>
+							</div>
 						</main>
 					</div>
 				</div>

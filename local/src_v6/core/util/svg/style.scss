@@ -440,6 +440,58 @@
   }
 }
 
+@mixin svg-sl-nav-next-active {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 14px;
+  height: 22px;
+}
+
+.svg-sl-nav-next-active {
+
+  &:before {
+    @include svg-sl-nav-next-active;
+  }
+}
+
+@mixin svg-sl-nav-next-disabled {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23688696%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 14px;
+  height: 22px;
+}
+
+.svg-sl-nav-next-disabled {
+
+  &:before {
+    @include svg-sl-nav-next-disabled;
+  }
+}
+
+@mixin svg-sl-nav-next-hover {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 14px;
+  height: 22px;
+}
+
+.svg-sl-nav-next-hover {
+
+  &:before {
+    @include svg-sl-nav-next-hover;
+  }
+}
+
+@mixin svg-sl-nav-next {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 14px;
+  height: 22px;
+}
+
+.svg-sl-nav-next {
+
+  &:before {
+    @include svg-sl-nav-next;
+  }
+}
+
 @mixin svg-pagin-next-active {
   background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2218%22%20viewBox%3D%220%200%209.494%2015.987%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20fill%3D%22%23#{str-slice(#{$link-color-active}, 2, -1)}%22%20d%3D%22M1.5%200l7.994%207.994L1.5%2015.987l-1.5-1.5%206.494-6.494L0%201.5%201.5%200z%22%2F%3E%3C%2Fsvg%3E');
   width: 8px;
@@ -541,58 +593,6 @@
 
   &:before {
     @include svg-sl-main-link-arrow;
-  }
-}
-
-@mixin svg-sl-nav-next-active {
-  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-  width: 14px;
-  height: 22px;
-}
-
-.svg-sl-nav-next-active {
-
-  &:before {
-    @include svg-sl-nav-next-active;
-  }
-}
-
-@mixin svg-sl-nav-next-disabled {
-  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23688696%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-  width: 14px;
-  height: 22px;
-}
-
-.svg-sl-nav-next-disabled {
-
-  &:before {
-    @include svg-sl-nav-next-disabled;
-  }
-}
-
-@mixin svg-sl-nav-next-hover {
-  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-  width: 14px;
-  height: 22px;
-}
-
-.svg-sl-nav-next-hover {
-
-  &:before {
-    @include svg-sl-nav-next-hover;
-  }
-}
-
-@mixin svg-sl-nav-next {
-  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2222%22%20viewBox%3D%220%200%2014%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1.333%201l12%2010-12%2010%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
-  width: 14px;
-  height: 22px;
-}
-
-.svg-sl-nav-next {
-
-  &:before {
-    @include svg-sl-nav-next;
   }
 }
 

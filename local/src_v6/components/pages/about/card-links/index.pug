@@ -1,25 +1,54 @@
 include ../../../block/card-links/index
+include ../../../../components/sliders/template/sl-card-links/index
+include ../../../../components/sliders/nav/sl-nav/index
+include ../../../../components/sliders/pager/sl-pager/index
 
-+card-links({
-    colClassName: 'col-lg-4 col-md-6 col-12',
-    cards: [
-        {
-            img: 'img/tmp/card-links-01.svg',
-            imgHover: 'img/tmp/card-links-01-active.svg',
-            title: 'Сохранность',
-            text: 'Доставим посылку до любой точки в полной сохранности'
-        },
-        {
-            img: 'img/tmp/card-links-02.svg',
-            imgHover: 'img/tmp/card-links-02-active.svg',
-            title: 'Оперативность',
-            text: 'Обеспечиваем доставку отправлений в кротчайшие сроки'
-        },
-        {
-            img: 'img/tmp/card-links-03.svg',
-            imgHover: 'img/tmp/card-links-03-active.svg',
-            title: 'Отслеживание',
-            text: 'Предоставляем возможность отслеживания статуса отправления'
-        }
-    ]
-})
+.d-none.d-lg-block
+  +card-links({
+      colClassName: 'col-lg-4 col-md-6 col-12',
+      cards: [
+          {
+              img: 'img/tmp/card-links-04.svg',
+              imgHover: 'img/tmp/card-links-04-active.svg',
+              title: 'Работаем с 2000 года',
+              text: 'Имеем опыт успешной доставки отправлений более 20 лет'
+          },
+          {
+              img: 'img/tmp/card-links-05.svg',
+              imgHover: 'img/tmp/card-links-05-active.svg',
+              title: 'Отправляем 10 000 посылок в месяц',
+              text: 'Нам доверяют тысячи клиентов'
+          },
+          {
+              img: 'img/tmp/card-links-06.svg',
+              imgHover: 'img/tmp/card-links-06-active.svg',
+              title: 'Доставляем в 50 стран',
+              text: 'Мы отправим вашу посылку в любую точку мира'
+          }
+      ]
+  })
+.d-block.d-lg-none
+  +sl-card-links({
+      nav: 'sl-nav',
+      pager: 'sl-pager',
+      slides: [
+          {
+              img: 'img/tmp/card-links-04.svg',
+              imgHover: 'img/tmp/card-links-04-active.svg',
+              title: 'Работаем с 2000 года',
+              text: 'Имеем опыт успешной доставки отправлений более 20 лет'
+          },
+          {
+              img: 'img/tmp/card-links-05.svg',
+              imgHover: 'img/tmp/card-links-05-active.svg',
+              title: 'Отправляем 10 000 посылок в месяц',
+              text: 'Нам доверяют тысячи клиентов'
+          },
+          {
+              img: 'img/tmp/card-links-06.svg',
+              imgHover: 'img/tmp/card-links-06-active.svg',
+              title: 'Доставляем в 50 стран',
+              text: 'Мы отправим вашу посылку в любую точку мира'
+          }
+      ]
+  })
