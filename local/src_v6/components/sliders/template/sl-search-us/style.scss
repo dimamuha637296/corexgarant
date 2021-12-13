@@ -1,0 +1,128 @@
+.sl-search-us {
+  position: relative;
+
+  .wrap {
+    position: relative;
+    padding: 0 0 45px;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 0 0 33px;
+    }
+
+    &.inited-not {
+
+      .slider {
+        display: flex;
+      }
+
+      .slide {
+        flex: 0 0 25%;
+        max-width: 25%;
+
+        @media (max-width: $screen-lg-max) {
+          flex: 0 0 33.3333%;
+          max-width: 33.3333%;
+        }
+
+        @media (max-width: $screen-md-max) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &:nth-child(n+5) {
+          display: none;
+        }
+
+        &:nth-child(n+4) {
+
+          @media (max-width: $screen-lg-max) {
+            display: none;
+          }
+        }
+
+        &:nth-child(n+3) {
+
+          @media (max-width: $screen-md-max) {
+            display: none;
+          }
+        }
+
+        &:nth-child(n+2) {
+
+          @media (max-width: $screen-xs-max) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 27px;
+    }
+  }
+
+  .slider {
+
+  }
+
+  .slide {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: $transition-default;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .slick-list {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .slick-track {
+    //padding-left: 15px;
+    //padding-right: 15px;
+  }
+
+  .img-wrap {
+    display: block;
+    position: relative;
+    //padding-top: 220px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //.img-inner {
+  //  display: flex;
+  //  flex-direction: column;
+  //  align-items: center;
+  //  justify-content: center;
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //}
+
+  img {
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

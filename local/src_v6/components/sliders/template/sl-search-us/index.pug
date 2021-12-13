@@ -1,0 +1,16 @@
+mixin sl-search-us(data)
+  .sl-search-us(class=data.modifier ? data.modifier : '')
+    .wrap.cursor.inited-not
+      h2.h2.h2-square.mt-0.title.d-none.d-md-block !{data.title}
+      h2.h2.mt-0.title.d-block.d-md-none !{data.title}
+      .slider
+        each slide in data.slides
+          .slide
+            .inner
+              a(href='#').img-wrap
+                .img-inner
+                  img(src=DB.DIR + slide.img, alt=(data.slide || 'alt'))
+      if (data.nav !== undefined)
+        +#{data.nav}()
+    if (data.pager !== undefined)
+      +#{data.pager}()
