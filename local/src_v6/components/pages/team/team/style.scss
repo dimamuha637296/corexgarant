@@ -1,6 +1,10 @@
 .team {
   padding-bottom: 137px;
 
+  @media (max-width: $screen-sm-max) {
+    padding-bottom: 86px;
+  }
+
   &__title {
     margin-bottom: 20px;
   }

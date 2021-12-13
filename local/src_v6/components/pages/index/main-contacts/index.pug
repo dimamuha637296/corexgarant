@@ -1,0 +1,85 @@
+.main-contacts
+  .main-contacts__row.row
+    .main-contacts__col.main-contacts__col--text.col-lg-6.col-12
+      h2.h2.mt-0.h2-square.main-contacts__title Как нас найти
+      .main-contacts__items
+        .main-contacts__items-row.row
+          .main-contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-map
+                  .main-contacts__block-title-text Адрес:
+              .main-contacts__block-text
+                p г. Минск
+                p пр-т Независимости, 36
+          .main-contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-phone
+                  .main-contacts__block-title-text Телефоны:
+              .main-contacts__block-text
+                a(href='tel:+375172241100') +375 (17) 224-11-00
+                a(href='tel:+375296368675') +375 (29) 636-86-75
+          .main-contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-clock
+                  .main-contacts__block-title-text Время работы:
+              .main-contacts__block-text
+                p Будни: 8:30 - 19:00
+                p Выходные: сб, вс
+          .main-contacts__items-col.col-sm-6.col-12.d-none.d-md-block
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-mail
+                  .main-contacts__block-title-text Электронная почта:
+              .main-contacts__block-text
+                a(href='mailto:info@korex.by') info@korex.by
+          .main-contacts__items-col.col-12.d-block.d-md-none
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-map
+                  .main-contacts__block-title-text Минск, пр-т Независимости, 36
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-phone
+                  a(href='tel:+375172241100').main-contacts__block-title-text +375 (17) 224-11-00
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-print
+                  a(href='tel:+375172241100').main-contacts__block-title-text +375 (17) 224-11-00
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-clock
+                  .main-contacts__block-title-text Будни: 8:30 - 19:00 (вых.:сб, вс)
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  i.main-contacts__block-title-icon.svg-main-contacts-mail
+                  a(href='mailto:info@korex.by').main-contacts__block-title-text info@korex.by
+          .main-contacts__items-col.col-12
+            .main-contacts__block
+              .main-contacts__block-title
+                .main-contacts__block-title-text-wrap
+                  .main-contacts__block-title-text Прием заказов для доставки из других <br>городов в РБ/Минск:
+              .main-contacts__block-text
+                a(href='tel:+375172241100') +375 (17) 224-11-00
+                a(href='mailto:zakaz@korex.by') zakaz@korex.by
+      +btn-primary({text: 'Подробнее', className: 'main-contacts__btn d-none d-md-block', outline: true})
+      +btn-primary({text: 'Подробнее', className: 'main-contacts__btn d-block d-md-none'})
+    .main-contacts__col.main-contacts__col--map.col-lg-6.col-12
+      .main-contacts__map-wrap
+        .main-contacts__map-container
+          if (mapId === undefined)
+            - var mapId = 'map';
+          .main-contacts__map(id=mapId)
+            iframe(src='https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d75220.1454818802!2d27.5250443!3d53.9027881!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1417006632796',
+              style='border:0;display:block;')
