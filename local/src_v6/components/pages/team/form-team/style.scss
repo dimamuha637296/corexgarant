@@ -1,0 +1,86 @@
+.form-team {
+  margin-bottom: 59px;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 30px;
+  }
+
+  &__title-row {
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__title-col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__title {
+    @include font-family-lato-semibold();
+    font-size: 40px;
+    line-height: 1.4;
+    color: $brand-gray-10;
+    margin-bottom: 50px;
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__title-text {
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: right;
+    color: $brand-gray-10;
+    margin-bottom: 50px;
+
+    @media (max-width: $screen-md-max) {
+      text-align: left;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      margin-bottom: 49px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  .btn-wrap {
+    display: flex;
+  }
+
+  .btn {
+    flex: 1 0 auto;
+    color: $brand-black;
+  }
+
+  .btn-icon {
+    position: relative;
+    margin-right: 0;
+    padding: 14px 55px 14px 29px;
+    font-size: 18px;
+    text-align: left;
+    //text-align: left;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 16.5px 48px 16.5px 19px;
+      font-size: 16px;
+    }
+
+    .icon {
+      width: auto;
+      height: 100%;
+      background: transparent;
+      margin-right: 29px;
+      //position: static;
+      //display: inline-block;
+      //font-size: 0;
+      //background: 0 0;
+      //vertical-align: middle;
+      //margin-left: auto;
+    }
+  }
+}

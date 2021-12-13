@@ -1,0 +1,102 @@
+include ../../../base/forms/form_1/form/index
+.form-team
+  .form-team__title-row.row
+    .form-team__title-col.form-team__title-col--title.col-lg-6.col-12
+      .h2.mt-0.form-team__title Корэксгарант — дружный коллектив специалистов
+    .form-team__title-col.form-team__title-col--text.col-xl-4.col-lg-5.col-12
+      .form-team__title-text Хотите работать вместе с нами? Присылайте свою анкету и мы обязательно рассмотрим ее
+  .form-team__inner
+    form#form-team.form-1(name='form_team', method='post', target='_top', action='/')
+      fieldset.fieldset
+        .row
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_team_SURNAME.form-control(type='text', name='form_team_SURNAME', placeholder='Фамилия*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_team_NAME.form-control(type='text', name='form_team_NAME', placeholder='Имя*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_team_PATRONYMIC.form-control(type='text', name='form_team_PATRONYMIC', placeholder='Отчество*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_team_TEL.form-control.js_mask_tel(type='tel', name='form_team_TEL', placeholder='Телефон*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              .text.col-12
+                .input-wrap
+                  input#form_team_MAIL.form-control(type='email', name='form_team_MAIL', placeholder='Электронная почта*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.mb-0
+              .col-12.btn-wrap
+                +btn-secondary({type: 'button', className: 'btn_submit btn-icon', text: '<span>Загрузить анкету</span><span class="icon svg-btn-icon--download"></span>'})(id='form-team-submit')
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-team');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form_team_SURNAME': {
+                                required: true,
+                                minlength: 2
+                            },
+                            'form_team_NAME': {
+                                required: true,
+                                minlength: 2
+                            },
+                            'form_team_PATRONYMIC': {
+                                required: true,
+                                minlength: 2
+                            },
+                            'form_team_TEL': {
+                                minlengthphone: true,
+                                requiredphone: true
+                            },
+                            'form_team_MAIL': {
+                                required: true
+                            }
+                        }
+                    });
+                }
+            }
+
+            function validOnButton() {
+                var form = $('#form-team');
+                var btn = $('#form-team-submit');
+
+                btn.on('click', function () {
+                    if (form.valid()) {
+                        form.submit();
+                    }
+                })
+            }
+
+            $(function () {
+                initValid();
+                validOnButton();
+            });
+        }();

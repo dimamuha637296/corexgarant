@@ -13,6 +13,10 @@
   appearance: none;
   transition: all .25s ease;
 
+  @media (max-width: $screen-sm-max) {
+    padding: 11.5px 19px;
+  }
+
   .form-group--big & {
     padding: 19.5px 30px;
     font-size: 22px;

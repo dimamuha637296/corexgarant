@@ -220,6 +220,139 @@
 																							<div class="js-sl-pager sl-pager"></div>
 															</div>
 							</div>
+							<div class="form-team">
+								<div class="form-team__title-row row">
+									<div class="form-team__title-col form-team__title-col--title col-lg-6 col-12">
+										<div class="h2 mt-0 form-team__title">Корэксгарант — дружный коллектив специалистов</div>
+									</div>
+									<div class="form-team__title-col form-team__title-col--text col-xl-4 col-lg-5 col-12">
+										<div class="form-team__title-text">Хотите работать вместе с нами? Присылайте свою анкету и мы обязательно рассмотрим ее</div>
+									</div>
+								</div>
+								<div class="form-team__inner">
+									<form class="form-1" id="form-team" name="form_team" method="post" target="_top" action="/">
+										<fieldset class="fieldset">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group control-group">
+														<div class="text col-12">
+															<div class="input-wrap">
+																<input class="form-control" id="form_team_SURNAME" type="text" name="form_team_SURNAME" placeholder="Фамилия*" value="" required="">
+															</div>
+														</div>
+														<div class="controls col-12"></div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group control-group">
+														<div class="text col-12">
+															<div class="input-wrap">
+																<input class="form-control" id="form_team_NAME" type="text" name="form_team_NAME" placeholder="Имя*" value="" required="">
+															</div>
+														</div>
+														<div class="controls col-12"></div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group control-group">
+														<div class="text col-12">
+															<div class="input-wrap">
+																<input class="form-control" id="form_team_PATRONYMIC" type="text" name="form_team_PATRONYMIC" placeholder="Отчество*" value="" required="">
+															</div>
+														</div>
+														<div class="controls col-12"></div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group control-group">
+														<div class="text col-12">
+															<div class="input-wrap">
+																<input class="form-control js_mask_tel" id="form_team_TEL" type="tel" name="form_team_TEL" placeholder="Телефон*" value="" required="">
+															</div>
+														</div>
+														<div class="controls col-12"></div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group control-group">
+														<div class="text col-12">
+															<div class="input-wrap">
+																<input class="form-control" id="form_team_MAIL" type="email" name="form_team_MAIL" placeholder="Электронная почта*" value="" required="">
+															</div>
+														</div>
+														<div class="controls col-12"></div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-12">
+													<!-- row-->
+													<div class="form-group mb-0">
+														<div class="col-12 btn-wrap">
+																									<button class="btn btn-secondary btn_submit btn-icon" id="form-team-submit" type="button"><span>Загрузить анкету</span><span class="icon svg-btn-icon--download"></span></button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+									<script>
+										!function () {
+										    'use strict';
+										
+										    // Form validation
+										    function initValid() {
+										        // Validation options http://jqueryvalidation.org/documentation/
+										        var form_validator = $('#form-team');
+										        if (form_validator.length && $.fn.validate) {
+										            form_validator.validate({
+										                rules: {
+										                    'form_team_SURNAME': {
+										                        required: true,
+										                        minlength: 2
+										                    },
+										                    'form_team_NAME': {
+										                        required: true,
+										                        minlength: 2
+										                    },
+										                    'form_team_PATRONYMIC': {
+										                        required: true,
+										                        minlength: 2
+										                    },
+										                    'form_team_TEL': {
+										                        minlengthphone: true,
+										                        requiredphone: true
+										                    },
+										                    'form_team_MAIL': {
+										                        required: true
+										                    }
+										                }
+										            });
+										        }
+										    }
+										
+										    function validOnButton() {
+										        var form = $('#form-team');
+										        var btn = $('#form-team-submit');
+										
+										        btn.on('click', function () {
+										            if (form.valid()) {
+										                form.submit();
+										            }
+										        })
+										    }
+										
+										    $(function () {
+										        initValid();
+										        validOnButton();
+										    });
+										}();
+									</script>
+								</div>
+							</div>
 						</main>
 					</div>
 				</div>
