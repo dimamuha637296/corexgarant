@@ -1,0 +1,8 @@
+include ../reviews-items-card/index
+
+mixin reviews-items(data)
+  .reviews-items(class=data.className)
+    .reviews-items__row.row
+      each card in data.cards
+        .reviews-items__col(class=(data.colClassName ? data.colClassName : 'col-lg-6 col-12'))
+          +reviews-items-card(card)

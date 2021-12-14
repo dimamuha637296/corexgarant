@@ -1,0 +1,208 @@
+.reviews-items-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  @include hover-focus() {
+
+    .reviews-items-card__inner {
+      background: $brand-2;
+    }
+
+    .reviews-items-card__title {
+      color: $brand-gray-10;
+    }
+
+    .reviews-items-card__text {
+      color: $brand-gray-10;
+    }
+
+    .reviews-items-card__date {
+      color: $brand-gray-10;
+    }
+  }
+
+  &__row {
+
+  }
+
+  &__col {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &--pic {
+      flex: 0 0 163px;
+      max-width: 163px;
+      margin-bottom: 20px;
+    }
+
+    &--title {
+      flex: 0 0 377px;
+      max-width: 377px;
+      margin-bottom: 20px;
+
+      @media (max-width: $screen-lg-max) {
+        flex: 0 0 257px;
+        max-width: 257px;
+      }
+
+      @media (max-width: $screen-md-max) {
+        flex: 0 0 497px;
+        max-width: 497px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        flex: 0 0 317px;
+        max-width: 317px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    &--text {
+      flex: 0 0 350px;
+      max-width: 350px;
+
+      @media (max-width: $screen-lg-max) {
+        flex: 0 0 260px;
+        max-width: 260px;
+      }
+
+      @media (max-width: $screen-md-max) {
+        flex: 0 0 500px;
+        max-width: 500px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        flex: 0 0 290px;
+        max-width: 290px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    &--doc {
+      flex: 0 0 190px;
+      max-width: 190px;
+
+      @media (max-width: $screen-lg-max) {
+        flex: 0 0 160px;
+        max-width: 160px;
+      }
+
+      @media (max-width: $screen-md-max) {
+        flex: 0 0 160px;
+        max-width: 160px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        flex: 0 0 190px;
+        max-width: 190px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__inner {
+    flex: 1 1 auto;
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    background: $brand-1;
+    transition: $transition-default;
+    padding: 33px 30px 29px;
+
+    @media (max-width: $screen-xs-max) {
+      padding: 20px 22px 29px;
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    padding: 45px 0 0;
+    background: $brand-white;
+  }
+
+  &__img-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__img {
+    flex-shrink: 0;
+    max-height: 100%;
+    transition: $transition-default;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $brand-white;
+    margin-bottom: 6px;
+  }
+
+  &__date {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $brand-white;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $brand-white;
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__doc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+    background: $brand-white;
+  }
+
+  &__doctext {
+    flex: 1 0 auto;
+    padding: 33px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    color: $brand-black;
+
+    @media (max-width: $screen-md-max) {
+      padding: 22px 0;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding: 32px 0;
+    }
+  }
+}
