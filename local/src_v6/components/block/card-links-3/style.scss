@@ -1,0 +1,110 @@
+.card-links-3 {
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__card {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto 0 0;
+    background: $brand-1;
+    text-decoration: none;
+    overflow: hidden;
+    transition: $transition-default;
+  }
+
+  &__inner {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    @include font-family-medium();
+    font-size: 26px;
+    line-height: 1.40;
+    text-align: center;
+    color: $brand-white;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: $transition-default;
+    
+    @media (max-width: $screen-sm-max) {
+      @include font-family-regular();
+      font-size: 22px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.41;
+    text-align: center;
+    color: $brand-white;
+  }
+
+  &__rates {
+    margin-top: 30px;
+
+    @media (max-width: $screen-sm-max) {
+      margin-top: 21px;
+    }
+  }
+
+  &__rate {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border: 1px solid $brand-white;
+    padding: 9px 30px 9px 14px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: $brand-white;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 11px 30px 11px 14px;
+      font-size: 16px;
+    }
+
+    @include hover-focus() {
+      background: $brand-2;
+      color: $brand-black;
+      border-color: $brand-2;
+
+      &:after {
+        @include svg-card-links-3-arrow-black();
+      }
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      transform: translateY(-50%);
+      @include svg();
+      @include svg-card-links-3-arrow();
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

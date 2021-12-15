@@ -1,0 +1,16 @@
+mixin card-links-3(data)
+  .card-links-3(class=data.className)
+    .card-links-3__row.row
+      each card in data.cards
+        .card-links-3__col(class=(data.colClassName ? data.colClassName : 'col-12 col-md-6 col-lg-4 col-xl-3'))
+          .card-links-3__card
+            .card-links-3__inner
+              .card-links-3__top
+                if (card.title)
+                  .card-links-3__title !{card.title}
+                if (card.text)
+                  .card-links-3__text !{card.text}
+              if (card.rates)
+                .card-links-3__rates
+                  each item in card.rates
+                    a(href='#').card-links-3__rate !{item}

@@ -739,6 +739,32 @@
   }
 }
 
+@mixin svg-card-links-3-arrow-black {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%2214%22%20viewBox%3D%220%200%208%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M.5%201l7%206-7%206%22%20stroke%3D%22%23000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 8px;
+  height: 14px;
+}
+
+.svg-card-links-3-arrow-black {
+
+  &:before {
+    @include svg-card-links-3-arrow-black;
+  }
+}
+
+@mixin svg-card-links-3-arrow {
+  background-image:url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%2214%22%20viewBox%3D%220%200%208%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M.5%201l7%206-7%206%22%20stroke%3D%22%23fff%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  width: 8px;
+  height: 14px;
+}
+
+.svg-card-links-3-arrow {
+
+  &:before {
+    @include svg-card-links-3-arrow;
+  }
+}
+
 @mixin svg-resize {
   background-image:url('data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M21%208a1%201%200%200%200%201-1V3a1.001%201.001%200%200%200-.08-.38%201%201%200%200%200-.54-.54A1%201%200%200%200%2021%202h-4a1%201%200%201%200%200%202h1.59L12%2010.59%205.41%204H7a1%201%200%200%200%200-2H3a1%201%200%200%200-.38.08%201%201%200%200%200-.54.54A1%201%200%200%200%202%203v4a1%201%200%200%200%202%200V5.41L10.59%2012%204%2018.59V17a1%201%200%201%200-2%200v4a1%201%200%200%200%20.08.38%201%201%200%200%200%20.54.54c.12.051.25.078.38.08h4a1%201%200%200%200%200-2H5.41L12%2013.41%2018.59%2020H17a1%201%200%200%200%200%202h4c.13-.002.26-.029.38-.08a1%201%200%200%200%20.54-.54c.051-.12.078-.25.08-.38v-4a1%201%200%200%200-2%200v1.59L13.41%2012%2020%205.41V7a1%201%200%200%200%201%201z%22%20fill%3D%22%23688696%22%2F%3E%3C%2Fsvg%3E');
   width: 24px;
