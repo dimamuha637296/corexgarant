@@ -35,7 +35,11 @@ html body {
 }
 
 .g-content {
-  padding-bottom: 44px;
+  padding-bottom: 150px;
+
+  @media (max-width: $grid-breakpoint-max) {
+    padding-bottom: 90px;
+  }
 
   @media (min-width: $screen-lg-min) {
 

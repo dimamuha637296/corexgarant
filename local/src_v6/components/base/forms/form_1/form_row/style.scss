@@ -18,6 +18,18 @@
     }
   }
 
+  .name {
+    font-size: 18px;
+    line-height: 1.4;
+    color: $brand-gray-10;
+    margin-bottom: 15px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+  }
+
   .checkbox,
   .radio {
     padding-left: 2px;

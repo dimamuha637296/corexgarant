@@ -1,0 +1,21 @@
+.form-calculator {
+
+  &__inner {
+    position: relative;
+  }
+
+  .btn-wrap {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .btn {
+    color: $brand-black;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: $screen-sm-max) {
+      flex: 1 0 auto;
+    }
+  }
+}

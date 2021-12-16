@@ -1,0 +1,20 @@
+.calculator {
+
+  &__title {
+
+    .g-wrap & {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: 1.41;
+    margin-bottom: 60px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+  }
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<title>Тарифы</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="manifest/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="manifest/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="manifest/favicon-16x16.png">
+		<link rel="manifest" href="manifest/manifest.json">
+		<link rel="shortcut icon" href="manifest/favicon.ico">
+		<meta name="msapplication-TileColor" content="#033550">
+		<meta name="msapplication-TileImage" content="manifest/mstile-144x144.png">
+		<meta name="msapplication-config" content="manifest/browserconfig.xml">
+		<meta name="theme-color" content="#033550">
+		<link rel="stylesheet" href="css/app.min.css">
+		<script src="js/libs/jquery-3.3.1.min.js"></script>
+		<script src="js/libs/modernizr-custom.min.js"></script>
+		<script src="js/libs/current-device.min.js"></script>
+		<script src="js/libs/jquery.touchSwipe.min.js"></script>
+		<script src="js/libs/jquery.validate.min.js"></script>
+		<script src="js/libs/jquery.validate_be.min.js"></script>
+		<script src="js/libs/jquery.validate_en.min.js"></script>
+		<script src="js/libs/jquery.validate_ru.min.js"></script>
+		<script src="js/libs/jquery.maskedinput.min.js"></script>
+		<script src="js/libs/jquery-ui.datepicker.min.js"></script>
+		<script src="js/libs/jquery-ui.datepicker_by.min.js"></script>
+		<script src="js/libs/jquery-ui.datepicker_ru.min.js"></script>
+		<script src="js/app.min.js"></script>
+	</head>
+	<body class="ru js-off pm-close  inner">
+		<div class="db g-wrap" id="db">
+			<div class="outer-bg pm-content">
+				<header class="header">
+					<div class="header__desktop">
+						<div class="container">
+							<div class="header__row row">
+								<div class="header__col header__col--logo">
+									<div class="logo-desk">
+										<div class="pic">
+											<a href="/"><img class="img-black" src="img/logo-png.svg" alt="ООО &quot;КОРЭКСГАРАНТ&quot;"><img class="img-white" src="img/logo-png-white.svg" alt="ООО &quot;КОРЭКСГАРАНТ&quot;"></a>
+										</div>
+									</div>
+								</div>
+								<div class="header__col header__col--contacts">
+									<div class="contacts-head-5">
+										<div class="contacts-head-5__dropdown-wrap">
+											<div class="contacts-head-5__dropdown dropdown"><a class="contacts-head-5__toggle dropdown-toggle" data-toggle="dropdown" href="#"><span>+375 (17) 224-11-00</span></a>
+												<div class="contacts-head-5__menu dropdown-menu">
+													<div class="contacts-head-5__list">
+														<div class="contacts-head-5__item">
+															<div class="contacts-head-5__item-subtitle">Горячая линия:</div><a class="contacts-head-5__item-link" href="tel:+375333823138"><span>+375 (33) 382-31-38</span></a>
+															<div class="contacts-head-5__item-helper">(вт. и чт. с 10:00 до 12:00)</div>
+														</div>
+														<div class="contacts-head-5__item">
+															<div class="contacts-head-5__item-subtitle">Горячая линия:</div><a class="contacts-head-5__item-link" href="tel:+375333823138"><span>+375 (33) 382-31-38</span></a>
+															<div class="contacts-head-5__item-helper">(вт. и чт. с 10:00 до 12:00)</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header__col header__col--links d-none d-md-flex">
+									<div class="head-links">
+										<div class="head-links__row">
+											<div class="head-links__col"><a class="head-links__link head-links__link--location" href="#">
+													<div class="head-links__icon"></div></a></div>
+											<div class="head-links__col"><a class="head-links__link head-links__link--human" href="#">
+													<div class="head-links__icon"></div></a></div>
+										</div>
+									</div>
+								</div>
+								<div class="header__col header__col--hamb">
+									<div class="hamb-wrap">
+										<button class="hamburger pm-opener closed"><span class="ico"></span></button>
+									</div>
+									<div class="hamburger-closer">
+										<div class="pm-closer closed"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="g-main">
+					<div class="container">
+						<!--include ../../components/base/breadcrumb/index-->
+						<div class="back">
+							<div class="back__wrap"><a class="back__link" href="#"><i class="back__icon"></i>
+									<div class="back__text">Назад</div></a></div>
+						</div>
+						<h1 class="hidden" id="title">H1 Заголовок страницы. В магазинах начался сезон скидок</h1>
+						<main class="g-content" id="workarea">
+							<div class="calculator">
+								<div class="row">
+									<div class="col-lg-7 col-12">
+										<h2 class="h2 mt-0 h2-square calculator__title">Рассчитать стоимость</h2>
+										<div class="calculator__text">Предлагаем онлайн-калькулятор для расчета стоимости доставки из любой страны в любую точку мира</div>
+									</div>
+								</div>
+								<div class="form-calculator">
+									<div class="form-calculator__inner">
+										<form class="form-1" id="form-calculator" name="form_calculator" method="post" target="_top" action="/">
+											<fieldset class="fieldset">
+												<div class="row">
+													<div class="col-lg-4 col-md-6 col-12">
+														<!-- row-->
+														<div class="form-group control-group">
+															<label class="name col-12" for="form_calculator_FROM">Откуда</label>
+															<div class="text col-12">
+																<div class="input-wrap">
+																	<input class="form-control" id="form_calculator_FROM" type="text" name="form_calculator_FROM" placeholder="Фамилия*" value="" required="">
+																</div>
+															</div>
+															<div class="controls col-12"></div>
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-6 col-12">
+														<!-- row-->
+														<div class="form-group control-group">
+															<label class="name col-12" for="form_calculator_TO">Откуда</label>
+															<div class="text col-12">
+																<div class="input-wrap">
+																	<input class="form-control" id="form_calculator_TO" type="text" name="form_calculator_TO" placeholder="Имя*" value="" required="">
+																</div>
+															</div>
+															<div class="controls col-12"></div>
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-6 col-12">
+														<!-- row-->
+														<div class="form-group control-group">
+															<label class="name col-12" for="form_calculation_WEIGHT">Откуда</label>
+															<div class="text col-12">
+																<div class="input-wrap">
+																	<select class="form-control ui-select" id="form_calculation_WEIGHT" name="form_calculation_WEIGHT" required>
+																		<option value="" selected disabled>До 1 кг</option>
+																		<option>До 2 кг</option>
+																		<option>До 3 кг</option>
+																	</select>
+																</div>
+															</div>
+															<div class="controls col-12"></div>
+														</div>
+													</div>
+													<div class="col-12">
+														<!-- row-->
+														<div class="form-group mb-0">
+															<div class="col-12 btn-wrap">
+																										<button class="btn btn-secondary btn_submit" id="form-calculator-submit" type="button">Рассчитать</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+										</form>
+										<script>
+											!function () {
+											    'use strict';
+											
+											    // Form validation
+											    function initValid() {
+											        // Validation options http://jqueryvalidation.org/documentation/
+											        var form_validator = $('#form-calculator');
+											        if (form_validator.length && $.fn.validate) {
+											            form_validator.validate({
+											                rules: {
+											                    'form_calculator_FROM': {
+											                        required: true,
+											                        minlength: 2
+											                    },
+											                    'form_calculator_TO': {
+											                        required: true,
+											                        minlength: 2
+											                    },
+											                    'form_calculator_WEIGHT': {
+											                        required: true
+											                    }
+											                }
+											            });
+											        }
+											    }
+											
+											    function validOnButton() {
+											        var form = $('#form-calculator');
+											        var btn = $('#form-calculator-submit');
+											
+											        btn.on('click', function () {
+											            if (form.valid()) {
+											                form.submit();
+											            }
+											        })
+											    }
+											
+											    $(function () {
+											        initValid();
+											        validOnButton();
+											    });
+											}();
+										</script>
+									</div>
+								</div>
+							</div>
+						</main>
+					</div>
+				</div>
+				<footer class="footer d-print-none">
+					<div class="footer__inner">
+						<div class="container">
+							<div class="footer__row footer__row--top row">
+								<div class="footer__col footer__col--logo col-lg-3 col-12">
+									<div class="logo-foot">
+										<div class="logo-foot__pic"><img class="logo-foot__img" src="img/logo-foot.svg" alt="ООО &quot;КОРЭКСГАРАНТ&quot;"></div>
+										<div class="logo-foot__text d-none d-lg-block">Полный спектр <br>курьерских услуг</div>
+									</div>
+								</div>
+								<div class="footer__col footer__col--menu col-lg-6 col-12">
+									<div class="menu-foot-2">
+										<ul class="menu_level_1 list-reset break-word">
+											<li class="item_1"><a href="#"><span>Главная</span></a></li>
+											<li class="item_1"><a href="#"><span>Тарифы</span></a><a class="icon collapsed" data-toggle="collapse" href="#accordion-m-32"></a>
+												<div class="collapse submenu" id="accordion-m-32">
+													<ul class="menu_level_2 list-reset">
+														<li class="item_2"><a href="#"><span>О нас</span></a></li>
+														<li class="item_2"><span><span>Команда</span></span></li>
+														<li class="item_2"><a href="#"><span>Клиенты</span></a></li>
+														<li class="item_2"><span><span>Автопарк</span></span></li>
+														<li class="item_2"><a href="#"><span>Вакансии</span></a></li>
+														<li class="item_2"><a href="#"><span>Партнерство</span></a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="item_1"><span><span>О компании</span></span><a class="icon" data-toggle="collapse" href="#accordion-m-34"></a>
+												<div class="collapse show submenu" id="accordion-m-34">
+													<ul class="menu_level_2 list-reset">
+														<li class="item_2"><a href="#"><span>О нас</span></a></li>
+														<li class="item_2"><span><span>Команда</span></span></li>
+														<li class="item_2"><a href="#"><span>Клиенты</span></a></li>
+														<li class="item_2"><span><span>Автопарк</span></span></li>
+														<li class="item_2"><a href="#"><span>Вакансии</span></a></li>
+														<li class="item_2"><a href="#"><span>Партнерство</span></a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="item_1"><a href="#"><span>Доставка корреспонденции</span></a></li>
+										</ul>
+										<ul class="menu_level_1 list-reset break-word">
+											<li class="item_1 active"><a href="#"><span>Расчет стоимости</span></a></li>
+											<li class="item_1"><a href="#"><span>Документы</span></a></li>
+											<li class="item_1"><a href="#"><span>Контакты</span></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="footer__col footer__col--contacts col-lg-3 col-12">
+																			<a class="btn btn-light-outline footer__btn" href="#">Личный кабинет</a>
+									<div class="contacts-foot">
+										<div class="contacts-foot__item"><a class="contacts-foot__link" href="tel:+375172241100"><i class="contacts-foot__icon svg-contacts-foot--phone"></i>
+												<div class="contacts-foot__text">+375 (17) 224-11-00</div></a></div>
+										<div class="contacts-foot__item"><a class="contacts-foot__link" href="#"><i class="contacts-foot__icon svg-contacts-foot--location"></i>
+												<div class="contacts-foot__text">г. Минск, пр&#8209;т&nbsp;Независимости, 36</div></a></div>
+									</div>
+								</div>
+							</div>
+							<div class="footer__small">
+								<div class="footer__row footer__row--bottom row">
+									<div class="footer__col footer__col--copyright col-md-3 col-12 order-2 order-md-0">
+										<div class="logo-foot-2">
+											<div class="title">&copy; Копирайт</div>
+										</div>
+									</div>
+									<div class="footer__col footer__col--policy col-md-3 col-12 order-0 order-md-1">
+										<div class="policy-foot"><a class="title" href="#">Политика конфиденциальности</a></div>
+									</div>
+									<div class="footer__col footer__col--studio col-md-6 col-12 order-1 order-md-2">
+										<div class="studio">
+											<div class="text-wrap">ООО "КОРЭКСГАРАНТ", УНП 101431980</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<div class="pm">
+				<div class="pm-backdrop"></div>
+				<div class="pm-wrap">
+					<div class="pm-container">
+						<div class="pm-inner">
+							<div class="hamburger-closer">
+								<div class="pm-closer closed"></div>
+							</div>
+							<div class="pm-pic d-none d-md-block"><img class="pm-img" src="img/tmp/logo-pm.svg" alt="ООО &quot;КОРЭКСГАРАНТ&quot;"></div>
+							<div class="menu-mob">
+								<ul class="menu_level_1 list-reset break-word">
+									<li class="item_1"><a href="#"><span>Главная</span></a></li>
+									<li class="item_1"><a href="#"><span>Тарифы</span></a><a class="icon collapsed" data-toggle="collapse" href="#accordion-m-12"></a>
+										<div class="collapse submenu" id="accordion-m-12">
+											<ul class="menu_level_2 list-reset">
+												<li class="item_2"><a href="#"><span>О нас</span></a></li>
+												<li class="item_2"><span><span>Команда</span></span></li>
+												<li class="item_2"><a href="#"><span>Клиенты</span></a></li>
+												<li class="item_2"><span><span>Автопарк</span></span></li>
+												<li class="item_2"><a href="#"><span>Вакансии</span></a></li>
+												<li class="item_2"><a href="#"><span>Партнерство</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="item_1"><span><span>О компании</span></span><a class="icon" data-toggle="collapse" href="#accordion-m-14"></a>
+										<div class="collapse show submenu" id="accordion-m-14">
+											<ul class="menu_level_2 list-reset">
+												<li class="item_2"><a href="#"><span>О нас</span></a></li>
+												<li class="item_2"><span><span>Команда</span></span></li>
+												<li class="item_2"><a href="#"><span>Клиенты</span></a></li>
+												<li class="item_2"><span><span>Автопарк</span></span></li>
+												<li class="item_2"><a href="#"><span>Вакансии</span></a></li>
+												<li class="item_2"><a href="#"><span>Партнерство</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="item_1"><a href="#"><span>Доставка корреспонденции</span></a></li>
+								</ul>
+								<ul class="menu_level_1 list-reset break-word">
+									<li class="item_1 active"><a href="#"><span>Расчет стоимости</span></a></li>
+									<li class="item_1"><a href="#"><span>Документы</span></a></li>
+									<li class="item_1"><a href="#"><span>Контакты</span></a></li>
+								</ul>
+							</div>
+																	<a class="btn btn-light-outline pm-btn" href="#">Личный кабинет</a>
+							<div class="pm-contacts">
+								<div class="pm-contacts__item"><a class="pm-contacts__link" href="tel:+375172241100"><i class="pm-contacts__icon svg-pm-contacts--phone"></i>
+										<div class="pm-contacts__text">+375 (17) 224-11-00</div></a></div>
+								<div class="pm-contacts__item"><a class="pm-contacts__link" href="#"><i class="pm-contacts__icon svg-pm-contacts--location"></i>
+										<div class="pm-contacts__text">г. Минск, пр-т Независимости, 36</div></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="scroll-to-top"></div>
+			<!--include ../../components/header/menu-base/menu-base/index-->
+			<!--include ../../components/extra/cookies/index-->
+			<div class="modal fade" id="questModal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<div class="h2 modal-title">Задать вопрос</div>
+							<button class="close" type="button" data-dismiss="modal" aria-hidden="true"></button>
+						</div>
+						<div class="modal-body">
+										<form class="form-1" id="form-quest" method="post" action="/">
+											<fieldset class="fieldset">
+															<div class="form-group control-group">
+																<label class="col-form-label col-xl-2 col-md-3 col-12" for="form-quest-NAME">Ваше имя<span class="f-star">&nbsp;*</span>
+																</label>
+																<div class="text col-xl-6 col-md-5 col-12">
+																							<input class="form-control" id="form-quest-NAME" name="form-quest-NAME" required>
+																</div>
+																<div class="controls col-md-4 col-12"></div>
+															</div>
+															<div class="form-group control-group">
+																<label class="col-form-label col-xl-2 col-md-3 col-12" for="form-quest-PHONE">Телефон<span class="f-star">&nbsp;*</span>
+																</label>
+																<div class="text col-xl-6 col-md-5 col-12">
+																							<input class="form-control" id="form-quest-PHONE" name="form-quest-PHONE" type="tel" required>
+																	<p class="help-block">Например: +375 (29) 123-45-67</p>
+																</div>
+																<div class="controls col-md-4 col-12"></div>
+															</div>
+															<div class="form-group control-group">
+																<label class="col-form-label col-xl-2 col-md-3 col-12" for="form-quest-EMAIL">Эл. почта<span class="f-star">&nbsp;*</span>
+																</label>
+																<div class="text col-xl-6 col-md-5 col-12">
+																							<input class="form-control" id="form-quest-EMAIL" name="form-quest-EMAIL" type="email" placeholder="email@example.com" required>
+																</div>
+																<div class="controls col-md-4 col-12"></div>
+															</div>
+															<div class="form-group control-group">
+																<label class="col-form-label col-xl-2 col-md-3 col-12" for="form-quest-MESSAGE">Вопрос<span class="f-star">&nbsp;*</span>
+																</label>
+																<div class="text col-xl-6 col-md-5 col-12">
+																							<textarea class="form-control" id="form-quest-MESSAGE" name="form-quest-MESSAGE" maxlength="500" rows="4" cols="60" required></textarea>
+																</div>
+																<div class="controls col-md-4 col-12"></div>
+															</div>
+															<div class="form-group">
+																<div class="col-xl-10 col-md-9 col-12 offset-xl-2 offset-md-3 d-md-flex align-items-center">
+																											<input class="btn btn-primary btn_submit" name="submit" type="submit" value="Отправить">
+																	<div class="form_required"><span class="f-star">&nbsp;*</span> — поля обязательные к заполнению
+																	</div>
+																</div>
+															</div>
+											</fieldset>
+										</form>
+													<script>
+!function () {
+    'use strict';
+
+    // Form validation
+    function initValid() {
+        // Validation options http://jqueryvalidation.org/documentation/
+        var form_validator = $('#form-quest');
+        if (form_validator.length && $.fn.validate) {
+            form_validator.validate({
+                rules: {
+                    'form-quest-NAME': {
+                        minlength: 2,
+                        required: true
+                    },
+                    'form-quest-PHONE': {
+                        minlength: 3,
+                        required: true
+                    },
+                    'form-quest-EMAIL': {
+                        email: true,
+                        required: true
+                    },
+                    'form-quest-MESSAGE': {
+                        maxlength: 500,
+                        minlength: 2,
+                        required: true
+                    }
+                }
+            });
+        }
+    }
+
+    $(function () {
+        initValid();
+    });
+}();
+													</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

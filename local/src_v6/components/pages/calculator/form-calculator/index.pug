@@ -1,0 +1,81 @@
+include ../../../base/forms/form_1/form/index
+.form-calculator
+  .form-calculator__inner
+    form#form-calculator.form-1(name='form_calculator', method='post', target='_top', action='/')
+      fieldset.fieldset
+        .row
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              label.name.col-12(for='form_calculator_FROM') Откуда
+              .text.col-12
+                .input-wrap
+                  input#form_calculator_FROM.form-control(type='text', name='form_calculator_FROM', placeholder='Фамилия*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              label.name.col-12(for='form_calculator_TO') Откуда
+              .text.col-12
+                .input-wrap
+                  input#form_calculator_TO.form-control(type='text', name='form_calculator_TO', placeholder='Имя*', value='', required='')
+              .controls.col-12
+          .col-lg-4.col-md-6.col-12
+            // row
+            .form-group.control-group
+              label.name.col-12(for='form_calculation_WEIGHT') Откуда
+              .text.col-12
+                .input-wrap
+                  select#form_calculation_WEIGHT.form-control.ui-select(name='form_calculation_WEIGHT', required)
+                    option(value='', selected, disabled) До 1 кг
+                    option До 2 кг
+                    option До 3 кг
+              .controls.col-12
+          .col-12
+            // row
+            .form-group.mb-0
+              .col-12.btn-wrap
+                +btn-secondary({type: 'button', className: 'btn_submit', text: 'Рассчитать'})(id='form-calculator-submit')
+    script.
+        !function () {
+            'use strict';
+
+            // Form validation
+            function initValid() {
+                // Validation options http://jqueryvalidation.org/documentation/
+                var form_validator = $('#form-calculator');
+                if (form_validator.length && $.fn.validate) {
+                    form_validator.validate({
+                        rules: {
+                            'form_calculator_FROM': {
+                                required: true,
+                                minlength: 2
+                            },
+                            'form_calculator_TO': {
+                                required: true,
+                                minlength: 2
+                            },
+                            'form_calculator_WEIGHT': {
+                                required: true
+                            }
+                        }
+                    });
+                }
+            }
+
+            function validOnButton() {
+                var form = $('#form-calculator');
+                var btn = $('#form-calculator-submit');
+
+                btn.on('click', function () {
+                    if (form.valid()) {
+                        form.submit();
+                    }
+                })
+            }
+
+            $(function () {
+                initValid();
+                validOnButton();
+            });
+        }();
