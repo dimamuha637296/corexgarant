@@ -82,6 +82,7 @@
 
     // radiobutton styles
     &.ui-checkboxradio-radio-label {
+      font-size: 18px;
 
       .ui-checkboxradio-icon {
         width: 20px;
@@ -128,5 +129,21 @@
         }
       }
     }
+  }
+}
+
+.radio-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -27.5px;
+  margin-right: -27.5px;
+}
+
+.radio-wrap {
+  padding-left: 27.5px;
+  padding-right: 27.5px;
+
+  label {
+    margin-bottom: 0;
   }
 }

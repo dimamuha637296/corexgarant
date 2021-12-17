@@ -98,11 +98,13 @@ include ../../../block/delivery-items/index
             .row.form-group.control-group
               .col-12
                 .radio-block
-                  .radio
-                    label
-                      input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='checked')
-                      span Онлайн
-                  .radio
-                    label
-                      input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='')
-                      span Наличными
+                  .radio-wrap
+                    .radio
+                      label
+                        input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='checked')
+                        span Онлайн
+                  .radio-wrap
+                    .radio
+                      label
+                        input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='')
+                        span Наличными

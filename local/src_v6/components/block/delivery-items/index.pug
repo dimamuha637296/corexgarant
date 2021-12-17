@@ -16,3 +16,4 @@ mixin delivery-items(data)
                         .delivery-items__right !{item.right}
               .delivery-items__bottom
                 +btn-light({type: 'input', text: 'Выбрать', className: 'delivery-items__btn', outline: true})
+                input.hidden(type='radio' name='form-delivery-variants')

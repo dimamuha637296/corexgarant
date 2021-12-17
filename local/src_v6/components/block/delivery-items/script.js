@@ -12,8 +12,10 @@
                     e.preventDefault();
                     $(this).closest('.delivery-items').find('.delivery-items__btn').each(function () {
                         $(this).removeClass('active');
+                        $(this).siblings('input').prop('checked', false);
                     });
                     $(this).addClass('active');
+                    $(this).siblings('input').prop('checked', true);
                 });
             });
         }
