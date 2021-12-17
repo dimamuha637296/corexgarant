@@ -1,0 +1,108 @@
+include ../../../base/forms/form_1/form/index
+include ../../../block/delivery-items/index
+
+.delivery-steps
+  h2.h2.mt-0.delivery-steps__title Заказать доставку
+  .form-delivery-steps
+    .form-delivery-steps__inner
+      form#form-delivery-steps.form-1(name='form_delivery_steps', method='post', target='_top', action='/')
+        .delivery-steps__step
+          .delivery-steps__step-title 1. Выберете вариант доставки
+          +delivery-items({
+              cards: [
+                  {
+                      title: 'Срочный режим',
+                      strings: [
+                          {
+                              left: 'Срок',
+                              right: '2-3 дня'
+                          },
+                          {
+                              left: 'До 1 кг',
+                              right: '19 BYN'
+                          },
+                          {
+                              left: 'За каждый последующий кг',
+                              right: '3,5 BYN'
+                          }
+                      ]
+                  },
+                  {
+                      title: 'Сверхсрочный режим',
+                      strings: [
+                          {
+                              left: 'Срок',
+                              right: '1-2 дня'
+                          },
+                          {
+                              left: 'До 1 кг',
+                              right: '27 BYN'
+                          },
+                          {
+                              left: 'За каждый последующий кг',
+                              right: '3,5 BYN'
+                          }
+                      ]
+                  }
+              ]
+          })
+        .delivery-steps__step
+          .delivery-steps__step-title 2. Введите свои данные
+          fieldset.fieldset
+            .row
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_SURNAME.form-control(type='text', name='form_delivery_steps_SURNAME', placeholder='Фамилия*', value='', required='')
+                  .controls.col-12
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_NAME.form-control(type='text', name='form_delivery_steps_NAME', placeholder='Имя*', value='', required='')
+                  .controls.col-12
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_PATRONYMIC.form-control(type='text', name='form_delivery_steps_PATRONYMIC', placeholder='Отчество*', value='', required='')
+                  .controls.col-12
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_TEL.form-control.js_mask_tel(type='tel', name='form_delivery_steps_TEL', placeholder='Телефон*', value='', required='')
+                  .controls.col-12
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_MAIL.form-control(type='email', name='form_delivery_steps_MAIL', placeholder='Электронная  почта*', value='', required='')
+                  .controls.col-12
+              .col-md-4.col-12
+                // row
+                .form-group.control-group
+                  .text.col-12
+                    .input-wrap
+                      input#form_delivery_steps_ADDRESS.form-control(type='text', name='form_delivery_steps_ADDRESS', placeholder='Адрес*', value='', required='')
+                  .controls.col-12
+        .delivery-steps__step
+          .delivery-steps__step-title 3. Выберете вариант оплаты
+          fieldset.fieldset
+            .row.form-group.control-group
+              .col-12
+                .radio-block
+                  .radio
+                    label
+                      input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='checked')
+                      span Онлайн
+                  .radio
+                    label
+                      input.ui-checkbox(type='radio' name='form-delivery-steps-paytype', checked='')
+                      span Наличными

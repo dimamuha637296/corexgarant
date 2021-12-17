@@ -31,7 +31,7 @@
 .btn-secondary {
   background:           $brand-2;
   border-color:         $brand-2;
-  color:                $brand-white;
+  color:                $brand-gray-10;
 
   @include hover-focus  {
     background:         darken($brand-2, 10%);

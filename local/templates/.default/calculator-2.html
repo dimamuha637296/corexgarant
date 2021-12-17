@@ -102,18 +102,18 @@
 										<div class="calculator__text">Предлагаем онлайн-калькулятор для расчета стоимости доставки из любой страны в любую точку мира</div>
 									</div>
 								</div>
-								<div class="form-calculator">
-									<div class="form-calculator__inner">
-										<form class="form-1" id="form-calculator" name="form_calculator" method="post" target="_top" action="/">
+								<div class="form-calculator-2">
+									<div class="form-calculator-2__inner">
+										<form class="form-1" id="form-calculator-2" name="form_calculator_2" method="post" target="_top" action="/">
 											<fieldset class="fieldset">
 												<div class="row">
 													<div class="col-md-4 col-12">
 														<!-- row-->
 														<div class="form-group control-group">
-															<label class="name col-12" for="form_calculator_FROM">Откуда</label>
+															<label class="name col-12" for="form_calculator_2_FROM">Откуда</label>
 															<div class="text col-12">
 																<div class="input-wrap">
-																	<input class="form-control" id="form_calculator_FROM" type="text" name="form_calculator_FROM" placeholder="Фамилия*" value="" required="">
+																	<input class="form-control" id="form_calculator_2_FROM" type="text" name="form_calculator_2_FROM" placeholder="Фамилия*" value="" required="">
 																</div>
 															</div>
 															<div class="controls col-12"></div>
@@ -122,10 +122,10 @@
 													<div class="col-md-4 col-12">
 														<!-- row-->
 														<div class="form-group control-group">
-															<label class="name col-12" for="form_calculator_TO">Куда</label>
+															<label class="name col-12" for="form_calculator_2_TO">Куда</label>
 															<div class="text col-12">
 																<div class="input-wrap">
-																	<input class="form-control" id="form_calculator_TO" type="text" name="form_calculator_TO" placeholder="Имя*" value="" required="">
+																	<input class="form-control" id="form_calculator_2_TO" type="text" name="form_calculator_2_TO" placeholder="Имя*" value="" required="">
 																</div>
 															</div>
 															<div class="controls col-12"></div>
@@ -151,7 +151,7 @@
 														<!-- row-->
 														<div class="form-group mb-0">
 															<div class="col-12 btn-wrap">
-																										<button class="btn btn-secondary btn_submit" id="form-calculator-submit" type="button">Рассчитать</button>
+																										<button class="btn btn-secondary btn_submit" id="form-calculator-2-submit" type="button">Рассчитать</button>
 															</div>
 														</div>
 													</div>
@@ -165,19 +165,19 @@
 											    // Form validation
 											    function initValid() {
 											        // Validation options http://jqueryvalidation.org/documentation/
-											        var form_validator = $('#form-calculator');
+											        var form_validator = $('#form-calculator-2');
 											        if (form_validator.length && $.fn.validate) {
 											            form_validator.validate({
 											                rules: {
-											                    'form_calculator_FROM': {
+											                    'form_calculator_2_FROM': {
 											                        required: true,
 											                        minlength: 2
 											                    },
-											                    'form_calculator_TO': {
+											                    'form_calculator_2_TO': {
 											                        required: true,
 											                        minlength: 2
 											                    },
-											                    'form_calculator_WEIGHT': {
+											                    'form_calculator_2_WEIGHT': {
 											                        required: true
 											                    }
 											                }
@@ -186,8 +186,8 @@
 											    }
 											
 											    function validOnButton() {
-											        var form = $('#form-calculator');
-											        var btn = $('#form-calculator-submit');
+											        var form = $('#form-calculator-2');
+											        var btn = $('#form-calculator-2-submit');
 											
 											        btn.on('click', function () {
 											            if (form.valid()) {
@@ -202,6 +202,168 @@
 											    });
 											}();
 										</script>
+									</div>
+								</div>
+							</div>
+							<div class="delivery-steps">
+								<h2 class="h2 mt-0 delivery-steps__title">Заказать доставку</h2>
+								<div class="form-delivery-steps">
+									<div class="form-delivery-steps__inner">
+										<form class="form-1" id="form-delivery-steps" name="form_delivery_steps" method="post" target="_top" action="/">
+											<div class="delivery-steps__step">
+												<div class="delivery-steps__step-title">1. Выберете вариант доставки</div>
+																			<div class="delivery-items">
+																				<div class="delivery-items__row row">
+																					<div class="delivery-items__col col-12 col-md-6">
+																						<div class="delivery-items__card">
+																							<div class="delivery-items__inner">
+																								<div class="delivery-items__top">
+																									<div class="delivery-items__title">Срочный режим</div>
+																									<div class="delivery-items__strings">
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">Срок</div>
+																											<div class="delivery-items__right">2-3 дня</div>
+																										</div>
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">До 1 кг</div>
+																											<div class="delivery-items__right">19 BYN</div>
+																										</div>
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">За каждый последующий кг</div>
+																											<div class="delivery-items__right">3,5 BYN</div>
+																										</div>
+																									</div>
+																								</div>
+																								<div class="delivery-items__bottom">
+																																			<input class="btn btn-light-outline delivery-items__btn" type="submit" value="Выбрать">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="delivery-items__col col-12 col-md-6">
+																						<div class="delivery-items__card">
+																							<div class="delivery-items__inner">
+																								<div class="delivery-items__top">
+																									<div class="delivery-items__title">Сверхсрочный режим</div>
+																									<div class="delivery-items__strings">
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">Срок</div>
+																											<div class="delivery-items__right">1-2 дня</div>
+																										</div>
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">До 1 кг</div>
+																											<div class="delivery-items__right">27 BYN</div>
+																										</div>
+																										<div class="delivery-items__string">
+																											<div class="delivery-items__left">За каждый последующий кг</div>
+																											<div class="delivery-items__right">3,5 BYN</div>
+																										</div>
+																									</div>
+																								</div>
+																								<div class="delivery-items__bottom">
+																																			<input class="btn btn-light-outline delivery-items__btn" type="submit" value="Выбрать">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+											</div>
+											<div class="delivery-steps__step">
+												<div class="delivery-steps__step-title">2. Введите свои данные</div>
+												<fieldset class="fieldset">
+													<div class="row">
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control" id="form_delivery_steps_SURNAME" type="text" name="form_delivery_steps_SURNAME" placeholder="Фамилия*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control" id="form_delivery_steps_NAME" type="text" name="form_delivery_steps_NAME" placeholder="Имя*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control" id="form_delivery_steps_PATRONYMIC" type="text" name="form_delivery_steps_PATRONYMIC" placeholder="Отчество*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control js_mask_tel" id="form_delivery_steps_TEL" type="tel" name="form_delivery_steps_TEL" placeholder="Телефон*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control" id="form_delivery_steps_MAIL" type="email" name="form_delivery_steps_MAIL" placeholder="Электронная  почта*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+														<div class="col-md-4 col-12">
+															<!-- row-->
+															<div class="form-group control-group">
+																<div class="text col-12">
+																	<div class="input-wrap">
+																		<input class="form-control" id="form_delivery_steps_ADDRESS" type="text" name="form_delivery_steps_ADDRESS" placeholder="Адрес*" value="" required="">
+																	</div>
+																</div>
+																<div class="controls col-12"></div>
+															</div>
+														</div>
+													</div>
+												</fieldset>
+											</div>
+											<div class="delivery-steps__step">
+												<div class="delivery-steps__step-title">3. Выберете вариант оплаты</div>
+												<fieldset class="fieldset">
+													<div class="row form-group control-group">
+														<div class="col-12">
+															<div class="radio-block">
+																<div class="radio">
+																	<label>
+																		<input class="ui-checkbox" type="radio" name="form-delivery-steps-paytype" checked="checked"><span>Онлайн</span>
+																	</label>
+																</div>
+																<div class="radio">
+																	<label>
+																		<input class="ui-checkbox" type="radio" name="form-delivery-steps-paytype" checked=""><span>Наличными</span>
+																	</label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</fieldset>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>

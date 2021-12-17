@@ -1,24 +1,24 @@
 include ../../../base/forms/form_1/form/index
-.form-calculator
-  .form-calculator__inner
-    form#form-calculator.form-1(name='form_calculator', method='post', target='_top', action='/')
+.form-calculator-2
+  .form-calculator-2__inner
+    form#form-calculator-2.form-1(name='form_calculator_2', method='post', target='_top', action='/')
       fieldset.fieldset
         .row
           .col-md-4.col-12
             // row
             .form-group.control-group
-              label.name.col-12(for='form_calculator_FROM') Откуда
+              label.name.col-12(for='form_calculator_2_FROM') Откуда
               .text.col-12
                 .input-wrap
-                  input#form_calculator_FROM.form-control(type='text', name='form_calculator_FROM', placeholder='Фамилия*', value='', required='')
+                  input#form_calculator_2_FROM.form-control(type='text', name='form_calculator_2_FROM', placeholder='Фамилия*', value='', required='')
               .controls.col-12
           .col-md-4.col-12
             // row
             .form-group.control-group
-              label.name.col-12(for='form_calculator_TO') Куда
+              label.name.col-12(for='form_calculator_2_TO') Куда
               .text.col-12
                 .input-wrap
-                  input#form_calculator_TO.form-control(type='text', name='form_calculator_TO', placeholder='Имя*', value='', required='')
+                  input#form_calculator_2_TO.form-control(type='text', name='form_calculator_2_TO', placeholder='Имя*', value='', required='')
               .controls.col-12
           .col-md-4.col-12
             // row
@@ -35,7 +35,7 @@ include ../../../base/forms/form_1/form/index
             // row
             .form-group.mb-0
               .col-12.btn-wrap
-                +btn-secondary({type: 'button', className: 'btn_submit', text: 'Рассчитать'})(id='form-calculator-submit')
+                +btn-secondary({type: 'button', className: 'btn_submit', text: 'Рассчитать'})(id='form-calculator-2-submit')
     script.
         !function () {
             'use strict';
@@ -43,19 +43,19 @@ include ../../../base/forms/form_1/form/index
             // Form validation
             function initValid() {
                 // Validation options http://jqueryvalidation.org/documentation/
-                var form_validator = $('#form-calculator');
+                var form_validator = $('#form-calculator-2');
                 if (form_validator.length && $.fn.validate) {
                     form_validator.validate({
                         rules: {
-                            'form_calculator_FROM': {
+                            'form_calculator_2_FROM': {
                                 required: true,
                                 minlength: 2
                             },
-                            'form_calculator_TO': {
+                            'form_calculator_2_TO': {
                                 required: true,
                                 minlength: 2
                             },
-                            'form_calculator_WEIGHT': {
+                            'form_calculator_2_WEIGHT': {
                                 required: true
                             }
                         }
@@ -64,8 +64,8 @@ include ../../../base/forms/form_1/form/index
             }
 
             function validOnButton() {
-                var form = $('#form-calculator');
-                var btn = $('#form-calculator-submit');
+                var form = $('#form-calculator-2');
+                var btn = $('#form-calculator-2-submit');
 
                 btn.on('click', function () {
                     if (form.valid()) {

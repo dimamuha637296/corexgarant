@@ -1,0 +1,20 @@
+.delivery-steps {
+
+  &__title {
+
+    .g-wrap & {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__step {
+    margin-bottom: 50px;
+  }
+
+  &__step-title {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 21px;
+  }
+}

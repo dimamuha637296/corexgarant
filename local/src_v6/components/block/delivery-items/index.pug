@@ -1,0 +1,18 @@
+mixin delivery-items(data)
+  .delivery-items(class=data.className)
+    .delivery-items__row.row
+      each card in data.cards
+        .delivery-items__col(class=(data.colClassName ? data.colClassName : 'col-12 col-md-6'))
+          .delivery-items__card
+            .delivery-items__inner
+              .delivery-items__top
+                if (card.title)
+                  .delivery-items__title !{card.title}
+                if (card.strings)
+                  .delivery-items__strings
+                    each item in card.strings
+                      .delivery-items__string
+                        .delivery-items__left !{item.left}
+                        .delivery-items__right !{item.right}
+              .delivery-items__bottom
+                +btn-light({type: 'input', text: 'Выбрать', className: 'delivery-items__btn', outline: true})
