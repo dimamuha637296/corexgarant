@@ -1,7 +1,7 @@
 {
   "name": "corexgarant",
   "short_name": "corexgarant",
-  "description": "db.by framework based on Bootstrap",
+  "description": "framework based on Bootstrap",
   "dir": "auto",
   "lang": "ru-RU",
   "display": "standalone",

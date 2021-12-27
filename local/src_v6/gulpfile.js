@@ -44,8 +44,8 @@ var opt = {
     ' * <%= pkg.name %> v<%= pkg.version %>\n' + // переменные берутся с package.json
     ' * 2014-<%= new Date().getFullYear() %> <%= pkg.author %> (<%= pkg.homepage %>)\n' +
     ' * Based on Bootstrap <%= pkg.bootstrap %>\n' +
-    ' * For support please contact us: info@db.by \n' +
-    ' * bugs in template: westy.by@gmail.com, kovalsky@db.by \n' +
+    ' * For support please contact us: info \n' +
+    ' * bugs in template: \n' +
     ' */ \n'],
     encoding: 'utf8',// Кодировка файлов
     extensions: {
